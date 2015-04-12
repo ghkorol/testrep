@@ -1,0 +1,34 @@
+\chapter*{Conclusions}
+
+In this work, a measurement of charm and beauty quark production in deep inelastic scattering at HERA was presented.
+A data set collected by the ZEUS detector in the period from 2003 to 2007, corresponding to an integrated luminosity of \SI{354}{\per\pico\barn}, was analysed.
+A secondary vertex technique was employed to tag heavy flavours.
+The method makes use of the fact that charm and beauty hadrons have long lifetimes and large decay lengths, hence they can be separated from the light flavour background.
+The advantage of the method is that no specific final state is required, every charm or beauty hadron decay with at least two charged tracks can be potentially reconstructed.
+
+A detailed evaluation of the systematic uncertainties was performed in this thesis;
+a substantial reduction of uncertainties from certain sources was achieved, compared to the previous study~\cite{Roloff}.
+As an example, the systematics due to a large uncertainty on the ZEUS tracking efficiency was reduced thanks to dedicated studies of hadronic interactions performed in this work.
+% The uncertainties on the acceptance determination were reduced by tuning of the Monte Carlo simulation to data.
+
+Differential cross-sections of jet production in charm and beauty events were measured and compared to NLO QCD calculations in the fixed flavour number scheme.
+Within uncertainties, an agreement between data and theory was found.
+The central values of predictions for charm are however typically below the data.
+
+The contributions $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ of charm and beauty quark production to the inclusive proton structure function $F_2$ were determined from the double differential cross sections.
+NLO QCD predictions were used to extrapolate the cross sections from the visible to the full phase space.
+% Reliable description of the shape of the cross sections in the jet transverse energy \ETjet and pseudorapidity \etajet ensure reliability of this procedure.
+The obtained results can be compared to theory predictions in various schemes.
+The extracted $F_2^{b\overline{b}}$ represent the most precise measurement among the published HERA results.
+The $F_2^{c\overline{c}}$ is competitive  compared to the previous measurements.
+In future, these data will be used for the combination of H1 and ZEUS results
+which will be the ultimate results on $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ from HERA.
+A QCD analysis of them can potentially improve understanding of heavy flavour production as well as allow more precise determinations of the quark masses.
+
+The work was also devoted to beam test studies of the ATLAS pixel sensors, within the Insertable B-layer (IBL) upgrade programme.
+The test beam data analysis software EUTelescope was extended, which allowed efficient analysis and characterisation of ATLAS pixel sensors.
+At CERN SPS, a simultaneous beam test characterisation of two sensor types, the Planar and 3D was performed with the EUDET pixel telescope.
+Usage a single experimental setup ensured that all conditions are the same and hence the results are comparable.
+The results that were obtained such as the hit efficiency or charge collection were consistent to the previous studies,
+thus ensuring understanding of the new tools, which was an important step in the programme.
+The ATLAS pixel data acquisition system for IBL beam tests called USBPix was integrated to the EUDET Telescope, allowing its usage for final IBL testbeams.

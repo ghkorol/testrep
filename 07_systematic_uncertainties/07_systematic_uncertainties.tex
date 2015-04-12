@@ -1,0 +1,433 @@
+\chapter{Systematic Uncertainties}
+
+\section{Determination of Systematic Uncertainties}
+
+\section{Experimental Uncertainties}
+
+\section{Model Uncertainties}
+
+% \chapter{Systematic Uncertainties}\label{chapt:systematics}
+% 
+% Every physics measurement suffers from a number of systematic uncertainties.
+% One of the most important tasks for an experimentalist is to identify them
+% and to quantify the influence of these effects on the physics results.
+% A detailed investigation of systematic uncertainties for the charm and beauty measurement presented in this thesis was performed and is discussed in this chapter.
+% First, the general method that was used for determination of uncertainties is described.
+% Afterwards, all identified sources of uncertainty are discussed.
+% 
+% \section{The Scan Technique}
+% 
+% \begin{figure}[!b]\centering
+%  \includegraphics[width=0.8\textwidth]{06_systematic_uncertainties/plots/trk_eff_scan_charm.png}
+%   \caption{Illustration of the scanning technique for the systematic uncertainty determination. Points show the total charm cross section; only statistical uncertainties are indicated.
+%   The dashed line shows the default value of a parameter, while the dot-dashed line represents its variation at which the systematic uncertainty has to be determined. The solid line shows a straight line fit.}
+%   \label{fig:trk_eff_scan_charm.png}
+% \end{figure}
+% 
+% Often, in order to evaluate a systematic uncertainty, a certain parameter or procedure is modified, and the result is reextracted.
+% The difference $\Delta$ between the default result and the one obtained with an altered parameter is called a systematic uncertainty.
+% However this approach is not protected from statistical fluctuations.
+% For the measurement presented in this thesis, template fits have to be redone each time the analysis procedure is changed.
+% Variations of certain parameters cause event migration from and to neighboring bins; due to the fact that MC templates are statistically limited, this introduces fluctuations to the fit results,
+% which alters the difference $\Delta$. Hence the obtained systematic uncertainty contains a statistical component and differs from the actual systematic effect. 
+% 
+% In order to overcome this problem and hence to achieve a better systematic uncertainty determination, a {\it scan technique} was used in this thesis.
+% The idea of the method is that the relevant parameter is not changed only once, but in steps in a certain range. For each variation, the template fit is redone and results are reextracted.
+% The corresponding dependence of cross sections on the parameter represents the systematic effect.
+% For small parameter variations, the resulting dependence is expected to be linear and can be approximated with a first-order polynomial.
+% In this case, a systematic effect is related to the slope of the line.
+% From the parameter scan one can also check if there is any significant nonlinear dependence present in the range of the uncertainty of the parameter which would lead to asymmetric uncertainties.
+% With the scan technique it is possible to see directly whether there is a systematic trend and to reduce the influence of statistical fluctuations on the resulting systematic uncertainty.
+% 
+% The method is illustrated in Fig.~\ref{fig:trk_eff_scan_charm.png}, for the case of the tracking efficiency systematics as an example
+% (see Section~\ref{sect:corrections} for description of the tracking efficiency correction and the next section for details on parameter variations for the systematic uncertainty determination).
+% The horizontal axis denotes the value of a relevant parameter $\alpha$ that has to be varied (in this case, the variation of a parameter $\epsilon$ which enters the probability of track discarding in the MC).
+% The vertical axis denotes the total charm cross section.
+% The default value of the parameter is denoted by the vertical dashed line and corresponds to $\alpha=0$. The dot-dashed line shows the upward variation
+% of this parameter at which systematics has to be determined ($\alpha=0.2$).
+% Several variations of $\alpha$ are performed, and for every value of $\alpha$, the cross section is reevaluated.
+% One concludes that there is a systematic increase of the cross section with the increase of $\alpha$.
+% The dependence is fitted with a first-order polynomial.
+% Due to the fact that the data points are highly correlated, the resulting $\chisqndf=0.2618/4$ is much smaller than unity.
+% The uncertainties on the fitted parameters are therefore meaningless.
+% The slope of the fitted line corresponds to the systematic uncertainty per unit of parameter variation.
+% By multiplying the slope by the difference between the default parameter and the variation ($\Delta\alpha=0.2$), the systematic uncertainty is determined.
+% It follows from Fig.~\ref{fig:trk_eff_scan_charm.png} that the determination of the systematic uncertainty with a single variation
+% (i.e. the difference $\Delta$ between the cross sections at $\alpha=0.2$ and $\alpha=0$) would significantly underestimate it.
+% 
+% In this way, uncertainties were determined for each identified source.
+% They were evaluated separately for total charm and beauty cross sections as well as for every
+% bin in all differential cross sections
+% and added quadratically to obtain the total systematic uncertainty, separately for positive and negative variations.
+% 
+% \section{Sources of Uncertainty}
+% 
+% Various effects that influence the charm and beauty measurement presented in the thesis have been identified and studied.
+% This section describes these effects as well as the procedures to evaluate the corresponding systematic uncertainties.
+% 
+% \subsubsection{Tracking efficiency}
+% 
+% The tracking efficiency directly affects the acceptance, hence its modelling by the Monte Carlo is essential for the cross section determination.
+% It was studied in detail in this thesis, in particular it was found that the tracking efficiency is on average overestimated in the MC,
+% which leads to an underestimation of the measured cross sections, see Chapter~\ref{sect:hadr_interactions}.
+% The corresponding correction is described in Section~\ref{sect:corrections}.
+% It is performed by randomly rejecting tracks in the MC according to a probability, which depends on the data-to-MC ratio of the hadronic interaction rate, $\epsilon$,
+% and the tracking inefficiency due to hadronic interactions in the MC, $p_\text{hadr, MC}$, see equation~(\ref{eq:tracking_correction}).
+% 
+% The $\epsilon$ parameter is known with moderate precision;
+% in order to evaluate the resulting systematics, it is varied within its uncertainties and the procedure of rejecting tracks is repeated.
+% According to the results of Chapter~\ref{sect:hadr_interactions}, there is a dependence of $\epsilon$ on the transverse track momentum $p_T$, while there is no
+% significant dependence on other track parameters: $\epsilon\approx1.4$ for $p_T<\SI{1.5}{\GeV}$ and $\epsilon\approx1$ for $p_T>\SI{1.5}{\GeV}$.
+% An uncertainty of 0.2 was assigned to the $\epsilon$ parameter in both momentum regions.
+% Hence, in order to evaluate the systematic uncertainty, the $\epsilon$ parameter is varied simultaneously to 1.2 and 1.6 at low momenta, and to 0.8 and 1.2 at high $p_T$.
+% 
+% With the method of track rejection, it is not possible to perform the correction if $\epsilon<1$, since this means that the tracking efficiency
+% is underestimated in the MC, and one would need to add tracks to the MC rather than reject, which cannot be easily done.
+% Hence, one-sided (positive) variations are performed and the resulting systematic uncertainty is symmetrised.
+% Simultaneous variations in both momenta regions are performed which leads to a more conservative uncertainty (since the systematic effect is maximised):
+% $$
+% \epsilon=\begin{cases}
+% 1.4+\alpha, &p_T<\SI{1.5}{\GeV};\\
+% 1+\alpha, &p_T>\SI{1.5}{\GeV},
+% \end{cases}
+% $$
+% where $\alpha$ is the variation of the $\epsilon$ parameter.
+% 
+% Figures~\ref{fig:trk_eff_scan_charm.png} and~\ref{fig:trk_eff_beauty} show the total charm and beauty cross sections, respectively, for different values of $\alpha$.
+% As discussed in the previous section, the systematic uncertainty is determined from a straight line fit to these distributions.
+% The resulting uncertainty on the total charm cross section is \SI{\pm0.9}{\percent}.
+% The uncertainty on the beauty cross section is \SI{\pm2.8}{\percent} which is one of its dominant uncertainties.
+% 
+% \begin{figure}[!b]\centering
+%  \includegraphics[width=0.75\textwidth]{06_systematic_uncertainties/plots/trk_eff_scan_beauty.png}
+%   \caption{Total beauty cross section as a function of the $\epsilon$ parameter variation. Other details are as in Fig.~\ref{fig:trk_eff_scan_charm.png}.}
+%   \label{fig:trk_eff_beauty}
+% \end{figure}
+% 
+% Prior to this study, the tracking efficiency was not well-known. A systematic uncertainty of \SI{-2}{\percent} was assigned to it, irrespectively of track parameters~\cite{ZEUS:2011aa}.
+% The resulting systematic uncertainty was \SI{+5}{\percent} on the total charm cross section and  \SI{+8}{\percent} on the beauty~\cite{Roloff}.
+% Hence, a substantial reduction of the uncertainty due to tracking efficiency was achieved in this thesis.
+% 
+% \subsubsection{Charm Fragmentation Function}
+% 
+% \begin{figure}[!b]\centering
+% 
+%   \includegraphics[width=0.5\textwidth]{06_systematic_uncertainties/plots/fragmentation_functions.png}
+%   \caption{Bowler and Peterson fragmentation functions. The solid line shows the Bowler parametrisation (see text for details on the values of parameters), while the dashed, dotted and dot-dashed lines represent Peterson
+% functions with different values of the $\epsilon$ parameter.}
+%   \label{fig:frag_fcn}
+% \end{figure}
+% 
+% Due to the fact that the acceptance for the vertex reconstruction may depend on the momentum of the corresponding charm or beauty hadron,
+% the measured cross section is sensitive to modelling of the fragmentation hardness in the Monte Carlo.
+% This process is parametrised by the charm (beauty) quark longitudinal fragmentation function, which defines the probability to transfer a certain longitudinal momentum fraction from a charm (beauty) quark to a charm (beauty) hadron (see a more detailed discussion in Section~\ref{sect:mc}).
+% For MC samples used in this analysis, the Bowler parametrisation~\cite{Bowler:1981sb} was chosen, as described in Section~\ref{sect:DATA_MC}.
+% In order to evaluate the sensitivity of the results to the fragmentation function, a different parametrisation -- the Peterson fragmentation function~\cite{pr:d27:105} -- was alternatively tried.
+% 
+% Figure~\ref{fig:frag_fcn} shows the Bowler and Peterson functions, normalised to unit area.
+% Definitions of the functions are given in Section~\ref{sect:mc}.
+% The same settings as for the default MC samples were used to plot the Bowler function, namely: $a_\alpha=a_\beta=0.3, b=0.58, r_Q=1,m=\SI{2.01}{\GeV}$, $m_Q=\SI{1.5}{\GeV}$, $p_T=\SI{0}{\GeV}$.
+% The Peterson parametrisation is controlled by a single parameter, $\epsilon$.
+% It was shown in an analysis of $D^*$-meson photoproduction by the ZEUS Collaboration~\cite{ZEUS_dstar_frag}, that
+% the \PYTHIA fragmentation model gives the best description of data for $\epsilon=0.062\pm0.007^{+0.008}_{-0.004}$.
+% In Fig.~\ref{fig:frag_fcn}, the Peterson function was plotted with three values of  $\epsilon$: 0.052, 0.062 and 0.072.
+% Generally Bowler and Peterson functions behave similarly, however Bowler is somewhat wider.
+% 
+% \begin{figure}[t]\centering
+% 
+%   \subfigure[]{\label{fig:z_string}
+%     \includegraphics[width=0.45\textwidth]{06_systematic_uncertainties/plots/z_string.png}
+%   }
+%   \subfigure[]{\label{fig:z_string_ratio}
+%     \includegraphics[width=0.45\textwidth]{06_systematic_uncertainties/plots/z_string_ratio.png}
+%   }
+%   \caption{Distributions of $z_\text{hadr}$ for MC samples with different fragmentation functions (a) and corresponding reweighting functions (b).}
+% \end{figure}
+% 
+% In order to modify the fragmentation function in the MC simulation, a reweighting of a variable, representing the fraction of the longitudinal momentum transferred from the charm (beauty) quark to the
+% charm (beauty) hadrons, $z_\text{hadr}$, was performed.
+% This variable is sensitive to the longitudinal fragmentation function and has different shapes for different parametrisations.
+% It was defined in the following way:
+% $$z_\text{hadr} = \frac{(E+p_{||})_\text{hadr}}{E_\text{string}},$$
+% where $E_\text{hadr}$ is the energy of the charm (beauty) hadron, $p_{||,\,\text{hadr}}$ is the projection of its momentum onto the parent charm (beauty) quark momentum, $E_\text{string}$ is the energy of the string which fragments to a given hadron
+% (see Section~\ref{sect:mc} for more details on the string fragmentation model).
+% All quantities are calculated in the rest frame of the string. Only charm or beauty hadrons that are produced in the fragmentation (not in decays) are considered. 
+% 
+% In order to obtain the shape of $z_\text{hadr}$ for the Peterson function, dedicated \RAPGAP Monte Carlo samples were generated.
+% All settings were as for the default samples, except for the fragmentation function which was chosen to be the Peterson function with $\epsilon$-parameter values of 0.052, 0.062 and 0.072.
+% Fig.~\ref{fig:z_string} shows the distribution of $z_\text{hadr}$ for these samples as well as for the default one, with the Bowler function.
+% The distribution illustrates that  $z_\text{hadr}$ is indeed sensitive to the fragmentation function and behaves similarly to the parametrisations shown in Fig.~\ref{fig:frag_fcn}.
+% By reweighting of $z_\text{hadr}$ in the main samples (i.e. with the Bowler function),
+% it is possible to mimic a change of the fragmentation function.
+% Fig.~\ref{fig:z_string_ratio} shows the resulting weighting functions from the Bowler to the Peterson parametrisation.
+% For the evaluation of the fragmentation function systematics only the case of $\epsilon=0.062$ was used for the reweighting.
+% 
+% In order to allow systematic uncertainty determination with the scan technique, the weight is defined in the following way:
+% $$\textrm{weight}=1-\beta[1-\omega(z)],$$
+% where $\omega(z)$ is the weight as a function of $z$ shown in Fig.~\ref{fig:z_string_ratio}\footnote{The total event weight is defined as a product of weights of all charm (beauty) hadrons produced in the event.}, $\beta\in[0,1]$ is the amount of the reweighting: for $\beta$ = 1, reweighting is fully performed, while $\beta=0$ means no reweighting. Figure~\ref{fig:c_fragm} shows the dependences of the total charm and beauty cross sections
+% on the $\beta$ parameter.
+% The resulting systematic effect on the total charm cross section was found to be \SI{+1}{\percent}, while for the beauty it is \SI{-0.9}{\percent}.
+% Figure~\ref{fig:c_fragm}(a) indicates that the usage of the scan technique for charm improves the determination
+% of the systematic uncertainty which would be underestimated in case of single variation only.
+% 
+% \begin{figure}[t]
+%   \centering
+%   \subfigure[]{
+%     \includegraphics[width=0.47\textwidth,height=0.35\textheight]{06_systematic_uncertainties/plots/c_fragm_scan_charm.png}
+%   }
+%   \subfigure[]{
+%     \includegraphics[width=0.47\textwidth,height=0.35\textheight]{06_systematic_uncertainties/plots/c_fragm_scan_beauty.png}
+%   }
+%   \caption{Effect of the charm fragmentation function reweighting on the total charm (a) and beauty (b) cross sections. Other details are as in Fig.~\ref{fig:trk_eff_scan_charm.png}.}
+%   \label{fig:c_fragm}
+% \end{figure}
+% 
+% \subsubsection{Beauty Fragmentation Function}
+% 
+% A similar procedure was also performed for the beauty fragmentation function systematics. The Peterson $\epsilon$-parameter is different for beauty: the value of $\epsilon=0.0041$ measured by the OPAL experiment at LEP~\cite{Abbiendi:2002vt} was used.
+% Figure~\ref{fig:b_fragm} shows the effect of the reweighting of the beauty fragmentation function from Bowler to Peterson on the total charm and beauty cross section, respectively. 
+% The effect on the charm cross section is negligible.
+% The systematic uncertainty on the beauty is \SI{-3}{\percent} and is one of its dominant uncertainties.
+% \begin{figure}[h]
+%   \centering
+%   \subfigure[]{
+%     \includegraphics[width=0.47\textwidth,height=0.35\textheight]{06_systematic_uncertainties/plots/b_fragm_scan_charm.png}
+%   }
+%   \subfigure[]{
+%     \includegraphics[width=0.47\textwidth,height=0.35\textheight]{06_systematic_uncertainties/plots/b_fragm_scan_beauty.png}
+%   }
+%   \caption{Effect of the beauty fragmentation function reweighting on the total charm (a) and beauty (b) cross sections. Other details are as in Fig.~\ref{fig:trk_eff_scan_charm.png}.}
+%   \label{fig:b_fragm}
+% \end{figure}
+% 
+% 
+% \subsubsection{Model dependence: charm \etajet- and \ETjet-spectrum}
+% 
+% As discussed in Section~\ref{sect:corrections}, the acceptance is sensitive to the modelling of the jet pseudorapidity, \etajet, and of the jet transverse energy, \ETjet.
+% Spectra of these distributions were reweighted in the MC so that it gives a good description of the data.
+% In order to evaluate the corresponding systematic uncertainties, the \etajet- and \ETjet-reweighting procedures were modified and the results were reextracted.
+% 
+% Figure~\ref{fig:eta_reweighting_variation} shows the scaling factors for charm, $k_c$, as a function of \etajet before the \etajet-reweighting as well as the default reweighting function,
+% obtained from this distribution (see Section~\ref{sect:corrections}).
+% The variations of the function for the systematics were determined by modifying its parameters until it is still consistent with the data
+% (i.e. that each data point is not further from the curve than one standard deviation)\footnote{This approach leads to a more conservative uncertainty estimate, than requiring a change of $\chi^2$ by~1.}.
+% The resulting functions are shown in Fig.~\ref{fig:eta_reweighting_variation}.
+% They are obtained by the variation of the coefficient $p_2$ of the quadratic term of the reweighting function, equation~(\ref{eq:eta_reweighting}),
+% and correspond to $p_2$=0.121 (upward variation) and to $p_2$=0.0403 (downward variation), while the default value is $p_2$=0.0715.
+% The resulting systematic uncertainty on the total charm cross section is $^{\SI{+1.5}{\percent}}_{\SI{-1}{\percent}}$ and is negligible for the beauty.
+% The fact that the variation of $p_2$ is asymmetric with respect to its default value leads to an asymmetric uncertainty.
+% It is interesting to note that the usage of the scan technique does not improve the results in this case. This can be explained by the fact that
+% only a reweighting is performed and there are no event migrations.
+% 
+% The systematics due to modelling of the \ETjet-distribution was determined in a similar way. Figure~\ref{fig:et_reweighting_variation} shows the default reweighting function as well as its extreme variations.
+% The systematic uncertainty on the total charm cross section is $^{\SI{+2.2}{\percent}}_{\SI{-1.7}{\percent}}$, while on beauty it is $^{\SI{+1.7}{\percent}}_{\SI{-1.3}{\percent}}$.
+% 
+% \begin{figure}[t]\centering
+%  \subfigure[] {\label{fig:eta_reweighting_variation}
+%   \includegraphics[width=0.45\textwidth]{06_systematic_uncertainties/plots/eta_reweighting_variation.png}
+%  }
+%  \subfigure[] {\label{fig:et_reweighting_variation}
+%     \includegraphics[width=0.45\textwidth]{06_systematic_uncertainties/plots/et_reweighting_variation.png}
+%  }
+%   \caption{Variations of reweighting functions for determination of the systematic uncertainty on \etajet-reweighting (a) and \ETjet-reweighting (b) for charm.
+%            The solid lines show the default reweighting functions; the dashed and dot-dashed lines are their extreme upward and downward variations respectively.}
+% \end{figure}
+% 
+% \subsubsection{Light Flavour Background}
+% 
+% The mirroring of the projected decay length significance (Section~\ref{sect:signal_extraction}) suppresses the light flavour background contribution almost completely, as can be seen by comparing Fig.~\ref{fig:significance_massbins} and Fig.~\ref{fig:significance_massbins_mirrored}.
+% However it is still non-negligible, i.e. there is a certain asymmetry of the light flavour which remains in the mirrored distributions.
+% One of the sources are decays of long-lived hadrons such as $K^0_S$-mesons or $\Lambda$-baryons~\cite{stefan}.
+% 
+% In order to evaluate the sensitivity to this asymmetry, the light flavour contribution in the mirrored distributions was varied before the fit.
+% The amount of the variation was \SI{\pm 30}{\percent}, according to studies by the H1 Collaboration~\cite{Aaron:2009af, Aaron:2010ib};
+% this number represents the uncertainty on the asymmetry in the MC, deduced from the comparison of $K^0_S$ events in data and MC.
+% 
+% After the asymmetry was scaled by \SI{30}{\percent} up (down), the \chisqndf of the fit changed from the default value of 1.152 to 1.089 (1.397), while 
+% the light flavour scaling factor changed by \SI{+0.6}{\percent} (\SI{-0.6}{\percent}).
+% The resulting systematic uncertainty on the charm cross section is \SI{\pm2}{\percent} and is among  the dominant effects. The effect on beauty is small ($<\SI{0.5}{\percent}$).
+% The difference between the effects on the charm and on the beauty is due to the fact that at high vertex masses where the beauty is enhanced, the light flavour contribution is very small and
+% does not affect the results. However, for smaller \mvtx, where  the charm dominates, the contribution of the light flavour is not negligible.
+% These findings are consistent with the previous study~\cite{Roloff}.
+% 
+% \subsubsection{Significance Smearing}
+% 
+% \begin{figure}[p]
+% 
+%   \centering
+% 
+%     \begin{overpic}[width=0.32\textwidth,height=0.28\textheight]{06_systematic_uncertainties/plots/smearing_core_variation_5.png}
+% 	  \put(40,83){\framebox[1.1\width]{Core: \SI{5}{\percent}}}
+%     \end{overpic}
+% 	\begin{overpic}[width=0.32\textwidth,height=0.28\textheight]{06_systematic_uncertainties/plots/smearing_core_variation_7.png}
+% 	  \put(40,83){\framebox[1.1\width]{Core: \SI{7}{\percent}}}
+%     \end{overpic}
+% 	\begin{overpic}[width=0.32\textwidth,height=0.28\textheight]{06_systematic_uncertainties/plots/smearing_core_variation_9.png}
+% 	  \put(40,83){\framebox[1.1\width]{Core: \SI{9}{\percent}}}
+%     \end{overpic}
+% 	\begin{overpic}[width=0.32\textwidth,height=0.28\textheight]{06_systematic_uncertainties/plots/smearing_tail_variation_0_0.png}
+% 	  \put(40,83){\framebox[1.1\width]{Tail: \SI{0}{\percent}}}
+%     \end{overpic}
+% 	\begin{overpic}[width=0.32\textwidth,height=0.28\textheight]{06_systematic_uncertainties/plots/smearing_tail_variation_0_2.png}
+% 	  \put(40,83){\framebox[1.1\width]{Tail: \SI{0.2}{\percent}}}
+%     \end{overpic}
+% 	\begin{overpic}[width=0.32\textwidth,height=0.28\textheight]{06_systematic_uncertainties/plots/smearing_tail_variation_0_4.png}
+% 	  \put(40,83){\framebox[1.1\width]{Tail: \SI{0.4}{\percent}}}
+%     \end{overpic}
+%   \caption{Data-to-MC ratio of the significance distribution, for different smearing parameters (shown in the boxes). Top row: variation of the core smearing parameters; bottom row: variation of the tail smearing.}
+%   \label{fig:smearing_variation}
+%   \subfigure[]{
+%     \includegraphics[width=0.47\textwidth]{06_systematic_uncertainties/plots/smearing_core_scan_charm.png}
+%   }
+%   \subfigure[]{
+%     \includegraphics[width=0.47\textwidth]{06_systematic_uncertainties/plots/smearing_core_scan_beauty.png}
+%   }
+%   \caption{Effect of the variation of the core smearing probability on the total charm (a) and beauty (b) cross sections. Other details are as in Fig.~\ref{fig:trk_eff_scan_charm.png}.}
+%   \label{fig:smearing_core}
+% \end{figure}
+% 
+% The influence of the significance distribution modelling on the results was evaluated by the variation of the smearing procedure.
+% In particular, the amount of smearing, i.e. the probability for a vertex to be smeared, was varied.
+% This was done independently for the core and the tails, keeping the default parameters for other part. The ranges of the variation were determined conservatively as extremes at which the MC starts
+% to deviate from the data dramatically. The probability for the core gaussian was varied to \SI{5}{\percent} and \SI{9}{\percent} (default: \SI{7}{\percent}),
+% while for the tail gaussian to \SI{0}{\percent} (i.e. the smearing of the tail part was switched off) and \SI{0.4}{\percent} (default: \SI{0.2}{\percent})\footnote{
+% For this study, additional corrections to the significance distribution (see Sect.~\ref{sect:smearing}) were undone,
+% i.e. shifts of the decay length in the three most forward \etajet-bins were switched off, and
+% smearing parameters in the most forward \etajet-bin were always set to same values as in the other bins instead of having their own values.
+% The relative uncertainty was then applied to the cross sections with all corrections switched on.
+% Thanks to linearity of the cross section as a function of smearing parameters (see Fig.~\ref{fig:smearing_core}),
+% the uncertainty determined for the highest \etajet-bin corresponds to variation of \SI{\pm2}{\percent} (core) and \SI{\pm0.2}{\percent} (tail), as in the other regions.}.
+% 
+% Figure~\ref{fig:smearing_variation} shows the data-to-MC ratio of the significance distribution for the default smearing parameters as well as for these variations.
+% It makes evident that the discrepancy at the variations is large, hence an uncertainty determined in this way is conservative and covers the small disagreement between data and MC
+% in the default spectrum (see Section~\ref{sect:corrections}).
+% 
+% Figure~\ref{fig:smearing_core} shows the total charm and beauty cross sections as a function of the smearing probability for the core part.
+% The resulting systematic uncertainty on the total charm cross section is \SI{\pm1.2}{\percent}, while it is \SI{\pm0.7}{\percent}  on the beauty.
+% The uncertainty on the tail variation was deduced in a similar way. The resulting systematics on the total charm and beauty cross sections is $<\SI{0.5}{\percent}$ and \SI{\pm1.1}{\percent}, respectively.
+% 
+% For the core variation, the effect is largest for charm, while the tail variation affects mostly beauty.
+% This can be explained by the fact that beauty is more pronounced in the region of high absolute significance (tail), while the charm populates mostly the region of lower $|S|$ (tail)
+% as  Fig.~\ref{fig:significance_massbins_mirrored} shows. Hence, the variation of the core (tail) affects mostly the charm (beauty) cross sections.
+% 
+% \subsubsection{Hadronic Energy Scale}
+% 
+% \begin{figure}[!b]
+%   \centering
+%   \subfigure[] {\label{fig:et_charm}
+%     \includegraphics[width=0.49\textwidth,height=0.38\textheight]{06_systematic_uncertainties/plots/hadr_scale_charm_et.png}  
+%   }
+%   \subfigure[] {\label{fig:et_beauty}
+%     \includegraphics[width=0.45\textwidth,height=0.35\textheight]{06_systematic_uncertainties/plots/hadr_scale_beauty_et.png}
+%   }
+%   \caption{Systematic effect of the variation of the hadronic energy scale by \SI{+3}{\percent} on the charm (a) and beauty (b) \ETjet-differential cross section. The solid lines show the fits by an inverse tangent (a) and a first-order polynomial (b) functions, for illustration purposes.}
+%   \label{fig:hadr_scale_et}
+% \end{figure}
+% 
+% The hadronic energy scale uncertainty arises due to the non-perfect calibration of the ZEUS hadronic calorimeter (HAC).
+% The calibration precision is \SI{3}{\percent} for jets with low transverse energy, $\ETjet<\SI{10}{\GeV}$~\cite{Wing:2002fc}.
+% Hence, in order to evaluate the resulting systematic uncertainty, the energy measured in HAC is varied by \SI{\pm3}{\percent} in the MC only.
+% As discussed in Section~\ref{sect:event_selection}, jets were reconstructed from ZUFOs which include both the calorimeter and the tracking information.
+% Therefore, for the hadronic energy scale systematics, only those ZUFOs were considered which are attributed to calorimeter energy deposits and contain no tracking information; their transverse energies were summed up to obtain the calorimeter contribution $E_T^\text{jet, CAL}$ to the jet transverse energy and $E_T^\text{jet, CAL}$ was varied.
+% 
+% The effect on the total charm cross section is \SI{\pm0.9}{\percent} while on the beauty total cross section it is \SI{\pm0.7}{\percent}.
+% A strong effect was observed for the differential cross section as a function of \ETjet. Figure~\ref{fig:hadr_scale_et} shows the effect of the modification of
+% the hadronic energy scale by \SI{+3}{\percent} as a function of \ETjet.
+% For both charm and beauty, it increases up to $\sim\SI{15}{\percent}$ at highest \ETjet and is the dominant systematic uncertainty in that region.
+% It is interesting to note that for charm, the effect is negative (i.e. the cross section decreases) for the whole region of \ETjet (at \SI{+3}{\percent} variation of the scale),
+% while for beauty the effect is positive at low \ETjet and it is negative at high \ETjet.
+% This difference between charm and beauty can be explained by different shapes of the \ETjet spectrum:
+% for charm production, a region above the threshold is probed, where the energy spectrum is monotonically falling,
+% while for beauty production the threshold region is also probed, where the energy spectrum is rising at low values of \ETjet and, after reaching the maximum, falls monotonically.
+% 
+% No strong dependences on the differential cross sections as a function of other variables were observed.
+% 
+% \subsubsection{Electromagnetic Energy Scale}
+% 
+% A similar uncertainty as the hadronic energy scale uncertainty arises due to the non-perfect calibration of the electromagnetic calorimeter.
+% The calibration of the electromagnetic calorimeter is more precise than of the hadronic part and is at \SI{1}{\percent} level at ZEUS~\cite{Wing:2002fc}.
+% The most affected observable is the scattered electron energy.
+% Hence, in order to evaluate the effect of the electromagnetic energy scale, the reconstructed energy of the scattered electron was raised and lowered by \SI{1}{\percent} in the MC only.
+% The systematic uncertainty on both charm and on beauty total cross section is small and corresponds to $<\SI{1}{\percent}$.
+% 
+% \subsubsection{Signal Extraction}
+% 
+% As discussed in Section~\ref{sect:signal_extraction}, the fit is performed for the region of $|S|\in[4, 20]$.
+% In order to cross-check the influence of the fit range on the results, the lower cut on $|S|$ was modified by $\pm1$ and the fit was repeated.
+% The \chisqndf of the fit changes from 1.152 to 1.167 (0.803) after a decrease (increase) of the lower $|S|$ cut by 1.
+% 
+% A modest effect of \SI{\pm0.8}{\percent} was observed both for charm and beauty total cross section.
+% 
+% \subsubsection{DIS Selection}
+% 
+% The influence of the event selection on the results was checked by modifying the selection criteria both in data and MC.
+% The low-$y$ cut was changed to 0.01 and 0.03. The cut on $E_e'$ was changed to \SI{9}{\GeV} and \SI{11}{\GeV}. The $E-p_Z$ cut was modified to \SI{42}{\GeV} and \SI{46}{\GeV}.
+% The latter also assesses a possible bias due to the non-perfect description of the $E-p_Z$ distribution by the Monte Carlo.
+% Small effects of $\lesssim\SI{1}{\percent}$ were found for both charm and beauty total cross sections.
+% 
+% \vspace{10pt}
+% Some systematic uncertainty sources were studied in the previous studies~\cite{Roloff,Viazlo} and there was no attempt made to improve them in this thesis.
+% They are briefly described below.
+% 
+% \subsubsection{Charm fragmentation fractions and branching ratios}
+% 
+% As discussed in Section~\ref{sect:corrections}, the values of the charm fragmentation fractions and of the branching ratios were found to be outdated in the MC simulations.
+% In order to correct them to the world average values~\cite{Nakamura:2010zzi,arXiv:1112.3757v1}, a dedicated study was performed~\cite{Viazlo}; a reweighting procedure was developed
+% and applied to the analysis.
+% The corresponding systematic uncertainty was deduced by variations of the fragmentation fractions and the branching ratios within their uncertainties,
+% repeating the reweighting and the fits.
+% 
+% Variations of the branching ratios yielded a $^{\SI{+3.3}{\percent}}_{\SI{-2.4}{\percent}}$ uncertainty on charm and $^{\SI{+1.8}{\percent}}_{\SI{-2.1}{\percent}}$ on beauty,
+% while the effect from fragmentation fractions variation was $^{\SI{+1.0}{\percent}}_{\SI{-1.1}{\percent}}$ on charm and \SI{\pm0.3}{\percent} on beauty.
+% 
+% \subsubsection{FLT Efficiency}
+% At the first level trigger, except for the {\it FLT30} slot (see Section~\ref{sect:event_selection} for description of the first level trigger slots used in this analysis),
+% events were vetoed using the tracking information ({\it track veto}).
+% It is known that this effect is not well reproduced by the MC simulation; the difference between data and MC was estimated to be not more than \SI{5}{\percent}~\cite{Roloff}.
+% Hence, in order to estimate the systematic uncertainty due to this effect,
+% events not triggered by {\it FLT30} were weighted down by \SI{5}{\percent} in the MC, and the analysis procedure was repeated~\cite{Roloff}.
+% 
+% The resulting systematic uncertainty on the total charm cross-section is \SI{+1}{\percent}, while it is \SI{+2}{\percent} on beauty.
+% 
+% \subsubsection{Model dependence: charm and beauty $Q^2$ spectrum}
+% As discussed in Section~\ref{sect:corrections}, the $Q^2$ spectra were corrected for the charm and beauty MC by performing a reweighting.
+% The resulting systematic uncertainty was evaluated by variation of the reweighting by \SI{\pm50}{\percent}~\cite{Roloff}. 
+% The uncertainty on the charm total cross-section is \SI{\pm2}{\percent} and it is \SI{\pm3}{\percent} on the beauty total cross section.
+% 
+% \subsubsection{Luminosity}
+% The uncertainty on the luminosity determination at ZEUS is \SI{2}{\percent}.
+% This uncertainty was not included in the differential cross sections.
+% 
+% \section{Summary}
+% 
+% Detailed studies of systematic uncertainties were performed in this thesis.
+% Table~\ref{tab:syst_summary} summarises the uncertainties on the total charm and beauty cross sections from the sources that have been studied.
+% The procedure has been repeated for every bin in the differential distributions.
+% The uncertainties from all the sources have been added in quadrature in order to obtain the total systematic uncertainty.
+% 
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{|c|c|c|}
+%     \hline
+%     Source & Charm systematics& Beauty systematics \\ \hline
+%     Tracking efficiency &	\SI{\pm0.9}{\percent} 	& \SI{\pm2.8}{\percent} 	 \\ \hline
+%     Charm fragmentation function &	\SI{+1}{\percent} &	\SI{-0.9}{\percent} \\ \hline
+%     Beauty fragmentation function &	negligible &	\SI{-3}{\percent} \\ \hline
+%     Hadronic energy scale &	\SI{\pm0.9}{\percent} 	 & 	\SI{\pm0.7}{\percent} \\ \hline
+%     Significance smearing (core) &	\SI{\pm1.2}{\percent} 	&  	\SI{\pm0.7}{\percent} \\ \hline
+%     Significance smearing (tails) &	$<$\SI{1}{\percent} 	&  	\SI{\pm1}{\percent} \\ \hline
+%     Light flavour background &	\SI{\pm2}{\percent} 	&  	 $<$\SI{1}{\percent} \\ \hline
+%     Model dependence: charm \etajet-reweighting &	$^{\SI{+1.5}{\percent}}_{\SI{-1}{\percent}}$ & $<$\SI{0.5}{\percent} \\ \hline
+%     Model dependence: charm \ETjet-reweighting &	$^{\SI{+2.2}{\percent}}_{\SI{-1.7}{\percent}}$ &  $^{\SI{+1.7}{\percent}}_{\SI{-1.3}{\percent}}$ \\ \hline
+%     Model dependence: $Q^2$-reweighting &	\SI{\pm2}{\percent} & 	\SI{\pm3}{\percent} \\ \hline
+%     Signal extraction 	& \SI{\pm0.8}{\percent} 	 & 	\SI{\pm0.8}{\percent} 	  \\ \hline
+%     DIS Selection ($y_\textrm{JB}$ cut) &	 $<$\SI{1}{\percent} &	  	\SI{\pm0.7}{\percent} 	  \\ \hline
+%     DIS Selection ($E_e'$ cut) &	 $<$\SI{1}{\percent} &	  	\SI{\pm1.0}{\percent} 	  \\ \hline
+%     DIS Selection ($E-p_Z$ cut) &	\SI{\pm0.7}{\percent} & 	  	\SI{\pm0.7}{\percent} 	  \\ \hline
+%     EM scale 	&  $<$\SI{1}{\percent} 	&  	$<$\SI{1}{\percent} 	  \\ \hline
+%     FLT efficiency& 	\SI{+1}{\percent} &	  	\SI{+2}{\percent} 	  \\ \hline
+%     Luminosity 	& \SI{\pm2}{\percent} &	\SI{\pm2}{\percent} \\ \hline
+%     TOTAL (no Luminosity) & $^{\SI{+6.1}{\percent}}_{\SI{-5.2}{\percent}}$ &  $^{\SI{+6.0}{\percent}}_{\SI{-6.5}{\percent}}$ \\ \hline
+%   \end{tabular}
+%   \caption{Summary of the systematic uncertainties on the total charm and beauty cross sections.}\label{tab:syst_summary}
+% \end{table}

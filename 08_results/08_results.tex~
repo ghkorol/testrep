@@ -1,0 +1,329 @@
+\chapter{Results}
+
+\section{Double Differential Cross Sections}
+\subsection{different bins}
+
+\section{Systemacs ans Acale Factors summary}
+
+% \chapter{Results}\label{chapt:results}
+% 
+% This chapter presents the results of the measurement.
+% First, details are given on theoretical predictions which are compared to the data. 
+% Measured differential cross sections of jet production in events containting charm and beauty quarks, together with theory calculations are then presented.
+% Finally, the procedure to determine the charm and beauty contributions $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ to the proton structure function $F_2$ is discussed and corresponding results are shown.
+% 
+% \section{NLO QCD Predictions}\label{sect:HVQDIS_settings}
+% 
+% Theoretical predictions for comparisons with the cross sections measured in this thesis were obtained with the \HVQDIS program.
+% It provides Next-to-Leading Order (NLO) QCD calculations for charm and beauty quark production in deep inelastic electron-proton scattering in the Fixed Flavour Number Scheme (FFNS).
+% \HVQDIS works in a similar fashion as Monte Carlo generators, i.e. it produces events and provides full information about them.
+% However, in contrast to MC programs, no hadronisation is performed: only partons created in the hard interaction (charm or beauty quarks and possibly an additional gluon) are present.
+% This section describes the program settings which were used for the calculations and for the estimation of their uncertainties as well as the corrections that have to be applied to the predictions
+% in order to allow direct comparisons with data.
+% 
+% The HERAPDF 1.0 FFNS PDF set~\cite{charm_comb} was used to parametrise the parton densities in the proton.
+% The three-flavour variant of the PDF set was used for both charm and beauty cross section predictions.
+% The strong coupling constant was set to the same value as in the PDF fit, namely to $\alpha_s^{n_f=3}(M_Z)=0.105$ (this corresponds to $\alpha_s^{n_f=5}(M_Z)=0.116$).
+% The masses of the charm and beauty quarks were set to $m_c=\SI{1.5}{\GeV}$ and $m_b=\SI{4.75}{\GeV}$ respectively.
+% Both renormalisation and factorisation scales were chosen to be $\mu_R=\mu_F=\sqrt{Q^2+4m_{b, c}^2}$.
+% 
+% In order to allow comparisons with data, measured and calculated cross sections have to be defined in a consistent way.
+% For this, hadronisation and real photon emission effects need to be taken into account.
+% Hadronisation is accounted for in two steps. First, a jet algorithm\footnote{Throughout this section, the same jet algorithm is used as for the reconstruction of detector level jets, namely the inclusive $k_T$-algorithm.}
+% is applied to the outgoing partons in \HVQDIS and the {\it parton level jet cross section} $\sigma^\text{jet}_\text{part}$ is calculated.
+% In the second step, the parton level jet cross section is multiplied by a correction factor $C_\text{hadr}$ which is obtained from the \RAPGAP MC simulation in the following way:
+% $$C_\text{hadr} = \frac{\sigma_\text{hadr,\,MC}}{\sigma_\text{part,\,MC}},$$
+% where $\sigma_\text{hadr,\,MC}$ is the cross section of jet production in MC with the jet algorithm being applied to true level hadrons and $\sigma_\text{part,\,MC}$ is the same quantity
+% obtained by running the jet algorithm on MC partons before the hadronisation.
+% For the definition of $\sigma_\text{hadr,\,MC}$, the charm and beauty ground state hadrons are input to the jet algorithm and not their daughter particles.
+% 
+% \HVQDIS simulates no real photon emissions from the incoming or outgoing lepton, which affects resulting cross sections (however, virtual corrections at the photon vertex are included).
+% Hence, in order to allow comparisons to measured cross sections, {\it radiative corrections} are applied.
+% Correction factors are obtained with the \RAPGAP MC simulation:
+% $$C_\text{rad} = \frac{\sigma_\text{rad,\,MC}}{\sigma_\text{no\ rad,\,MC}},$$
+% where $\sigma_\text{rad,\,MC}$ is the jet cross section with simulation of the initial and final state real photon emission, while $\sigma_\text{no\ rad,\,MC}$ is the same quantity without the real photon emission.
+% The cross section $\sigma_\text{rad,\,MC}$ was obtained from default samples, while for the $\sigma_\text{no\ rad,\,MC}$ quantity dedicated samples were generated with all setings identical to the default samples except
+% for the photon radiation which was switched off.
+% 
+% Charm and beauty differential cross sections were calculated in the same phase space and with the same binning as the measured ones.
+% Corrections were determined in Ref.~\cite{Roloff}, for each bin in the differential cross sections, separately for charm and beauty. 
+% In summary, cross sections theory predictions, directly comparable to data are given by:
+% $$\sigma = C_\text{hadr}\times C_\text{rad}\times\sigma^\text{jet}_\text{part}.$$
+% 
+% The uncertainties of the theory predictions were estimated by varying the \HVQDIS settings.
+% The charm and beauty quark masses and $\alpha_s$ were varied within their uncertainties:
+% \begin{itemize}
+%  \item $m_c$ was changed to \SI{1.35}{\GeV} and \SI{1.65}{\GeV} (charm cross sections);
+%  \item $m_b$ was changed to \SI{4.5}{\GeV} and \SI{5.0}{\GeV} (beauty cross sections);
+%  \item $\alpha_s$ was changed to 0.103 and 0.107.
+% \end{itemize}
+% In order to estimate effects from missing higher orders, the factorisation and renormalisation scales were modified:
+% \begin{itemize}
+%  \item $\mu_F$ was changed to $\frac{1}{2}\sqrt{Q^2+4m_{b, c}^2}$ and $2\sqrt{Q^2+4m_{b, c}^2}$;
+%  \item $\mu_R$ was changed to $\frac{1}{2}\sqrt{Q^2+4m_{b, c}^2}$ and $2\sqrt{Q^2+4m_{b, c}^2}$.
+% \end{itemize}
+% For variations of the charm quark mass, of $\alpha_s$ and of $\mu_F$, a consistent PDF, i.e. obtained with the same value of the corresponding parameter in the QCD fit, was used.
+% For each variation, a deviation from the default prediction was calculated. Effects from all sources were added in quadrature separately for positive and negative variations
+% to obtain the total uncertainty on the prediction.
+% 
+% In order to assess the sensitivity to PDFs, the ABKM NLO PDF set~\cite{Alekhin:2009ni} was used alternatively.
+% In this case $m_b$ was set to \SI{4.5}{\GeV}, consistent with the PDF and a modified version of \HVQDIS was used, in which a missing term of the perturbative series was added~\cite{Roloff}.
+% Only the central value of predictions were produced, since uncertainties are expected to be very similar. As for the HERAPDF set, the three-flavour variant was used both for charm
+% and beauty cross sections.
+% 
+% \section{Differential Jet Cross Sections in Charm Events}
+% 
+% This section presents measured differential cross sections of jet production in charm events.
+% The cross sections are obtained by repeating the fit procedure described in the Section~\ref{sect:signal_extraction} for every bin in the corresponding variable. 
+% The measurement is performed in the following phase space region:
+% $5<Q^2<\SI{1000}{\GeV\squared}$, $0.02<y<0.7$, $\ETjet>\SI{4.2}{\GeV}$ and $-1.6<\etajet<2.2$.
+% 
+% Figures~\ref{fig:single_diff_charm}(a)-(d) show the measured cross sections as a function of the jet pseudorapidity~\etajet, jet transverse energy \ETjet, photon virtuality $Q^2$ and Bjorken-$x$
+% as well as corresponding theory predictions.
+% The overall precision of the data is around \SI{7}{\percent} on average and up to \SI{20}{\percent} in some bins.
+% Uncertainties of the theory predictions depend on the kinematic region and range from \SI{10}{\percent} to \SI{40}{\percent}.
+% Generally, theory is consistent with data within uncertainties.
+% The central values of the predictions are however typically \SI{20}{\percent} to \SI{30}{\percent} lower than the measured values.
+% In most bins, the data are more precise than the theoretical predictions,
+% hence they might have constraining power on these predictions, e.g. on their input parameters.
+% The predictions obtained with the ABKM PDF set are very similar to those with the HERAPDF 1.0 set, hence the uncertainties due to PDF are not very large.
+% 
+% The cross section has largest values in the cental region, $\etajet\approx0$, and reduces towards positive and negative \etajet.
+% The agreement between data and theory is good in the region $-0.2<\etajet<1.6$ within uncertainties. In the backward region $-1.6<\etajet<-0.2$ the theory slightly undershoots the data:
+% the measured values are one standard deviation above the upper edge of the predictions.
+% In the most forward bin ($1.6<\etajet<2.2$) the prediction is below the data as well, however both experimental and theoretical uncertainties are large.
+% The \ETjet-cross section falls off by three orders of magnitude monotonically from lowest values of $\ETjet\approx\SI{4.2}{\GeV}$ to the highest accessible $\ETjet\approx\SI{35}{\GeV}$.
+% The predictions describe this dramatic drop-off well. In the region of $4.2<\ETjet<\SI{8}{\GeV}$ the theory slightly underestimates the data.
+% Since jets are a direct probe of the underlying charm quarks, the good agreement of data and theory
+% suggests a good understanding of the dynamics of charm quark production at HERA by the NLO QCD.
+% A large kinematic range is probed in $Q^2$ and $x$, where cross sections fall by three orders of magnitude.
+% A reasonable description of this behaviour by the NLO QCD is observed for both $Q^2$ and $x$.
+% However, by a closer inspection one notices that in most $Q^2$ bins, the theory undershoots the data, especially in the region of $10<Q^2<\SI{70}{\GeV\squared}$.
+% Similarly, for the region of $0.0006<x<0.05$, predictions are below the data.
+% 
+% It is interesting to compare these observations to previous measurements of charm production at HERA.
+% In a measurement of charm-jet cross sections by the H1 Collaboration~\cite{Aaron:2010ib}, a similar kinematic region was probed,
+% with somewhat more restricted \etajet-range. The same settings on \HVQDIS were used for the predictions.
+% Generally, a good agreement of data with theory was found within uncertainties. However, in regions of low-\ETjet and of low-$Q^2$, central values of the predictions are below the data,
+% consistently to observations of this analysis. In an investigation of $D^*(2010)$-production by the ZEUS Collaboration~\cite{Chekanov:2003rb}, a somewhat wider region in $Q^2$ was probed than in this measurement.
+% The agreement between data and central values of the theoretical predictions is good. However, a value of the charm mass of $m_c=\SI{1.35}{\GeV}$  was used for theory calculations which is different from $m_c=\SI{1.5}{\GeV}$ used in this analysis.
+% A decrease of $m_c$ leads to an increase of predicted cross section; hence, the theory would slightly undershoot the data if a value of $m_c=\SI{1.5}{\GeV}$ was used.
+% In the $D^*(2010)$-measurement by the H1 Collaboration~\cite{Aaron:2011gp}, a good agreement between data and theory was found; however, in certain kinematic regions, such as low-$Q^2$, low-$x$ or low momentum of the $D^*$-meson,
+% the central values of predictions are  mostly below the data.
+% In summary, similar observations were made in earlier publications: albeit the general agreement of data and theory is reasonable within the theory uncertainties,
+% the central values of the predictions tend to underestimate the data in some regions of phase space such as at low $Q^2$ or at low charm quark momentum.
+% 
+% As it was discussed in Section~\ref{sect:qcd}, fixed-order QCD calculations in the fixed flavour number scheme (FFNS) can potentially suffer from the multiple scale problem in
+% regions of high photon virtuality $Q^2$ or high quark transverse momentum squared $p_T^2$, compared to the charm quark mass squared $m_c^2$, due to presence of terms proportional to $\left[\alpha_s\log(p_T^2/m_{c}^2)\right]^n$ or $\left[\alpha_s\log(Q^2/m_{c}^2)\right]^n$ in the perturbative series, where $n$ is the order of the calculation.
+% On the other hand, they should be reliable for $(\ETjet)^2$ and $Q^2$ comparable to $m_c^2$.
+% Up to highest probed $Q^2$, no deviations from FFNS predictions were observed so far in previous H1 and ZEUS measurements, see Section~\ref{sect:hfl_measurements_hera} and Ref.~\cite{Chuvakin:2000zj}.
+% Nevertheless it is instructive to check whether the same conclusion may be reached in this measurement,
+% since it covers both regions and hence is sensitive to the multiple scale problem.
+% Indeed, the $\ETjet$-cross section spans from $(\ETjet)^2\approx\SI{18}{\GeV\squared}$ which is above but comparable to the squared charm quark mass, $m_c^2\approx\SI{2.25}{\GeV\squared}$, to $(\ETjet)^2\approx\SI{1200}{\GeV\squared}$ which is very much above $m_c^2$.
+% The NLO QCD prediction provides a reasonable description up to the highest \ETjet, similarly as at low-\ETjet.
+% Hence, the multiple scale problem does not manifest itself for charm production in the probed kinematic region confirming the reliability of FFNS predictions.
+% Similarly, the photon virtuality is probed from $Q^2=\SI{5}{\GeV\squared}\sim m_c^2$, up to $Q^2=\SI{1000}{\GeV\squared}\gg m_c^2$. A good description is observed up to highest values of $Q^2$.
+% 
+% Figs.~\ref{fig:double_diff_charm_1} and~\ref{fig:double_diff_charm_2} show the differential cross sections as a function of $x$ in bins of $Q^2$.
+% Again, an agreement between data and theory is observed within uncertainties.
+% However, the central values of the predictions are mostly below the measured cross sections, especially in the region of  $20<Q^2<\SI{60}{\GeV\squared}$, consistently to observations in the differential cross section in $Q^2$, Fig.~\ref{fig:single_diff_charm} (c).
+% These double-differential cross sections are the basis for the determination of the charm contribution to the proton structure function, $F_2^{c\overline{c}}$ (Sect.~\ref{sect:f2_determination}).
+% 
+% \begin{figure}[p]\centering
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/charm/etajet.png}
+%     \put(40,40){(a)}
+%     \end{overpic}
+%   \end{minipage}%
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/charm/etjet.png}
+%     \put(40,40){(b)}
+%     \end{overpic}
+%   \end{minipage}
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/charm/q2da.png}
+%     \put(40,40){(c)}
+%     \end{overpic}
+%   \end{minipage}%
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/charm/xda.png}
+%     \put(40,40){(d)}
+%     \end{overpic}
+%   \end{minipage}
+% \caption{Differential cross sections of jet production in charm events as a function of the jet pseudorapidity \etajet (a), transverse jet energy \ETjet (b), photon virtuality $Q^2$ (c) and Bjorken-$x$ (d) for
+% the following phase space region: $5<Q^2<\SI{1000}{\GeV\squared}$, $0.02<y<0.7$, $\ETjet>\SI{4.2}{\GeV}$ and $-1.6<\etajet<2.2$. The inner error bars represent statistical uncertainties, while the outer error bars show statistical and systematic uncertainties added in quadrature. The solid lines represent NLO QCD predictions obtained with the HERAPDF 1.0 PDF set, while the blue bands show their uncertainties. The red dashed lines denote NLO QCD predictions obtained with the ABKM NLO PDF set. The small inserts below each cross section plot show the corresponding data-to-theory ratio.}
+% \label{fig:single_diff_charm}
+% \end{figure}
+% 
+% \begin{figure}[p]\centering
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/charm/q2da_xda_bin1.png}
+%     \put(20,85){(a)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/charm/q2da_xda_bin2.png}
+%     \put(20,85){(b)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/charm/q2da_xda_bin3.png}
+%     \put(20,85){(c)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/charm/q2da_xda_bin4.png}
+%     \put(20,85){(d)}
+%   \end{overpic}
+% \caption{Differential cross sections of jet production in charm events for $0.02<y<0.7$, $\ETjet>\SI{4.2}{\GeV}$ and $-1.6<\etajet<2.2$ as a function of $x$ in the following regions of~$Q^2$: $5 < Q^{2} < \SI{20}{\GeV\squared}$ (a), $20 < Q^{2} < \SI{60}{\GeV\squared}$ (b), $60 < Q^{2} < \SI{120}{\GeV\squared}$ (c), $120 < Q^{2} < \SI{400}{\GeV\squared}$ (d). Other details are as in the Fig.~\ref{fig:single_diff_charm}.}
+% \label{fig:double_diff_charm_1} 
+% \end{figure}
+% 
+% % \clearpage
+% \begin{figure}[p]\centering
+% \includegraphics[width=0.48\textwidth]{07_results/plots/charm/q2da_xda_bin5.png}
+% \caption{Differential cross sections of jet production in charm events for $0.02<y<0.7$, $\ETjet>\SI{4.2}{\GeV}$ and $-1.6<\etajet<2.2$ as a function of $x$ for the~$Q^2$ region of $400 < Q^{2} <\SI{1000}{\GeV\squared}$. Other details are as in the Fig.~\ref{fig:single_diff_charm}.}
+% \label{fig:double_diff_charm_2}
+% \end{figure}
+% 
+% \clearpage
+% \section{Differential Jet Cross Sections in Beauty Events}
+% 
+% In this section, jet cross sections in beauty events are presented.
+% The same set of cross sections was obtained as for charm (see the previous section).
+% The phase space region is defined by $5<Q^2<\SI{1000}{\GeV\squared}$, $0.02<y<0.7$, $\ETjet>\SI{5.0}{\GeV}$ and $-1.6<\etajet<2.2$ which is the same as for the charm measurement except for the jet transverse momentum region.
+% 
+% Figs.~\ref{fig:single_diff_beauty}(a)-(d) show differential cross sections as a function of \etajet, \ETjet, $Q^2$ and $x$.
+% All bins are the same as for charm except for the \etajet-differential cross section, where the two lowest-\etajet bins were merged in order to reach a satisfactory statistical precision.
+% The relative uncertainties of the measured beauty cross sections are larger than for charm and are around 10--\SI{15}{\percent} on average.
+% In contrast, the relative uncertainties on the theoretical predictions are smaller than for the charm case, thanks to the large mass of the beauty quark;
+% they range from \SI{10}{\percent} to \SI{20}{\percent}.
+% The agreement between data and theory is good which points to a good reliability of NLO QCD predictions for beauty production at HERA.
+% As for the charm case, the description remains good up to highest values of \ETjet and $Q^2$.
+% A similar consistency of data and theory for beauty cross sections was observed in recent measurements with a lifetime tag by the H1 Collaboration~\cite{Aaron:2010ib} and with an electron tag by the ZEUS Collaboration~\cite{Abramowicz:2011kj}.
+% The measurement presented here covers a larger range in the pseudorapidity than the previous studies~\cite{Aaron:2010ib,Abramowicz:2011kj}: region up to $\etajet=2.2$ is probed,
+% whereas previous analyses were limited to around $\eta=1.5$.
+% 
+% Figures~\ref{fig:double_diff_beauty_1} and \ref{fig:double_diff_beauty_2} show differential cross sections as a function of $x$ in bins of $Q^2$.
+% Compared to charm, the highest-$x$ bin for $120<Q^2<\SI{400}{\GeV\squared}$ was removed due to low statistical precision.
+% Again, a good agreement between data and theory is observed.
+% These cross sections are used for the $F_2^{b\overline{b}}$ determination (Sect.~\ref{sect:f2_determination}). 
+% 
+% \begin{figure}[p]\centering
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/beauty/etajet.png}
+%     \put(40,40){(a)}
+%     \end{overpic}
+%   \end{minipage}%
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/beauty/etjet.png}
+%     \put(40,40){(b)}
+%     \end{overpic}
+%   \end{minipage}
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/beauty/q2da.png}
+%     \put(40,40){(c)}
+%     \end{overpic}
+%   \end{minipage}%
+%   \begin{minipage}{0.48\textwidth}\centering
+%     \begin{overpic}[width=1.0\textwidth]{07_results/plots/beauty/xda.png}
+%     \put(40,40){(d)}
+%     \end{overpic}
+%   \end{minipage}
+% \caption{Differential cross sections of jet production in beauty events as a function of the jet pseudorapidity \etajet (a), transverse jet energy \ETjet (b), photon virtuality $Q^2$ (c) and Bjorken-$x$ (d) for the following phase space region: $5<Q^2<\SI{1000}{\GeV\squared}$, $0.02<y<0.7$, $\ETjet>\SI{5.0}{\GeV}$ and $-1.6<\etajet<2.2$. Other details are as in the Fig.~\ref{fig:single_diff_charm}.}
+% \label{fig:single_diff_beauty}
+% \end{figure}
+% 
+% \begin{figure}[p]\centering
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/beauty/q2da_xda_bin1.png}
+%     \put(20,85){(a)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/beauty/q2da_xda_bin2.png}
+%     \put(20,85){(b)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/beauty/q2da_xda_bin3.png}
+%     \put(20,85){(c)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.48\textwidth]{07_results/plots/beauty/q2da_xda_bin4.png}
+%     \put(20,85){(d)}
+%   \end{overpic}
+% \caption{Differential cross sections of jet production in beauty events for the phase space region of $0.02<y<0.7$, $\ETjet>\SI{5.0}{\GeV}$ and $-1.6<\etajet<2.2$ as a function of $x$ in the following regions of $Q^2$: $5 < Q^{2} < \SI{20}{\GeV\squared}$ (a), $20 < Q^{2} < \SI{60}{\GeV\squared}$ (b), $60 < Q^{2} < \SI{120}{\GeV\squared}$ (c), $120 < Q^{2} < \SI{400}{\GeV\squared}$ (d). Other details are as in the Fig.~\ref{fig:single_diff_charm}.}
+% \label{fig:double_diff_beauty_1}
+% \end{figure}
+% 
+% \begin{figure}[p]\centering
+% \includegraphics[width=0.48\textwidth]{07_results/plots/beauty/q2da_xda_bin5.png}
+% \caption{Differential cross sections of jet production in beauty events for $0.02<y<0.7$, $\ETjet>\SI{5.0}{\GeV\squared}$ and $-1.6<\etajet<2.2$ as a function of $x$ for the $Q^2$ region of $400 < Q^{2} < \SI{1000}{\GeV\squared}$. Other details are as in the Fig.~\ref{fig:single_diff_charm}.}
+% \label{fig:double_diff_beauty_2}
+% \end{figure}
+% 
+% \clearpage
+% \section{$F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ Determination}\label{sect:f2_determination}
+% In the previous sections, the differential jet cross sections in charm (beauty) events were presented.
+% Results were compared to theory calculations based on the \HVQDIS program, which provides NLO QCD predictions in the fixed flavour number scheme.
+% Predictions in other schemes than FFNS and higher order calculations are not available for such differential cross sections. 
+% 
+% A more convenient observable is the charm (beauty) contribution to the proton structure function, $F_2^{c\overline{c}}$ $(F_2^{b\overline{b}})$.
+% It is closely related to the double-differential cross section of charm (beauty) quark-antiquark pair production as a function of $Q^2$ and $x$, $d^2\sigma^{q\overline{q}}/{dQ^2dx}$, where $q=c,b$.
+% The $F_2^{q\overline{q}}$ is a function of $x$ and $Q^2$ and is defined in analogy to the inclusive DIS case (neglecting $Z^0$ exchange):
+% $$
+% \frac{d^2\sigma^{q\overline{q}}}{dQ^2dx} = \frac{2\pi\alpha^2}{Q^4x}[(1+(1-y)^2)F_2^{q\overline{q}}(x, Q^2) - y^2 F_L^{q\overline{q}}(x, Q^2)], 
+% $$
+% where $F_L^{q\overline{q}}(x, Q^2)$ is the contribution of charm (beauty) to the longitudinal proton structure function $F_L$.
+% QCD calculations of this quantity are available in different schemes both at NLO and (partially) at NNLO.
+% In addition, $F_2^{q\overline{q}}(Q^2, x)$ is independent of particular final states and allows direct comparisons between measurements with different charm (beauty) tagging techniques as well as their combination.
+% 
+% In order to extract the $F_2^{q\overline{q}}$, it is necessary to determine $d^2\sigma^{q\overline{q}}/{dQ^2dx}$. 
+% However, due to the fact that detectors always have only a limited geometrical acceptance, it is not possible to directly measure the latter,
+% and only double-differential cross sections $d^2\sigma/dQ^2dx$ with certain cuts on the quark kinematics are accessible.
+% In this measurement these are the restrictions on the jet pseudorapidity \etajet and on the jet transverse energy \ETjet.
+% Hence, an extrapolation must be performed from the visible phase space (with cuts) to the full phase space (without any cuts).
+% 
+% In this thesis, the extrapolation is done with the \HVQDIS NLO QCD calculations. The value of $F_2^{q\overline{q}}(x_i, Q^2_j)$ at a certain point in the kinematic plane ($x_i$, $Q^2_j$)
+% is obtained in the following way:
+% $$
+% F_2^{q\overline{q}}(x_i, Q^2_j) = \frac{\left(\frac{d^2\sigma}{dQ^2dx}\right)_{i,j}^\text{meas}}{\left(\frac{d^2\sigma}{dQ^2dx}\right)_{i,j}^\text{NLO}}\ F_2^{q\overline{q}}(x_i, Q^2_j)^\text{NLO},
+% $$
+% where $i$ and $j$ denote a certain bin in $x$-$Q^2$ plane, the point ($x_i$, $Q^2_j$) is chosen inside the bin;
+% $\left(\frac{d^2\sigma}{dQ^2dx}\right)_{i,j}^\text{meas}$ is the measured charm (beauty) double-differential cross section in this bin
+% (e.g. one of those shown in Figs.~\ref{fig:double_diff_charm_1} or \ref{fig:double_diff_beauty_1} divided by the bin width in $Q^2$);
+% $\left(\frac{d^2\sigma}{dQ^2dx}\right)_{i,j}^\text{NLO}$ is the NLO prediction of this quantity from \HVQDIS;
+% $F_2^{q\overline{q}}(x_i, Q^2_j)^\text{NLO}$ is the \HVQDIS prediction for the $F_2^{q\overline{q}}$ at $(x_i, Q^2_j)$.
+% The same set of ($x_i$, $Q^2_j$) points for extraction of $F_2^{q\overline{q}}$ was chosen as in Ref.~\cite{Roloff}.
+% 
+% The \HVQDIS settings used for extraction of $F_2^{q\overline{q}}$ were as described in Section~\ref{sect:HVQDIS_settings}.
+% The uncertainty of the extrapolation was estimated by varying the settings and redoing the procedure.
+% The same variations were used as described in Section~\ref{sect:HVQDIS_settings} except for the scale variations: for the extraction, a {\it simultaneous} variation of $\mu_R$ and $\mu_F$ was performed, following
+% Ref.~\cite{charm_comb}.
+% 
+% A reliable shape description of cross sections as a function of \etajet and \ETjet is required to ensure a proper extrapolation from the visible to the full phase space in these variables.
+% As it was shown in Figs.~\ref{fig:single_diff_charm} (a), (b) for charm 
+% and in Figs.~\ref{fig:single_diff_beauty} (a), (b) for beauty, the shapes are indeed reasonably well described by the theory in the visible region.
+% 
+% Figures~\ref{fig:f2c} and \ref{fig:f2b} show results for the extracted $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ respectively, as a function of $x$ for different values of $Q^2$.
+% An agreement between data and NLO QCD predictions is observed both for charm and beauty within uncertainties; for $Q^2=\SI{25}{\GeV\squared}$ and $Q^2=\SI{30}{\GeV\squared}$ theory are below the data for charm.
+% However one has to be cautious since for the prediction uncertainties (which are given by the blue bands in Figures~\ref{fig:f2c} and \ref{fig:f2b})
+% a {\it simultaneous} variation of factorisation and renormalisation scales was performed; normally this is done separately and results in larger uncertainties.
+% It is evident that for charm at low values of $Q^2$, the total uncertainty is significantly larger than the statistical one.
+% This comes from large extrapolation uncertainties due to a relatively high cut on the jet transverse energy, compared to the charm quark mass $m_c$.
+% For beauty the extrapolation uncertainties are small thanks to the large beauty quark mass: the \ETjet cut is comparable to $m_b$ and allows a measurement down to low values of its transverse momentum $p_T$,
+% hence less extrapolation is needed.
+% 
+% \begin{figure}[p]\centering
+% \includegraphics[width=0.9\textwidth]{07_results/plots/F2c.png}
+% \caption{The charm contribution to the proton structure function, $F_2^{c\overline{c}}$, as a function of $x$ for different values of $Q^2$. The inner error bars represent statistical uncertainties, while the outer error bars show statistical, systematic and extrapolation uncertainties added in quadrature. The solid line represents NLO QCD prediction obtained with the HERAPDF 1.0 PDF set, while the blue band show its uncertainty. A simultaneous variation of 
+% factorisation and renormalisation scales was performed for evaluating the uncertainty (see text).}
+% \label{fig:f2c}
+% \end{figure}
+% 
+% \begin{figure}[p]\centering
+% \includegraphics[width=0.9\textwidth]{07_results/plots/F2b.png}
+% \caption{The beauty contribution to the proton structure function, $F_2^{b\overline{b}}$, as a function of $x$ for different values of $Q^2$. Other details are as in the Fig.~\ref{fig:f2c}.}
+% \label{fig:f2b}
+% \end{figure}
+% 
+% \section{Summary}
+% \enlargethispage{\baselineskip}
+% In this chapter, the results of the charm and beauty quark production measurement were presented. 
+% Differential cross sections as functions of the jet pseudorapidity~\etajet, jet transverse energy \ETjet, photon virtuality $Q^2$ and Bjorken-$x$ were
+% measured and compared to NLO QCD predictions in the fixed flavour number scheme. Both charm and beauty results agree reasonably to theory in the whole kinematic region.
+% However, the central values of charm predictions tend to underestimate the measured cross sections; the upper margins of the predictions are mostly consistent with the data though.
+% These observations are generally consistent to previous publications.
+% 
+% The double-differential cross sections as a function of $x$ and $Q^2$ were used to extract charm and beauty contributions to the $F_2$ proton structure function, $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$.
+% Again, a reasonable agreement between data and theory is observed. The $F_2^{c\overline{c}}$ results are competitive at mid- and high-$Q^2$, while the $F_2^{b\overline{b}}$ measurement
+% is the most precise among published measurements.
+% These data will serve as input to future combinations of various measurements of $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ by H1 and ZEUS.

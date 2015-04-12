@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt,twoside]{book}
+
+% additional packages
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[bottom]{footmisc}
+\usepackage{xcolor}
+\usepackage[percent]{overpic}
+\usepackage{amssymb}
+%\usepackage{hepunits}
+\usepackage{xspace}
+\usepackage{cite}
+\usepackage[retain-explicit-plus]{siunitx}
+
+% page settings
+\textwidth=16cm
+\oddsidemargin=5mm
+\evensidemargin=-5mm
+
+% include the file with command definitions
+\input{defs.tex}
+
+% body of the document
+\begin{document}
+
+\makeatletter
+\renewcommand{\@evenhead}{{\vbox{\hbox to\textwidth{\normalfont\slshape\thepage \hfil \strut \leftmark}\hrule}}}
+\renewcommand{\@oddhead}{{\vbox{\hbox to\textwidth{\normalfont\slshape\rightmark \hfil \strut \thepage}\hrule}}}
+\makeatother
+
+% front matters
+\input{title.tex}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% back of the title
+\input{title_back.tex}
+
+% abstract
+\input{abstract.tex}
+
+% abstract - German version
+\input{abstract_german.tex}
+
+% \hfill {\Large To my Family}
+% 
+% \newpage
+% \thispagestyle{empty}
+% \mbox{}
+% 
+
+% reset numbering for the table of contents
+\clearpage
+\pagenumbering{roman}
+
+% table of contents
+\tableofcontents
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% reset the numbering for the main text
+\clearpage
+\pagenumbering{arabic}
+
+% main text
+
+\input{00_introduction/00_introduction.tex}
+
+\input{01_Theory_SM/01_Theory_SM.tex}
+
+\input{02_experimental_setup/02_experimental_setup.tex}
+
+% \input{03_simulation/03_simulation.tex}
+% 
+% \input{04_event_reconstruction/04_event_reconstruction.tex}
+% 
+% \input{05_kinReco/05_kinReco.tex}
+% 
+% \input{06_DiffXsec/06_DiffXsec.tex}
+% 
+% \input{07_systematic_uncertainties/07_systematic_uncertainties.tex}
+% 
+% \input{08_results/08_results.tex}
+% 
+% \input{09_conclusions/09_conclusions.tex}
+% 
+% % appendices
+% \appendix
+% \input{10_appendices/mirrored_significance.tex}
+% \input{10_appendices/cross_section_tables.tex}
+% 
+% bibliography
+%\bibliographystyle{JHEPLibov}
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
+% 
+% \newpage
+% \thispagestyle{empty}
+% \mbox{}
+% 
+% % acknowledgements
+% \input{acknowledgements.tex}
+
+% end body of the document
+\end{document}

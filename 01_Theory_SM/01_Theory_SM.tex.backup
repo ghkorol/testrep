@@ -1,0 +1,455 @@
+\chapter{The Standard Model of Particle Physics}\label{chapt:SM}
+
+This chapter is an introduction to the Elementary Particle Physics in the view of Standard Model.
+First the particles are described, then the way they interract is shown. The short introduction
+to the top physics is given in the end.
+
+\section{Introduction. Elementary Particle physics}
+
+The main question which the elementary particle physics addresses is '\textit{What is the matter made of?}'
+This question was stated many thouthands years ago and is still of current interest. First guesses about
+the structure of matter were made already in ancient Greece by a phylosopher-atomist Demokrit, who
+claimed that everything around us consists of tiny undevidable chuncs called \textit{atomos}\cite{yangcn}.
+But the elementary particle physics (elementary here means unstructured) in modern sense started with 
+J.J. Thomson's discovery of \textit{electron}\cite{jjthome} in 1897. The electrons were correctly surmised to be constituents
+of atoms. The full picture of the atom structure was created after Ernest Rutherford's scattering experiment\cite{rutherford},
+thus proving atom to be non-elementary particle. It actually consists of a heavy positively charged core, called 
+\textit{nucleus} and very light negatively charged electrons, moving around like satelites. 
+The nucleus was also proven to be non-elementary. But no structure of electron was discovered 
+and it is nowadays known as one of the undevidable particles. 
+
+Many other elementary particles were subsequently discovered the last sixty years. Now having an idea 
+what are the structureless bricks making up matter in the Universe, particle physycs
+states another important question: '\textit{How do the particles interact?}'.
+
+The Standard Model of particle physics is a theory which is summing up the constituents of the Universe
+and interactions between them. This theory is overall successfully describing many phenomena and 
+agrees with the experimental efforts. But there is also a number of challenges which Standard Model
+is facing. In particular
+\begin{itemize}
+ \item the gravitation is not described,
+ \item the neutrino oscillations and their non-zero masses are not explained,
+ \item dark matter and dark energy do not fit into the model,
+ \item the matter-antimatter asymmetry in the Universe is not explained.
+\end{itemize}
+
+
+\section{Elementary Particles}
+
+This chapter is the answer which the Standard Model gives to the question '\textit{What is the matter made of?}'.
+The Standard Model asserts that all the material in the Universe is made up of the elementary \textit{fermions} (particles
+which have half-integer spin -- $\frac{n}{2}\hbar$, $n = 1, 2, 3, ...$) interacting through the fields, carried 
+by \textit{bosons} (particles which have integer spin -- $n\hbar$, $n = 0, 1, 2, 3, ...$). The names of the particles 
+originate from the statistics they obay. Fermions follow the Fermi-Dirac statistics, bosons -- Bose-Einstein statistics.
+Another thing which is different for the fermions and bosons is how their wave functions behave. After swapping two
+bosons in a system, the wave function does not change, it is symmetric to the exchange of bosons. While the wave function
+of fermions changes the sign, it is asymmetric.
+
+The Fig.\ref{fig:SM_Particles} shows all the elementary constituents of matter and fields.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\textwidth]{01_Theory_SM/plots/Standard_Model_of_Elementary_Particles.png}
+  \caption{The Standard Model of Elementary Particle Physics with three generations of matter fermions, field bosons and a Higgs boson. 
+  The properties of the particles are also shown in each box.}
+  \label{fig:SM_Particles}
+\end{figure}
+
+
+\subsection{Leptons}
+
+The two bottom rows of fermions at the Fig.\ref{fig:SM_Particles} represent the known \textit{leptons} with their masses, charges
+and spins. 
+
+In general, the fermions are described with the Dirac equation\cite{diraceq}:
+
+\begin{equation}\label{eq:dirac}
+  i\hbar\gamma^{\mu}\partial_{\mu}\psi - mc\psi = 0 ,
+\end{equation}
+
+where the $\psi$ is a four-element Dirac spinor, an equivalent of a one dimentional Schr\"{o}dinger wave function, 
+$\gamma^{\mu}$s are the gamma matricies and $\partial_{\mu}$ is a partial derivative with respect to the time-space four-vector
+components. 
+
+Dirac equation \ref{eq:dirac} has solutions with positive but also with negative energy states. Those are treated
+as \textit{antiparticles}. So every lepton, being a fermion, has an antiparticle. At the Fig.\ref{fig:SM_Particles}
+only particles are shown. Electron $e^{-}$ has an antiparticle positron $e^{+}$. The muon $\mu^{-}$, tau $\tau^{-}$ and
+their antiparticles, $\mu^{+}$ and $\tau^{+}$ differ from the electron and positron only by their masses and their lifetimes.
+
+Neutral leptons, neutrinos $\nu$, also have antiparticles, antineutrinos $\bar{\nu}$. Every massive lepton has a corresponding
+neutrino: $\nu_{e}$, $\nu_{\mu}$ and $\nu_{\tau}$. It is believed that in the interactions a lepton can change only to another
+of this type. This is known as \textit{conservation of lepton number}. In this rule leptons have positive lepton numbers and
+antileptons -- negative ones.
+
+\subsection{Quarks}
+
+The upper two rows 
+% \section{Deep Inelastic Scattering at HERA}
+% 
+% The term {\it Deep Inelastic Scattering} (DIS) is used to denote the scattering of a lepton on a nucleon (or nuclei) at a high centre-of-mass energy,
+% when a large squared momentum (above 1~GeV$^2$) is transferred from the lepton to the nucleon~\cite{mandy_dis}. The reaction can be written~as:
+% $$
+% l(k)+N(p)\to l'(k') + X (p_X),
+% $$
+% where $l$ ($l'$) denote the initial (final) state lepton, $N$ is the initial state nucleon and $X$ is an arbitrary hadronic final state.
+% The notation for the four momentum vector of the corresponding object is given in parentheses.
+% In the leading order, this reaction proceeds via exchange of an electroweak gauge boson.
+% In case of a neutral boson exchange ($\gamma$, $Z^0$) one speaks about Neutral Current (NC) while for a charged boson exchange ($W^\pm$) the process is called Charged Current (CC).
+% 
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/dis_parton_model.png}
+%   \caption{The leading order of lepton-nucleon scattering in the naive Quark Parton Model~\cite{doi:10.1142/S0217751X98001670}. The lepton scatters off a quark in the proton via exchange of a vector boson~$V^*$.}
+%   \label{fig:dis_parton_model}
+% \end{figure}
+% 
+% At HERA, DIS occurs in collisions of electrons (or positrons) with an energy of ${E_e=\SI{27.5}{\GeV}}$ with protons of energy $E_p=\SI{920}{\GeV}$.
+% The nucleon $N$ stands for the proton, the initial lepton $l'$ is the electron (positron);
+% the final state lepton is the electron (positron) for NC while it becomes the neutrino (antineutrino) for the CC process.
+% In this thesis, the Neutral Current reaction is studied, hence the following discussion omits the CC. 
+% 
+% The process is described by the following kinematic variables which are Lorentz invariants:
+% \begin{itemize}
+%  \item $s=(k+p)^2$ -- centre-of-mass energy ($\sqrt{s}=\SI{318}{\GeV}$ for HERA);
+%  \item $Q^2 = -q^2 = -(k-k')^2$ -- the negative four momentum squared of the exchanged boson, or its {\it virtuality};
+%  \item $y=p\cdot q/p\cdot k$ -- the energy transferred from the lepton to the proton in the proton rest frame or the {\it inelasticity};
+%  \item $x=Q^2/2p\cdot q$ -- Bjorken $x$ variable (see below for interpretation).
+% \end{itemize}
+% The following relation holds (neglecting the masses of the electron and the proton):
+% \begin{equation}
+% Q^2=s\,x\,y.
+% \end{equation}
+% Thus, at fixed $s$ there are only two independent variables (e.g. $Q^2$ and $x$).
+% 
+% In the leading order (one boson exchange), the double differential cross section of NC DIS as a function of $Q^2$ and $x$ is given by:
+% \begin{equation}\label{eq:structure_functions}
+% \frac{d^2\sigma^{e^{\pm}p\to e^{\pm'}X}}{dxdQ^2}=\frac{2\pi\alpha^2}{xQ^4}\left[Y_+F_2(x,Q^2)-y^2F_L(x,Q^2)\mp Y_-xF_3(x,Q^2)\right],
+% \end{equation}
+% where $Y_{\pm}=1\pm(1-y)^2$ and $F_2(x,Q^2)$, $F_L(x,Q^2)$ and $F_3(x,Q^2)$ are the proton {\it structure functions}.
+% The $F_L$ function is called the longitudinal structure function; $F_3$ is negligible for $Q^2\ll M_Z^2$ where $M_Z$ is the mass of the $Z^0$ boson.
+% 
+% In the {\it naive quark parton model} (QPM)~\cite{Bjorken:1969ja}, the proton consists of three {\it valence} quarks (two up quarks and one down quark) and of {\it sea} quarks.
+% The DIS in this model is viewed as the interaction of the lepton with one of the quarks in the proton ({\it struck quark}), see Fig.~\ref{fig:dis_parton_model}.
+% The Bjorken $x$ is then interpreted as the fraction of the proton momentum carried by the struck quark\footnote{It is assumed that quarks have no transverse momentum with respect to the proton momentum.}. 
+% In this case the cross section reduces to (neglecting $Z^0$ exchange):
+% $$
+% \frac{d^2\sigma^{e^{\pm}p\to e^{\pm'}X}}{dxdQ^2}=\frac{2\pi\alpha^2}{xQ^4}\left[(1+(1-y)^2)F_2(x,Q^2)\right].
+% $$
+% Here $F_2(x,Q^2)$ depends only on $x$ and reflects the distributions of quarks in the proton:
+% $$
+% F_2(x)=\sum_ie_i^2xf_i(x),
+% $$
+% where the sum runs over all quark flavours in the proton (valence and sea) and $f_i(x)$ is the probability to find a quark $i$ with a proton momentum fraction of $x$,
+% or the quark {\it parton distribution function} (PDF). 
+% Hence, in this simple picture, the inclusive NC DIS cross-section is directly sensitive to the quark PDFs in the proton.
+% 
+% However, the general case of DIS involves also the strong interaction
+% This complicates the interpretation of the structure functions in terms of PDFs, since the inclusive scattering contains various subprocesses,
+% but it also turns HERA into a unique laboratory for studies of the strong force.
+% The Quantum Chromodynamics (QCD), the theory of the strong interaction, is the topic of the next section. 
+% 
+% \section{Quantum Chromodynamics}\label{sect:qcd}
+% 
+% Quantum Chromodynamics (QCD) is the theory of the strong interaction, the force which is responsible for holding the nucleons together inside nuclei and for binding the quarks inside hadrons.
+% Together with the electroweak theory, it is part of the Standard Model, the most successful particle physics theory.
+% QCD describes interactions of objects possessing the {\it colour} degree of freedom, quarks and gluons.
+% Quarks can be thought of as matter constituents (similarly to the electron),
+% while gluons are the {\it field quanta} mediating the interaction (as the photons mediate the electromagnetic force in Quantum Electrodynamics).
+% QCD is a {\it gauge} quantum field theory: its Lagrangian obeys certain symmetries, i.e. is invariant under certain {\it gauge transformations}, which defines the properties of the theory.
+% For QCD this is the symmetry under the $SU(3)$-group transformation in the colour space.
+% The Non-Abelian nature of this group leads to the fact that field quanta (gluons) can interact between themselves,
+% unlike photons in Quantum Electrodynamics (QED). This leads to a number of properties that distinguish QCD from QED.
+% 
+% Among the most striking features of QCD are {\it asymptotic freedom} and {\it confinement}.
+% Both are  related to the {\it running} of the coupling constant of QCD, $\alpha_s$,
+% i.e. its dependence on the scale of a process (e.g. the momentum transfer).
+% In terms of Feynman diagrams, the running of the coupling appears due to higher order virtual corrections ({\it loops}) to the leading order diagrams (e.g. to a $qqg$ vertex).
+% Including diagrams with loops in a calculation leads to infinite amplitudes.
+% In order to overcome this problem, the {\it renormalisation} procedure is invoked which is the redefinition
+% of the original theory parameters (the coupling $\alpha_s$ in this case) in such a way that they are finite at some arbitrary scale~$\mu_R$ called {\it renormalisation scale},
+% while the infinities are absorbed into bare (non-renormalised) parameters.
+% This introduces a dependence of observed quantities on an arbitrary parameter $\mu_R$, which is unphysical;
+% requiring that observables are independent of $\mu_R$  leads to the {\it renormalisation group equation}. 
+% Its solution yields a relation between the coupling at an arbitrary scale~$Q$ to that at the scale~$\mu_R$.
+% For the one-loop calculation one gets~\cite{Halzen:1984mc}:
+% $$
+% \alpha_s(Q^2)=\frac{12\pi}{(33-2n_f)\ln(Q^2/\Lambda^2)},
+% $$
+% where $Q^2$ is the scale of the process, $n_f$ is the number of active flavours (appearing in the loops) at the scale $Q^2$,
+% $\Lambda$ is a parameter of QCD depending on particular renormalisation procedure (scheme) chosen and on $\mu_R$ as well as on the number of active flavours $n_f$.
+% This expression shows that $\alpha_s$ decreases with increasing scale.
+% At large scales (or at small distances), the interaction is weak, the property called asymptotic freedom,
+% whereas at small scales (large distances) the interaction becomes strong.
+% The latter leads to confinement -- the fact that coloured objects (e.g. a quark and an antiquark) cannot be taken apart by distances larger than around \SI{1}{\femto\m}
+% (quarks are confined inside hadrons).
+% In contrast, the coupling constant of QED increases with increasing the scale (decreasing the distance).
+% 
+% The smallness of $\alpha_s$ at high scales (small distances) allows to apply perturbative approach to the calculations,
+% i.e. to expand the cross section in series of $\alpha_s$.
+% At small scales, when the coupling is large, this is not anymore possible, since the series does not converge.
+% The transition between two regimes happens at scales of the order of the~$\Lambda$ parameter which has a value around the typical hadronic mass, $\Lambda\sim0.1\div\SI{0.5}{\GeV}$.
+% 
+% Quarks and gluons are not directly observable due to confinement.
+% Only colourless hadrons, inherently non-perturbative objects, can be present in the initial or final state of any reaction.
+% Hence, generally speaking, perturbative techniques are not applicable to any real process involving the strong force.
+% The {\it Factorisation Theorem}~\cite{Collins:1989gx} rescues the situation.
+% It states that under certain conditions one can separate the hard process that is characterised by a large scale and soft processes which are associated to initial and final state hadrons.
+% The hard process can be calculated with perturbative techniques, while the soft part is usually taken from experiment.
+% For the cross section $\sigma$ of a certain QCD process in $ep$-collisions this can be illustrated by the following simplified formula:
+% $$
+% \sigma=\int \, dx \, f(x, \mu_F) \, \hat\sigma(x, \mu_F),
+% $$
+% where $f$ is the parton density function (PDF) of a parton that is involved in the process, taken from experiment,
+% $\hat\sigma$ is the calculable in the perturbative approach parton level cross section of the process.
+% The cross section has to be integrated over the fractional momentum of the parton, $x$.
+% A dependence of the PDF and of the hard cross section on a parameter $\mu_F$, called {\it factorisation scale}, was indicated.
+% The factorisation scale represents a threshold at which splitting into hard and soft processes is done:
+% at scales above $\mu_F$, the process is treated as perturbative; processes at lower scales are absorbed in the PDF.
+% The dependence of the PDFs on the scale is given by the DGLAP ~\cite{sovjnp:15:438,sovjnp:20:94,np:b126:298,jetp:46:641} evolution equations.
+% 
+% \section{Heavy Flavour Production at HERA}
+% 
+% \begin{figure}[!b]
+%   \centering
+%   \includegraphics[width=0.4\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/bgf.png}
+%   \caption{Leading order Feynman diagram for heavy quarks production at HERA.}
+%   \label{fig:bgf}
+% \end{figure}
+% 
+% One of the domains of QCD studies at HERA is the production of charm and beauty quarks.
+% The leading order Feynman diagram of this process (Boson-Gluon Fusion) is shown in Fig.~\ref{fig:bgf}.
+% There is a gluon in the initial state, hence the process is directly sensitive to the gluon density in the proton.
+% 
+% The mass of the heavy quarks, $m$, represents a hard scale, hence enabling the usage of perturbative techniques.
+% However, the situation is complicated due to the fact that in some regions of phase space, other hard scales can be present in addition to the mass,
+% such as the photon virtuality $Q^2$ and the quark transverse\footnote{A right-handed cartesian coordinate system is used, with the $Z$ axis pointing along the incident proton direction. The transverse momentum $p_T$ of a particle
+% is given by $p_T=p\sin\theta$, where $\theta$ is the particle polar angle in this coordinate system and $p$ is its momentum. The pseudorapidity $\eta$ is defined as $\eta=-\ln\tan(\theta/2)$.} momentum $p_T$.
+% This is the so-called {\it multiple scale problem}.
+% It might spoil the convergence of the perturbative series, due to the presence of the terms protortional
+% $\left[\alpha_s\log(p_T^2/m^2)\right]^n$ or $\left[\alpha_s\log(Q^2/m^2)\right]^n$, where $n$ is the order of a calculation.
+% These terms represent collinear gluon radiation from the heavy quarks.
+% 
+% Several schemes for heavy flavour calculations are available. The {\it fixed flavour number scheme} (FFNS) or {\it massive} scheme~\cite{Laenen1993162, Laenen1993229,Riemersma1995143} is a rigorous QCD calculation which
+% fully takes heavy quark masses into account.
+% It is expected to be appropriate at small scales, $p_T\sim m$ and $Q^2\sim m^2$,
+% while at very high scales it may break down due to the multiple scale problem.
+% A calculation program called \HVQDIS~\cite{Harris1995109} is available; it provides NLO ($\mathcal{O}(\alpha_s^2)$) QCD predictions in this scheme for any differential cross sections
+% of heavy flavour production at HERA.
+% 
+% An alternative approach is the Zero-Mass Variable Number Scheme (ZM-VFNS)~\cite{Kniehl1995539, Kniehl:1996we} or {\it massless} scheme.
+% Here, the heavy quarks are treated as massless and they appear as active sea quarks in the proton. 
+% In this scheme it is possible to resum the large logarithms mentioned above at all orders of perturbation theory, hence the multiple scale problem does not affect predictions.
+% However, since this approach neglects the mass, it is expected to work only far above the threshold of heavy quark production, i.e. for $Q^2\gg m^2$ or $p_T\gg m$.
+% 
+% The Generalised Variable Flavour Number Schemes (GM-VFNS)~\cite{Olness1988813,PhysRevD.50.3085,PhysRevD.50.3102,PhysRevD.62.096007,PhysRevD.57.6871,Thorne1998303,thorne_eur,refId0,PhysRevD.71.014018}
+% combines the massive and massless schemes.
+% It converges to FFNS and to ZM-VFNS at small and large scales, respectively.
+% In the intermediate region it performs a certain interpolation between the two schemes.
+% There is some arbitrariness in the treatment of this interpolation and various approaches are used.
+% 
+% Measurements of heavy flavour production at HERA can help to distinguish between different theoretical schemes.
+% They can also provide valuable information on charm and beauty quark masses, since predictions are very sensitive to these parameters.
+% In the next section, several measurements of charm and beauty production in DIS at HERA are discussed which address these questions.
+% 
+% \section{Heavy Flavour Measurements in DIS at HERA}\label{sect:hfl_measurements_hera}
+% 
+% The production of charm and beauty quarks has been studied extensively at HERA~\cite{Adloff:1996xq,Breitweg:1997mj,Adloff:1998vb,Breitweg:1999ad,Adloff:2001zj,Chekanov:2003rb,Aktas:2004ka,Aktas:2004az,Aktas:2005iw,Aktas:2006py,Chekanov:2007ch,Chekanov:2008yd,Chekanov:2009kj,Aaron:2009af,Aaron:2009jy,Abramowicz:2010aa,Aaron:2010ib,Aaron:2011gp,Abramowicz:2010zq,Chekanov:2008tx,Chekanov:2008zz,Chekanov:2008aaa,Chekanov:2006sg,Chekanov:2004tk,PhysRevD.70.012008,Breitweg:2000nz,Aktas:2006vs,Aktas:2005bt,Aktas:2005zc,Adloff:1999nr,Abramowicz:2011kj}, and is still an active field of research.
+% Various techniques were used to identify events with heavy flavours ({\it tagging methods}).
+% \enlargethispage{\baselineskip}
+% In this section, selected results on charm and beauty production in DIS by the H1 and ZEUS experiments are discussed.
+% 
+% \subsection{Charm Production}
+% 
+% \begin{figure}[!b]
+%   \centering
+%   \begin{overpic}[width=0.45\textwidth,height=0.4\textheight]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/zeus_dstar_q2.png}
+%     \put(25,75){(a)}
+%   \end{overpic}
+%   \begin{overpic}[width=0.45\textwidth,height=0.4\textheight]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/h1_dstar_eta.png}
+%     \put(20,75){(b)}
+%   \end{overpic}
+%   \caption{(a) Differential cross section of $D^*(2010)$ meson production as a function of $Q^2$ from a measurement by the ZEUS Collaboration~\cite{Chekanov:2003rb}. The points represent the data, the lines represent NLO QCD predictions in the FFNS scheme, obtained with different PDF sets and hadronisation models. (b) Differential cross section of $D^*(2010)$ meson production as a function of $\eta(D^*)$ from the H1 experiment~\cite{Aaron:2011gp}. The points show the data, the dot dashed and the solid lines represent NLO QCD predictions in the FFNS and ZM-VFNS schemes, respectively. For both plots, the inner (outer) error bars show the statistical (total) uncertainties of the measurements while the bands indicate uncertainties of the predictions. The kinematic regions of the measurements are given in the main text. }
+%   \label{fig:charm_diff_dstar}
+% \end{figure}
+% 
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/h1_vtx_charm_et.png}
+%   \caption{Differential cross section of charm jet production as a function of the jet transverse energy \ETjet in the inclusive lifetime analysis by the H1 Collaboration~\cite{Aaron:2010ib}. The points represent the measurement, the lines show the NLO QCD predictions in the FFNS scheme, the bands indicate uncertainties  of the predictions.  The kinematic region of the measurement is given in the main text. }
+%   \label{fig:charm_diff_vtx}
+% \end{figure}
+% 
+% In a measurement by the ZEUS Collaboration~\cite{Chekanov:2003rb}, charm quarks were identified by reconstruction of $D^*(2010)$ mesons decaying via the {\it golden channel}:
+% $D^*\to D^0\pi\to K\pi\pi$.
+% The restrictions on the transverse momentum of $D^*$ mesons, $p_T(D^*)$, and on their pseudorapidity, $\eta(D^*)$,  were $1.5<p_T(D^*)<\SI{15}{\GeV}$ and $|\eta(D^*)|<1.5$, respectively.
+% The kinematic range was $1.5<Q^2<\SI{1000}{\GeV^2}$ and $0.02<y<0.7$.
+% Figure~\ref{fig:charm_diff_dstar}(a) shows the differential cross section as a function of the photon virtuality $Q^2$.
+% The data are compared to NLO QCD predictions in the FFNS scheme.
+% A good agreement is found in the full $Q^2$ range.
+% 
+% The same technique of charm tagging was applied in a measurement by the H1 Collaboration~\cite{Aaron:2011gp}.
+% The phase space for the $D^*$ mesons was $p_T(D^*)>\SI{1.25}{\GeV}$ and $|\eta(D^*)|<1.8$. The kinematic range was $5<Q^2<\SI{100}{\GeV^2}$ and $0.02<y<0.7$.
+% For the cross sections presented here, an additional cut on the $D^*$ transverse momentum in the virtual photon-proton ($\gamma^*p$) centre-of-mass frame, $p_T^*(D^*)>\SI{2.0}{\GeV}$, was applied 
+% in order to allow comparisons to predictions in the ZM-VFNS scheme.
+% Figure~\ref{fig:charm_diff_dstar}(b) shows the differential cross section as a function of the $D^*$ meson pseudorapidity $\eta(D^*)$.
+% Data are compared to NLO QCD predictions in the FFNS and ZM-VFNS schemes.
+% It can be concluded, that the FFNS predictions describe the data well, while the calculations in the ZM-VFNS approach overshoot the data.
+% 
+% Although a full reconstruction of charmed mesons provides a good signal to background ratio,
+% this method suffers from low branching ratios of decays into a particular final state.
+% The H1 collaboration applied an {\it inclusive lifetime technique} to tag heavy quarks~\cite{Aaron:2010ib}.
+% It makes use of the fact that the ground states of the hadrons containing heavy quarks have typically long lifetimes.
+% No specific decay modes are required in the method.
+% Charm quarks were measured in association to jets.
+% The phase space region in the jet transverse energy, \ETjet, and jet pseudorapidity, \etajet, was $\ETjet>\SI{6}{\GeV}$ and $-1.0<\etajet<1.5$, respectively.
+% The kinematic range was $Q^2>\SI{6}{\GeV^2}$ and $0.07<y<0.625$.
+% Figure~\ref{fig:charm_diff_vtx} shows the differential cross section for production of jets containing a charm quark, as a function of the jet transverse energy \ETjet.
+% Data are compared to NLO QCD predictions in the FFNS scheme. A good agreement is found within uncertainties.
+% 
+% In conclusion, measurements show that NLO QCD predictions in the fixed flavour number scheme provide a good description of charm production at HERA in the probed kinematic region.
+% NLO QCD predictions based on the ZM-VFNS scheme which neglects the charm quark mass, fail to describe the data.
+% 
+% Recently, a combination of various charm measurements by H1 and ZEUS was performed~\cite{charm_comb}.
+% For every measurement, the {\it reduced} charm cross section \sigmaredc was determined before the combination.
+% Up to a kinematic factor, it represents the inclusive double differential cross section of charm quark-antiquark pair production, as a function of $x$ and~$Q^2$:
+% $$
+% \sigmaredc=\frac{d^2\sigma^{ep\to c \overline{c}X}}{dxdQ^2} \frac{xQ^4}{2\pi\alpha^2(1+(1-y)^2)}.
+% $$
+% In order to determine \sigmaredc, an extrapolation procedure needs to be performed,
+% since all measurements are done in a restricted region of charm quark kinematics (e.g. due to transverse momentum and pseudorapidity cuts on $D^*$ mesons; see also a discussion in Section~\ref{sect:f2_determination}).
+% The extrapolation is done with the NLO QCD in the FFNS scheme. The same procedure is used for all measurements.
+% After extrapolation, the combination is performed.
+% A procedure which takes into account correlated systematic uncertainties between different measurements is used.
+% It allows a reduction of systematic uncertainties, in addition to obvious reduction of statistical uncertainties.
+% Figure~\ref{fig:charm_comb_all} shows the result of the combination,
+% together with various measurements that enter into the combination.
+% It is readily seen that uncertainties reduce drastically after the combination,
+% which increases the potential of the data to distinguish between various theory schemes.
+% As an example, Figure~\ref{fig:charm_comb_nnpdf} shows a comparison of the combined data to NLO and NNLO QCD predictions from the NNPDF group (see Ref.~\cite{charm_comb} for details).
+% One is lead to the conclusion that the NNLO calculation agrees to data better than the NLO predictions.
+% 
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/charm_comb_all.png}
+%   \caption{The combined reduced charm cross sections (full circles) and various measurements entering the combination (different style points). Taken from Ref.~\cite{charm_comb}.}
+%   \label{fig:charm_comb_all}
+% \end{figure}
+% 
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/charm_comb_nnpdf.png}
+%   \caption{A comparison of the combined reduced charm cross sections (points) to NLO (hatched areas) and NNLO (filled area) QCD predictions from the NNPDF group. Taken from Ref.~\cite{charm_comb}.}
+%   \label{fig:charm_comb_nnpdf}
+% \end{figure}
+% \clearpage
+% 
+% \subsection{Beauty Production}
+% 
+% % \begin{figure}[t]
+% %   \centering
+% %   \begin{overpic}[width=0.45\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/h1_vtx_beauty_et.png}
+% %     \put(25,35){(a)}
+% %   \end{overpic}
+% %   \begin{overpic}[width=0.4\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/zeus_muon_beauty_q2.png}
+% %     \put(20,35){(b)}
+% %   \end{overpic}
+% %   \caption{(a) Differential cross section of beauty jet production as a function of the jet transverse energy \ETjet in the inclusive lifetime analysis by the H1 Collaboration~\cite{Aaron:2010ib}. The points represent the measurement, the lines show the NLO QCD predictions in the FFNS scheme, the bands indicate uncertainties  of the predictions. (b) Differential cross section of beauty quark production as a function of the photon virtuality $Q^2$, from a measurement by the ZEUS Collaboration~\protect{\cite{Abramowicz:2010zq}} where beauty quarks were identified via semi-leptonic decays with a muon in the final state. The points represent the data, the solid line is the NLO QCD prediction in the FFNS scheme, the band indicates its uncertainty. The dotted line represents LO QCD prediction from the \RAPGAP MC, scaled by a constant factor.}
+% %   \label{fig:beauty_diff_vtx_muon}
+% % \end{figure}
+% 
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/h1_vtx_beauty_et.png}
+%   \caption{Differential cross section of beauty jet production as a function of the jet transverse energy \ETjet in the inclusive lifetime analysis by the H1 Collaboration~\cite{Aaron:2010ib}. The points represent the measurement, the lines show the NLO QCD predictions in the FFNS scheme, the bands indicate uncertainties  of the predictions.}
+%   \label{fig:beauty_diff_vtx}
+% \end{figure}
+% 
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/zeus_muon_beauty_q2.png}
+%   \caption{Differential cross section of beauty quark production as a function of the photon virtuality $Q^2$, from a measurement by the ZEUS Collaboration~\protect{\cite{Abramowicz:2010zq}} where beauty quarks were identified via semi-leptonic decays with a muon in the final state. The points represent the data, the solid line is the NLO QCD prediction in the FFNS scheme, the band indicates its uncertainty. The dotted line represents LO QCD prediction from the \RAPGAP MC, scaled by a constant factor.}
+%   \label{fig:beauty_diff_muon}
+% \end{figure}
+% 
+% 
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/f2b_summary.png}
+%   \caption{A summary of $F_2^{b\overline{b}}$ measurements~\cite{Abramowicz:2011kj} at HERA. The points represent various measurements from H1 and ZEUS. The lines show different theoretical predictions.}
+%   \label{fig:f2b_summary}
+% \end{figure}
+% 
+% In the inclusive lifetime analysis by the H1 Collaboration~\cite{Aaron:2010ib} mentioned in the previous subsection, the beauty quark production was measured.
+% Figure~\ref{fig:beauty_diff_vtx} shows the differential cross section for production of jets containing a beauty quark, as a function of the jet transverse energy \ETjet.
+% Data are compared to NLO QCD predictions in the FFNS scheme. A good agreement is found within uncertainties.
+% 
+% The ZEUS Collaboration performed a measurement of the beauty quark production, where it was identified via semi-leptonic decays with a muon in the final state~\cite{Abramowicz:2010zq}.
+% Muons were associated to jets which were selected in the following kinematic region: $\ETjet>\SI{5}{GeV}$ and $-2.0<\etajet<2.5$.
+% The phase space was defined by $Q^2>\SI{2}{\GeV^2}$ and $0.05<y<0.7$.
+% Figure~\ref{fig:beauty_diff_muon} shows the differential cross section of beauty jet production as a function of the photon virtuality $Q^2$.
+% It is compared to the NLO QCD predictions in the FFNS scheme. As can be seen, the theory underestimates the data.
+% The significance of the excess is around two standard deviations. 
+% 
+% All measurements are done in a restricted region of the beauty quark kinematics (defined by the jet transverse energy and pseudorapidity cuts).
+% Similarly to the charm case (see previous subsection), it is useful to perform an extrapolation to the full phase space,
+% i.e. to determine cross section of beauty quark production with no cuts on its kinematics (see also a discussion in Section~\ref{sect:f2_determination}).
+% The convenient observable is the {\it beauty contribution to the proton structure function}, $F_2^{b\overline{b}}$.
+% It is defined in analogy to the inclusive structure functions Eq.~(\ref{eq:structure_functions}) but a beauty quark-antiquark pair is required in the final state.
+% Up to small contributions from the structure functions $F_L$ and $F_3$, it coincides with the reduced beauty cross section \sigmaredb which was defined for the charm case in the previous subsection.  
+% Figure~\ref{fig:f2b_summary} shows a compilation of all available $F_2^{b\overline{b}}$ measurements at HERA with various QCD predictions.
+% A good agreement between data and theory is observed; with given precision of the measurements, data are not yet able to discriminate between various predictions,
+% contrary to the case of charm production.
+% 
+% \clearpage
+% 
+% \section{Monte Carlo Generators}\label{sect:mc}
+% 
+% \begin{figure}[!b]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{/scratch/libov/writeups/05_PhD_thesis/01_heavy_flavour_production_at_hera/plots/mc.png}
+%   \caption{Simulation of $ep$-collison events. Different steps are shown by boxes. Indicated are: hard process (ME), initial and final parton showers (ISPC, FSPC) and hadronisation. The result of the generator
+% is a set of outgoing hadrons.}
+%   \label{fig:mc}
+% \end{figure}
+% 
+% At high energy colliders complex particle detectors, trigger chains and reconstruction algorithms are involved which have to deal with complicated final states emerging in collisions.
+% A detailed understanding of the performance of these components is essential for any measurement.
+% For example, in the analysis presented in this thesis one needs to determine the {\it detector acceptance}; it defines the probability to detect events of various types (e.g. charm quark production, beauty quark production) and hence allows extraction the corresponding cross sections.
+% Also, the {\it events properties} need to be known, e.g. the transverse momentum, $p_T$, and pseudorapidity, $\eta$, spectra of produced charm or beauty quarks.
+% This is required both for proper determination of the acceptance (since it usually depends strongly on these variables), as well as for prediction of shapes of certain distributions in order to test the consistency of the data with various models or to extract their relative contribution to the given data sample.
+% These problems are solved with help of the {\it Monte Carlo} (MC) simulation.
+% It consists of two major steps: the {\it event simulation} and the {\it detector simulation}.
+% In the first step, virtual particle collision events are produced; every event contains full information about all particles that emerged in the collision and about their decay products.
+% In the second step, the response of the detector, readout electronics and trigger to these particles is simulated.
+% Information is then stored in the same format as real data, which allows to apply the same reconstruction algorithms.
+% 
+% Events are simulated with Monte Carlo {\it generators}.
+% The basic steps of $ep$-event generation are schematically shown in Fig.~\ref{fig:mc}.
+% The implementation of the {\it hard process} depends on particular generator.
+% In this thesis, the \RAPGAP~\cite{Jung:1995,rapgap_manual} generator is used to simulate the signal.
+% In the hard interaction it produces a pair of charm (or beauty) quark-antiquark.
+% The kinematics of the process (e.g. $p_T$ and $\eta$ distributions of the quarks) is calculated in the Leading Order perturbative QCD (the Feynman diagram is shown in Fig.~\ref{fig:bgf}).
+% Since the photon directly enters the hard interaction, this process is also called {\it direct}.
+% In \RAPGAP, also {\it resolved} processes are available, where the photon fluctuates into a hadronic system before the hard interaction.
+% In order to simulate higher order QCD processes, additional radiation in the initial or final state needs to be included.
+% This is done with {\it parton showers}: quarks and gluons can radiate additional gluons; gluons can split into a quark-antiquark pair. 
+% 
+% Due to confinement, the resulting partons are subject to {\it hadronisation} or {\it fragmentation}, the transition from coloured partons to colourless hadrons.
+% This cannot be calculated in perturbative QCD and models have to be invoked. 
+% The most common is the {\it Lund} or {\it string} fragmentation model.
+% In this model, a so-called string is attached to a pair of coloured objects (e.g. between the struck quark and the proton remnant).
+% If these objects move apart, the energy of the string increases (due to confinement) and this ultimately results in creation of a new quark-antiquark pair,
+% which might combine with original quarks (antiquarks) to form colourless hadrons.
+% The process is repeated iteratively until only colourless hadrons are present.
+% The longitudinal fragmentation is characterised by {\it fragmentation functions}.
+% It gives the probability to transfer a certain fraction $z$ of momentum of the original parton to the hadron which contains it.  
+% The Bowler~\cite{Bowler:1981sb} fragmentation function is given by:
+% \begin{equation}\label{eq:bowler}
+% f(z)\propto\frac{1}{z^{1+r_Q b m_Q^2}}z^{a_\alpha}\left(\frac{1-z}{z}\right)^{a_\beta}\exp\left(-\frac{bm_\perp^2}{z}\right),
+% \end{equation}
+% where $m_Q$ is the mass of the quark, $m_\perp$ is the transverse mass of the hadron, $m_\perp^2=m^2+p_T^2$ ($m$ is the hadron mass, $p_T$ is the mean transverse momentum of the quark); $r_Q$, $b$, $a_\alpha$, $a_\beta$ are model parameters taken from experiment.
+% The Peterson~\cite{pr:d27:105} fragmentation function is defined in the following way:
+% \begin{equation}\label{eq:peterson}
+% f(z)\propto\frac{1}{z\left(1-\frac{1}{z}-\frac{\epsilon}{1-z}\right)^2},
+% \end{equation}
+% where $\epsilon$ is the only function parameter; it is taken from experiment.
+% In the last step, decays of particles are simulated. The result of this is passed to the detector simulation which is typically done with the \geant{} package~\cite{Agostinelli2003250,1610988}.
