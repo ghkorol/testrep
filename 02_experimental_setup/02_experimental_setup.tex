@@ -135,11 +135,11 @@ run period in proton-proton collisions with center-of-mass energy $\sqrt{s} = $8
 the construction and performance of the CMS machine.
 
 Any particle detector is being constructed with respect to the measurements which are planned to be done on it. Different physical
-tasks provide special requirements for specific experimental setup parts. For instance, if the plan is to measure Standard Model decays
+tasks provide special requirements for specific experimental setup parts. If the plan is to measure Standard Model decays
 ($W$, $H$, $Z'$ decays with leptons in final state), the detector complex has to comprise a precise electromagnetic calorimetry and 
-muon systems for a better lepton reconstruction. To measure the hadronic decays and higher order QCD with jets in final states, a
-good tracking and calorimetry have to provide absolute energy determinations. To look for heavy resonances one needs a well granulated
-and precise detection in the central region, perpendicular to the beam direction. Unlike for the low mass particles, where the tracking
+muon systems for a better lepton reconstruction. To measure the QCD processes with jets in final states, a
+good hadronic calorimetry has to provide absolute energy determination with fine resolution. To look for heavy resonances one needs a
+precise detection in the central region, perpendicular to the beam direction. Unlike for the low mass particles, where the tracking
 has to cover the forward regions. The parts of the detector located in the direction of beam flow are also important to measure the 
 total transverse missing energy. A particle identification precision and muon detection relies much on a magnet system which bands the charged 
 particles differently corresponding to their energy and charge. This also makes it important to choose the optimal magnet
@@ -180,7 +180,7 @@ The other variable which can be used instead of $\eta$ for the massive particles
 
 \begin{equation}\label{eq:y}
   \eta = \frac{1}{2}\ln\frac{E + p_{L}}{E - p_{L}},
-\end{equation}
+\end{equation} 
 where $E$ is the energy of the particle.
 
 The momentum and energy transverse to the beam direction, denoted as $p_{T}$ and $E_T$, are also commonly used in the data analysis. 
@@ -188,7 +188,27 @@ They are defined in the $(x-y)$ plane. Another variable is responsible for the e
 \textit{missing transverse energy} $E_{T}^{miss}$.
 
 \subsection{Solenoid magnet}
-% \subsection{Tracking Detector}
+
+The CMS detector features a 4T superconducting solenoid 13 m in length and 6 m in diameter shown on the Fig.\ref{fig:solenoid}. 
+The flux is returned through a 10000 tonnes yoke \cite{CMSatLHC}. Historically the main stress of the CMS detector was 
+addressed on the construction of a precise moun detection system, as at the time when the facility was designed, there 
+were no silicon pixel tracker technologies providing material with sufficient radiation hardness and readout speed. Thus, 
+the tracking could have had a bad performance. So a good muon identification would
+rescue some physics processes reconstruction. A strong magnetic field plays a very important role for identifying high energetic
+particles as muons, bending them enough on their pass to the muon system.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/CERN_CMS_Solenoid_schematic.png}
+  \caption{The schematic view on the CMS solenoid}
+  \label{fig:solenoid}
+\end{figure}
+
+The strength of the magnetic field sets the limit of the size of tracking and calorimetry systems. Most of the tracks should reach the 
+calorimeter before they start to band back to the beam direction. The solenoid magnet geometry limits the tracking precision to
+the central pseudorapidity ranges, as the forward regions will have unbanded tracks which are not influenced by a magnetic field.
+
+\subsection{Tracking Detector}
 % \subsection{Electromagnetic Calorimeter}
 % \subsection{Hadronic Calorimeter}
 % \subsection{Muon Detector}
