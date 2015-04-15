@@ -17,7 +17,7 @@ chapter is revealing the CMS detector construction and features in more detail a
 results of this work. The third and the last part of this chapter is about the upgrade plans for the
 CMS detector to operate with higher energies and luminosities.
 
-\section{Large Hadron Collider}
+\section{Large Hadron Collider}\label{sec:LHC}
 
 The fastest protons in the world, ever controlled by human, are alive in Switzerland at CERN.
 The Machine which can manage the operation of these protons is called Large Hadron Collider(LHC). 
@@ -28,24 +28,23 @@ The designed center-of-mass energy for those collisions is $\sqrt{s}$ = 14 TeV, 
 
 
 Not to get out of the ring 7 TeV protons are guided by 8 T superconducting magnets. 
-For optimal usage of these magnets one needs to preaccelerate and preforme the proton banches.
+For optimal usage of these magnets one needs to preaccelerate and preform the proton bunches.
 For this purpose LHC is supported by preacceleration system.
 
 
 The way of the protons literally starts from a bottle of hydrogen gas.
 H2 molecules are entering metallic cylinder (duoplasmatron[?]) with electron gas under magnetic field  where they are smashed 
-into atoms and stripped off the electrons. The protons produced by a duoplasmatron have to satisfy very stringent needs of the LHC: 
+into atoms and stripped off the electrons. The protons produced by a duoplasmatron have to satisfy very stringent needs of the LHC -- 
 many high intensity proton bunches (2808 per LHC ring) with small transverse and well defined longitudinal emittances.
 To reach the stated goals the following acceleration injector chain is used(Fig. \ref{fig:AccelCERN}): 
 
 \begin{figure}[t]
   \centering
   %\includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/Cern-Accelerator-Complex.png}
-  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/Cern-Accelerator-Complex-2.png}
+  \includegraphics[width=0.8\textwidth]{02_experimental_setup/plots/Cern-Accelerator-Complex-2.png}
   \caption{The complex of accelerators at CERN with their length and particles being accelerated inside.}
   \label{fig:AccelCERN}
 \end{figure}
-
 
 \begin{itemize}
  \item[--] Protons first enter the \textit{Linac2}[?] where they are accelerated up to 50 MeV and sent to Proton Synchrotron Booster (PSB);
@@ -77,11 +76,10 @@ recorded by the Compact Muon Solinoid (CMS) detector which is seen from the Fig.
   \label{fig:LumiCMS}
 \end{figure}
 
-During the 2012 LHC run period 3.16^10^16[?] protons were delivered which means only ~1 mm^3 of Hidrogen gas 
+During the 2012 LHC run period $3.16 \cdot 10^16$[?] protons were delivered which means only ~$1$ mm$^3$ of Hydrogen gas 
 under the normal conditions is needed (taken the efficiency of proton source to account[?]). 
 %http://www.lhc-closer.es/1/3/10/0
 %https://indico.cern.ch/event/219327/ -- slide 11
-
 
 The measurements of collision products are done with the complex particle detectors. There are four of them, 
 \textit{ALICE}, \textit{LHCb}, \textit{ATLAS} and \textit{CMS}, on the LHC
@@ -130,7 +128,66 @@ Two much smaller experiments are also located at the LHC ring alongside the four
 researches which do not collide but rather brush past each other and continue their flow along the beam direction. Thus these facilities do not
 need to be based around the beam coincidence points. The names of the two experiments are \textit{LHCf} and \textit{TOTEM}.
 
- \section{The Compact Muon Solenoid}\label{sec:CMS}
+\section{The Compact Muon Solenoid}\label{sec:CMS}
+
+The analysis presented in this work was performed on the data recorded by the Compact Muon Solenoid (CMS) detector\cite{CMSatLHC} during the 2012
+run period in proton-proton collisions with center-of-mass energy $\sqrt{s} = $8 TeV. This section will describe in more detail 
+the construction and performance of the CMS machine.
+
+Any particle detector is being constructed with respect to the measurements which are planned to be done on it. Different physical
+tasks provide special requirements for specific experimental setup parts. For instance, if the plan is to measure Standard Model decays
+($W$, $H$, $Z'$ decays with leptons in final state), the detector complex has to comprise a precise electromagnetic calorimetry and 
+muon systems for a better lepton reconstruction. To measure the hadronic decays and higher order QCD with jets in final states, a
+good tracking and calorimetry have to provide absolute energy determinations. To look for heavy resonances one needs a well granulated
+and precise detection in the central region, perpendicular to the beam direction. Unlike for the low mass particles, where the tracking
+has to cover the forward regions. The parts of the detector located in the direction of beam flow are also important to measure the 
+total transverse missing energy. A particle identification precision and muon detection relies much on a magnet system which bands the charged 
+particles differently corresponding to their energy and charge. This also makes it important to choose the optimal magnet
+shape and power. To gain precise $b$- and $\tau$ identification, good inner silicon
+pixel and strip detectors have to be operated. Also taken into account the designed luminosities (see Sec.\ref{sec:LHC}) and bunch spacing of 25 ns at the LHC,
+the detectors have to deal with multiple interactions per collision - pile up. Not to get distorted by a large amount of particles 
+flowing to one sensor unit, the detector must have a fine enough granularity and radiation hardness.
+And in the end the price and feasibility play a crucial role in the detector complex creation.
+
+The CMS facility being a general purpose detector was designed to make it's parts fulfill as many physical goals as possible.
+The final onion-like construction of the machine is shown on the Fig. \ref{fig:CMSview}. The overall detector size reaches 28.7 m in length
+and 15.0 m in width. The total weight of the facility is 14000 tones, which makes the CMS the heaviest particle detector on the
+LHC. The detector is cylindrically symmetric around the beam pipe and also symmetric to left and right sight along the beam direction
+relative to the collision point.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{02_experimental_setup/plots/cms_120918_03.png}
+  \caption{Sectional view of the CMS detector. The LHC beams collide in the center of the 
+  machine. The central axis of the detector corresponds to the beam direction. Position of different
+  components is highlighted.}
+  \label{fig:CMSview}
+\end{figure}
+
+The common coordinate system is important for measurement consistency. For the CMS experiment the origin  
+is assumed to be located at the nominal collision point, the $x$-axis is pointing to the center of the 
+LHC ring and the $y$-axis is pointing vertically upwards. Thus the $z$-axis points along the beam axis towards the
+Jura mountains. As the detector is symmetric around the beam pipe, it may be convenient to use cylindrical or spherical
+coordinate systems. The azimuthal angle $\phi$ is measured from the $x$-axis in $(x-y)$ plane and the polar angle $\theta$ --
+from the $+z$-axis. The radial coordinate $r$ is a distance from the beam pipe. Often the variable \textit{pseudorapidity}
+$\eta$ is used instead of the polar angle:
+
+\begin{equation}\label{eq:eta}
+  \eta = -\ln(\tan(\frac{\theta}{2})) = \frac{1}{2}\ln\frac{|\bar{p}| + p_{L}}{|\bar{p}| - p_{L}},
+\end{equation}
+where $\bar{p}$ is the particle momentum vector and $p_{L}$ is it's projection on the $z$-axis, or longitudinal component.
+The other variable which can be used instead of $\eta$ for the massive particles is the \textit{rapidity} $y$:
+
+\begin{equation}\label{eq:y}
+  \eta = \frac{1}{2}\ln\frac{E + p_{L}}{E - p_{L}},
+\end{equation}
+where $E$ is the energy of the particle.
+
+The momentum and energy transverse to the beam direction, denoted as $p_{T}$ and $E_T$, are also commonly used in the data analysis. 
+They are defined in the $(x-y)$ plane. Another variable is responsible for the energy imbalance in transverse plane is a
+\textit{missing transverse energy} $E_{T}^{miss}$.
+
+\subsection{Solenoid magnet}
 % \subsection{Tracking Detector}
 % \subsection{Electromagnetic Calorimeter}
 % \subsection{Hadronic Calorimeter}
