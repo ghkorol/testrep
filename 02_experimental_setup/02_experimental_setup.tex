@@ -17,6 +17,9 @@ chapter is revealing the CMS detector construction and features in more detail a
 results of this work. The third and the last part of this chapter is about the upgrade plans for the
 CMS detector to operate with higher energies and luminosities.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Large Hadron Collider}\label{sec:LHC}
 
 The fastest protons in the world, ever controlled by human, are alive in Switzerland at CERN.
@@ -128,6 +131,9 @@ Two much smaller experiments are also located at the LHC ring alongside the four
 researches which do not collide but rather brush past each other and continue their flow along the beam direction. Thus these facilities do not
 need to be based around the beam coincidence points. The names of the two experiments are \textit{LHCf} and \textit{TOTEM}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Compact Muon Solenoid}\label{sec:CMS}
 
 The analysis presented in this work was performed on the data recorded by the Compact Muon Solenoid (CMS) detector\cite{CMSatLHC} during the 2012
@@ -141,45 +147,50 @@ muon systems for a better lepton reconstruction. To measure the QCD processes wi
 good hadronic calorimetry has to provide absolute energy determination with fine resolution. To look for heavy resonances one needs a
 precise detection in the central region, perpendicular to the beam direction. Unlike for the low mass particles, where the tracking
 has to cover the forward regions. The parts of the detector located in the direction of beam flow are also important to measure the 
-total transverse missing energy. A particle identification precision and muon detection relies much on a magnet system which bands the charged 
-particles differently corresponding to their energy and charge. This also makes it important to choose the optimal magnet
-shape and power. To gain precise $b$- and $\tau$ identification, good inner silicon
-pixel and strip detectors have to be operated. Also taken into account the designed luminosities (see Sec.\ref{sec:LHC}) and bunch spacing of 25 ns at the LHC,
+total transverse missing energy. A particle identification precision relies much on a magnet system which bands the charged 
+particles differently corresponding to their momentum to mass relation and charge. Thus it is important to choose the optimal magnet
+shape and power. To gain precise $b$- and $\tau$ identification, silicon
+pixel of at least micron resolution and strip detectors have to be operated. 
+
+Taken into account the designed luminosities (see Sec.\ref{sec:LHC}) at the LHC,
 the detectors have to deal with multiple interactions per collision - pile up. Not to get distorted by a large amount of particles 
-flowing to one sensor unit, the detector must have a fine enough granularity and radiation hardness.
-And in the end the price and feasibility play a crucial role in the detector complex creation.
+flowing to one sensor unit, the detector must have a fine enough granularity. The designed and bunch spacing of 25 ns 
+requires a fast enough readout. Radiation hardness of the materials is very important concidering high luminosity and small
+bunch spacing. And in the end the price and feasibility play a crucial role in the detector complex creation.
 
 The CMS facility being a general purpose detector was designed to make it's parts fulfill as many physical goals as possible.
-The final onion-like construction of the machine is shown on the Fig. \ref{fig:CMSview}. The overall detector size reaches 28.7 m in length
+Final onion-like construction of the machine is shown on the Fig. \ref{fig:CMSview}. The overall detector size reaches 28.7 m in length
 and 15.0 m in width. The total weight of the facility is 14000 tones, which makes the CMS the heaviest particle detector on the
-LHC. The detector is cylindrically symmetric around the beam pipe and also symmetric to left and right sight along the beam direction
+LHC. Detector is cylindrically symmetric around the beam pipe and also symmetric to left and right sight along the beam direction
 relative to the collision point.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\textwidth]{02_experimental_setup/plots/cms_120918_03.png}
-  \caption{Sectional view of the CMS detector. The LHC beams collide in the center of the 
-  machine. The central axis of the detector corresponds to the beam direction. Position of different
-  components is highlighted.}
+  \caption{Sectional view of the CMS detector with highlighting different components. 
+  The LHC beams collide in the center of the machine. The central axis of the detector 
+  corresponds to the beam line.}
   \label{fig:CMSview}
 \end{figure}
 
 The common coordinate system is important for measurement consistency. For the CMS experiment the origin  
 is assumed to be located at the nominal collision point, the $x$-axis is pointing to the center of the 
-LHC ring and the $y$-axis is pointing vertically upwards. Thus the $z$-axis points along the beam axis towards the
-Jura mountains. As the detector is symmetric around the beam pipe, it may be convenient to use cylindrical or spherical
-coordinate systems. The azimuthal angle $\phi$ is measured from the $x$-axis in $(x-y)$ plane and the polar angle $\theta$ --
-from the $+z$-axis. The radial coordinate $r$ is a distance from the beam pipe. Often the variable \textit{pseudorapidity}
-$\eta$ is used instead of the polar angle:
+LHC ring and the $y$-axis is pointing vertically upwards. Thus the $z$-axis points along the beam axis to make
+the coordinate system right-handed. As the detector is symmetric around the beam pipe, it may be convenient to use cylindrical or spherical
+coordinate systems. The azimuthal angle $\phi$ is measured from the $x$-axis in $(x-y)$ plane in the range $(0..2\pi)$ 
+and the polar angle $\theta$ -- from the $+z$-axis in the range $(0..\pi)$. The radial coordinate $r$ is a distance from the beam pipe. 
+
+Often it is more convenient for the analysis or detector desctiption to use the variables which are in relation with bare coordinates
+The \textit{pseudorapidity} $\eta$ is often used instead of the polar angle:
 
 \begin{equation}\label{eq:eta}
   \eta = -\ln(\tan(\frac{\theta}{2})) = \frac{1}{2}\ln\frac{|\bar{p}| + p_{L}}{|\bar{p}| - p_{L}},
 \end{equation}
-where $\bar{p}$ is the particle momentum vector and $p_{L}$ is it's projection on the $z$-axis, or longitudinal component.
+where $\bar{p}$ is the particle momentum vector and $p_{L}$ is a longitudinal component.
 The other variable which can be used instead of $\eta$ for the massive particles is the \textit{rapidity} $y$:
 
 \begin{equation}\label{eq:y}
-  \eta = \frac{1}{2}\ln\frac{E + p_{L}}{E - p_{L}},
+  y = \frac{1}{2}\ln\frac{E + p_{L}}{E - p_{L}},
 \end{equation} 
 where $E$ is the energy of the particle.
 
@@ -187,7 +198,8 @@ The momentum and energy transverse to the beam direction, denoted as $p_{T}$ and
 They are defined in the $(x-y)$ plane. Another variable is responsible for the energy imbalance in transverse plane is a
 \textit{missing transverse energy} $E_{T}^{miss}$.
 
-\subsection{Solenoid magnet}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Solenoid magnet}\label{ssec:solenoid}
 
 The CMS detector features a 4T superconducting solenoid 13 m in length and 6 m in diameter shown on the Fig.\ref{fig:solenoid}. 
 The flux is returned through a 10000 tonnes yoke \cite{CMSatLHC}. Historically the main stress of the CMS detector was 
@@ -208,9 +220,101 @@ The strength of the magnetic field sets the limit of the size of tracking and ca
 calorimeter before they start to band back to the beam direction. The solenoid magnet geometry limits the tracking precision to
 the central pseudorapidity ranges, as the forward regions will have unbanded tracks which are not influenced by a magnetic field.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tracking Detector}
-% \subsection{Electromagnetic Calorimeter}
-% \subsection{Hadronic Calorimeter}
+
+The inner tracking detector\cite{TrackerTDR, CMSatLHC} (also called tracker) at CMS is the closest component to the beam line and to the collision point having a
+length 5.8m and a diameter of 2.5m. It is designed for a precise track and secondary vertex measurement. 
+A tracker is positioned inside the solenoid (see Section\ref{ssec:solenoid}) and has a best performance in the areas where the magnetic field
+is sizable. This corresponds the central pseudorapidity ranges $|\eta| < 2.5$ so the most emphasis of the tracker design covers the central
+areas. The requirements of high granularity, fast readout and radiation hardness lead to tracker design based entirely on silicon
+detectors technologies. The tracking detector consists of \textit{pixel} and \textit{strip} silicon modules
+and overall structure is displayed on the Fig.\ref{fig:tracker}.
+
+\begin{itemize}
+ \item Pixel detector is located in the closest vicinity to the proton-proton collision point. It is composed of three co-axial barrel layers (BPIX)
+ 4.4 cm, 7.3 cm and 10.2 cm far from the beamline and two forward discs (FPIX) on positive and negative z side
+ at $\pm$34.5 cm and $\pm$46.5 cm. All together the detector consists of 66 million pixels each of a size $100 \times 150 \mu$m$^2$. The hit
+ position resolution of 15-20 $\mu$m was reached\cite{TrackPerf}.
+ As shown on the Fig.\ref{fig:tracker} the pixel detector covers the rapidity range $|\eta| < 2.5$.
+ 
+ \item Silicon strip detector composed of ten layers follows right after the pixel detector and reached the distance of 130 cm far
+ from the beamlines. It consists of four inner barrel layers or Tracker Inner Barrel (TIB), two inner endcups each containing 3 discs
+ or Tracker Inner Disk (TID), six outer barrel layers or Tracker Outer Barrel (TOB) and two outer Tracker End Cups (TEC).
+ Each of the components has a specific design corresponding to it's position and geometry. Overall a silicon tracker consists of 9.3
+ million strips.
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{02_experimental_setup/plots/img_cms_tracker_view.png}
+  \caption{CMS tracking detector. The pixel part is marked with blue and the strip part is marked with red.}
+  \label{fig:tracker}
+\end{figure}
+
+With overall 200 m$^2$ of active silicon area CMS tracking detector became the largest silicon tracker ever built. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Electromagnetic Calorimeter}
+
+The Electromagnetic Calorimeter (ECAL)~\cite{ECALtdr, ECALtdradd, CMSatLHC} is a detector component which comes next after the tracker on the way of particles from
+the collision point. The facility is assigned to measure the full electron and photon energies in all the directions. 
+A very special lead tungsten (PbWO$_{4}$) scintillating crystal was made to build up the ECAL. The crystalline is heavier then stainless steel but transparent thanks 
+to the oxygen touch. Each crystal weights 1.5 kg having a size of a coffee cup.
+
+ECAL is a hermetic and homogeneous detector made up of a \textit{barrel} part (EB) covering the range of $|\eta| <$ 1.479 and two \textit{endcups} (EE) in the range $(1.479 < |\eta| < 3.0)$
+as shown on the Fig.\ref{fig:ecal}. For a high precision low momentum gamma quanta measurement a \textit{Preshower} is installed right before 
+the endcups.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_ECALRapidity.png}
+  \caption{CMS electomagnetic calorimeter sketch. Different components and their pseudorapidity ranges are shown.}
+  \label{fig:ecal}
+\end{figure}
+
+EB of the electromagnetic calorimeter consists of 61200 crystals of lead tungsten joined in modules with 5 crystals in each. It is
+cylindrically surrounding the beam pipe starting from the distance of $r = 1.29$m from it. 
+The material is dense thus reduces the particle's path allowing a smaller overall size of this detector component. 
+Each crystal has a length of 230 mm, corresponding to 25.8$X_{0}$\footnotemark. To avoid the particles traveling through 
+the cracks between the single submodules they are all tilted by 3$^{\circ}$ with respect to the direction to the nominal collision point.
+Lead tungsten scintillators emit 80$\%$ of the light fast enough to fit into the 25 ns bunch spacing
+designed for the LHC. A special avalanche photomultiplier designed to work under the high magnetic fields is glued on the back side 
+of each crystal to detect the scintillated light.
+\footnotetext{A radiation length of electron in PbWO$_{4}$ is $X_{0}=0.86$. It corresponds to the distance which an electron should
+pass in this specific material to reduce it's energy by a factor of $\frac{1}{e}$}
+
+A Preshower forms a 20 cm thick disc which contains two layers of lead to form the showering each followed by a layer of silicon strips to
+detect the particles from the shower. A much finer granularity of the silicon strips (2 mm wide each) compared to the 
+crystals in EB and EE allow a more accurate particle distinction. An additional cooling to -10$^{\circ}$C -- -15$^{\circ}$C 
+of the silicon detectors has to be provided but the nearby ECAL need to operate with a higher temperature. That is why the
+Preshower is cooled insight and warmed outside.
+
+EE consists of two endcups each being composed of 7324 lead tungsten crystals placed at $z = \pm 3.154$m. As for the EB the modules
+at EE are slightly tilted but each crystal is a bit shorter compared to the barrel layer (24.7$X_{0}$). Vacuum photodiodes were
+glued to the back side of the scintillating planes.
+
+The enegry resolution $\sigma(E)$ of the ECAL detector is given as\cite{CMSatLHC}:
+
+\begin{equation}\label{eq:resECAL}
+  (\frac{\sigma}{E})^{2} = (\frac{S}{\sqrt{E}})^{2} + (\frac{N}{E})^{2} + C^{2},
+\end{equation} 
+
+where $S$ is a stochastic term due to different measurement fluctuations, $N$ -- a noise term due to electronics and pile up noise
+and $C$ -- a constant term due to systematic imperfections. The ECAL energy resolution was primary determined on the test beam using 
+electrons in the energy range from 20 GeV to 240 GeV\cite{ECALres2007} and taking (\ref{eq:resECAL}) to account the result was the
+following:
+
+\begin{equation}\label{eq:resECAL}
+  (\frac{\sigma}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{13\%}{E})^{2} + (0.3\%)^{2}.
+\end{equation}
+
+After the measurement of the ECAL characteristics with the proton-proton collisions with the center-of-mass energy $\sqrt{s} = $7 TeV
+at the LHC in 2010 and 2011 it was found that for the 60 GeV electrons the energy resolution varies from 1.1$\%$ in barrel to 5$\%$ in 
+forward regions\cite{ECALres2013}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hadronic Calorimeter}
 % \subsection{Muon Detector}
 % \subsection{Trigger system}
 % 
