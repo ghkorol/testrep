@@ -201,44 +201,41 @@ They are defined in the $(x-y)$ plane. Another variable is responsible for the e
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solenoid magnet}\label{ssec:solenoid}
 
-The CMS detector features a 4T superconducting solenoid 13 m in length and 6 m in diameter shown on the Fig.\ref{fig:solenoid}. 
-The flux is returned through a 10000 tonnes yoke \cite{CMSatLHC}. Historically the main stress of the CMS detector was 
-addressed on the construction of a precise moun detection system, as at the time when the facility was designed, there 
-were no silicon pixel tracker technologies providing material with sufficient radiation hardness and readout speed. Thus, 
-the tracking could have had a bad performance. So a good muon identification would
-rescue some physics processes reconstruction. A strong magnetic field plays a very important role for identifying high energetic
-particles as muons, bending them enough on their pass to the muon system.
+A 4T superconducting CMS solenoid 13 m in length and 6 m in diameter is shown on the Fig.\ref{fig:solenoid}. 
+The flux is returned through a 10000 tonnes yoke \cite{CMSatLHC}. A very strong magnet would allow not only curving
+the high momentum muons for their better reconstruction, but also keeping soft particles with a small banding radius
+inside the inner detector layers. This reduces occupancy and pile-up inside the calorimeters leaving only higher
+momentum particles there. And a solenoid design allows compact sizes of a powerful magnet.
+But on the other hand this limits tracking precision at high pseudorapidities, as the forward regions will have 
+uncurved tracks which are not influenced by a magnetic field\cite{Dissertori:2010xe}.
+
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/CERN_CMS_Solenoid_schematic.png}
+  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/CERN_CMS_Solenoid_schematic.jpg}
   \caption{The schematic view on the CMS solenoid}
   \label{fig:solenoid}
 \end{figure}
-
-The strength of the magnetic field sets the limit of the size of tracking and calorimetry systems. Most of the tracks should reach the 
-calorimeter before they start to band back to the beam direction. The solenoid magnet geometry limits the tracking precision to
-the central pseudorapidity ranges, as the forward regions will have unbanded tracks which are not influenced by a magnetic field.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tracking Detector}
 
 The inner tracking detector\cite{TrackerTDR, CMSatLHC} (also called tracker) at CMS is the closest component to the beam line and to the collision point having a
 length 5.8m and a diameter of 2.5m. It is designed for a precise track and secondary vertex measurement. 
-A tracker is positioned inside the solenoid (see Section\ref{ssec:solenoid}) and has a best performance in the areas where the magnetic field
-is sizable. This corresponds the central pseudorapidity ranges $|\eta| < 2.5$ so the most emphasis of the tracker design covers the central
+The tracker is positioned inside the solenoid (see Section \ref{ssec:solenoid}) and has a best performance in the areas where the magnetic field
+is sizable. This corresponds the central pseudorapidity ranges $|\eta| < 2.5$ thus the most emphasis of the tracker design covers the central
 areas. The requirements of high granularity, fast readout and radiation hardness lead to tracker design based entirely on silicon
 detectors technologies. The tracking detector consists of \textit{pixel} and \textit{strip} silicon modules
 and overall structure is displayed on the Fig.\ref{fig:tracker}.
 
 \begin{itemize}
- \item Pixel detector is located in the closest vicinity to the proton-proton collision point. It is composed of three co-axial barrel layers (BPIX)
+ \item Pixel detector is located at the closest distance to the proton-proton collision point. It is composed of three co-axial barrel layers (BPIX)
  4.4 cm, 7.3 cm and 10.2 cm far from the beamline and two forward discs (FPIX) on positive and negative z side
  at $\pm$34.5 cm and $\pm$46.5 cm. All together the detector consists of 66 million pixels each of a size $100 \times 150 \mu$m$^2$. The hit
  position resolution of 15-20 $\mu$m was reached\cite{TrackPerf}.
  As shown on the Fig.\ref{fig:tracker} the pixel detector covers the rapidity range $|\eta| < 2.5$.
  
- \item Silicon strip detector composed of ten layers follows right after the pixel detector and reached the distance of 130 cm far
+ \item Silicon strip detector composed of ten layers follows right after the pixel detector and reaches the distance of 130 cm far
  from the beamlines. It consists of four inner barrel layers or Tracker Inner Barrel (TIB), two inner endcups each containing 3 discs
  or Tracker Inner Disk (TID), six outer barrel layers or Tracker Outer Barrel (TOB) and two outer Tracker End Cups (TEC).
  Each of the components has a specific design corresponding to it's position and geometry. Overall a silicon tracker consists of 9.3
@@ -262,7 +259,7 @@ the collision point. The facility is assigned to measure the full electron and p
 A very special lead tungsten (PbWO$_{4}$) scintillating crystal was made to build up the ECAL. The crystalline is heavier then stainless steel but transparent thanks 
 to the oxygen touch. Each crystal weights 1.5 kg having a size of a coffee cup.
 
-ECAL is a hermetic and homogeneous detector made up of a \textit{barrel} part (EB) covering the range of $|\eta| <$ 1.479 and two \textit{endcups} (EE) in the range $(1.479 < |\eta| < 3.0)$
+ECAL is a homogeneous detector made up of a \textit{barrel} part (EB) covering the range of $|\eta| <$ 1.479 and two \textit{endcups} (EE) in the range $(1.479 < |\eta| < 3.0)$
 as shown on the Fig.\ref{fig:ecal}. For a high precision low momentum gamma quanta measurement a \textit{Preshower} is installed right before 
 the endcups.
 
@@ -276,22 +273,22 @@ the endcups.
 EB of the electromagnetic calorimeter consists of 61200 crystals of lead tungsten joined in modules with 5 crystals in each. It is
 cylindrically surrounding the beam pipe starting from the distance of $r = 1.29$m from it. 
 The material is dense thus reduces the particle's path allowing a smaller overall size of this detector component. 
-Each crystal has a length of 230 mm, corresponding to 25.8$X_{0}$\footnotemark. To avoid the particles traveling through 
-the cracks between the single submodules they are all tilted by 3$^{\circ}$ with respect to the direction to the nominal collision point.
-Lead tungsten scintillators emit 80$\%$ of the light fast enough to fit into the 25 ns bunch spacing
-designed for the LHC. A special avalanche photomultiplier designed to work under the high magnetic fields is glued on the back side 
-of each crystal to detect the scintillated light.
-\footnotetext{A radiation length of electron in PbWO$_{4}$ is $X_{0}=0.86$. It corresponds to the distance which an electron should
-pass in this specific material to reduce it's energy by a factor of $\frac{1}{e}$}
+Each crystal has a length of 230 mm, corresponding to 25.8$X_{0}$\footnote{A radiation length of electron in PbWO$_{4}$ is 
+$X_{0}=0.86$ cm. It corresponds to the distance which an electron should pass in this specific material to reduce it's 
+energy by a factor of $\frac{1}{e}$ and to the $\frac{7}{9}$ of the mean free paths for a pair production by a photon.}. 
+To avoid the particles traveling through the cracks between the single submodules they are all tilted by 3$^{\circ}$ with 
+respect to the direction to the nominal collision point. Lead tungsten scintillation decay time\footnote{Scintillation Decay 
+time is the time required for scintillation emission to decrease to $e^{-1}$ of its maximum.} is in order of 25 ns thus it 
+emits 80$\%$ of the light signals fast enough to fit into the bunch spacing designed for the LHC. A special avalanche 
+photomultiplier designed to work under the high magnetic fields is glued on the back side of each crystal to detect the scintillated light\cite{APDVPT}.
 
 A Preshower forms a 20 cm thick disc which contains two layers of lead to form the showering each followed by a layer of silicon strips to
 detect the particles from the shower. A much finer granularity of the silicon strips (2 mm wide each) compared to the 
 crystals in EB and EE allow a more accurate particle distinction. An additional cooling to -10$^{\circ}$C -- -15$^{\circ}$C 
-of the silicon detectors has to be provided but the nearby ECAL need to operate with a higher temperature. That is why the
-Preshower is cooled insight and warmed outside.
+of the silicon detectors has to be provided.
 
 EE consists of two endcups each being composed of 7324 lead tungsten crystals placed at $z = \pm 3.154$m. As for the EB the modules
-at EE are slightly tilted but each crystal is a bit shorter compared to the barrel layer (24.7$X_{0}$). Vacuum photodiodes were
+at EE are slightly tilted but each crystal is a bit shorter compared to the barrel layer (24.7$X_{0}$). Vacuum phototriodes\cite{APDVPT} were
 glued to the back side of the scintillating planes.
 
 The enegry resolution $\sigma(E)$ of the ECAL detector is given as\cite{CMSatLHC}:
@@ -301,12 +298,13 @@ The enegry resolution $\sigma(E)$ of the ECAL detector is given as\cite{CMSatLHC
 \end{equation} 
 
 where $S$ is a stochastic term due to different measurement fluctuations, $N$ -- a noise term due to electronics and pile up noise
-and $C$ -- a constant term due to systematic imperfections. The ECAL energy resolution was primary determined on the test beam using 
+and $C$ -- a constant term due to systematic imperfections and from temperature instabilities. 
+The ECAL energy resolution was primary determined on the test beam using 
 electrons in the energy range from 20 GeV to 240 GeV\cite{ECALres2007} and taking (\ref{eq:resECAL}) to account the result was the
 following:
 
 \begin{equation}\label{eq:resECAL}
-  (\frac{\sigma}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{13\%}{E})^{2} + (0.3\%)^{2}.
+  (\frac{\sigma}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{12\%}{E})^{2} + (0.3\%)^{2}.
 \end{equation}
 
 After the measurement of the ECAL characteristics with the proton-proton collisions with the center-of-mass energy $\sqrt{s} = $7 TeV
@@ -314,9 +312,30 @@ at the LHC in 2010 and 2011 it was found that for the 60 GeV electrons the energ
 forward regions\cite{ECALres2013}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Hadronic Calorimeter}
-% \subsection{Muon Detector}
-% \subsection{Trigger system}
+\subsection{Hadron Calorimeter}
+
+% The Hadron Calorimeter (HCAL)\cite{CMSatLHC} at CMS follows the ECAL and aims to capture until the full stop all the particles which entered it, 
+% except for the muons. As it assumed that electrons are consumed in the ECAL, HCAL is designed to measure the full energy of hadrons. 
+% Due to the hermiticity, the detector should perceive all the hadron decay products. Thus any energy imbalance would point to the
+% existance of non-interacting neutral particles as neutrinos. To ensure that there are no particles escaping undetected, the layers
+% of HCAL are positioned in a staggered fashion.
 % 
-% \section{Upgrade for RunII}
-% \subsection{CMS Pixel Tracker Upgrade}
+% One of the main challenges of the hadronic calorimeter design was to fit it inside the compact solenoid (see sec.\ref{ssec:solenoid}).
+% The solution was to put one of the parts of the detector component outside the magnet coil. Thus HCAL consists of the barrel (HB), 
+% outer barrel (HO), endcup (HE) and forward (HF) parts. A schematic sketch of the hadron calotimeter is presented on the Fig.\ref{fig:hcal}.
+% 
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_HCAL.png}
+%   \caption{CMS hadron calorimeter sketch. Different components and their pseudorapidity ranges are shown.}
+%   \label{fig:hcal}
+% \end{figure}
+% 
+% The HB is a sampling calorimeter composed of brass plates (some of them made of Russian Navy brass shell casements in World War II) 
+% interleaved with scintillators.
+\subsection{Muon Detector}
+\subsection{Trigger system}
+\subsection{Data quality monitoring}
+
+\section{Upgrade for RunII}
+\subsection{CMS Pixel Tracker Upgrade}
