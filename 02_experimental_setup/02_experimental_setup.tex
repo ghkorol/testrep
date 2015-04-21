@@ -372,7 +372,7 @@ the range $|\eta| < $1.6. A schematic view of the muon detecting system with its
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_MuonDetector.png}
-  \caption{CMS hadron calorimeter sketch. Different components and their pseudorapidity ranges are shown.}
+  \caption{CMS muon detection system sketch. Different components and their position is shown.}
   \label{fig:muond}
 \end{figure}
 
@@ -381,9 +381,18 @@ Each tube contains a stretched positively charged wire inside to collect the cha
 divided into four stations (together with RPCs) each. The stations are aligned parallel to the beam line and measure coordinates in $(r,\phi)$
 plane. Three inner stations additionally provide the measurements in $z$ direction with four additional radial aligned DTs.
 
-CSCs disks are used in the endcup region
+CSCs disks are used in the endcup regions. They are composed of six of anode wire planes interleaved with copper cathode strip planes within 
+a gas volume. Wires and planes have perpendicular direction, thus providing two coordinates of the tracks. CSCs plains are also organized 
+to stations together with PRCs.
 
-% \subsection{Trigger system}
+The RPCs provide precise timing measurements and can tag from which bunch crossing the particle comes. This is used to trigger (see sec.\ref{sec:trig})
+the events.
+
+Muon momentum measurements from combination of muon system and the tracker reach relative resolution of 1$\%$ -- 3$\%$ for the muon $p_{T}$ from
+20 GeV to 100 GeV.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Trigger system}\label{sec:trig}
 % \subsection{Data quality monitoring}
 % 
 % \section{Upgrade for RunII}
