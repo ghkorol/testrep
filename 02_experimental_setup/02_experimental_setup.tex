@@ -392,7 +392,7 @@ Muon momentum measurements from combination of muon system and the tracker reach
 20 GeV to 100 GeV.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Triggers and Data Acquisition system}\label{sec:trig}
+\subsection{Triggers}\label{sec:trig}
 
 LHC should provide proton-proton collisions every 25 ns, which means that particles from one bunch crossing still travel in the detector at 
 the time when the next collision takes place. There is no way to store a huge amount of information from every collision, but even if it were,
@@ -402,6 +402,20 @@ to produce heavy resonances or Higgs bosons.
 Thus there is a need to filter the collisions and take only those which have interesting outcome products. This task is taken over by a trigger
 system\cite{CMSatLHC}. Unlike the three-level trigger system commonly used by other collider experiments, CMS has decided to keep first and high
 level trigger omitting the second one.
+
+The \textit{Level-1 trigger} (L1) of custom designed programmable electronics, FPGA, ASICs and programmable look-up tables (LUTs). L1 is designed
+to reduce the nominal LHC collision rate of 40 MHz to 100 kHz. The data from different detector parts is stored in synch in the pipeline with a 
+time stamp corresponding to the bunch crossing it appeared from. The information from calorimeters and muon systems is taken to run very primitive
+and fast algorithms of particles and jets reconstruction. The information is subsequently collected, compared and is accepted if the trigger
+requirements fulfilled. More detailed L1 trigger architecture is shown on Figure. \ref{fig:trigA}. The time of L1 decision is 3.2 $\mu$s. 
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/img_l1.png}
+  \caption{CMS Level 1 trigger architecture. The plot taken from \cite{CMSatLHC}.}
+  \label{fig:trigA}
+\end{figure}
+
 % \subsection{Data quality monitoring}
 % 
 % \section{Upgrade for RunII}
