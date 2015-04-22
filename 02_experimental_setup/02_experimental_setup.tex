@@ -416,6 +416,17 @@ requirements fulfilled. More detailed L1 trigger architecture is shown on Figure
   \label{fig:trigA}
 \end{figure}
 
+The \textit{High Level Trigger} (HLT) is a software system represented as a filter farm with about a thousand commercial processors. The information
+from L1 trigger is passed to the computers where it is processed in parallel. The amount of information and a readout speed set the requirements
+on the transfer network. Complex modern network switches solved these problems. HLT performs a mini-reconstruction of the objects detected,
+typically it takes events with leptons, muons and jets with minimum $p_{T}$ and $\eta$ requirement, but also some restrictions on global
+event characteristics, like the missing transverse energy $E^{miss_{T}}$ can be set. An event is written in case of at least one HLT accept.
+If a trigger has a rather low threshold for some physical interest thus accepting too many events, it is being prescaled. This means that not 
+all of the events that a trigger accepts are written, but only some fraction of them.
+
+The total event rate reduction after L1 and HLT triggers perform is designed to be of a factor $10^{6}$.
+
+
 % \subsection{Data quality monitoring}
 % 
 % \section{Upgrade for RunII}
