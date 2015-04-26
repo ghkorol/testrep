@@ -1,4 +1,4 @@
-\chapter{Reconstruction of Top Kinematics}
+\chapter{Reconstruction of the Top Kinematics}
 
 As presented in previous chapter, the $t\bar{t}$ dileptonic final state does not have a complete reconstruction 
 of the final state. Two neutrinos are not detected and only their transverse energy can be measured. Thus additional
@@ -72,7 +72,7 @@ in 80$\%$ of the cases two solutions and in 20$\%$ of the cases -- four solution
 Under the real conditions a sizable amount of the events will find no solutions of the kinematic equations (\ref{alg:LS1}--\ref{alg:LS6})
 because of an imperfect reconstruction of the detector objects. But in the other cases there is a possibility to find up to four solutions.
 
-\section{Solution Search}
+\section{Solution Search}\label{sec:SolSer}
 
 There are several problems arising during the $t\bar{t}$ kinematics reconstruction. A trace to some of them was already given in the previous
 section. Following challenges have to be dealt:
@@ -88,8 +88,10 @@ section. Following challenges have to be dealt:
  \item \textit{Multiple combinations of leptons and jets}. An event with a $t\bar{t}$ decaying to a dilepton final state has minimum two leptons and two
  jets. But there is no sign if a jet comes from $t$ or a $\bar{t}$. For this reason each jet is being paired to one of the leptons, and then to another
  to form a $t$ or $\bar{t}$ candidate. Thus an event with two leptons and two jets has two possible $t\bar{t}$ candidates. In case of multiple jets
- in the event, the number of $t\bar{t}$ will be $N!$, where $N$ is a jet multiplicity.
+ in the event, the number of $t\bar{t}$ will be $N_{jet}!$, where $N_{jet}$ is a jet multiplicity.
 \end{itemize}
+
+The last two challenges have different nature but boths cause the same issue of multiple possible $t\bar{t}$ candidates, thus they can be treated together.
 
 \subsection{Measurement fluctuations}
 
@@ -97,11 +99,13 @@ The challenge of rescuing the events which are lost due to the measurement fluct
 momentum directions. That would increase a chance of pushing the kinematics back to physical region. This idea was implemented by reconstructing
 each event 100 times, each time shifting relevant observables randomly according to their resolution determined from the Monte Carlo.
 
-The lepton and jet energies and momenta were smeared. The energy variation was performed through multiplication of an actual reconstructed energy value
-by a correction factor $f(E) = \frac{E_{reaco}}{E_{true}}$. Here the $E_{reco}$ is the lepton or jet energy taken from the MC on the reconstructed level
-and the $E_{true}$ is the true energy of the same object on the particle level. The distributions for the $f(E)$ which are used for random correction
-factor choice are shown on the Figure \ref{fig:fE}. The shape of these distributions is energy independent (see Appendix !!!), thus they are obtained in
-the complete kinematic region.
+The lepton and jet energies and directions were smeared. All the variations are done simultaneously for every lepton and jet.
+The energy variation was performed through multiplication of an actual reconstructed energy value
+by a correction factor $f(E) = \frac{E_{reco}}{E_{true}}$. Here the $E_{reco}$ is the lepton or jet energy taken from the MC signal the reconstruction
+and the $E_{true}$ is the true energy of the same object on the particle level. The distributions for the $f(E)$ which are used for the random choice
+of the correction factors are shown on the Figure \ref{fig:fE}. The shape of these distributions is energy independent (see Appendix !!!), thus they are obtained in
+the complete kinematic region. The correction factors which enter the distributions \ref{fig:fE} are determined from the signal MC simulation jets and 
+leptons matched to the particle level $b$-quarks and leptons arising from the top decay. 
 
 \begin{figure}[t]
 \centering
@@ -119,8 +123,9 @@ the leptons -- on the right.}
 \label{fig:fE}
 \end{figure}
 
-Additionally to the energy variation a random gaussian smearing in a random diraction around the nominal direction is applied. The resolutions for
-the gaussians are taken from the MC distributions presented on the Figure \ref{fig:dAngle}. These distributions are also independent 
+Additionally to the energy variation a random gaussian smearing in a random direction around the nominal direction is applied. The resolutions for
+the gaussians are taken from the MC distributions presented on the Figure \ref{fig:dAngle}. These distributions are also independent of leptons and
+jets kinematics (see Appendix !!!) and thus the resolution applied for smearing is averaged over the whole kinematic range.
 
 \begin{figure}[t]
 \centering
@@ -133,11 +138,55 @@ the gaussians are taken from the MC distributions presented on the Figure \ref{f
   \includegraphics[width=0.48\textwidth]{05_kinReco/plots/dan_lep.png}
 \end{subfigure}
 \caption{Distributions of the angle between the particle level direction and the detector level direction.
-The angle distribution for jets is shown on the left and for the leptons -- on the right.}
+The angle distribution for the b quarks is shown on the left and for the leptons -- on the right.}
 \label{fig:dAngle}
 \end{figure}
-% 
-% \section{Performance}
+
+In each of the 100 jet and lepton kinematics variations the transverse missing energy $E_{T}^{miss}$ has to be recalculated. This is done
+assuming the transverse energy component, which does not refer to the leptons and jets forming a $t\bar{t}$ candidate, to be constant. Thus,
+missing transverse energy for the $i^{th}$ smearing will be expressed as following:
+
+\begin{equation}
+ E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reconstruction}_{T_{x,y}} + p^{jet \; not\,smeared}_{x,y} + p^{lepton\;not\,smeared}_{x,y} - (p^{jet\;i}_{x,y} + p^{lepton\;i}_{x,y})
+\end{equation}
+
+\subsection{Single solution choice}
+
+The equation \ref{eq:eqLSf} is solved for every of the 100 event reconstructions. Each equation may have up to four solutions, thus each event
+has up to ($100 \otimes 4 \otimes N_{jet}!$) reconstructed $t\bar{t}$ candidates ($N_{jet}!$ component has already been discussed is sec. \ref{SolSer}). 
+To obtain one $t\bar{t}$ pair out of this candidate variety, following steps are undertaken:
+
+\begin{itemize}
+ \item [--] For each of the four solutions of the equation \ref{eq:eqLSf} the invariant of the $t\bar{t}$ pair, $m(t\bar{t})$, is calculated. Only
+ the solution which has the smallest $m(t\bar{t})$ is taken. This criterion was prior introduced in \cite{PhysRevD.73.112006}, where it was shown to
+ deliver for the correct lepton-jet assignment in most cases the correct solution.
+ %
+ \item [--] To the rest of up to ($100 \otimes N_{jet}!$) candidates a weight $\omega = \omega_{m^{\bar{l}b}} \dot \omega_{m^{l\bar{b}}}$
+ is calculated. Here $m^{\bar{l}b}$ and $m^{l\bar{b}}$ are the reconstructed invariant masses of the lepton-jet pairs from the top and the anti-top 
+ decays, respectively. These weights are calculated from the spectrum of the lepton-jet pairs in top decays obtained from a signal MC on the 
+ particle level after all kinematic cuts described in chapter \ref{chapt:event_selection}. A $t$ ($\bar{t}$) momentum is constructed as a wighted 
+ average of all smeared solutions as following:
+ \begin{equation}
+  \langle{\vec{p}(t,\bar{t})}\rangle = \frac{\sum\limits_{i=1}^{100} \omega_{i} \vec{p(t,\bar{t})}_i}{\sum\limits_{i=1}^{100} \omega_i}.
+ \end{equation}
+ Here $\omega_i$ is a weight and $\vec{p(t, \bar{t})}_{i}$ is a $t$ or $\bar{t}$ momentum three vector for the $i^{th}$ variation in the event. 
+ In case no solution of kinematic equations is found, both, weight and momentum three vector are set to zero. To complete the system kinematics,
+ the $t$ and $\bar{t}$ energies are calculated taking $\langle{\vec{p}(t,\bar{t})}\rangle$ and assuming the top mass $m(t) = m(\bar{t}) = $ 172.5 GeV.
+\end{itemize}
+
+\section{Performance}
+
+Only the events in which the solution of kinematic equations is found are accepted for this analysis. Thus it is important to study the efficiency
+of the kinematic reconstruction method proposed. Figure \ref{} shows the efficiency depending on jet multiplicity in the event.
+
+The kinematic reconstruction method proposed shows desirable results over the complete kinematic range of the top system. As shown on the Figure \ref{} 
+$t\bar{t}$ pairs are reconstructed up to the higher edges of pseudorapidity and transverse momentum. In general, a good agreement between data and
+simulation results is observed. Signal is dominating backgrounds in all the bins of kinematic observables.
+
+The scatter plots on Figure \ref{} show the correlation between the kinematic variables after the selection and kinematic reconstruction in the simulated
+signal and the actual characteristics of the $t\bar{t}$ system and decay on the particle level. There are no shifts and trends observed, thus showing 
+the trustful behavior of the kinematic reconstruction algorithm.
+
 % \subsection{Efficiency Studies}
 % \subsection{Control Distributions}
 % \subsection{Quality Studies}
