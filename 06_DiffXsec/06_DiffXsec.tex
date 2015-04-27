@@ -1,12 +1,69 @@
 \chapter{Cross Section Measurement}
 
-\section{Selection of Binning}
+The cross section measurement procedure and results are explained in this section.
+After applying selection criteria and kinematic reconstruction, one can count the events to determine
+the rate of $t\bar{t}$ production process.
 
-\section{Unfolding of the Experimental results}
+The cross sections were measured double differentially in bins of the kinematic variables of the event.
+A binning choice is explained in the first section.
+The two dimensional unfolding was applied to correct for the detector effect and fluctuations, which is described
+in the second section of this chapter.
+The double differential cross sections and their definitions are shown in the last section of the chapter.
+% \section{Selection of Binning}\label{sec:binning}
 
-\section{Cross Section Definition}
-\subsection{Total Production Cross Section}
-\subsection{Double Differential Production Cross Section}
+\section{Unfolding of the Experimental Results}\label{sec:unfold}
+
+This study is performed as counting of events which fulfill certain criteria (e.g. given in chapter \ref{chapt:event_selection} and 
+chapter \ref{chapt:kinReco}) and grouping them into bins (as described in sec. \ref{sec:binning}). However, a finite precision
+of experimental apparatus and reconstruction algorithms may lead to incorrect measurement of kinematic properties of the event.
+Thus, some fraction of events may be reconstructed in the wrong bin. To present the results independent of the detector effects,
+one needs to correct them back.
+
+The whole problem can be described as
+
+\begin{equation}\label{eq:UnfoldProb}
+ \tilde{y}_i = \sum_{j = 1}^{m} A_{ij}\tilde{x}_{j} + b_{i}, \;\;\; 1 \leq i \leq n.
+\end{equation}
+
+Here the $\tilde{x}_j$ in $m$ bins is a true distribution, independent of the detector effects, which is the aim of the measurement;
+$\tilde{y}_i$ in $n$ bins is a distribution which one gets out of the detector and $A_{ij}$ is a matrix of probabilities describing 
+the migration probabilities to different bins on the detector level; $b_{i}$ is the background, or the contribution of other physical
+processes, in the bin $i$. However, the pure $\tilde{y}_{i}$ distribution is also not available for the final measurements, because it is
+spoiled by the statistical fluctuations, forming the distribution $y_{i}$. The schematic view of the problem is given on the Figure \ref{fig:scUnf}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/d12-129f1.png}
+  \caption{Schematic view of the problem of migration effects due to the finite precision of the detector and statistical 
+  fluctuations. Plot taken from \cite{Schmitt:2012kp}.}
+  \label{fig:scUnf}
+\end{figure}
+
+The most simple solution would be to take $y_{i}$ instead of $\tilde{y}_{i}$ in eq. \ref{eq:UnfoldProb} and invert
+the $A_{ij}$ matrix to obtain $x_{j}$. But it turns out that the statistical fluctuations of $y_{i}$ are greatly 
+amplified this way. To minify these fluctuations the \textit{regularisation} procedure is applied.
+
+The process of restoring the true distribution $\tilde{x}_{j}$ from the known distribution $y_{i}$ which was influenced
+by the detector effects and statistical fluctuations is called \textit{unfolding}. The TUnfold \cite{Schmitt:2012k} algorithm was used for the
+unfolding in this work.
+
+\subsection{Mathematical Background}
+
+The TUnfold algorithm is using the least square minimization method and the Tikhonov regularization \cite{Tikhonov:1963}. One of the crucial 
+constrains for a better performance of the method is that the number of degrees of freedom for the minimization ($n - m$) has to be positive,
+or $n > m$. This means that the true unfolded distribution $\tilde{x}_j$ will have coarser binning than the measured one, $y_{i}$.
+
+The unfolding algorithm of the TUnfold determines the stationary point of the Lagrangian:
+
+\begin{align}
+ \mathcal{L}(x, \lambda) = \mathcal{L}_{1} + \mathcal{L}_{2} + \mathcal{L}_{3}, \;\;\;\;\; \textrm{where}\\
+ \mathcal{L}_{1} = (\mathbf{y} - \mathbf{A}\mathbf{x})^{T} \mathbf{V_{yy}}^{-1}(\mathbf{y} - \mathbf{A}\mathbf{x})
+\end{align}
+
+
+% \section{Cross Section Definition}
+% \subsection{Total Production Cross Section}
+% \subsection{Double Differential Production Cross Section}
 
 % \chapter{Tracking Inefficiency due to Hadronic Interactions}\label{sect:hadr_interactions}
 % \chaptermark{Tracking Inefficiency}
