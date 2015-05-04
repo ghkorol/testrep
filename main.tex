@@ -20,6 +20,14 @@
 \cfoot{\thepage}
 \pagestyle{fancy} 
 
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
 % page settings
 \textwidth=16cm
 \textheight = 22cm
@@ -76,13 +84,13 @@
 
 % main text
 
-\input{00_introduction/00_introduction.tex}
-
-\input{01_Theory_SM/01_Theory_SM.tex}
+% \input{00_introduction/00_introduction.tex}
+% 
+% \input{01_Theory_SM/01_Theory_SM.tex}
 
 \input{02_experimental_setup/02_experimental_setup.tex}
 
-\input{03_simulation/03_simulation.tex}
+% \input{03_simulation/03_simulation.tex}
 
 \input{04_event_reconstruction/04_event_reconstruction.tex}
 
@@ -90,11 +98,11 @@
 
 \input{06_DiffXsec/06_DiffXsec.tex}
 
-\input{07_systematic_uncertainties/07_systematic_uncertainties.tex}
-
-\input{08_results/08_results.tex}
-
-\input{09_conclusions/09_conclusions.tex}
+% \input{07_systematic_uncertainties/07_systematic_uncertainties.tex}
+% 
+% \input{08_results/08_results.tex}
+% 
+% \input{09_conclusions/09_conclusions.tex}
 % 
 % % appendices
 % \appendix
