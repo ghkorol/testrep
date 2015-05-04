@@ -85,8 +85,8 @@ A simplistic description of the reconstruction with the PF algorithm can be give
 \begin{figure}[t]
   \centering
   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/CMS_Slice.png}
-  \caption{Muon track reconstructed using different sub-detector information in combination in Particle Flow algorithm. An actual
-  muon track is shown with a curved blue line.}
+  \caption{Track reconstruction using different sub-detector information in combination in Particle Flow algorithm. An actual
+  muon track is shown with a curved blue line, an electron track is red and a charged hadron is solid green.}
   \label{fig:PFmuons}
 \end{figure}
 
@@ -103,7 +103,7 @@ A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001
 The presence of two leptons, electrons or muons, is required for this analysis. Their reconstruction
 differs a lot due to a huge mass distinction. Thus, the reconstruction of leptons and muons is discussed separately.
 
-\subsection{Muons}
+\subsection{Muons reconstruction}
 
 As it was discussed in section \ref{sec:CMS}, the CMS experiment has a well established setup for the muon reconstruction.
 Muons are the only particles expected to appear in the muon sub-detector system, thus their identification is unambiguous.
@@ -115,13 +115,65 @@ Three techniques of muon reconstruction were implemented:
  analysis is recorded.
  
  \item [--] \textit{Tracker}: the tracks, reconstructed in the tracking detector only, are assigned as muons in case they 
- match at least one hit in the muon sub-detector.
+ match at least one hit in the muon sub-detector. 
  
- \item [--] \textit{Global}: making use of the PF algorithm (sec. \ref{sec:PF}), the global muons are reconstructed using 
+ \item [--] \textit{Global}: the muons are reconstructed using 
  the combined fit of tracks from the muon system and from the inner tracker.
 \end{itemize}
 
-% \subsection{Electrons}
+Only the global or tracker muons were used for this analysis. It is more efficient to use the tracker algorithm to reconstruct
+low-momentum muons, but it suffers a lot from the presence of a large number of other particles. The global muons with small momenta
+are dominantly using the tracking detector information for the reconstruction, while starting from $p_{T} \sim \textrm{200 GeV}$
+the muon system data plays a significant role.
+
+\subsection{Electrons reconstruction}
+
+To reconstruct the electrons a combined information from the tracking detector and ECAL was used \cite{CMS-PAS-EGM-10-004}. The energy
+deposits in the ECAL are grouped into superclusters\footnote{A \textit{supercluster} is  a group of one or more associated clusters 
+of energy deposits in the ECAL. It is constructed taking into account its characteristic narrow width in the pseudorapidity $\eta$
+and its characteristic spread in $\phi$ due to the bending in the magnetic field of electrons radiating in the tracker material.} 
+with transverse energy $E_{T} > \textrm{4 GeV}$ and fitted to the tracks in the tracking detector \cite{GSF_Electron_Reconstruction_CMS}.
+
+For a better quality of the tracks a restriction on the impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
+distance of the track to the primary vertex in the transverse $x-y$ plane.} $|d_{xy}| < 0.4 mm$ is applied. A maximum one hit in the inner tracker
+which is positioned close to the track, but not reconstructed, is allowed for the electron candidate.
+
+On top of the mentioned conditions, a multivariate analysis (MVA) is performed to reduce the number of misidentified electrons.
+
+\subsection{Lepton selection and isolation}
+
+Only the events which contain at least two leptons (electrons or muons) with a minimum transverse momentum $p_{T}$ of 20 GeV reconstructed
+in central detector part $|\eta| \leq 2.4$ are accepted for the further analysis.
+
+To distinguish leptons from hard processes (like a $W^{\pm}$ decay), or \textit{prompt leptons}, from the misidentified charged hadrons 
+and leptons from the jets, an \textit{isolation} criterion is required. The former usually don't overlap with jets, while the latter should
+fly in the same direction and be located in a close vicinity of a jet. This distinction is a basis for the isolation. An energy in a cone 
+around a lepton (not counting the lepton energy itself) is calculated. That is the definition of a combined isolation:
+
+\begin{equation}
+ I_{comb} = I_{tracker} + I_{ECAL} + I_{HCAL} = \sum E_{photons} + \sum E_{hadrons}
+\end{equation}
+
+The combined isolation $I_{comb}$ divided by the lepton transverse momentum $p_{T}(l)$ is the relative isolation used as a discriminant value:
+
+\begin{equation}
+ I_{rel} = \frac{I_{comb}}{p_{T}(l)}
+\end{equation}
+
+Leptons with the $I_{rel} \leq 0.15$ in the cone $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}} = 0.3$ are selected.
+
+\subsection{Lepton pair selection}
+
+The $t\bar{t}$ decay final state has two oppositely charged leptons, while the selected events may contain three or more leptons.
+Out of all the leptons in the event, only the pair of opposite sign tracks with the maximum total transverse momentum $p_{T}(l\bar{l})$
+is selected. After this step the event is tagged with the $t\bar{t}$ decay channel -- $ee$, $e\mu$ or $\mu\mu$.
+
+To minimize the fraction of the Drell-Yan low-mass resonances only the lepton pairs with the masses higher then 20 GeV are accepted. 
+
+The same flavour final states ($ee$ and $\mu\mu$) are highly contaminated by the $Z/\gamma * \to ee/\mu\mu$ processes. To lower this effect
+the restriction on the mass window of the lepton pair system $\textrm{76 GeV} \leq m(l\bar{l}) \leq \textrm{106 GeV}$ is applied which removes  
+the mass peak of the $Z-$boson resonance at $\textrm{91 GeV}$. This condition is only required for the $ee$- and $\mu\mu$-tagged events.
+
 % \subsection{Lepton Isolation}
 %
 % \section{Jets}
