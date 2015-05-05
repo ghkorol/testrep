@@ -16,6 +16,7 @@ procedures are based on the CMS Top-Quark-Physics-Analysis group recommendations
 The full chain of event selection are described and the details of each component reconstruction are given. 
 Resulting event yields are represented in the control distributions, showing the data, simulated signal and backgrounds.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Event cleaning and Pile-Up treatment}
 
 In a very harsh and busy environment which the LHC collisions provide for the CMS detector, it is necessary to make an event 
@@ -39,6 +40,8 @@ largest sum of transverse momenta squared ($p_{T}^{2}$) of the associated tracks
 
 The events with \textit{anomalous noise} from calorimeters are removed by the third filter.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trigger selection}
 
 All the data flow in the CMS detector is reduced by triggers based on the physical requirements (see sec. \ref{sec:trig}).
@@ -56,6 +59,8 @@ As all of the data recorded is accepted by some HLT trigger, the determination o
 respect to another independent trigger. To calculate the dileptonic trigger efficiencies the triggers based on $E_{T}^{miss}$ selection
 were taken as a reference.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Particle Flow Concept}\label{sec:PF}
 
 All the objects in $t\bar{t}$ dileptonic final state were reconstructed making use of \textit{Particle Flow} (PF)
@@ -98,6 +103,8 @@ resolution gain reaches factor 3 for a low transverse momentum region. Furthermo
 A more detailed description of each object reconstruction relevant for this analysis is given in the following sections of this chapter.
 A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lepton reconstruction and selection}
 
 The presence of two leptons, electrons or muons, is required for this analysis. Their reconstruction
@@ -174,10 +181,79 @@ The same flavour final states ($ee$ and $\mu\mu$) are highly contaminated by the
 the restriction on the mass window of the lepton pair system $\textrm{76 GeV} \leq m(l\bar{l}) \leq \textrm{106 GeV}$ is applied which removes  
 the mass peak of the $Z-$boson resonance at $\textrm{91 GeV}$. This condition is only required for the $ee$- and $\mu\mu$-tagged events.
 
-% \subsection{Lepton Isolation}
-%
-% \section{Jets}
-% \subsection{Jet Finder Algorithm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Jet reconstruction and selection}
+
+Each $t$ quark from the $t\bar{t}$ decays to a $b$. A quark as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
+A $b$ quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. The LHC proton-proton collisions
+are providing an environment with a fertile hadron activity which makes a jet reconstruction not a straight forward task. Special algorithms are developed
+to find and reconstruct jets.
+
+\subsection{Jet Finder Algorithms}
+
+The simple idea which lies behind any algorithm of a jet finding and reconstruction is the merging of the objects which are measured near by in the detector.
+Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
+
+\begin{itemize}
+ \item \textit{Sequential clustering}: the particles are sequentially recombined until the closest (regarding the actual distance between measured
+ objects) combination is found.
+ %
+ \item \textit{Cone algorithms}: a jet is defined as a cone around some direction of dominant energy flow. Each or some of the particles are tried 
+ in a role of the dominant direction seed. The next step was to define a trial cone around the seed and accept all the particles which enter this cone.
+ The sum of the four-momenta of all objects inside the jet candidate area is calculated and assumed to be a new seed. This iterative process continues
+ until the stable seed is found.
+\end{itemize}
+
+Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default. This means that the jets constructed this way will
+change if one of the jet components will face a collinear splitting and do not account for additional soft radiation.
+
+The sequential clustering algorithms are both infrared and collinear safe, though may be not that fast. They don't rely on a stable cone. The procedure of constructing
+a jet starts with defining two distances -- $d_{ij}$ (the distance between two objects, particles or pseudojets, $i$ and $j$ in the detector) and $d_{iB}$ (the distance between the object $i$
+and the beam). These two distances are compared:
+
+\begin{itemize}
+ \item [--] $d_{ij} < d_{iB}$: the objects $i$ and $j$ are combined together to a pseudojet which enters the clustering again as a single object;
+ \item [--] $d_{ij} > d_{iB}$: the object $i$ is taken as a final jet.
+\end{itemize}
+
+The different sequential clustering algorithms differ at the level of the distance definition. In general the distances are defined as follows \cite{Cacciari:2008gp}:
+
+\begin{align}
+ d_{ij} & = min(k_{Ti}^{2p}, k_{Tj}^{2p}) \frac{\Delta_{ij}^{2}}{R^{2}},\label{eq:ktDist} \\
+ d_{iB} & = k_{Ti}^{2p}, \\
+ \Delta_{ij}^{2} & = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}.
+\end{align}
+
+Here the $k_{Ti}$, $y_{i}$ and $\phi_i$ are the transverse momentum, rapidity and azimuth angle of an object $i$. The $R$ is a cone radius which tells 
+how large the jet can be. A $p$ is the parameter which varies the power of the energy in comparison to the geometrical scale $\Delta_{ij}$.
+The algorithm behaves differently depending on a $p$ value:
+
+\begin{itemize}
+ \item $p = 1$ defines the $k_{T}$ algorithm, where the energetic and spatial term are of the same power;
+ \item $p = 0$ defines the Cambridge/Aachen algorithm, where the energetic term in eq.\ref{eq:ktDist} is removed thus the spatial part only plays role;
+ \item $p = -1$ defines the anti-$k_{T}$ algorithm which produces circular shaped infrared and collinear safe jets.
+\end{itemize}
+
+The jets for this analyses were constructed making use of the anti-$k_{T}$ sequential clustering algorithm. The procedure was carried out with real and
+simulated data (on the generator level and after the detector simulation).
+
+Jets are reconstructed with a particle flow concept (see sec. \ref{sec:PF}) using the information from all the sub-detector parts.
+
+\subsection{Jet Energy Calibration}
+
+The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this sake a factorized jet calibration
+method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed on the Figure \ref{fig:JECsc}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/JEC.pdf}
+  \caption{Jet calibration steps applied for the detector data and simulated MC samples.}
+  \label{fig:JECsc}
+\end{figure}
+
+First calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
+Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step.
 % \subsection{Jet selection}
 % \subsection{b-Jets identification}
 % 
