@@ -15,7 +15,7 @@ The following constrains are being used:
  \item \textit{t and $\bar{t}$ masses} ($m_{t}$ and $m_ {\bar{t}}$) are assumed to be equal and constrained to the same value of 172.5 GeV\cite{PDG-2012};
  \item The whole missing transverse energy $E_{T}^{miss}$ of the event is assumed to arise entirely
  from the two neutrinos from the $t\bar{t}$ decay;
- \item \textit{The $W^{\pm}$ masses} ($m(W\pm)$) are assumed to be known and constrained to the value which is randomly taken
+ \item \textit{The $W^{\pm}$ masses} ($m_{W\pm}$) are assumed to be known and constrained to the value which is randomly taken
  from the generator $W^{\pm}$ mass spectrum.
 \end{itemize}
 
@@ -50,23 +50,22 @@ $E_{l^{\pm}}$, $p_{l^{\pm}_{x,y,z}}$, $E_{b/\bar{b}}$, $p_{b/\bar{b}_{x,y,z}}$ a
 and $p_{\nu/\bar{\nu}_{x,y,z}}$ are the unknowns.
 
 The analytical solution of the system of equations (\ref{alg:LS1}--\ref{alg:LS6}) was proposed in \cite{LSpaper}. After a number of transformations
-the system is reduced to the fourth order polynomial equation of a neutrino momentum component:
+the system is reduced to the fourth order polynomial equation of a neutrino momentum component $p_{\nu_{x}}$:
 
 \begin{equation}\label{eq:eqLSf}
  0 = h_{0} p_{\nu_{x}}^{4} + h_{1} p_{\nu_{x}}^{3} + h_{2} p_{\nu_{x}}^{2} + h_{3} p_{\nu_{x}} + h_{4},
 \end{equation}
 
-where the coefficients $h_{0} - h_{4}$ \cite{LSpaper, LSerrat} depend on the missing transverse energy $E_{T}^{miss}$ and four-momenta of the reconstructed 
+where the coefficients $h_{0} - h_{4}$ \cite{LSpaper, LSerrat} depend on the missing transverse energy $E_{T}^{miss}$ and four-momenta of the
 leptons and jets. 
 
-The equation \ref{eq:eqLSf} is a fourth order polynomial. In the ideal case after solving it as described in \cite{LSpaper} one gets
-in 80$\%$ of the cases two solutions and in 20$\%$ of the cases -- four solutions, as shown on the figure \ref{fig:LSNsol}.
+The equation \ref{eq:eqLSf} ends up with up to four solutions. The frequency of the cases with multiple solutions is shown on the Figure \ref{fig:LSNsol}.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.6\textwidth]{05_kinReco/plots/medium.png}
-  \caption{Number of solutions of the equation \ref{eq:eqLSf}. The distribution is normalized to one. The generated data used for this check
-  is produced before any radiation. The figure is taken from \cite{LSpaper}.}
+  \caption{Number of solutions of the equation \ref{eq:eqLSf}. The distribution is normalized to one. The information used for this plot is taken
+  from the generator level MC used for this analysis.}
   \label{fig:LSNsol}
 \end{figure}
 
