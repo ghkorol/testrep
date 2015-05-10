@@ -12,15 +12,14 @@ to the $t\bar{t}$ system in the dilepton final state.
 The following constrains are being used:
 
 \begin{itemize}
- \item \textit{t and $\bar{t}$ masses} are assumed to be equal and constrained to the same value of 172.5 GeV\cite{PDG-2012};
+ \item \textit{t and $\bar{t}$ masses} ($m_{t}$ and $m_ {\bar{t}}$) are assumed to be equal and constrained to the same value of 172.5 GeV\cite{PDG-2012};
  \item The whole missing transverse energy $E_{T}^{miss}$ of the event is assumed to arise entirely
  from the two neutrinos from the $t\bar{t}$ decay;
- \item \textit{The $W^{\pm}$ masses} are assumed to be known and constrained to the value which is randomly taken
+ \item \textit{The $W^{\pm}$ masses} ($m(W\pm)$) are assumed to be known and constrained to the value which is randomly taken
  from the generator $W^{\pm}$ mass spectrum.
 \end{itemize}
 
-These assumptions lead to the system of six.
-They are written down in the CMS coordinate system (see sec. \ref{sec:CMS}):
+These assumptions lead to the system of six equations which describe energies and momenta conservation:
 
 \begin{align}\label{alg:LS1}
  E^{miss}_{T_{x}} & =  p_{\nu_{x}} + p_{\bar{\nu}_{x}} \\
@@ -38,11 +37,11 @@ They are written down in the CMS coordinate system (see sec. \ref{sec:CMS}):
                  & - (p_{\bar{b}_{y}} + p_{l^{-}_{y}} + p_{\bar{\nu}_{y}})^2 - (p_{\bar{b}_{z}} + p_{l^{-}_{z}} + p_{\bar{\nu}_{z}})^2\label{alg:LS6} 
 \end{align}
 
-Here the the $E_{l^{\pm}}$ and $p_{l^{\pm}_{x,y,z}}$ correspond to the lepton(antilepton) energy and momentum components respectively; 
+Here the $E_{l^{\pm}}$ and $p_{l^{\pm}_{x,y,z}}$ correspond to the lepton(antilepton) energy and momentum components respectively; 
 $E_{b/\bar{b}}$ and $p_{b/\bar{b}_{x,y,z}}$ are the $b$/$\bar{b}$-jet energy and momentum components respectively; the $E^{miss}_{T_{x,y}}$ are
-the two components of the missing transverse energy.
-These are the characteristics of the reconstructed objects from the detector information directly, as described in the chapter \ref{chapt:event_selection}.
-The six unknowns are the neutrino momentum components $p_{\nu/\bar{\nu}_{x,y,z}}$ and the neutrino energies are just composed from momenta:
+the two components of the missing transverse energy; the $p_{\nu/\bar{\nu}_{x,y,z}}$ are the neutrino (antineutrino) momenta components.
+$E_{l^{\pm}}$, $p_{l^{\pm}_{x,y,z}}$, $E_{b/\bar{b}}$, $p_{b/\bar{b}_{x,y,z}}$ and $E^{miss}_{T_{x,y}}$ are reconstructed from the detector (as described in the chapter \ref{chapt:event_selection}),
+$p_{\nu/\bar{\nu}_{x,y,z}}$ are the unknowns and the neutrino energies $ E_{\nu/\bar{\nu}}$ are composed from momenta:
 
 \begin{equation}
  E_{\nu/\bar{\nu}}^{2} = p_{\nu/\bar{\nu}_{x}}^{2} + p_{\nu/\bar{\nu}_{y}}^{2} + p_{\nu/\bar{\nu}_{z}}^{2}
