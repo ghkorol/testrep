@@ -105,8 +105,7 @@ The leptons and jets energies and directions were smeared. All the variations ar
 The energy variation was performed through multiplication of an actual reconstructed energy value
 by a correction factor $f(E) = \frac{E_{true}}{E_{reco}}$. Here the $E_{reco}$ is the reconstructed lepton or jet energy taken from the MC signal simulation;
 the $E_{true}$ is the true energy of the same object on the particle level. The distributions for the $f(E)$ which are used for the random choice
-of the correction factors are shown on the Figure \ref{fig:fE}. The shape of these distributions is energy independent (see Appendix !!!), thus they are obtained in
-the complete kinematic region. The correction factors which enter the distributions \ref{fig:fE} are determined from the signal MC simulation jets and 
+of the correction factors are shown on the Figure \ref{fig:fE}. The correction factors which enter the distributions are determined from the signal MC simulation jets and 
 leptons matched to the particle level $b$-quarks and leptons arising from the top decay. 
 
 \begin{figure}[t]
@@ -125,9 +124,8 @@ the leptons -- on the right.}
 \label{fig:fE}
 \end{figure}
 
-Additionally to the energy variation a random gaussian smearing in a random direction around the nominal direction is applied. The resolutions for
-the gaussians are taken from the MC distributions presented on the Figure \ref{fig:dAngle}. These distributions are also independent of leptons and
-jets kinematics (see Appendix !!!) and thus the resolution applied for smearing is averaged over the whole kinematic range.
+Additionally to the energy variation a random gaussian smearing in a random direction of the azimuth angle $\theta$ (see sec. \ref{sec:CMS}) around the nominal direction is applied. The resolutions for
+the gaussians are taken from the MC distributions presented on the Figure \ref{fig:dAngle}. The polar angle $\phi$ is taken randomly from 0 to $2\pi$.
 
 \begin{figure}[t]
 \centering
