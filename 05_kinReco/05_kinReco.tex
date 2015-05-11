@@ -60,7 +60,7 @@ where the coefficients $h_{0} - h_{4}$ \cite{LSpaper, LSerrat} depend on the mis
 leptons and jets. 
 
 The equation \ref{eq:eqLSf} ends up with up to four solutions. The frequency distribution of the number of solutions for generated $t\bar{t}$ sample (MadGraph+Pythia,
-see chapt. \ref{chapt:MC}) is shown on the Figure \ref{fig:LSNsol}. Two solutions per event are expected in 80$\%$ of the cases and four solutions oer event appear in 
+see chapt. \ref{chapt:MC}) is shown on the Figure \ref{fig:LSNsol}. Two solutions per event are expected in 80$\%$ of the cases and four solutions per event appear in 
 $20\%$ of the cases.
 
 \begin{figure}[t]
@@ -88,21 +88,20 @@ There are several problems arising during the $t\bar{t}$ dilepton final state ki
  provides up to four correct solutions while a real neutrino has only one momentum.
  %
  \item \textit{Multiple combinations of leptons and jets}. An event with a $t\bar{t}$ decaying to a dilepton final state has minimum two leptons and two
- jets. But there is no sign if a jet comes from $t$ or a $\bar{t}$. For this reason each jet is being paired to one of the leptons, and then to another
+ jets. However there is no sign if a jet comes from $t$ or a $\bar{t}$. For this reason each jet is being paired to one of the leptons, and then to another
  to form a $t$ or $\bar{t}$ candidate. Thus an event with two leptons and two jets has two possible $t\bar{t}$ candidates. In case of multiple jets
- in the event, the number of $t\bar{t}$ will be $N_{jet}!$, where $N_{jet}$ is a jet multiplicity. Specifically for this analysis only those combinations 
- of two jets with lepton and antilepton are accepted where at least one jet is b-tagged as discribed in sec. \ref{ssec:bTag}.
+ in the event, the number of $t\bar{t}$ candidates can be up to $N_{jet}!$, where $N_{jet}$ is a jet multiplicity.
 \end{itemize}
 
-The last two challenges have different nature but boths cause the same issue of multiple possible $t\bar{t}$ candidates, thus they can be treated together.
+% The last two challenges have different nature but boths cause the same issue of multiple possible $t\bar{t}$ candidates, thus they can be treated together.
 
-\subsection{Measurement fluctuations}
+\subsection{Fluctuations of measurements}
 
-The challenge of rescuing the events which are lost due to the measurement fluctuations can be solved by varying the measured objects energies and
-momentum directions. That would increase a chance of pushing the kinematics back to physical region. This idea was implemented by reconstructing
-each event 100 times, each time shifting relevant observables randomly according to their resolution determined from the Monte Carlo.
-
+The problem of rescuing the events which are lost due to the fluctuations is solved by varying the measured objects energies and
+momentum directions. That will increase the efficiency of finding a solution of the system of equations (\ref{alg:LS1}--\ref{alg:LS6}). This idea was implemented by reconstructing
+each event 100 times, each time varying relevant observables randomly and independent according to their resolution determined from the Monte Carlo.
 The lepton and jet energies and directions were smeared. All the variations are done simultaneously for every lepton and jet.
+
 The energy variation was performed through multiplication of an actual reconstructed energy value
 by a correction factor $f(E) = \frac{E_{reco}}{E_{true}}$. Here the $E_{reco}$ is the lepton or jet energy taken from the MC signal the reconstruction
 and the $E_{true}$ is the true energy of the same object on the particle level. The distributions for the $f(E)$ which are used for the random choice
