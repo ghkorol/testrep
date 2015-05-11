@@ -124,8 +124,9 @@ the leptons -- on the right.}
 \label{fig:fE}
 \end{figure}
 
-Directional smearing is applied by varying the azimuth and polar angles (see sec. \ref{sec:CMS}). A smearing of the azimuth angle $\theta$ is performed in a random direction taken from
-the MC distributions presented on the Figure \ref{fig:dAngle}. The polar angle $\phi$ is taken randomly from 0 to $2\pi$.
+Directional smearing is applied by rotating the actual momentum vectors varying by the azimuth and polar angles relatively to the nominal vector direction. 
+A smearing of the azimuth angle $\alpha$ is performed in a random direction taken from
+the MC distributions presented on the Figure \ref{fig:dAngle}. The polar angle $\tilde{\phi}$ is taken randomly from 0 to $2\pi$.
 
 \begin{figure}[t]
 \centering
@@ -147,8 +148,10 @@ assuming the transverse energy component, which does not refer to the leptons an
 missing transverse energy for the $i^{th}$ smearing will be expressed as following:
 
 \begin{equation}
- E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reconstruction}_{T_{x,y}} + p^{jet \; not\,smeared}_{x,y} + p^{lepton\;not\,smeared}_{x,y} - (p^{jet\;i}_{x,y} + p^{lepton\;i}_{x,y})
+ E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reconstruction}_{T_{x,y}} + p^{jet \; not\,smeared}_{x,y} + p^{lepton\;not\,smeared}_{x,y} - (p^{jet\;i}_{x,y} + p^{lepton\;i}_{x,y}).
 \end{equation}
+
+Here 
 
 \subsection{Single solution choice}
 
