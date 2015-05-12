@@ -116,7 +116,7 @@ leptons matched to the particle level $b$-quarks and leptons arising from the to
 \end{subfigure}
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.48\textwidth]{05_kinReco/plots/fE_lep.png}
+  \includegraphics[width=0.50\textwidth]{05_kinReco/plots/fE_lep.png}
 \end{subfigure}
 \caption{Distributions of the energy correction factors used for the energy smearing in the kinematic
 reconstruction of the top-quark kinematics. The factor distribution for jets is shown on the left and for
@@ -190,10 +190,34 @@ To obtain one $t\bar{t}$ pair out of this candidate variety, following steps are
 
 \section{Performance}\label{sec:kinRecPerf}
 
-Only the events in which the solution of kinematic equations is found are accepted for this analysis. Thus it is important to study the efficiency
-of the kinematic reconstruction method proposed. Figure \ref{} shows the efficiency depending on jet multiplicity in the event. A slight efficiency
-drop can be explained by the increase of number of possible $t\bar{t}$ candidates in the event due to multiple combinations of leptons and jets
-(see sec. \ref{sec:SolSer}). An integrated efficiency of the kinematic reconstruction method is 93 $\%$.
+Only the events in which the solution of kinematic equations is found are accepted for this analysis. 
+Figure \ref{fig:EffSF} shows the efficiencies and scale factors for the $t\bar{t}$ kinematic reconstruction procedure depending on jet multiplicity in the event, 
+lepton kinematics and missing transverse energy. An integrated efficiency of the kinematic reconstruction method is 93 $\%$. Overall, the scale factors 
+show a flat behaviour depending on different variables, thus the integrated value 0.9909 for the scale factor  is used for the analysis.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{05_kinReco/plots/eff_SF/KinRecoEff_JetMult.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{05_kinReco/plots/eff_SF/KinRecoEff_MET.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{05_kinReco/plots/eff_SF/KinRecoEff_LeptonEta.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{05_kinReco/plots/eff_SF/KinRecoEff_LeptonpT.png}
+\end{subfigure}
+\caption{The efficiencies and scale factors for the $t\bar{t}$ kinematics reconstruction procedure in the bins of jent multiplicity in the event (top left),
+         missing transverse energy (top right), lepton pseudorapidity (bottom left) and transverse momentum (bottom right). The efficiencies in the data 
+         are marked with black dots, efficiencies in MC simulations are red lined and the scale factors are plotted with the blue dots.}
+\label{fig:EffSF}
+\end{figure}
 
 The kinematic reconstruction method proposed shows desirable results over the complete kinematic range of the top system. As shown on the Figure \ref{} 
 $t\bar{t}$ pairs are reconstructed up to the higher edges of pseudorapidity and transverse momentum. In general, a good agreement between data and
