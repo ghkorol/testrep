@@ -1,4 +1,4 @@
-\chapter{Event Selection}\label{chapt:event_selection}
+\chapter{Event Reconstruction and Selection}\label{chapt:event_selection}
  
 This work was aiming to reconstruct the $t\bar{t}$ pair in the dilepton decay channel, or
 $t\bar{t} \to W^{+}b\,W^{-}\bar{b} \to \bar{l}b\,l\bar{b}$. Thus the aim is to 
@@ -15,6 +15,25 @@ This chapter gives an overview of the $t\bar{t}$ final state objects reconstruct
 procedures are based on the CMS Top-Quark-Physics-Analysis group recommendations \cite{TopPAGreco}.
 The full chain of event selection are described and the details of each component reconstruction are given. 
 Resulting event yields are represented in the control distributions, showing the data, simulated signal and backgrounds.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trigger selection}
+
+All the data flow in the CMS detector is reduced by triggers based on the physical requirements (see sec. \ref{sec:trig}).
+The HLT triggers provide a selection which sorts the data by the processes which are taking place in the events. Thereby
+a choice of a trigger which selected the events is already easing the task of selecting the correct physical process from
+all the recorded data.
+
+The events for this work were selected using several dileptonic HLTs which require at least two leptons (electrons or muons)
+with the momenta larger than 15 GeV for one of them and 8 GeV for another. To identify a muon the triggers use the information
+from the inner tracker and muon system. An electron is identified from the tracker and calorimeter information and additionally
+has to fulfill a very loose isolation criterion. The details on the trigger paths used for this analysis are given in the
+Appendix !!!.
+
+As all of the data recorded is accepted by some HLT trigger, the determination of a particular trigger efficiency is determined with 
+respect to another independent trigger. To calculate the dileptonic trigger efficiencies the triggers based on $E_{T}^{miss}$ selection
+were taken as a reference.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Event cleaning and Pile-Up treatment}
@@ -39,25 +58,6 @@ are given with respect to the CMS coordinate system (see sec.\ref{sec:CMS} )}. T
 largest sum of transverse momenta squared ($p_{T}^{2}$) of the associated tracks is taken for further analysis.
 
 The events with \textit{anomalous noise} from calorimeters are removed by the third filter.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Trigger selection}
-
-All the data flow in the CMS detector is reduced by triggers based on the physical requirements (see sec. \ref{sec:trig}).
-The HLT triggers provide a selection which sorts the data by the processes which are taking place in the events. Thereby
-a choice of a trigger which selected the events is already easing the task of selecting the correct physical process from
-all the recorded data.
-
-The events for this work were selected using several dileptonic HLTs which require at least two leptons (electrons or muons)
-with the momenta larger than 15 GeV for one of them and 8 GeV for another. To identify a muon the triggers use the information
-from the inner tracker and muon system. An electron is identified from the tracker and calorimeter information and additionally
-has to fulfill a very loose isolation criterion. The details on the trigger paths used for this analysis are given in the
-Appendix !!!.
-
-As all of the data recorded is accepted by some HLT trigger, the determination of a particular trigger efficiency is determined with 
-respect to another independent trigger. To calculate the dileptonic trigger efficiencies the triggers based on $E_{T}^{miss}$ selection
-were taken as a reference.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -319,7 +319,7 @@ In general the efficiency of the CSV algorithm was estimated in data and simulat
   \label{fig:CSVeff}
 \end{figure}
 
-For this analysis the jets are tagged as arising from a $b$-quark in case they are accepted by CSVL.
+For this analysis the jets are tagged as arising from a $b$-quark in case they are accepted by CSVL. An event is selected only if it contains at least one $b$-tagged jet.
 
 \section{Missing Transverse Energy}
 
@@ -359,4 +359,31 @@ The corrected recoil value $u_{corr}$ is used to reestimate the missing transver
 For this analysis the events in the $ee$ and $\mu\mu$ channels are accepted only in case the missing transverse energy is $E_{T}^{miss} > 40 \textrm{GeV}$. This rejects
 the background events with a not real missing transverse energy.
 
-\section{Control Distributions}
+\section{Event Selection Summary}
+
+The full final state objects selection has been presented and all the selection criteria are summarized as follows:
+
+\begin{itemize}
+ \item [--] \textbf{Trigger selection}: The events have to be accepted by the dilepton triggers, which require the presents of two leptons, electrons or muons, with
+ minimum transverse momentum of 17 GeV and 8 GeV. 
+ %
+ \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
+ %
+ \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
+ %
+ \item [--] \textbf{Presence of a good vertex}: Events which contain at least one primary vertex with high reconstruction quality are accepted.
+ %
+ \item [--] \textbf{Lepton selection}: An event has to contain at least two leptons with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$. Both leptons have to be isolated with 
+ $I_{rel}\leq 0.15$ in a cone of $\Delta R = 0.3$.
+ %
+ \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. For the
+ same flavour channels a window of $76\textrm{ GeV}\leq m(l\bar{l}) \leq 106\textrm{ GeV}$ is cut out.
+ %
+ \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. Additionally, an event has to contain
+ at least one jet, tagged as originating from the $b$-quark with the help of CSVL.
+ %
+ \item [--] \textbf{Missing Transverse Energy selection}: For the same flavour channels only the events with $E_{T}^{miss} > 40$ GeV are accepted.
+\end{itemize}
+
+The set of selection criteria performs successfully decreasing the fraction of background events. The control distributions which show the data and MC simulation at one plot
+contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process. 
