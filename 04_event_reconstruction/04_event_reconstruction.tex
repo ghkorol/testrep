@@ -1,7 +1,7 @@
 \chapter{Event Reconstruction}\label{chapt:event_selection}
- 
-The next step after gathering the available information from the detector machine (doesn't matter if it is a real or simulated facility)
-is to interpret outcoming signals correctly. The task is to say which objects were present in the detecting apparatus using the hits
+
+Any physics analysis operates particles and their features. Thus one of the essential tasks on the way to a physical
+result is to interpret outcoming detector data as a set of physical objects making use of the hits
 in the tracker, energy deposits in the calorimeter and signals from the muon system. Assigning this information to some concrete particle 
 or object is a reconstruction procedure.
 
@@ -12,7 +12,7 @@ CMS sub-detectors.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track and Vertex Reconstruction}
-
+ 
 Tracks \footnote{A \textit{track} is a set of information about the charged particles trajectory curve and momentum.} and vertecies 
 \footnote{A \textit{vertex} is an estimate of a point in space where the particles arise from. It can be either related to the 
 collision point or to the place  where some secondary interaction happened.} are the essential objects used for all the particles reconstruction. 
@@ -30,6 +30,14 @@ transverse momentum or those, which are produced in the primary interaction regi
 are not used for any other track definition. After the number of hits is reduced in the first iterations, it is easier to reconstruct the
 tracks from the other more problematic particles (e.g. low-momentum or very displaced from the primary interaction region). Each track is reconstructed
 following the sequential steps \cite{Chatrchyan:2014fea}:
+
+\begin{itemize}
+ \item \textbf{Seed generation}: provides initial, hypotetical, track candidates. Assuming helical path of the particles in the
+ quasi-uniform magnetic field, a set of parameters for the trajectory is defined either using 3 hits or 2 hits and the assumption
+ of the track origin (close to the primary interaction region\footnote{A primary interaction region or a \textit{beam spot} is defined 
+ as an a}).
+\end{itemize}
+
 
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
