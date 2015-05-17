@@ -1,6 +1,6 @@
 \chapter{Event Reconstruction}\label{chapt:event_selection}
 
-Any physics analysis operates particles and their features. Thus one of the essential tasks on the way to a physical
+Any physics analysis operates particles and their characteristics. Thus one of the essential tasks on the way to a physical
 result is to interpret outcoming detector data as a set of physical objects making use of the hits
 in the tracker, energy deposits in the calorimeter and signals from the muon system. Assigning this information to some concrete particle 
 or object is a reconstruction procedure.
@@ -13,14 +13,14 @@ CMS sub-detectors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track and Vertex Reconstruction}
  
-Tracks \footnote{A \textit{track} is a set of information about the charged particles trajectory curve and momentum.} and vertecies 
-\footnote{A \textit{vertex} is an estimate of a point in space where the particles arise from. It can be either related to the 
+Tracks\footnote{A \textit{track} is a set of information about the charged particles trajectory curve and momentum.} and vertecies\footnote{A 
+\textit{vertex} is an estimate of a point in space where the particles arise from. It can be either related to the 
 collision point or to the place  where some secondary interaction happened.} are the essential objects used for all the particles reconstruction. 
-But they are also not the primer detector output and they have to be reconstructed.
+However they are not the primer detector output and they have to be reconstructed.
 
-\subsection{Track Reconstruction}
+\subsection{Track Reconstruction (04_event_reconstruction/Vertex_reconstruction.pdf)}
 
-First, the track reconstruction has to take place, using the information from the inner tracking detectors. The pixel and strip detectors 
+The track reconstruction has to take place using the information from the inner tracking detectors. The pixel and strip detectors 
 produce signals, which are grouped to clusters. A position of a cluster, or a hit, is an estimate of the point where a particle crossed the
 detector material. In simple words a particle trajectory can be tracked if fitting the corresponding consequence of hits. A curvature 
 of the trajectory with the known magnetic field gives a momentum estimate of a particle.
@@ -32,10 +32,10 @@ tracks from the other more problematic particles (e.g. low-momentum or very disp
 following the sequential steps \cite{Chatrchyan:2014fea}:
 
 \begin{itemize}
- \item \textbf{Seed generation}: provides initial, hypotetical, track candidates. Assuming helical path of the particles in the
+ \item \textbf{Seed generation}: provides initial, hypothetical, track candidates. Assuming helical path of the particles in the
  quasi-uniform magnetic field, a set of parameters for the trajectory is defined either using 3 hits or 2 hits and the assumption
  of the track origin (close to the primary interaction region\footnote{A primary interaction region or a \textit{beam spot} is defined 
- as an a}).
+ as an average value over all the events and is defined as a most luminous point.}).
 \end{itemize}
 
 
