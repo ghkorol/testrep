@@ -47,10 +47,14 @@ following the sequential steps \cite{Chatrchyan:2014fea}:
  associated to any real charged particle.} by setting physical and quality constrains on the object produced at the previous step. The requirements
  are based on the minimum number of layers where the track has assigned hits, maximum number of layers on the track path where no hit is assigned,
  a good $\chi^{2}$ per degree of freedom and how compatible the track is with emerging from the primary interaction region.
- 
 \end{itemize}
 
+For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only, similarely to the seed generation procedure\cite{Chatrchyan:2014fea}.
+This procedure is fast enough for the trigger performance. However the tracks produced this way have a higher probability to be fake and have worse resolution, they
+are not used as the track candidates, but rather for the vertex reconstruction at the trigger level. To define track candidates a simplistic procedure
+involving pixel and strip detector information is performed on the HLT\cite{Chatrchyan:2014fea}.
 
+\subsection{Vertex reconstruction}
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Particle Flow Concept}\label{sec:PF}
