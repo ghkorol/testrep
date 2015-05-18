@@ -18,6 +18,9 @@ Tracks\footnote{A \textit{track} is a set of information about the charged parti
 collision point or to the place  where some secondary interaction happened.} are the essential objects used for all the particles reconstruction. 
 However they are not the primer detector output and they have to be reconstructed.
 
+The task of a precise track and vertex reconstruction is very important and complicated because of a very busy LHC environment. Each collision
+provides many vertecies and tracks which have to be separated. An event
+
 \subsection{Track Reconstruction (04-event-reconstruction/Vertex-reconstruction.pdf)}
 
 The track reconstruction has to take place using the information from the inner tracking detectors. The neighboring pixels and strips which
@@ -25,7 +28,7 @@ produce signals are grouped to clusters. A position of a cluster defines a hit w
 detector material. A particle trajectory can be tracked if fitting the corresponding consequence of hits. A curvature 
 of the trajectory with the known magnetic field gives a momentum estimate of a particle.
 
-A tracks reconstruction is an iterative process in which first the "easiest" trajectories are reconstructed (e.g. the ones with the highest
+The tracks reconstruction is an iterative process in which first the "easiest" trajectories are reconstructed (e.g. the ones with the highest
 transverse momentum or those, which are produced in the primary interaction region). The hits used for a particular track reconstruction 
 are not used for any other track definition. After the number of hits is reduced in the first iterations, it is easier to reconstruct the
 tracks from the other more problematic particles (e.g. low-momentum or very displaced from the primary interaction region). Each track is reconstructed
@@ -43,18 +46,40 @@ following the sequential steps \cite{Chatrchyan:2014fea}:
  \item \textbf{Track fitting}: after getting additional hits and parameter estimates from the track finding stage, a track is refitted using the 
  Kalman filter. This procedure is performed releasing the constrains set on the seeding stage (such as the track connection to the beam spot).
  %
- \item \textbf{Track selection}: reduces the rate of fake tracks\footnote{A \textit{fake track} is a track produced by the fit but is actually not 
- associated to any real charged particle.} by setting physical and quality constrains on the object produced at the previous step. The requirements
+ \item \textbf{Track selection}: reduces the rate of fake tracks\footnote{A \textit{fake track} is a track produced by the fit but is actually there was
+ no real charged particle which produced this track.} by setting physical and quality constrains on the object produced at the previous step. The requirements
  are based on the minimum number of layers where the track has assigned hits, maximum number of layers on the track path where no hit is assigned,
  a good $\chi^{2}$ per degree of freedom and how compatible the track is with emerging from the primary interaction region.
 \end{itemize}
 
-For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only, similarely to the seed generation procedure\cite{Chatrchyan:2014fea}.
+For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only, similarly to the seed generation procedure\cite{Chatrchyan:2014fea}.
 This procedure is fast enough for the trigger performance. However the tracks produced this way have a higher probability to be fake and have worse resolution, they
 are not used as the track candidates, but rather for the vertex reconstruction at the trigger level. To define track candidates a simplistic procedure
 involving pixel and strip detector information is performed on the HLT\cite{Chatrchyan:2014fea}.
 
-\subsection{Vertex reconstruction}
+\subsection{Primary Vertex Reconstruction}
+
+The primary vertex reconstruction aims to measure the location of all proton-proton interaction points in the event. The reconstruction procedure has three
+phases described as follows\cite{Chatrchyan:2014fea}:
+
+\begin{itemize}
+ \item \textbf{Track selection}: the tracks for the primary vertex reconstruction are chosen with certain requirements such as to be consistent with being produced 
+ in the primary interaction region, having at least two pixel layers and at least five pixel and strip layers associated with the track and having the $\chi^{2}$ per degree
+ of freedom of the track fit not higher then 20. No minimum $p_{T}$ of the track is required.
+ %
+ \item \textbf{Track clustering}: the main task of the clustering algorithm is to separate the groups of tracks emerging from different primary vertecies, not splitting 
+ the tracks from one vertex to two, but also not merging the tracks from different verteces to one. The tracks are clustered according 
+ to their $z$-coordinate at the point of closest approach to the beam spot center. 
+ \\
+ The algorithm used for clustering for the CMS 2012 data is the \textit{deterministic annealing} described in detail in\cite{rose_ieee1998}. The system with many tracks has many degrees
+ of freedom and finding the primary vertex regions according to the coordinates of the closes approach to the beam spot center is treated analogically to the problem of a physical 
+ system approaching a state of minimal energy through a series of gradual temperature reductions.
+ %
+ \item \textbf{Fitting the position of the vertex}: each clustered group of tracks forms a vertex candidate. Only the candidates with at least two tracks are taken and are fitted
+ using the \textit{adaptive vertex fitter}\cite{Frühwirth:1027031}. The output of the fit is the vertex position, it's uncertainty and $\chi^{2}$. The determination of the probability
+ of each track to arise from the reconstructed vertex is performed.
+\end{itemize}
+
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Particle Flow Concept}\label{sec:PF}
