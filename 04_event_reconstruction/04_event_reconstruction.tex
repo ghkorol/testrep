@@ -12,27 +12,20 @@ CMS sub-detectors.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track and Vertex Reconstruction}
- 
+
 Tracks\footnote{A \textit{track} is a set of information about the charged particles trajectory curve and momentum.} and vertecies\footnote{A 
 \textit{vertex} is an estimate of a point in space where the particles arise from. It can be either related to the 
 collision point or to the place  where some secondary interaction happened.} are the essential objects used for all the particles reconstruction. 
 However they are not the primer detector output and they have to be reconstructed.
 
-The task of a precise track and vertex reconstruction is very important and complicated because of a very busy LHC environment. Each collision
-provides many vertecies and tracks which have to be separated. An event
-
-\subsection{Track Reconstruction (04-event-reconstruction/Vertex-reconstruction.pdf)}
+\subsection{Track Reconstruction (04-event-reconstruction/Vertex-reconstruction.pdf)}\label{ssec:trkReco}
 
 The track reconstruction has to take place using the information from the inner tracking detectors. The neighboring pixels and strips which
 produce signals are grouped to clusters. A position of a cluster defines a hit which is an estimate of the point where a particle crossed the
 detector material. A particle trajectory can be tracked if fitting the corresponding consequence of hits. A curvature 
 of the trajectory with the known magnetic field gives a momentum estimate of a particle.
 
-The tracks reconstruction is an iterative process in which first the "easiest" trajectories are reconstructed (e.g. the ones with the highest
-transverse momentum or those, which are produced in the primary interaction region). The hits used for a particular track reconstruction 
-are not used for any other track definition. After the number of hits is reduced in the first iterations, it is easier to reconstruct the
-tracks from the other more problematic particles (e.g. low-momentum or very displaced from the primary interaction region). Each track is reconstructed
-following the sequential steps \cite{Chatrchyan:2014fea}:
+The track reconstruction procedure consists of four main steps as following \cite{Chatrchyan:2014fea}:
 
 \begin{itemize}
  \item \textbf{Seed generation}: provides initial, hypothetical, track candidates, their parameters and uncertainties. Assuming helical path of the particles in the
@@ -52,23 +45,37 @@ following the sequential steps \cite{Chatrchyan:2014fea}:
  a good $\chi^{2}$ per degree of freedom and how compatible the track is with emerging from the primary interaction region.
 \end{itemize}
 
+To optimize the tracking procedure it is repeated in several iterations. The starting set of tracks is the one produced at the seed generation step.
+From this set only the tracks with highest momentum and the closest once to the beam spot are taken for the first iteration (as such tracks are the
+easiest for the reconstruction). After track finding, fitting and selection is performed for the subset of the tracks for the first iteration, all their
+associated hits are removed and the next iteration takes place, repeating everything as for the first iteration, but for the softer tracks. In general,
+six iterations are performed as described in \cite{Chatrchyan:2014fea}.
+
 For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only, similarly to the seed generation procedure\cite{Chatrchyan:2014fea}.
 This procedure is fast enough for the trigger performance. However the tracks produced this way have a higher probability to be fake and have worse resolution, they
 are not used as the track candidates, but rather for the vertex reconstruction at the trigger level. To define track candidates a simplistic procedure
 involving pixel and strip detector information is performed on the HLT\cite{Chatrchyan:2014fea}.
 
-\subsection{Primary Vertex Reconstruction}
+\subsection{Primary Vertex Reconstruction}\label{ssec:vtxReco}
 
-The primary vertex reconstruction aims to measure the location of all proton-proton interaction points in the event. The reconstruction procedure has three
+The primary vertex reconstruction aims to measure the location of all proton-proton collision points in the event (see Figure \ref{fig:HugePU}). The reconstruction procedure has three
 phases described as follows\cite{Chatrchyan:2014fea}:
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/url.png}
+  \caption{Magnified view of the event showing 29 distinct vertices reconstructed corresponding to 29 distinct collisions within a single crossing of the LHC beam.}
+  \label{fig:HugePU}
+\end{figure}
 \begin{itemize}
+
  \item \textbf{Track selection}: the tracks for the primary vertex reconstruction are chosen with certain requirements such as to be consistent with being produced 
- in the primary interaction region, having at least two pixel layers and at least five pixel and strip layers associated with the track and having the $\chi^{2}$ per degree
- of freedom of the track fit not higher then 20. No minimum $p_{T}$ of the track is required.
+ in the primary interaction region (the significance of the beam spot impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
+ distance of the track to certain vertex or beam spot in the transverse $x-y$ plane.} -- it's value over it's uncertainty -- has to be maximum 5), having at least two pixel 
+ layers and at least five pixel and strip layers associated with the track and having the $\chi^{2}$ per degree of freedom of the track fit not higher then 20.
  %
  \item \textbf{Track clustering}: the main task of the clustering algorithm is to separate the groups of tracks emerging from different primary vertecies, not splitting 
- the tracks from one vertex to two, but also not merging the tracks from different verteces to one. The tracks are clustered according 
+ the tracks from one vertex to two, but also not merging the tracks from different vertecies to one. The tracks are clustered according 
  to their $z$-coordinate at the point of closest approach to the beam spot center. 
  \\
  The algorithm used for clustering for the CMS 2012 data is the \textit{deterministic annealing} described in detail in\cite{rose_ieee1998}. The system with many tracks has many degrees
@@ -80,50 +87,54 @@ phases described as follows\cite{Chatrchyan:2014fea}:
  of each track to arise from the reconstructed vertex is performed.
 \end{itemize}
 
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Particle Flow Concept}\label{sec:PF}
-% 
-% All the objects in $t\bar{t}$ dileptonic final state were reconstructed making use of \textit{Particle Flow} (PF)
-% algorithm \cite{Beaudette:2014cea}. In other words each particle or jet is identified exploiting the information from all parts
-% of the detector instead of using only one dedicated detector sector. The algorithm relies on an efficient track reconstruction,
-% clustering algorithm in wich is able to distinguish overlapping showers and on the efficient linking procedure to connect 
-% the signals from different sub-detectors.
-% 
-% A simplistic description of the reconstruction with the PF algorithm can be given as follows \cite{Beaudette:2014cea}.
-% 
-% \begin{itemize}
-%  \item [--] Muons are identified beforehand to exclude overlapping with the charged hadrons. Their tracks are extrapolated
-%  from tracker to calorimeter clusters and to the muon systems. An example of muon reconstruction using particle flow algorithm is 
-%  shown on the figure \ref{fig:PFmuons}. The clusters in calorimeter and tracks in the tracker which the muons are assigned to
-%  do not enter the further objects identification process.
-%  %
-%  \item [--] Charged hadrons are reconstructed from the tracks which after the extrapolation to the HCAL region fall within the boundaries
-%  of one or more calorimeter clusters. Analogically to the tracks used for muon identification, tracks associated to the charged 
-%  hadrons do not enter any further particle reconstruction.
-%  %
-%  \item [--] Electrons have to be reconstructed taking into account not only the tracks and ECAL deposits matching to them, but also
-%  adding the photons from the frequent Bremsstrahlung.
-%  %
-%  \item [--] The remaining ECAL clusters are assigned to photons, and the one from HCAL - to the neutral hadrons
-% \end{itemize}
-% 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/CMS_Slice.png}
-%   \caption{Track reconstruction using different sub-detector information in combination in Particle Flow algorithm. An actual
-%   muon track is shown with a curved blue line, an electron track is red and a charged hadron is solid green.}
-%   \label{fig:PFmuons}
-% \end{figure}
-% 
-% The resulting list of particles is used for further jet and missing transverse energy ($E_{T}^{miss}$) construction. 
-% 
-% The performance of the algorithm was studied with the simulated events \cite{CMS-PAS-PFT-09-001}. Particularly the jet energy
-% resolution gain reaches factor 3 for a low transverse momentum region. Furthermore, the angular resolution is improved by factor 2-3.
-% 
-% A more detailed description of each object reconstruction relevant for this analysis is given in the following sections of this chapter.
-% A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
-% 
+The information on all primary vertecies in the event is useful not only for other objects reconstruction but also for separating the signal vertex (with hard interaction) 
+from the others with no useful physics information.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Particle Flow Concept}\label{sec:PF}
+
+All the objects in $t\bar{t}$ dileptonic final state were reconstructed making use of \textit{Particle Flow} (PF)
+algorithm \cite{Beaudette:2014cea}. In other words each particle or jet is identified exploiting the information from all parts
+of the detector instead of using only one dedicated detector sector. The algorithm relies on an efficient track reconstruction,
+clustering algorithm in which is able to distinguish overlapping track bunches (as described previously in sec. \ref{ssec:trkReco} - \ref{ssec:vtxReco})
+and on the efficient linking procedure to connect the signals from different sub-detectors.
+
+A short description of the reconstruction with the PF algorithm can be given as follows \cite{Beaudette:2014cea}.
+
+\begin{itemize}
+ \item [--] Muons are identified beforehand to exclude overlapping with the charged hadrons. Their tracks are extrapolated
+ from tracker to calorimeter clusters and to the muon systems. An example of muon reconstruction using particle flow algorithm is 
+ shown on the figure \ref{fig:PFmuons}. The clusters in calorimeter and tracks in the tracker which the muons are assigned to
+ do not enter the further objects identification process.
+ %
+ \item [--] Charged hadrons are reconstructed from the tracks which after the extrapolation to the HCAL region fall within the boundaries
+ of one or more calorimeter clusters. Analogically to the tracks used for muon identification, tracks associated to the charged 
+ hadrons do not enter any further particle reconstruction.
+ %
+ \item [--] Electrons have to be reconstructed taking into account not only the tracks and ECAL deposits matching to them, but also
+ adding the photons from the frequent Bremsstrahlung.
+ %
+ \item [--] The remaining ECAL clusters are assigned to photons, and the one from HCAL - to the neutral hadrons
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/CMS_Slice.png}
+  \caption{Track reconstruction using different sub-detector information in combination in Particle Flow algorithm. An actual
+  muon track is shown with a curved blue line, an electron track is red and a charged hadron is solid green.}
+  \label{fig:PFmuons}
+\end{figure}
+
+The resulting list of particles is used for further jet and missing transverse energy ($E_{T}^{miss}$) construction. 
+
+The performance of the algorithm was studied with the simulated events \cite{CMS-PAS-PFT-09-001}. Particularly the jet energy
+resolution gain reaches factor 3 for a low transverse momentum region. Furthermore, the angular resolution is improved by factor 2-3.
+
+A more detailed description of each object reconstruction relevant for this analysis is given in the following sections of this chapter.
+A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Muon Reconstruction}
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Lepton reconstruction and selection}
