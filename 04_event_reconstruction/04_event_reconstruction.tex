@@ -28,14 +28,12 @@ of the trajectory with the known magnetic field gives a momentum estimate of a p
 The track reconstruction procedure consists of four main steps as following \cite{Chatrchyan:2014fea}:
 
 \begin{itemize}
- \item \textbf{Seed generation}: assuming helical path of the particles in the
- quasi-uniform magnetic field, a set of parameters for the trajectory is defined either using 3 hits or 2 hits and the assumption
- of the track origin (close to the primary interaction region\footnote{A primary interaction region or a \textit{beam spot} is defined 
- as an average value over all the events and is defined as a most luminous point.}). The hits for the seed generation are taken from the
- inner pixel detector layers only. All the combinations of 3 hits or 2 hits and a beam spot center are tried out and if the created 
- track-like object fulfills some minimum $p_{T}$, maximum beam spot impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
- distance of the track to certain vertex or beam spot in the transverse $x-y$ plane.} and correct charge distribution requirements, it is
- accepted to be an initial track candidate.
+ \item \textbf{Seed generation}: all the possible combinations of three points (3 hits in the first layers of pixel tracker or beam spot center\footnote
+ {A primary interaction region or a \textit{beam spot} is defined as an average value over all the events and is defined as a most luminous point.} and
+ two hits from the first tracker layers) are fitted with a helical trajectory assuming the quasi-uniform magnetic field. Every fitted object is required
+ to have some minimum $p_{T}$, maximum beam spot impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
+ distance of the track to certain vertex or beam spot in the transverse $x-y$ plane.} and correct charge distribution requirements to be accepted
+ as an initial track candidate or seed.
  %
  \item \textbf{Track finding}: extrapolates the seeding track candidates along the expected flight paths to the consecutive detector layers searching 
  for the new hits and reestimating the track parameters respectively. The procedure is based on the Kalman filter\cite{Fruhwirth:1987fm}.
