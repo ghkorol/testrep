@@ -28,10 +28,14 @@ of the trajectory with the known magnetic field gives a momentum estimate of a p
 The track reconstruction procedure consists of four main steps as following \cite{Chatrchyan:2014fea}:
 
 \begin{itemize}
- \item \textbf{Seed generation}: provides initial, hypothetical, track candidates, their parameters and uncertainties. Assuming helical path of the particles in the
+ \item \textbf{Seed generation}: assuming helical path of the particles in the
  quasi-uniform magnetic field, a set of parameters for the trajectory is defined either using 3 hits or 2 hits and the assumption
  of the track origin (close to the primary interaction region\footnote{A primary interaction region or a \textit{beam spot} is defined 
- as an average value over all the events and is defined as a most luminous point.}).
+ as an average value over all the events and is defined as a most luminous point.}). The hits for the seed generation are taken from the
+ inner pixel detector layers only. All the combinations of 3 hits or 2 hits and a beam spot center are tried out and if the created 
+ track-like object fulfills some minimum $p_{T}$, maximum beam spot impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
+ distance of the track to certain vertex or beam spot in the transverse $x-y$ plane.} and correct charge distribution requirements, it is
+ accepted to be an initial track candidate.
  %
  \item \textbf{Track finding}: extrapolates the seeding track candidates along the expected flight paths to the consecutive detector layers searching 
  for the new hits and reestimating the track parameters respectively. The procedure is based on the Kalman filter\cite{Fruhwirth:1987fm}.
@@ -45,13 +49,12 @@ The track reconstruction procedure consists of four main steps as following \cit
  a good $\chi^{2}$ per degree of freedom and how compatible the track is with emerging from the primary interaction region.
 \end{itemize}
 
-To optimize the tracking procedure it is repeated in several iterations. The starting set of tracks is the one produced at the seed generation step.
-From this set only the tracks with highest momentum and the closest once to the beam spot are taken for the first iteration (as such tracks are the
-easiest for the reconstruction). After track finding, fitting and selection is performed for the subset of the tracks for the first iteration, all their
-associated hits are removed and the next iteration takes place, repeating everything as for the first iteration, but for the softer tracks. In general,
-six iterations are performed as described in \cite{Chatrchyan:2014fea}.
+To optimize the tracking procedure it is repeated in several iterations. Each iteration differs in the set of $p_{T}$ and beam spot impact parameter
+requirements for the seed tracks generation\cite{Chatrchyan:2014fea}. The first iteration has the hardest requirements - high $p_{T}$ of the tracks
+and a good connection to the beam spot center (such objects are usually easier to reconstruct). After reconstructing the tracks in the first iteration,
+their hits are removed and the second iteration starts with a bit softer requirements on the seed tracks. In total, six iterations are performed.
 
-For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only, similarly to the seed generation procedure\cite{Chatrchyan:2014fea}.
+For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only is used, repeating the seed generation procedure\cite{Chatrchyan:2014fea}.
 This procedure is fast enough for the trigger performance. However the tracks produced this way have a higher probability to be fake and have worse resolution, they
 are not used as the track candidates, but rather for the vertex reconstruction at the trigger level. To define track candidates a simplistic procedure
 involving pixel and strip detector information is performed on the HLT\cite{Chatrchyan:2014fea}.
@@ -70,8 +73,7 @@ phases described as follows\cite{Chatrchyan:2014fea}:
 \begin{itemize}
 
  \item \textbf{Track selection}: the tracks for the primary vertex reconstruction are chosen with certain requirements such as to be consistent with being produced 
- in the primary interaction region (the significance of the beam spot impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
- distance of the track to certain vertex or beam spot in the transverse $x-y$ plane.} -- it's value over it's uncertainty -- has to be maximum 5), having at least two pixel 
+ in the primary interaction region (the significance of the beam spot impact parameter -- it's value over it's uncertainty -- has to be maximum 5), having at least two pixel 
  layers and at least five pixel and strip layers associated with the track and having the $\chi^{2}$ per degree of freedom of the track fit not higher then 20.
  %
  \item \textbf{Track clustering}: the main task of the clustering algorithm is to separate the groups of tracks emerging from different primary vertecies, not splitting 
