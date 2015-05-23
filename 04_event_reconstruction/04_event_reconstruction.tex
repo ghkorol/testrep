@@ -94,8 +94,9 @@ from the others with no useful physics information.
 \section{Particle Flow Concept}\label{sec:PF}
 
 All the objects in $t\bar{t}$ dileptonic final state were reconstructed making use of \textit{Particle Flow} (PF)
-algorithm \cite{Beaudette:2014cea}. In other words each particle or jet is identified exploiting the information from all parts
-of the detector instead of using only one dedicated detector sector. The algorithm relies on an efficient track reconstruction,
+algorithm \cite{Beaudette:2014cea}. It is an iterative process which reconstructs the particles and one by one exploiting the information from all parts
+of the detector. After an object is reconstructed in one iteration, all the clusters and tracks assigned to it are blinded for the further iterations.
+The PF algorithm relies on an efficient track reconstruction,
 clustering algorithm in which is able to distinguish overlapping track bunches (as described previously in sec. \ref{ssec:trkReco} - \ref{ssec:vtxReco})
 and on the efficient linking procedure to connect the signals from different sub-detectors.
 
@@ -103,8 +104,7 @@ A short description of the reconstruction with the PF algorithm can be given as 
 
 \begin{itemize}
  \item [--] Muons are identified beforehand to exclude overlapping with the charged hadrons. Their tracks are extrapolated
- from tracker to calorimeter clusters and to the muon systems. An example of muon reconstruction using particle flow algorithm is 
- shown on the figure \ref{fig:PFmuons}. The clusters in calorimeter and tracks in the tracker which the muons are assigned to
+ from tracker to calorimeter clusters and to the muon systems. The clusters in calorimeter and tracks in the tracker which the muons are assigned to
  do not enter the further objects identification process.
  %
  \item [--] Charged hadrons are reconstructed from the tracks which after the extrapolation to the HCAL region fall within the boundaries
@@ -138,6 +138,7 @@ A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001
 
 As it was discussed in section \ref{sec:CMS}, the CMS experiment has a well established setup for the muon reconstruction.
 Muons are the only particles expected to appear in the muon sub-detector system, thus their identification is unambiguous.
+Figure \ref{fig:PFmuons} shows a muon path in the detector compared to the other particles.
 Three techniques of muon reconstruction were implemented:
 
 \begin{itemize}
