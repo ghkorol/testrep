@@ -150,19 +150,20 @@ Three techniques of muon reconstruction were implemented:
  or first and third stations are taken with either the difference between their $\phi$ coordinate or the direction of the higher quality segment as a bending parameter.
  The muon seed generation algorithm is used for the HLT muon track definition.
  \\
- 
+ The further procedure is to extrapolate the tracks to the other layers of the muon system (it is flexible enough to prolong the tracks from the outermost layers inside or
+ from the innermost layers outside, depending on how the seed was created). The track propagation is performed using the Kalman filter. Each time a new point of the 
+ track is found, the track is refitted (taking into account the effects from the multiple interaction with matter). In case on any step the $\chi^2$ per degree of freedom 
+ of the fit turns out to be higher then 20, this track is rejected. 
  
  \item [--] \textbf{Tracker}: the tracks, reconstructed in the tracking detector only as described in sec. \ref{ssec:trkReco}, 
- are assigned as muons in case they match at least one hit in the muon sub-detector. 
+ are assigned as muons in case they match at least one hit in the muon sub-detector \cite{TWiki:GlobalMuon}.
  
  \item [--] \textbf{Global}: the muons are reconstructed using 
- the combined fit of tracks from the muon system and from the inner tracker.
+ the combined fit of tracks from the muon system and from the inner tracker. Here the standalone and tracker muons are fitted together. The details are given
+ in \cite{TWiki:GlobalMuon}.
 \end{itemize}
 
-It is more efficient to use the tracker algorithm to reconstruct
-low-momentum muons, but it suffers a lot from the presence of a large number of other particles. The global muons with small momenta
-are dominantly using the tracking detector information for the reconstruction, while starting from $p_{T} \sim \textrm{200 GeV}$
-the muon system data plays a significant role.
+
 % 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Lepton reconstruction and selection}
