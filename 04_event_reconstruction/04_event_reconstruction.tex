@@ -94,11 +94,8 @@ from the others with no useful physics information.
 \section{Particle Flow Concept}\label{sec:PF}
 
 All the objects in $t\bar{t}$ dileptonic final state were reconstructed making use of \textit{Particle Flow} (PF)
-algorithm \cite{Beaudette:2014cea}. It is an iterative process which reconstructs the particles and one by one exploiting the information from all parts
+algorithm \cite{Beaudette:2014cea}. It is an iterative process which reconstructs the particles and jets exploiting the information from all parts
 of the detector. After an object is reconstructed in one iteration, all the clusters and tracks assigned to it are blinded for the further iterations.
-The PF algorithm relies on an efficient track reconstruction,
-clustering algorithm in which is able to distinguish overlapping track bunches (as described previously in sec. \ref{ssec:trkReco} - \ref{ssec:vtxReco})
-and on the efficient linking procedure to connect the signals from different sub-detectors.
 
 A short description of the reconstruction with the PF algorithm can be given as follows \cite{Beaudette:2014cea}.
 
@@ -152,6 +149,7 @@ Three techniques of muon reconstruction were implemented:
  bending angles, determine a seed for each of them and take an average. In the CSC region (see sec.\ref{ssec:muonDet}) the two segments from first and second
  or first and third stations are taken with either the difference between their $\phi$ coordinate or the direction of the higher quality segment as a bending parameter.
  The muon seed generation algorithm is used for the HLT muon track definition.
+ \\
  
  
  \item [--] \textbf{Tracker}: the tracks, reconstructed in the tracking detector only as described in sec. \ref{ssec:trkReco}, 
