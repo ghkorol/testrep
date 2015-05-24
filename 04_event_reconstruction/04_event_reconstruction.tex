@@ -36,7 +36,10 @@ The track reconstruction procedure consists of four main steps as following \cit
  as an initial track candidate or seed.
  %
  \item \textbf{Track finding}: extrapolates the seeding candidates along the expected flight paths to the consecutive tracking detector layers searching 
- for the new hits and reestimating the track parameters respectively. The procedure is based on the Kalman filter\cite{Fruhwirth:1987fm}.
+ for the new hits and reestimating the track parameters respectively. The procedure is based on the Kalman filter\cite{Fruhwirth:1987fm}. On each consecutive
+ layer all the hits from the 3 sigma region around the seed trajectory are taken and fitted with a Kalman filter. The best $chi^{2}$ hit is taken and the trajectory
+ continues extrapolation to the next layer until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
+ accepted if it contains more then one ghost hit.
  %
  \item \textbf{Track fitting}: after getting additional hits and parameter estimates from the track finding stage, a track is refitted using the 
  Kalman filter. This procedure is performed releasing the constrains set on the seeding stage (such as the track connection to the beam spot).
