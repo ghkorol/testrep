@@ -49,17 +49,17 @@ The track reconstruction procedure consists of four main steps as following \cit
  are based on a good $\chi^{2}$ and reasonable impact parameter value to the beam spot.
 \end{itemize}
 
-To optimize the tracking procedure it is repeated in several iterations. 
+The tracking procedure is repeated in several iterations.
 %Each iteration differs in the set of $p_{T}$ and beam spot impact parameter
 %requirements for the seed tracks generation\cite{Chatrchyan:2014fea}. 
 The first iteration has the hardest requirements - high $p_{T}$ of the tracks
 and a good connection to the beam spot center (such objects are usually easier to reconstruct). After reconstructing the tracks in the first iteration,
 their hits are removed and the second iteration starts with a bit softer requirements on the seed tracks. In total, six iterations are performed.
-
-For the sake of HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only is used, repeating the seed generation procedure\cite{Chatrchyan:2014fea}.
-This procedure is fast enough for the trigger performance. However the tracks produced this way have a higher probability to be fake and have worse resolution, they
-are not used as the track candidates, but rather for the vertex reconstruction at the trigger level. To define track candidates a simplistic procedure
-involving pixel and strip detector information is performed on the HLT\cite{Chatrchyan:2014fea}.
+% 
+% For the HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only is used, repeating the seed generation procedure\cite{Chatrchyan:2014fea}.
+% This procedure is fast enough for the trigger performance. However the tracks produced this way have a higher probability to be fake and have worse resolution, they
+% are not used as the track candidates, but rather for the vertex reconstruction at the trigger level. To define track candidates a simplistic procedure
+% involving pixel and strip detector information is performed on the HLT\cite{Chatrchyan:2014fea}.
 
 \subsection{Primary Vertex Reconstruction}\label{ssec:vtxReco}
 
