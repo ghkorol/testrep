@@ -46,11 +46,13 @@ The track reconstruction procedure consists of four main steps as following \cit
  %
  \item \textbf{Track selection}: reduces the rate of fake tracks\footnote{A \textit{fake track} is a track produced by the fit but is actually there was
  no real charged particle which produced this track.} by setting physical and quality constrains on the object produced at the previous step. The requirements
- are based a good $\chi^{2}$ per degree of freedom and how compatible the track is with emerging from the primary interaction region.
+ are based on a good $\chi^{2}$ and reasonable impact parameter value to the beam spot.
 \end{itemize}
 
-To optimize the tracking procedure it is repeated in several iterations. Each iteration differs in the set of $p_{T}$ and beam spot impact parameter
-requirements for the seed tracks generation\cite{Chatrchyan:2014fea}. The first iteration has the hardest requirements - high $p_{T}$ of the tracks
+To optimize the tracking procedure it is repeated in several iterations. 
+%Each iteration differs in the set of $p_{T}$ and beam spot impact parameter
+%requirements for the seed tracks generation\cite{Chatrchyan:2014fea}. 
+The first iteration has the hardest requirements - high $p_{T}$ of the tracks
 and a good connection to the beam spot center (such objects are usually easier to reconstruct). After reconstructing the tracks in the first iteration,
 their hits are removed and the second iteration starts with a bit softer requirements on the seed tracks. In total, six iterations are performed.
 
