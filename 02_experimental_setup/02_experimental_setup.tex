@@ -196,7 +196,7 @@ They are defined in the $(x-y)$ plane. Another variable representing the energy 
 
 The 4T superconducting CMS solenoid, 13 m in length and 6 m in diameter, is shown in the Fig.\ref{fig:solenoid}. 
 The flux is returned through a 10000 ton heavy yoke \cite{CMSatLHC}. A very strong magnet allows not only curving
-high momentum muons for their better reconstruction, but also keeps soft particles with a small bending radius
+high momentum muons for their better transverse  momentum reconstruction, but also keeps soft particles with a small bending radius
 inside the inner detector layers. This reduces occupancy inside the calorimeters leaving only higher
 momentum particles there. A solenoid design allows a compact size of the powerful magnet.
 On the other hand this limits the tracking precision at high pseudorapidities, as in the very forward regions will have 
@@ -206,7 +206,7 @@ tracks which are not influenced by a magnetic field\cite{Dissertori:2010xe} and 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/CERN_CMS_Solenoid_schematic.jpg}
-  \caption{The schematic view on the CMS solenoid}
+  \caption{The schematic view of the CMS solenoid}
   \label{fig:solenoid}
 \end{figure}
 
@@ -223,21 +223,22 @@ and its overall structure is displayed in Fig.\ref{fig:tracker}.
 
 \begin{itemize}
  \item The pixel detector is located at the closest distance to the proton-proton collision point. It is composed of three co-axial barrel layers (BPIX)
- 4.4 cm, 7.3 cm and 10.2 cm far from the beamline and two forward discs (FPIX) on positive and negative z side
- at $\pm$34.5 cm and $\pm$46.5 cm. All together the detector consists of 66 million pixels each of a size $100 \times 150 \mu$m$^2$. The hit
+ 4.4 cm, 7.3 cm and 10.2 cm far from the beamline and two forward discs (FPIX) on positive and negative z sides
+ at $\pm$34.5 cm and $\pm$46.5 cm. Altogether the detector consists of 66 million pixels each of a size $100 \times 150\;\mu$m$^2$. A hit
  position resolution of 15-20 $\mu$m was reached\cite{TrackPerf}.
- As shown on the Fig.\ref{fig:tracker} the pixel detector covers the rapidity range $|\eta| < 2.5$.
+ As shown in Fig.\ref{fig:tracker}, the pixel detector covers the rapidity range $|\eta| < 2.5$.
  
- \item Silicon strip detector composed of ten layers follows right after the pixel detector and reaches the distance of 130 cm far
- from the beamlines. It consists of four inner barrel layers or Tracker Inner Barrel (TIB), two inner endcups each containing 3 discs
- or Tracker Inner Disk (TID), six outer barrel layers or Tracker Outer Barrel (TOB) and two outer Tracker End Cups (TEC).
- Each of the components has a specific design corresponding to it's position and geometry. Overall a silicon tracker consists of 9.3
+ \item A silicon strip detector composed of ten layers follows right after the pixel detector and reaches a distance of 130 cm far
+ from the beamline. It consists of four inner barrel layers or Tracker Inner Barrel (TIB), two inner endcaps each containing 3 discs
+ or Tracker Inner Disk (TID), six outer barrel layers or Tracker Outer Barrel (TOB) and two outer Tracker EndCaps (TEC).
+ Each of the components has a specific design corresponding to it's position. The sensors in TIB and TOB are placed parallel to the
+ beamline, and in TID and TEC they are perpendicular to the beam pipe. Overall the silicon tracker consists of 9.3
  million strips.
 \end{itemize}
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.8\textwidth]{02_experimental_setup/plots/img_cms_tracker_view.png}
+  \includegraphics[width=1.1\textwidth]{02_experimental_setup/plots/img_cms_tracker_view.png}
   \caption{CMS tracking detector. The pixel part is marked with blue and the strip part is marked with red.}
   \label{fig:tracker}
 \end{figure}
@@ -249,12 +250,12 @@ With overall 200 m$^2$ of active silicon area CMS tracking detector became the l
 
 The Electromagnetic Calorimeter (ECAL)~\cite{ECALtdr, ECALtdradd, CMSatLHC} is a detector component which comes next after the tracker on the way of particles from
 the collision point. The facility is assigned to measure the full electron and photon energies in all the directions. 
-A very special lead tungsten (PbWO$_{4}$) scintillating crystal was made to build up the ECAL. The crystalline is heavier then stainless steel but transparent thanks 
-to the oxygen touch. Each crystal weights 1.5 kg having a size of a coffee cup.
+A very special lead tungsten (PbWO$_{4}$) scintillating crystal was made to build up the ECAL. The crystalline is heavier then stainless steel but transparent. 
+Each crystal weights 1.5 kg having a size from $22\times22\;$mm$^2$ to $26\times26\;$mm$^2$ with the length of 230 .
 
-ECAL is a homogeneous detector made up of a \textit{barrel} part (EB) covering the range of $|\eta| <$ 1.479 and two \textit{endcups} (EE) in the range $(1.479 < |\eta| < 3.0)$
-as shown on the Fig.\ref{fig:ecal}. For a high precision low momentum gamma quanta measurement a \textit{Preshower} is installed right before 
-the endcups.
+The ECAL is a homogeneous detector made up of the \textit{barrel} part (EB) covering the range of $|\eta| <$ 1.479 and two \textit{endcaps} (EE) in the range $(1.479 < |\eta| < 3.0)$
+as shown in Fig.\ref{fig:ecal}. For a high precision measurements of the low momentum gamma quanta a \textit{Preshower} is installed right before 
+the endcaps.
 
 \begin{figure}[t]
   \centering
@@ -263,163 +264,161 @@ the endcups.
   \label{fig:ecal}
 \end{figure}
 
-EB of the electromagnetic calorimeter consists of 61200 crystals of lead tungsten joined in modules with 5 crystals in each. It is
-cylindrically surrounding the beam pipe starting from the distance of $r = 1.29$m from it. 
-The material is dense thus reduces the particle's path allowing a smaller overall size of this detector component. 
-Each crystal has a length of 230 mm, corresponding to 25.8$X_{0}$\footnote{A radiation length of electron in PbWO$_{4}$ is 
+The EB consists of 61200 crystals of lead tungsten joined in modules with 5 crystals in each. It is
+cylindrically surrounding the beam pipe starting at a distance of $r = 1.29\;$m from it. 
+The material is dense and thus reduces the particle's path allowing a smaller overall size of this detector component. 
+Each crystal has a length of 230 mm, corresponding to 25.8$X_{0}$\footnote{The radiation length in PbWO$_{4}$ is 
 $X_{0}=0.86$ cm. It corresponds to the distance which an electron should pass in this specific material to reduce it's 
-energy by a factor of $\frac{1}{e}$ and to the $\frac{7}{9}$ of the mean free paths for a pair production by a photon.}. 
+energy by a factor of $\frac{1}{e}$ and to $\frac{7}{9}$ of the mean free paths for a pair production by a photon.}. 
 To avoid the particles traveling through the cracks between the single submodules they are all tilted by 3$^{\circ}$ with 
-respect to the direction to the nominal collision point. Lead tungsten scintillation decay time\footnote{Scintillation Decay 
-time is the time required for scintillation emission to decrease to $e^{-1}$ of its maximum.} is in order of 25 ns thus it 
-emits 80$\%$ of the light signals fast enough to fit into the bunch spacing designed for the LHC. A special avalanche 
+respect to the direction to the nominal collision point. The lead tungsten scintillation decay time\footnote{The scintillation decay 
+time is the time required for scintillation emission to decrease to $e^{-1}$ of its maximum.} is of the order of 25 ns, thus 80$\%$ 
+of the light signals are emitted fast enough to fit into the bunch spacing designed for the LHC. A special avalanche 
 photomultiplier designed to work under the high magnetic fields is glued on the back side of each crystal to detect the scintillated light\cite{APDVPT}.
 
 A Preshower forms a 20 cm thick disc which contains two layers of lead to form the showering each followed by a layer of silicon strips to
 detect the particles from the shower. A much finer granularity of the silicon strips (2 mm wide each) compared to the 
-crystals in EB and EE allow a more accurate particle distinction. An additional cooling to -10$^{\circ}$C -- -15$^{\circ}$C 
-of the silicon detectors has to be provided.
+crystals in EB and EE allow a more accurate particle distinction.
 
-EE consists of two endcups each being composed of 7324 lead tungsten crystals placed at $z = \pm 3.154$m. As for the EB the modules
+The EE consists of two endcups each being composed of 7324 lead tungsten crystals placed at $z = \pm 3.154\;$m. As for the EB the modules
 at EE are slightly tilted but each crystal is a bit shorter compared to the barrel layer (24.7$X_{0}$). Vacuum phototriodes\cite{APDVPT} were
 glued to the back side of the scintillating planes.
 
-The enegry resolution $\sigma(E)$ of the ECAL detector is given as\cite{CMSatLHC}:
+The energy resolution $\sigma(E)$ of the ECAL detector is given as\cite{CMSatLHC}:
 
 \begin{equation}\label{eq:resECAL}
   (\frac{\sigma}{E})^{2} = (\frac{S}{\sqrt{E}})^{2} + (\frac{N}{E})^{2} + C^{2},
 \end{equation} 
 
-where $S$ is a stochastic term due to different measurement fluctuations, $N$ -- a noise term due to electronics and pile up noise
-and $C$ -- a constant term due to systematic imperfections and from temperature instabilities. 
-The ECAL energy resolution was primary determined on the test beam using 
-electrons in the energy range from 20 GeV to 240 GeV\cite{ECALres2007} and taking (\ref{eq:resECAL}) to account the result was the
-following:
+where $S$ is a stochastic term due to measurement fluctuations, $N$ is a noise term due to electronics and pile up noise
+and $C$ is a constant term due to systematic imperfections and from temperature instabilities. 
+The ECAL energy resolution was primary determined on a test beam using 
+electrons in the energy range from 20 GeV to 240 GeV\cite{ECALres2007} and the result was the following:
 
 \begin{equation}\label{eq:resECAL}
-  (\frac{\sigma}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{12\%}{E})^{2} + (0.3\%)^{2}.
+  (\frac{\sigma}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{12\%}{E})^{2} + (0.3\%)^{2},
 \end{equation}
 
-After the measurement of the ECAL characteristics with the proton-proton collisions with the center-of-mass energy $\sqrt{s} = $7 TeV
-at the LHC in 2010 and 2011 it was found that for the 60 GeV electrons the energy resolution varies from 1.1$\%$ in barrel to 5$\%$ in 
-forward regions\cite{ECALres2013}.
+where the variation terms correspond to the ones listed in \ref{eq:resECAL}.
+
+After a measurement of the ECAL characteristics with proton-proton collisions with a centre-of-mass energy $\sqrt{s} = $7 TeV
+at the LHC in 2010 and 2011 it was found that for the 60 GeV electrons the energy resolution varies from 1.1$\%$ in the barrel 
+to 5$\%$ in the forward regions\cite{ECALres2013}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hadron Calorimeter}
 
-The Hadron Calorimeter (HCAL)\cite{CMSatLHC} at CMS follows the ECAL and aims to capture until the full stop all the particles which entered it, 
-except for the muons. As it assumed that electrons are absorbed in the ECAL, HCAL is designed to measure the full energy of hadrons. 
-Due to the hermiticity, the detector should identify all the hadron decay products. Thus any energy imbalance would point to the
-existance of non-interacting neutral particles as neutrinos.
+The Hadron Calorimeter (HCAL)\cite{CMSatLHC} at CMS follows the ECAL and aims to capture until full stop all the particles which entered it, 
+except for the muons and the invisible neutrinos. As it is assumed that electrons are absorbed in the ECAL, the HCAL is primarily designed 
+to measure the full energy of hadrons. Due to the hermiticity, the detector should identify all hadron decay products in a hard proton-proton
+collision. Thus any energy imbalance would point to the existence of non-interacting neutral particles such as neutrinos.
 
 One of the main challenges of the hadronic calorimeter design was to fit it inside the compact solenoid (see sec.\ref{ssec:solenoid}).
-The solution was to put one of the parts of the detector component outside the magnet coil. Thus HCAL consists of the barrel (HB), 
-outer barrel (HO), endcup (HE) and forward (HF) parts. A schematic sketch of the hadron calotimeter is presented on the Fig.\ref{fig:hcal}.
+The solution was to put one of the parts of the detector component outside the magnet coil. Thus the HCAL consists of the barrel (HB), 
+outer barrel (HO), endcup (HE) and forward (HF) parts. A schematic sketch of the hadron calotimeter is presented in Fig.\ref{fig:hcal}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_HCAL.png}
+  \includegraphics[width=1.0\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_HCAL.png}
   \caption{CMS hadron calorimeter sketch. Different components and their pseudorapidity ranges are shown.}
   \label{fig:hcal}
 \end{figure}
 
 The HB and HE are the sampling calorimeters composed of brass and stainless steel plates (some of them made of Russian Navy brass 
-shell casements in World War II) interleaved with scintillators. HB covers the pseudorapidity range of $|\eta| < $1.3. It contains 14 brass and
+shell casements in World War II) interleaved with scintillators. The HB covers the pseudorapidity range of $|\eta| < $1.3. It contains 14 brass and
 2 stainless steel absorbers, each from 50.4 mm to 56.6 mm thick. The HE covers more forward region in pseudorapidity -- 1.6$ < |\eta| < $3.0. It is composed
 of 18 layers of 79 mm thick brass plates. The scintillator plastic tiles are located after each absorber layer. The gaps between tiles are covered 
-with reflective paint to keep the light emitted inside one scintillator plate doesn't travel outside as this light gives the energy estimate. Optic fibers fitted into
+with reflective paint to prevent the light emitted inside one scintillator plate traveling outside as this light gives the energy estimate. Optic fibers fitted into
 specially cut grooves on top of scintillating tiles collect light signals and pass them to the readout boxes with hybrid photodiodes. The signals
 collected from successive tiles, one behind the other, are optically added and form so called ``towers``. The towers are indicating 
 the particle path in the calorimeter.
 
-HB and HE material thickness provides only 5.82$\lambda_{I}$\footnote{$\lambda_{I}$ is a \textit{nuclear interaction length}, or the average 
-length the particle has to travel inside the material before undergoing an inelastic nuclear interaction} in central region to 10.6$\lambda_{I}$ in more forward once. The 
-ECAL material overall is equal to 1.1$\lambda_{I}$. This is not enough to stop all the hadron showers\footnote{To fully contain a 1 TeV hadronic jet a thickness of
+The HB and HE material thickness provides only 5.82$\lambda_{I}\;\;$\footnote{$\lambda_{I}$ is \textit{nuclear interaction length}, or the average 
+length the particle has to travel inside the material before undergoing an inelastic nuclear interaction} in the central region to 10.6$\lambda_{I}$ in the more forward
+region. The ECAL material overall is equal to 1.1$\lambda_{I}$. This is not enough to stop all the hadron showers\footnote{To fully contain a 1 TeV hadronic jet a thickness of
 roughly 11$\lambda_{I}$.} so the additional outer calorimeter HO
-was placed outside the solenoid. Using the solenoid and yoke material itself, adding also some own absorber plates, HO provides 11.6$\lambda_{I}$ in the
+was placed outside the solenoid. Using the solenoid and yoke material itself, adding also some own absorber plates, HO provides additional 11.6$\lambda_{I}$ in the
 most central regions.
 
 The forward calorimeter part HF starts from the $z = \pm$11.6 m distance covering the pseudorapidity range of 3.0$ < |\eta| < $5.2. It has a cylindrical shape
 with the inner radius $r = $12.5 cm and outer radius $r = $130.0 cm. The overall length of HF is 165 cm. It consists of absorbing steel grooved plates and
-quartz light emitting tubes placed in these groves parallel to the beam pipe. As the HF faces not only hadronic but also the electromagnetic radiation
-it has to be sensitive to both. Thus half of the quartz tubes spread over the whole length of the HF (165 cm) and the other half starts only at 22 cm 
+quartz light emitting tubes placed in these grooves parallel to the beam pipe. As the HF faces not only hadronic but also the electromagnetic radiation
+it has to be sensitive to both. Thus half of the quartz tubes spread over the whole length of the HF (165 cm) and the other half (short quartz tubes) starts only at 22 cm 
 from the front side of the HF. The long and the short quartz fibers have different readouts. Electromagnetic showers would start very early  not reaching the 
 short quartz tubes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Muon Detector}\label{ssec:muonDet}
 
-The Muon Detector\cite{CMSatLHC} together with the solenoid is a name giving part of the CMS experimental setup. As muons pass through calorimeters materials
-without significant losses\cite{MuonStop}, muon detection systems can be placed on the outer layers of the whole CMS facility. A very precize measurement of muons 
-is possible also combining with a tracking detector. The momentum of these particles is measured out of their bending in a strong magnetic field.
-The unique signature of a muon in the event can be used for triggering. Muons appear in the processes
-of most physical interest at CMS, like Higgs or heavy resonances decays.
+The Muon Detector\cite{CMSatLHC} together with the solenoid are the detectors which were giving the name to the CMS detector. As muons pass through calorimeters materials
+without significant losses\cite{MuonStop}, the muon detection systems can be placed on the outer layers of the whole CMS apparatus.
+The unique signature of a muon in the event can be used for triggering. Muons appear in many processes
+of physical interest at CMS, like Higgs or heavy resonances decays.
 
-Muon system stations are located outside the solenoid and in-between the return yoke plates. A muon track is fitted to the hits in each station 
-and interpolated to the tracker. That is why muon system and the central tracking detector are aligned within one sixth of a millimeter.
+The muon system stations are located outside the solenoid and in-between the return yoke plates. A muon track is fitted to the hits in each station 
+and interpolated to the tracker. That is why the muon system and the central tracking detector have to be aligned with a precision of one sixth of a millimeter.
 
 The muon detector consists of 1400 gaseous chambers of three types: 250 Drift Tubes (DT), located in barrel region of $|\eta| < $1.2, 540 Cathode Strip Chambers
-(CSC) as endcups covering the pseudorapidity of 0.9$ < |\eta| < $2.4 and 610 Resistive Plate Chambers (RPC) placed in both, barrel and endcup regions, and covering
+(CSC) as endcaps covering the pseudorapidity of 0.9$ < |\eta| < $2.4 and 610 Resistive Plate Chambers (RPC) placed in both, barrel and endcup regions, and covering
 the range $|\eta| < $1.6. A schematic view of the muon detecting system with its components is presented on Fig.\ref{fig:muond}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_MuonDetector.png}
-  \caption{CMS muon detection system sketch. Different components and their position is shown.}
+  \includegraphics[width=1.0\textwidth]{02_experimental_setup/plots/Figures_Experimental_Apparatus_MuonDetector.png}
+  \caption{CMS muon detection system sketch. Different components and their position are shown.}
   \label{fig:muond}
 \end{figure}
 
-The DT measures muon position with a help of the system of 4 cm wide gas tubes filled with 15$\%$ of Argon and 85$\%$ of carbon dioxide.
-Each tube contains a stretched positively charged wire inside to collect the charge from the gas ionized by muons. DT has four layers
-divided into four stations (together with RPCs) each. The stations are aligned parallel to the beam line and measure coordinates in $(r,\phi)$
-plane. Three inner stations additionally provide the measurements in $z$ direction with four additional radial aligned DTs.
+The DT measures the muon position with a help of a system of 4 cm wide gas tubes filled with 15$\%$ of Argon and 85$\%$ of carbon dioxide.
+Each tube contains a stretched positively charged wire inside to collect the charge from the gas ionized by the muons. The DT has four layers
+divided into four stations (together with RPCs) each. The stations are aligned parallel to the beam line and measure the coordinates in $(r,\phi)$
+plane. Three inner stations additionally provide the measurements in the $z$ direction with four additional radial aligned DTs.
 
-CSCs disks are used in the endcup regions. Each of them is composed of seven copper cathode strip planes with six anode wire planes in-between, located in 
-a gas volume. Wires and planes have perpendicular direction, thus providing two coordinates of the tracks. CSCs plains are also organized 
-to stations together with PRCs.
+The CSCs disks are used in the endcup regions. Each of them is composed of seven copper cathode strip planes with six anode wire planes in-between, located in 
+a gas volume. Wires and planes have perpendicular directions, thus providing two coordinates of the tracks.
 
-The RPCs provide precise timing measurements and can tag from which bunch crossing the particle comes. This is used to trigger (see sec.\ref{sec:trig})
+The RPCs provide precise timing measurements and can tag from which bunch crossing the particle comes. This is used to trigger (see sec. \ref{sec:trig})
 the events.
 
-Muon momentum measurements from combination of muon system and the tracker reach relative resolution of 1$\%$ -- 3$\%$ for the muon $p_{T}$ from
-20 GeV to 100 GeV.
+Muon momentum measurements from a combination of measurements in the muon system and the tracker reach relative resolution of 1$\%$ -- 3$\%$ for muon $p_{T}$
+ranging from 20 GeV to 100 GeV.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Triggers}\label{sec:trig}
 
-LHC should provide proton-proton collisions every 25 ns, which means that particles from one bunch crossing still travel in the detector at 
-the time when the next collision takes place. There is no way to store a huge amount of information from every collision, but even if it were,
-a greater part of the events would contain no traces of new physics. Most of the collisions are not head-on and low energetic with no chance
+The LHC provides proton-proton collisions every 25 ns, which means that particles from one bunch crossing still travel in the detector at 
+the time when the next collision takes place. There is no way to store the huge amount of information from every collision, but even if it were,
+a greater part of the events would contain no traces of new physics. Most of the collisions are low energetic with no chance
 to produce heavy resonances or Higgs bosons.
 
-Thus there is a need to filter the collisions and take only those which have interesting outcome products. This task is taken over by a trigger
-system\cite{CMSatLHC}. Unlike the three-level trigger system commonly used by other collider experiments, CMS has decided to keep first and high
+Thus there is a need to filter the collisions and record only those which have interesting outcome products. This task is taken over by a trigger
+system\cite{CMSatLHC}. Unlike the three-level trigger system commonly used by other collider experiments, CMS has decided to install a first and a high
 level trigger omitting the second one.
 
-The \textit{Level-1 trigger} (L1) of custom designed programmable electronics, FPGA, ASICs and programmable look-up tables (LUTs). L1 is designed
-to reduce the nominal LHC collision rate of 40 MHz to 100 kHz. The data from different detector parts is stored in synch in the pipeline with a 
-time stamp corresponding to the bunch crossing it appeared from. The information from calorimeters and muon systems is taken to run very primitive
+The \textit{Level-1 trigger} (L1) consists of a custom designed programmable electronics, FPGA, ASICs and programmable look-up tables (LUTs).
+The trigger L1 is designed to reduce the nominal LHC collision rate of 40 MHz to 100 kHz. The data from different detector parts is stored
+synchronously in a pipeline with a time stamp corresponding to the bunch crossing it appeared from. The information from calorimeters and muon systems is taken to run very primitive
 and fast algorithms of particles and jets reconstruction. The information is subsequently collected, compared and is accepted if the trigger
-requirements fulfilled. More detailed L1 trigger architecture is shown on Figure. \ref{fig:trigA}. The time of L1 decision is 3.2 $\mu$s. 
+requirements are fulfilled. A more detailed L1 trigger architecture is shown in Figure. \ref{fig:trigA}. The time of the L1 decision is 3.2 $\mu$s. 
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.6\textwidth]{02_experimental_setup/plots/img_l1.png}
-  \caption{CMS Level 1 trigger architecture. The plot taken from \cite{CMSatLHC}.}
+  \caption{CMS Level 1 trigger architecture. The plot is taken from \cite{CMSatLHC}.}
   \label{fig:trigA}
 \end{figure}
 
-The \textit{High Level Trigger} (HLT) is a software system represented as a filter farm with about a thousand commercial processors. The information
-from L1 trigger is passed to the computers where it is processed in parallel. The amount of information and a readout speed set the requirements
+The \textit{High Level Trigger} (HLT) is a software system represented by a filter farm with about a thousand commercial processors. The information
+from the L1 trigger is passed to the computers where it is processed in parallel. The amount of information and readout speed define the requirements
 on the transfer network. Complex modern network switches solved these problems. HLT performs a mini-reconstruction of the objects detected,
 typically it takes events with leptons, muons and jets with minimum $p_{T}$ and $\eta$ requirement, but also some restrictions on global
-event characteristics, like the missing transverse energy $E^{miss_{T}}$ can be set. An event is written in case of at least one HLT accept.
+event characteristics, like the missing transverse energy $E^{miss_{T}}$ can be set. An event is written if it is accepted by at least one HLT.
 If a trigger has a rather low threshold for some physical interest thus accepting too many events, it is being prescaled. This means that not 
 all of the events that a trigger accepts are written, but only some fraction of them.
 
-The total event rate reduction after L1 and HLT triggers perform is designed to be of a factor $10^{6}$. But despite the trigger filtering
+The total event rate reduction after L1 and HLT triggers perform is designed to be of a factor $10^{6}$. Despite the trigger filtering
 the information which has to be recorded from all LHC experiments at the designed rate reaches 700 MByte per second, which should be analysed 
-at a high-perform computer infrastructure\cite{CMScompTDR}.
+at a high-performance computer infrastructure\cite{CMScompTDR}.
 % 
 % \section{Upgrade for RunII}
 % \subsection{CMS Pixel Tracker Upgrade}
