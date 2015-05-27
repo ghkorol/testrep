@@ -167,205 +167,167 @@ Three techniques of muon reconstruction were implemented:
  in \cite{TWiki:GlobalMuon}.
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Electrons reconstruction}\label{ssec:ElRec}
 
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Lepton reconstruction and selection}
-% 
-% The presence of two leptons, electrons or muons, is required for this analysis. Their reconstruction
-% differs a lot due to a huge mass distinction. Thus, the reconstruction of leptons and muons is discussed separately.
-% 
-% \subsection{Muons reconstruction}
-% 
+To reconstruct the electrons a combined information from the tracking detector and ECAL was used. The electron seeds
+are created in two ways as following \cite{CMS-PAS-EGM-10-004}:
 
-% \subsection{Electrons reconstruction}\label{ssec:ElRec}
-% 
-% To reconstruct the electrons a combined information from the tracking detector and ECAL was used \cite{CMS-PAS-EGM-10-004}. The energy
-% deposits in the ECAL are grouped into superclusters\footnote{A \textit{supercluster} is  a group of one or more associated clusters 
-% of energy deposits in the ECAL. It is constructed taking into account its characteristic narrow width in the pseudorapidity $\eta$
-% and its characteristic spread in $\phi$ due to the bending in the magnetic field of electrons radiating in the tracker material.} 
-% with transverse energy $E_{T} > \textrm{4 GeV}$ and fitted to the tracks in the tracking detector \cite{GSF_Electron_Reconstruction_CMS}.
-% 
-% For a better quality of the tracks a restriction on the impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
-% distance of the track to the primary vertex in the transverse $x-y$ plane.} $|d_{xy}| < 0.4 mm$ is applied. A maximum one hit in the inner tracker
-% which is positioned close to the track, but not reconstructed, is allowed for the electron candidate.
-% 
-% On top of the mentioned conditions, a multivariate analysis (MVA) is performed to reduce the number of misidentified electrons.
-% 
-% \subsection{Lepton selection and isolation}
-% 
-% Only the events which contain at least two leptons (electrons or muons) with a minimum transverse momentum $p_{T}$ of 20 GeV reconstructed
-% in central detector part $|\eta| \leq 2.4$ are accepted for the further analysis.
-% 
-% To distinguish leptons from hard processes (like a $W^{\pm}$ decay), or \textit{prompt leptons}, from the misidentified charged hadrons 
-% and leptons from the jets, an \textit{isolation} criterion is required. The former usually don't overlap with jets, while the latter should
-% fly in the same direction and be located in a close vicinity of a jet. This distinction is a basis for the isolation. An energy in a cone 
-% around a lepton (not counting the lepton energy itself) is calculated. That is the definition of a combined isolation:
-% 
-% \begin{equation}
-%  I_{comb} = I_{tracker} + I_{ECAL} + I_{HCAL} = \sum E_{photons} + \sum E_{hadrons}
-% \end{equation}
-% 
-% The combined isolation $I_{comb}$ divided by the lepton transverse momentum $p_{T}(l)$ is the relative isolation used as a discriminant value:
-% 
-% \begin{equation}
-%  I_{rel} = \frac{I_{comb}}{p_{T}(l)}
-% \end{equation}
-% 
-% Leptons with the $I_{rel} \leq 0.15$ in the cone $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}} = 0.3$ are selected.
-% 
-% \subsection{Lepton pair selection}
-% 
-% The $t\bar{t}$ decay final state has two oppositely charged leptons, while the selected events may contain three or more leptons.
-% Out of all the leptons in the event, only the pair of opposite sign tracks with the maximum total transverse momentum $p_{T}(l\bar{l})$
-% is selected. After this step the event is tagged with the $t\bar{t}$ decay channel -- $ee$, $e\mu$ or $\mu\mu$.
-% 
-% To minimize the fraction of the Drell-Yan low-mass resonances only the lepton pairs with the masses higher then 20 GeV are accepted. 
-% 
-% The same flavour final states ($ee$ and $\mu\mu$) are highly contaminated by the $Z/\gamma * \to ee/\mu\mu$ processes. To lower this effect
-% the restriction on the mass window of the lepton pair system $\textrm{76 GeV} \leq m(l\bar{l}) \leq \textrm{106 GeV}$ is applied which removes  
-% the mass peak of the $Z-$boson resonance at $\textrm{91 GeV}$. This condition is only required for the $ee$- and $\mu\mu$-tagged events.
-% 
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Jet reconstruction and selection}
-% 
-% Each $t$ quark from the $t\bar{t}$ decays to a $b$. A quark as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
-% A $b$ quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. The LHC proton-proton collisions
-% are providing an environment with a fertile hadron activity which makes a jet reconstruction not a straight forward task. Special algorithms are developed
-% to find and reconstruct jets.
-% 
-% \subsection{Jet Finder Algorithms}
-% 
-% The simple idea which lies behind any algorithm of a jet finding and reconstruction is the merging of the objects which are measured near by in the detector.
-% Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
-% 
-% \begin{itemize}
-%  \item \textit{Sequential clustering}: the particles are sequentially recombined until the closest (regarding the actual distance between measured
-%  objects) combination is found.
-%  %
-%  \item \textit{Cone algorithms}: a jet is defined as a cone around some direction of dominant energy flow. Each or some of the particles are tried 
-%  in a role of the dominant direction seed. The next step was to define a trial cone around the seed and accept all the particles which enter this cone.
-%  The sum of the four-momenta of all objects inside the jet candidate area is calculated and assumed to be a new seed. This iterative process continues
-%  until the stable seed is found.
-% \end{itemize}
-% 
-% Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default. This means that the jets constructed this way will
-% change if one of the jet components will face a collinear splitting and do not account for additional soft radiation.
-% 
-% The sequential clustering algorithms are both infrared and collinear safe, though may be not that fast. They don't rely on a stable cone. The procedure of constructing
-% a jet starts with defining two distances -- $d_{ij}$ (the distance between two objects, particles or pseudojets, $i$ and $j$ in the detector) and $d_{iB}$ (the distance between the object $i$
-% and the beam). These two distances are compared:
-% 
-% \begin{itemize}
-%  \item [--] $d_{ij} < d_{iB}$: the objects $i$ and $j$ are combined together to a pseudojet which enters the clustering again as a single object;
-%  \item [--] $d_{ij} > d_{iB}$: the object $i$ is taken as a final jet.
-% \end{itemize}
-% 
-% The different sequential clustering algorithms differ at the level of the distance definition. In general the distances are defined as follows \cite{Cacciari:2008gp}:
-% 
-% \begin{align}
-%  d_{ij} & = min(k_{Ti}^{2p}, k_{Tj}^{2p}) \frac{\Delta_{ij}^{2}}{R^{2}},\label{eq:ktDist} \\
-%  d_{iB} & = k_{Ti}^{2p}, \\
-%  \Delta_{ij}^{2} & = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}.
-% \end{align}
-% 
-% Here the $k_{Ti}$, $y_{i}$ and $\phi_i$ are the transverse momentum, rapidity and azimuth angle of an object $i$. The $R$ is a cone radius which tells 
-% how large the jet can be. A $p$ is the parameter which varies the power of the energy in comparison to the geometrical scale $\Delta_{ij}$.
-% The algorithm behaves differently depending on a $p$ value:
-% 
-% \begin{itemize}
-%  \item $p = 1$ defines the $k_{T}$ algorithm, where the energetic and spatial term are of the same power;
-%  \item $p = 0$ defines the Cambridge/Aachen algorithm, where the energetic term in eq.\ref{eq:ktDist} is removed thus the spatial part only plays role;
-%  \item $p = -1$ defines the anti-$k_{T}$ algorithm which produces circular shaped infrared and collinear safe jets.
-% \end{itemize}
-% 
-% The jets for this analyses were constructed making use of the anti-$k_{T}$ sequential clustering algorithm. The procedure was carried out with real and
-% simulated data (on the generator level and after the detector simulation).
-% 
-% Jets are reconstructed with a particle flow concept (see sec. \ref{sec:PF}) using the information from all the sub-detector parts.
-% 
-% \subsection{Jet Energy Calibration}\label{ssec:JCal}
-% 
-% The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this sake a factorized jet calibration
-% method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed on the Figure \ref{fig:JECsc}.
-% 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/JEC.pdf}
-%   \caption{Jet calibration steps applied for the detector data and simulated MC samples.}
-%   \label{fig:JECsc}
-% \end{figure}
-% 
-% First calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
-% Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step. Further correction steps aim to make the jet response
-% flat as a function of $|\eta|$ and $p_{T}$. The correction on the geometrical position dependence corrects all the energies as if they were measured 
-% in the most efficient barrel region using the dijet data events. The $p_{T}$ dependence correction makes use of the Drell-Yan events to exploit a good
-% lepton energy and momentum resolutions. Finally the residual corrections are applied on data to correct for some minor disagreement with the simulation.
-% 
-% In general all the corrections factor in the kinematic region of interest for this analysis are smaller then $5\%$.
-% 
-% \subsection{Jet selection}
-% 
-% This analysis requires only the events where at least two well reconstructed jets are present. All the energies are calibrated as explained in sec.\ref{ssec:JCal}.
-% The jets are required to be reconstructed in the barrel region of the detector with the pseudorapidity $|\eta| \leq 2.4$ and with the transverse momentum of at least 
-% 30 GeV. 
-% 
-% \subsection{b-Jets identification}\label{ssec:bTag}
-% 
-% A jet may arise from any parton, not only from a $b$ quark. But there are some properties which may allow to distinguish a $b$-jet from the other jets. In particular
-% a long life time of the B hadrons (in the order of $10^{-12}$ s) allows it to travel far enough from the primary interaction point before the decay. The point
-% in space, which corresponds to the place of $B$-hadron decay can be reconstructed in the pixel tracking detector as a \textit{secondary vertex}. The other important
-% parameter which can be used to identify the jet origin is the impact parameter of the tracks arising from the secondary vertex. The discussed properties are 
-% displayed on the Figure \ref{fig:SV}.
-% 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=0.5\textwidth]{04_event_reconstruction/plots/btagging_cartoon.png}
-%   \caption{A sketch of the event with a reconstructed secondary vertex. A light blue circle is the primary vertex and a red circle is the secondary vertex. The impact 
-%   parameter is marked with a blue dashed line and a symbol $d_{0}$.}
-%   \label{fig:SV}
-% \end{figure}
-% 
-% The algorithms which aim to find the jets originating from $b$-quarks are called the \textit{b-tagging algorithms}. All of them define a single discriminator value for each jet.
-% The algorithms used for the different analyses of the data recored by the CMS detector in 2012 are listed as follows \cite{CMS-PAS-BTV-13-001}: 
-% 
-% \begin{itemize}
-%  \item \textit{Track Counting High Purity} (THCP): the discriminator value is defined as a significance of the impact parameter\footnote{A \textit{significance} is a relation 
-%  of the impact parameter value $d$ to it's measurement uncertainty $\sigma_{d}$: $S = \frac{d}{\sigma_{d}}$} of the track with the third highest
-%  impact parameter significance;
-%  %
-%  \item \textit{Jet Probability} (JP): the discriminator is a likelihood value for all associated tracks to arise from the primary vertex. 
-%  %
-%  \item \textit{Combined Secondary Vertex} (CSV): a likelihood-based discriminator uses the secondary vertex and lifetime information to distinguish $b$-jets, $c$-jets
-%  and light jets. This method was exploited for the analyses presented.
-% \end{itemize}
-% 
-% The minimum thresholds for the algorithm are defined as three \textit{working points}, loose (L), medium (M) and tight (T), as following \cite{CMS-PAS-BTV-13-001}:
-% 
-% \begin{itemize}
-%  \item [--] CSVL sets the threshold on the actual discriminator value as $\geq 0.244$, which has an efficiency $\sim 80\%$ and a misidentification probability of
-%  light hadron jets close to $10\%$;
-%  %
-%  \item [--] CSVM sets a harsher threshold on the discriminator value of $\geq 0.679$, which lowers the misidentification probability to $\sim 1\%$, but also
-%  reduces the statistics down to 65$\%$;
-%  %
-%  \item [--] CSVT has the hardest threshold on the discriminator value of $\geq 0.898$. This lowers the misidentification probability by other factor of 10 ($0.1\%$)
-%  and reduces the efficiency down to 50$\%$;
-% \end{itemize}
-% 
-% In general the efficiency of the CSV algorithm was estimated in data and simulated QCD events \cite{CMS-PAS-BTV-13-001}. The resulting curve is presenter on the figure \ref{fig:CSVeff}.
-% 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/Figure_012-b.pdf}
-%   \caption{A b-jet tagging efficiency as a function of the discriminator threshold for the CSV algorithm. The upper panel shows the efficiency measured in data and predicted from the simulation.
-%   The lower panel shows the ratio between data and simulation efficiencies, where the blue line represents the combined statistical and systematical uncertainty. The plot is taken from \cite{CMS-PAS-BTV-13-001}.}
-%   \label{fig:CSVeff}
-% \end{figure}
-% 
-% For this analysis the jets are tagged as arising from a $b$-quark in case they are accepted by CSVL. An event is selected only if it contains at least one $b$-tagged jet.
-% 
+\begin{itemize}
+ \item \textbf{Tracker driven seeding}: The tracks from the tracking detector are matched to the superclusters in the ECAL\footnote
+ {A \textit{supercluster} is  a group of one or more associated clusters of energy deposits in the ECAL. It is constructed taking into 
+ account its characteristic narrow width in the pseudorapidity $\eta$ and its characteristic spread in $\phi$ due to the bending in the 
+ magnetic field of electrons radiating in the tracker material. The transverse energy of a supercluster has to be $E_{T} > \textrm{4 GeV}$}.
+ The track driven methods creates seeds with $p_{T} < 5$ GeV.
+ 
+ \item \textbf{ECAL driven seeding}: The ECAL superclusters are fitted to the tracks from the tracking detector using the Gaussian Sum Filter\cite{GSF_Electron_Reconstruction_CMS}.
+ Thw ECAL driven seeding algorithm is performed to create seeds with $p_{T} \geq 5$ GeV.
+\end{itemize}
+
+The seeding tracks are preselected to decrease the number of fake candidate. The tracker seeds are preselected by the multivariate analysis 
+(MVA) as described in \cite{CMS:2010byl}. For the ECAL seeds the restrictions on the GSM matching in $\eta$ and $\phi$ are applied \cite{Baffioni:2006cd}.
+
+The collection of the tracks formed after the preselection is assigned to electrons.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Jet reconstruction and selection}
+
+A quark or a gluon as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
+A $b$ quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. The LHC proton-proton collisions
+are providing an environment with a fertile hadron activity which makes a jet reconstruction not a straight forward task. Special algorithms are developed
+to find and reconstruct jets.
+
+\subsection{Jet Finder Algorithms}
+
+The simple idea which lies behind any algorithm of a jet finding and reconstruction is the merging of the objects which are measured near by in the detector.
+Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
+
+\begin{itemize}
+ \item \textit{Sequential clustering}: the particles are sequentially recombined until the closest (regarding the actual distance between measured
+ objects) combination is found.
+ %
+ \item \textit{Cone algorithms}: a jet is defined as a cone around some direction of dominant energy flow. Each or some of the particles are tried 
+ in a role of the dominant direction seed. The next step was to define a trial cone around the seed and accept all the particles which enter this cone.
+ The sum of the four-momenta of all objects inside the jet candidate area is calculated and assumed to be a new seed. This iterative process continues
+ until the stable seed is found.
+\end{itemize}
+
+Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default. This means that the jets constructed this way will
+change if one of the jet components will face a collinear splitting and do not account for additional soft radiation.
+
+The sequential clustering algorithms are both infrared and collinear safe, though may be not that fast. They don't rely on a stable cone. The procedure of constructing
+a jet starts with defining two distances -- $d_{ij}$ (the distance between two objects, particles or pseudojets, $i$ and $j$ in the detector) and $d_{iB}$ (the distance between the object $i$
+and the beam). These two distances are compared:
+
+\begin{itemize}
+ \item [--] $d_{ij} < d_{iB}$: the objects $i$ and $j$ are combined together to a pseudojet which enters the clustering again as a single object;
+ \item [--] $d_{ij} > d_{iB}$: the object $i$ is taken as a final jet.
+\end{itemize}
+
+The different sequential clustering algorithms differ at the level of the distance definition. In general the distances are defined as follows \cite{Cacciari:2008gp}:
+
+\begin{align}
+ d_{ij} & = min(k_{Ti}^{2p}, k_{Tj}^{2p}) \frac{\Delta_{ij}^{2}}{R^{2}},\label{eq:ktDist} \\
+ d_{iB} & = k_{Ti}^{2p}, \\
+ \Delta_{ij}^{2} & = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}.
+\end{align}
+
+Here the $k_{Ti}$, $y_{i}$ and $\phi_i$ are the transverse momentum, rapidity and azimuth angle of an object $i$. The $R$ is a cone radius which tells 
+how large the jet can be. A $p$ is the parameter which varies the power of the energy in comparison to the geometrical scale $\Delta_{ij}$.
+The algorithm behaves differently depending on a $p$ value:
+
+\begin{itemize}
+ \item $p = 1$ defines the $k_{T}$ algorithm, where the energetic and spatial term are of the same power;
+ \item $p = 0$ defines the Cambridge/Aachen algorithm, where the energetic term in eq.\ref{eq:ktDist} is removed thus the spatial part only plays role;
+ \item $p = -1$ defines the anti-$k_{T}$ algorithm which produces circular shaped infrared and collinear safe jets.
+\end{itemize}
+
+The jets for this analyses were constructed making use of the anti-$k_{T}$ sequential clustering algorithm. The procedure was carried out with real and
+simulated data (on the generator level and after the detector simulation).
+
+Jets are reconstructed with a particle flow concept (see sec. \ref{sec:PF}) using the information from all the sub-detector parts.
+
+\subsection{Jet Energy Calibration}\label{ssec:JCal}
+
+The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this sake a factorized jet calibration
+method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed on the Figure \ref{fig:JECsc}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/JEC.pdf}
+  \caption{Jet calibration steps applied for the detector data and simulated MC samples.}
+  \label{fig:JECsc}
+\end{figure}
+
+First calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
+Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step. Further correction steps aim to make the jet response
+flat as a function of $|\eta|$ and $p_{T}$. The correction on the geometrical position dependence corrects all the energies as if they were measured 
+in the most efficient barrel region using the dijet data events. The $p_{T}$ dependence correction makes use of the Drell-Yan events to exploit a good
+lepton energy and momentum resolutions. Finally the residual corrections are applied on data to correct for some minor disagreement with the simulation.
+
+In general all the corrections factor in the kinematic region of interest for this analysis are smaller then $5\%$.
+
+\subsection{Jet selection}
+
+This analysis requires only the events where at least two well reconstructed jets are present. All the energies are calibrated as explained in sec.\ref{ssec:JCal}.
+The jets are required to be reconstructed in the barrel region of the detector with the pseudorapidity $|\eta| \leq 2.4$ and with the transverse momentum of at least 
+30 GeV. 
+
+\subsection{b-Jets identification}\label{ssec:bTag}
+
+A jet may arise from any parton, not only from a $b$ quark. But there are some properties which may allow to distinguish a $b$-jet from the other jets. In particular
+a long life time of the B hadrons (in the order of $10^{-12}$ s) allows it to travel far enough from the primary interaction point before the decay. The point
+in space, which corresponds to the place of $B$-hadron decay can be reconstructed in the pixel tracking detector as a \textit{secondary vertex}. The other important
+parameter which can be used to identify the jet origin is the impact parameter of the tracks arising from the secondary vertex. The discussed properties are 
+displayed on the Figure \ref{fig:SV}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\textwidth]{04_event_reconstruction/plots/btagging_cartoon.png}
+  \caption{A sketch of the event with a reconstructed secondary vertex. A light blue circle is the primary vertex and a red circle is the secondary vertex. The impact 
+  parameter is marked with a blue dashed line and a symbol $d_{0}$.}
+  \label{fig:SV}
+\end{figure}
+
+The algorithms which aim to find the jets originating from $b$-quarks are called the \textit{b-tagging algorithms}. All of them define a single discriminator value for each jet.
+The algorithms used for the different analyses of the data recored by the CMS detector in 2012 are listed as follows \cite{CMS-PAS-BTV-13-001}: 
+
+\begin{itemize}
+ \item \textit{Track Counting High Purity} (THCP): the discriminator value is defined as a significance of the impact parameter\footnote{A \textit{significance} is a relation 
+ of the impact parameter value $d$ to it's measurement uncertainty $\sigma_{d}$: $S = \frac{d}{\sigma_{d}}$} of the track with the third highest
+ impact parameter significance;
+ %
+ \item \textit{Jet Probability} (JP): the discriminator is a likelihood value for all associated tracks to arise from the primary vertex. 
+ %
+ \item \textit{Combined Secondary Vertex} (CSV): a likelihood-based discriminator uses the secondary vertex and lifetime information to distinguish $b$-jets, $c$-jets
+ and light jets. This method was exploited for the analyses presented.
+\end{itemize}
+
+The minimum thresholds for the algorithm are defined as three \textit{working points}, loose (L), medium (M) and tight (T), as following \cite{CMS-PAS-BTV-13-001}:
+
+\begin{itemize}
+ \item [--] CSVL sets the threshold on the actual discriminator value as $\geq 0.244$, which has an efficiency $\sim 80\%$ and a misidentification probability of
+ light hadron jets close to $10\%$;
+ %
+ \item [--] CSVM sets a harsher threshold on the discriminator value of $\geq 0.679$, which lowers the misidentification probability to $\sim 1\%$, but also
+ reduces the statistics down to 65$\%$;
+ %
+ \item [--] CSVT has the hardest threshold on the discriminator value of $\geq 0.898$. This lowers the misidentification probability by other factor of 10 ($0.1\%$)
+ and reduces the efficiency down to 50$\%$;
+\end{itemize}
+
+In general the efficiency of the CSV algorithm was estimated in data and simulated QCD events \cite{CMS-PAS-BTV-13-001}. The resulting curve is presenter on the figure \ref{fig:CSVeff}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/Figure_012-b.pdf}
+  \caption{A b-jet tagging efficiency as a function of the discriminator threshold for the CSV algorithm. The upper panel shows the efficiency measured in data and predicted from the simulation.
+  The lower panel shows the ratio between data and simulation efficiencies, where the blue line represents the combined statistical and systematical uncertainty. The plot is taken from \cite{CMS-PAS-BTV-13-001}.}
+  \label{fig:CSVeff}
+\end{figure}
+
+For this analysis the jets are tagged as arising from a $b$-quark in case they are accepted by CSVL. An event is selected only if it contains at least one $b$-tagged jet.
+
 % \section{Missing Transverse Energy}
 % 
 % Previously the reconstruction methods and algorithms of all the charged objects of the $t\bar{t}$ dilepton final states were described. However the most complicated 
