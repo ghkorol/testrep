@@ -344,30 +344,32 @@ The corrected recoil value $u_{corr}$ is used to reestimate the missing transver
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Event Selection}
-% 
-% The full final state objects selection has been presented and all the selection criteria are summarized as follows:
-% 
-% \begin{itemize}
-%  \item [--] \textbf{Trigger selection}: The events have to be accepted by the dilepton triggers, which require the presents of two leptons, electrons or muons, with
-%  minimum transverse momentum of 17 GeV and 8 GeV. 
-%  %
-%  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
-%  %
-%  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
-%  %
-%  \item [--] \textbf{Presence of a good vertex}: Events which contain at least one primary vertex with high reconstruction quality are accepted.
-%  %
-%  \item [--] \textbf{Lepton selection}: An event has to contain at least two leptons with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$. Both leptons have to be isolated with 
-%  $I_{rel}\leq 0.15$ in a cone of $\Delta R = 0.3$.
-%  %
-%  \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. For the
-%  same flavour channels a window of $76\textrm{ GeV}\leq m(l\bar{l}) \leq 106\textrm{ GeV}$ is cut out.
-%  %
-%  \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. Additionally, an event has to contain
-%  at least one jet, tagged as originating from the $b$-quark with the help of CSVL.
-%  %
-%  \item [--] \textbf{Missing Transverse Energy selection}: For the same flavour channels only the events with $E_{T}^{miss} > 40$ GeV are accepted.
-% \end{itemize}
-% 
-% The set of selection criteria performs successfully decreasing the fraction of background events. The control distributions which show the data and MC simulation at one plot
-% contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process. 
+
+The reconstructed objects in each event (which corresponds to one bunch crossing) have to fulfill certain criteria to be accepted for this analysis. These 
+criteria are chosen taken to account the physical result this analysis is aiming for and the technical features of the CMS detector parts.
+All the selection requirements are summarized as follows:
+
+\begin{itemize}
+ \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT dilepton triggers, which require the presents of two leptons, electrons or muons, with
+ minimum transverse momentum of 17 GeV and 8 GeV. 
+ %
+ \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
+ %
+ \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
+ %
+ \item [--] \textbf{Presence of a good vertex}: Events which contain at least one primary vertex with high reconstruction quality are accepted.
+ %
+ \item [--] \textbf{Lepton selection}: An event has to contain at least two leptons with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$. Both leptons have to be isolated with 
+ $I_{rel}\leq 0.15$ in a cone of $\Delta R = 0.3$.
+ %
+ \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. For the
+ same flavour channels a window of $76\textrm{ GeV}\leq m(l\bar{l}) \leq 106\textrm{ GeV}$ is cut out.
+ %
+ \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. Additionally, an event has to contain
+ at least one jet, tagged as originating from the $b$-quark with the help of CSVL.
+ 
+ \item [--] \textbf{Missing Transverse Energy selection}: For the same flavour channels only the events with $E_{T}^{miss} > 40$ GeV are accepted.
+\end{itemize}
+
+The set of selection criteria performs successfully decreasing the fraction of background events. The control distributions which show the data and MC simulation at one plot
+contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process. 
