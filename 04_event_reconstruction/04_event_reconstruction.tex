@@ -1,14 +1,22 @@
-\chapter{Event Reconstruction}\label{chapt:event_selection}
+\chapter{Event Reconstruction and Section}\label{chapt:event_selection}
 
 Any physics analysis operates particles and their characteristics. Thus one of the essential tasks on the way to a physical
 result is to interpret outcoming detector data as a set of physical objects making use of the hits
 in the tracker, energy deposits in the calorimeter and signals from the muon system. Assigning this information to some concrete particle 
 or object is a reconstruction procedure.
 
+In general, for this analysis each object of the $t\bar{t}$ dileptonic final state was reconstructed using the \textit{Particle Flow} (PF)
+algorithm \cite{Beaudette:2014cea}. It is an iterative process which reconstructs the particles and jets exploiting the information from all parts
+of the detector. After an object is reconstructed in one iteration, all the detector signals assigned to it are blinded for the further iterations.
+
+The reconstruction with the PF algorithm following \cite{Beaudette:2014cea} starts with muons as they are the most unambiguous particles to identify.
+After blinding the muon signals in the detector, the charged hadrons are reconstructed. The next step is the electron reconstruction and afterwards
+all the remaining signals are assigned to the neutral hadrons and photons. After all particles are reconstructed and identified, the missing transverse
+energy ($E_{T}^{miss}$) is constructed out of them. A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
+
 Different algorithms and methods are used to reconstruct different objects and some of them (relevant for this analysis -- leptons, jets and missing transverse
-energy, responsible for neutrinos) are discussed in this
-chapter. In general, for this analysis each object of the $t\bar{t}$ dileptonic final state was reconstructed using the information from many
-CMS sub-detectors.
+energy, responsible for neutrinos) are discussed in this chapter. Finally the selection which aims to suppress the $t\bar{t}$ like events
+with the similar final state signature and increase the signal quality is presented. The selection is based on the CMS Top-Quark-Physics-Analysis group recommendations \cite{TopPAGreco}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track and Vertex Reconstruction}
@@ -18,7 +26,7 @@ Tracks\footnote{A \textit{track} is a set of information about the charged parti
 collision point or to the place  where some secondary interaction happened.} are the essential objects used for all the particles reconstruction. 
 However they are not the primer detector output and they have to be reconstructed.
 
-\subsection{Track Reconstruction (04-event-reconstruction/Vertex-reconstruction.pdf)}\label{ssec:trkReco}
+\subsection{Track Reconstruction}\label{ssec:trkReco}
 
 The track reconstruction has to take place using the information from the inner tracking detectors. The neighboring pixels and strips which
 produce signals are grouped to clusters. A position of a cluster defines a hit which is an estimate of the point where a particle crossed the
@@ -95,28 +103,20 @@ The information on all primary vertecies in the event is useful not only for oth
 from the others with no useful physics information.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Particle Flow Concept}\label{sec:PF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objects Reconstruction}
 
-All the objects in $t\bar{t}$ dileptonic final state were reconstructed making use of \textit{Particle Flow} (PF)
-algorithm \cite{Beaudette:2014cea}. It is an iterative process which reconstructs the particles and jets exploiting the information from all parts
-of the detector. After an object is reconstructed in one iteration, all the clusters and tracks assigned to it are blinded for the further iterations.
+Given the tracks and vertecies and making use of calorimeter and muon system signals the pattern recognition is possible. 
+This section describes the algorithms of the $t\bar{t}$ final state objects reconstruction (muons, electrons, jets and missing transverse energy).
 
-A short description of the reconstruction with the PF algorithm can be given as follows \cite{Beaudette:2014cea}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Muon Reconstruction}
 
-\begin{itemize}
- \item [--] Muons are identified beforehand to exclude overlapping with the charged hadrons. Their tracks are extrapolated
- from tracker to calorimeter clusters and to the muon systems. The clusters in calorimeter and tracks in the tracker which the muons are assigned to
- do not enter the further objects identification process.
- %
- \item [--] Charged hadrons are reconstructed from the tracks which after the extrapolation to the HCAL region fall within the boundaries
- of one or more calorimeter clusters. Analogically to the tracks used for muon identification, tracks associated to the charged 
- hadrons do not enter any further particle reconstruction.
- %
- \item [--] Electrons have to be reconstructed taking into account not only the tracks and ECAL deposits matching to them, but also
- adding the photons from the frequent Bremsstrahlung.
- %
- \item [--] The remaining ECAL clusters are assigned to photons, and the one from HCAL - to the neutral hadrons
-\end{itemize}
+As it was discussed in section \ref{sec:CMS}, the CMS experiment has a well established setup for the muon reconstruction.
+Muons are the only particles expected to appear in the muon sub-detector system, thus their identification is unambiguous.
+Figure \ref{fig:PFmuons} shows a muon path in the detector compared to the other particles.
+Three techniques of muon reconstruction were implemented:
 
 \begin{figure}[t]
   \centering
@@ -125,22 +125,6 @@ A short description of the reconstruction with the PF algorithm can be given as 
   muon track is shown with a curved blue line, an electron track is red and a charged hadron is solid green.}
   \label{fig:PFmuons}
 \end{figure}
-
-The resulting list of particles is used for further jet and missing transverse energy ($E_{T}^{miss}$) construction. 
-
-The performance of the algorithm was studied with the simulated events \cite{CMS-PAS-PFT-09-001}. Particularly the jet energy
-resolution gain reaches factor 3 for a low transverse momentum region. Furthermore, the angular resolution is improved by factor 2-3.
-
-A more detailed description of each object reconstruction relevant for this analysis is given in the following sections of this chapter.
-A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Muon Reconstruction}
-
-As it was discussed in section \ref{sec:CMS}, the CMS experiment has a well established setup for the muon reconstruction.
-Muons are the only particles expected to appear in the muon sub-detector system, thus their identification is unambiguous.
-Figure \ref{fig:PFmuons} shows a muon path in the detector compared to the other particles.
-Three techniques of muon reconstruction were implemented:
 
 \begin{itemize}
  \item [--] \textbf{Standalone}: muon tracks are reconstructed using the information from the muon system only. The track reconstruction
@@ -168,7 +152,7 @@ Three techniques of muon reconstruction were implemented:
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Electrons reconstruction}\label{ssec:ElRec}
+\subsection{Electrons reconstruction}\label{ssec:ElRec}
 
 To reconstruct the electrons a combined information from the tracking detector and ECAL was used. The electron seeds
 are created in two ways as following \cite{CMS-PAS-EGM-10-004}:
@@ -190,16 +174,16 @@ The seeding tracks are preselected to decrease the number of fake candidate. The
 The collection of the tracks formed after the preselection is assigned to electrons.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Jet reconstruction and selection}
+\subsection{Jet Reconstruction}
 
 A quark or a gluon as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
 A $b$ quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. The LHC proton-proton collisions
 are providing an environment with a fertile hadron activity which makes a jet reconstruction not a straight forward task. Special algorithms are developed
 to find and reconstruct jets.
 
-\subsection{Jet Finder Algorithms}
+\subsubsection{Jet Finder Algorithms}
 
-The simple idea which lies behind any algorithm of a jet finding and reconstruction is the merging of the objects which are measured near by in the detector.
+The idea which lies behind any algorithm of a jet finding and reconstruction is the merging of the objects which are measured near by in the detector.
 Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
 
 \begin{itemize}
@@ -247,9 +231,9 @@ simulated data (on the generator level and after the detector simulation).
 
 Jets are reconstructed with a particle flow concept (see sec. \ref{sec:PF}) using the information from all the sub-detector parts.
 
-\subsection{Jet Energy Calibration}\label{ssec:JCal}
+\subsubsection{Jet Energy Calibration}\label{ssec:JCal}
 
-The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this sake a factorized jet calibration
+The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this a factorized jet calibration
 method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed on the Figure \ref{fig:JECsc}.
 
 \begin{figure}[h]
@@ -267,13 +251,7 @@ lepton energy and momentum resolutions. Finally the residual corrections are app
 
 In general all the corrections factor in the kinematic region of interest for this analysis are smaller then $5\%$.
 
-\subsection{Jet selection}
-
-This analysis requires only the events where at least two well reconstructed jets are present. All the energies are calibrated as explained in sec.\ref{ssec:JCal}.
-The jets are required to be reconstructed in the barrel region of the detector with the pseudorapidity $|\eta| \leq 2.4$ and with the transverse momentum of at least 
-30 GeV. 
-
-\subsection{b-Jets identification}\label{ssec:bTag}
+\subsubsection{b-Jets identification}\label{ssec:bTag}
 
 A jet may arise from any parton, not only from a $b$ quark. But there are some properties which may allow to distinguish a $b$-jet from the other jets. In particular
 a long life time of the B hadrons (in the order of $10^{-12}$ s) allows it to travel far enough from the primary interaction point before the decay. The point
@@ -326,47 +304,46 @@ In general the efficiency of the CSV algorithm was estimated in data and simulat
   \label{fig:CSVeff}
 \end{figure}
 
-For this analysis the jets are tagged as arising from a $b$-quark in case they are accepted by CSVL. An event is selected only if it contains at least one $b$-tagged jet.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Missing Transverse Energy}
 
-% \section{Missing Transverse Energy}
-% 
-% Previously the reconstruction methods and algorithms of all the charged objects of the $t\bar{t}$ dilepton final states were described. However the most complicated 
-% task is to reconstruct the two neutrinos which are neutral and don't interact with detector material thus don't provide any direct trace. The only thing to rely on is
-% observation of the energy imbalances which may point to the presence of undetected objects. The variable responsible for energy imbalance in the transverse plane is 
-% the missing transverse energy $\vec{E^{miss}_{T}}$ (see sec. \ref{sec:CMS}) which is reconstructed using the particle flow algorithm \cite{CMS-PAS-PFT-09-001} (see sec. \ref{sec:PF})
-% as a vectorial sum over all reconstructed particles in the event and then taking the opposite of this azimuthal, momentum two-vector. The missing transverse energy is the modulus
-% of this vector.
-% 
-% \begin{align}
-%  \vec{E}_{T}^{miss} & = (E_{T_{x}}^{miss}, \, E_{T_{y}}^{miss}) = - \sum_{leptons} \vec{p}_{T}^{lepton} - \sum_{jets} \vec{p}_{T}^{jet}, \\
-%  E_{T}^{miss} & = \sqrt{E_{T_{x}}^{miss^{2}} + E_{T_{y}}^{miss^{2}}}.
-% \end{align}
-% 
-% Missing transverse energy reconstruction strongly relies on the quality of leptons and jets reconstruction and is sensitive to the pile up objects. Thus, it is
-% crucial to have a precise distinction to the objects from different collisions. To correct for the pile up effects the Multivariate Analysis (MVA) was performed \cite{CMS-PAS-JME-12-002}.
-% The MVA is trained on the $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and attempts to distinguish between the events emerging from the hard interaction point and
-% pile up verteces. The improvement in resolution which the exploiting of the MVA for pile up rejection gives is $\sim 6\%$. However, the differences between data
-% and simulation are getting larger. To compensate for these discrepancies the \textit{recoil corrections} are applied \cite{CMS-PAS-JME-12-002}. 
-% 
-% A recoil $\vec{u}$ is calculated using the well reconstructed $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and is defined as shown in the eq. \ref{eq:recoil}:
-% 
-% \begin{equation}
-%  \vec{u} = - \vec{p}_{T}(Z) - \vec{E}_{T}^{miss}
-% \end{equation}
-% 
-% The parallel ($u_{||}$) and perpendicular ($u_{\perp}$) components with respect to the $Z$ direction are simultaneously fitted in data and simulation for each bin
-% of the jet multiplicity and $p_{T}(Z)$. The areas of the fit curves $f$ in data and MC simulations are required to be equal:
-% 
-% \begin{equation}
-%  \int_{-\infty}^{u_{corr}} f_{data}\; du = \int_{-\infty}^{u_{uncorr}} f_{sim.}\; du.
-% \end{equation}
-% 
-% The corrected recoil value $u_{corr}$ is used to reestimate the missing transverse energy as $\vec{E}_{T}^{miss} = | \vec{p}_{T}(Z) - \vec{u}_{corr}$.
-% 
-% For this analysis the events in the $ee$ and $\mu\mu$ channels are accepted only in case the missing transverse energy is $E_{T}^{miss} > 40 \textrm{GeV}$. This rejects
-% the background events with a not real missing transverse energy.
-% 
-% \section{Event Selection Summary}
+Previously the reconstruction methods and algorithms of all the charged objects of the $t\bar{t}$ dilepton final states were described. However the most complicated 
+task is to reconstruct the two neutrinos which are neutral and don't interact with detector material, thus don't provide any direct trace. The only thing to rely on is
+observation of the energy imbalances which may point to the presence of undetected objects. The variable responsible for energy imbalance in the transverse plane is 
+the missing transverse energy $\vec{E^{miss}_{T}}$ (see sec. \ref{sec:CMS}) which is reconstructed using the particle flow algorithm \cite{CMS-PAS-PFT-09-001}
+as a vectorial sum over all reconstructed objects in the event and then taking the opposite of this azimuthal, momentum two-vector. The missing transverse energy is the modulus
+of this vector.
+
+\begin{align}
+ \vec{E}_{T}^{miss} & = (E_{T_{x}}^{miss}, \, E_{T_{y}}^{miss}) = - \sum_{leptons} \vec{p}_{T}^{lepton} - \sum_{jets} \vec{p}_{T}^{jet}, \\
+ E_{T}^{miss} & = \sqrt{E_{T_{x}}^{miss^{2}} + E_{T_{y}}^{miss^{2}}}.
+\end{align}
+
+Missing transverse energy reconstruction strongly relies on the quality of leptons and jets reconstruction and is sensitive to the pile up objects. To correct for the 
+pile up effects the Multivariate Analysis (MVA) was performed \cite{CMS-PAS-JME-12-002}.
+The MVA is trained on the $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and attempts to distinguish between the events emerging from the hard interaction point and
+pile up vertecies. The improvement in resolution which the exploiting of the MVA for pile up rejection gives is $\sim 6\%$. However, the differences between data
+and simulation are getting larger. To compensate for these discrepancies the \textit{recoil corrections} are applied \cite{CMS-PAS-JME-12-002}. 
+
+A recoil $\vec{u}$ is calculated using the well reconstructed $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and is defined as shown in the eq. \ref{eq:recoil}:
+
+\begin{equation}
+ \vec{u} = - \vec{p}_{T}(Z) - \vec{E}_{T}^{miss}
+\end{equation}
+
+The parallel ($u_{||}$) and perpendicular ($u_{\perp}$) components with respect to the $Z$ direction are simultaneously fitted in data and simulation for each bin
+of the jet multiplicity and $p_{T}(Z)$. The areas of the fit curves $f$ in data and MC simulations are required to be equal:
+
+\begin{equation}
+ \int_{-\infty}^{u_{corr}} f_{data}\; du = \int_{-\infty}^{u_{uncorr}} f_{sim.}\; du.
+\end{equation}
+
+The corrected recoil value $u_{corr}$ is used to reestimate the missing transverse energy as $\vec{E}_{T}^{miss} = | \vec{p}_{T}(Z) - \vec{u}_{corr} |$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Event Selection}
 % 
 % The full final state objects selection has been presented and all the selection criteria are summarized as follows:
 % 
