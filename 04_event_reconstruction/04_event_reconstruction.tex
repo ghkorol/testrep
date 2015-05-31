@@ -127,18 +127,18 @@ Three techniques of muon reconstruction were implemented:
  \item [--] \textbf{Standalone}: muon tracks are reconstructed using the information from the muon system only. The track reconstruction
  algorithm \cite{TWiki:GlobalMuon} is similar to the one used in the tracking system (see sec.\ref{ssec:trkReco}). Here the analogue to the
  tracker cluster is a segment in any part of the muon detector.
- \\
- The first stage, \textit{seed generation}, needs 3 parameters to fit a muon seed (as in sec.\ref{ssec:trkReco}). These can be either a beam spot position, segment position and segment
- bending angle with respect to the vertex direction or two segments from MB3 and MB4 (see figure \ref{fig:muond} in sec.\ref{ssec:muonDet}) and the difference
- between their bending angles. Also, the algorithm allows to take two segments from the first muon stations, MB1 and MB2, beam spot position and their
- bending angles, determine a seed for each of them and take an average. In the CSC region (see sec.\ref{ssec:muonDet}) the two segments from first and second
- or first and third stations are taken with either the difference between their $\phi$ coordinate or the direction of the higher quality segment as a bending parameter.
- The muon seed generation algorithm is used for the HLT muon track definition.
- \\
- The further procedure is to extrapolate the tracks to the other layers of the muon system (it is flexible enough to prolong the tracks from the outermost layers inside or
- from the innermost layers outside, depending on how the seed was created). The track propagation is performed using the Kalman filter. Each time a new point of the 
- track is found, the track is refitted (taking into account the effects from the multiple interaction with matter). In case on any step the $\chi^2$ per degree of freedom 
- of the fit turns out to be higher then 20, this track is rejected. 
+% \\
+%  The first stage, \textit{seed generation}, needs 3 parameters to fit a muon seed (as in sec.\ref{ssec:trkReco}). These can be either a beam spot position, segment position and segment
+%  bending angle with respect to the vertex direction or two segments from MB3 and MB4 (see figure \ref{fig:muond} in sec.\ref{ssec:muonDet}) and the difference
+%  between their bending angles. Also, the algorithm allows to take two segments from the first muon stations, MB1 and MB2, beam spot position and their
+%  bending angles, determine a seed for each of them and take an average. In the CSC region (see sec.\ref{ssec:muonDet}) the two segments from first and second
+%  or first and third stations are taken with either the difference between their $\phi$ coordinate or the direction of the higher quality segment as a bending parameter.
+%  The muon seed generation algorithm is used for the HLT muon track definition.
+%  \\
+%  The further procedure is to extrapolate the tracks to the other layers of the muon system (it is flexible enough to prolong the tracks from the outermost layers inside or
+%  from the innermost layers outside, depending on how the seed was created). The track propagation is performed using the Kalman filter. Each time a new point of the 
+%  track is found, the track is refitted (taking into account the effects from the multiple interaction with matter). In case on any step the $\chi^2$ per degree of freedom 
+%  of the fit turns out to be higher then 20, this track is rejected. 
  
  \item [--] \textbf{Tracker}: the tracks, reconstructed in the tracking detector only as described in sec. \ref{ssec:trkReco}, 
  are assigned as muons in case they match at least one hit in the muon sub-detector \cite{TWiki:GlobalMuon}.
