@@ -124,7 +124,7 @@ One can get three types of muons out of the reconstruction:
 \end{figure}
 
 \begin{itemize}
- \item [--] \textbf{Standalone}: muon tracks are reconstructed using the information from the muon system only. The track reconstruction
+ \item \textbf{Standalone}: muon tracks are reconstructed using the information from the muon system only. The track reconstruction
  algorithm \cite{TWiki:GlobalMuon} is similar to the one used in the tracking system. Here the analogue to the
  tracker cluster is a segment in any part of the muon detector.
 % \\
@@ -140,10 +140,10 @@ One can get three types of muons out of the reconstruction:
 %  track is found, the track is refitted (taking into account the effects from the multiple interaction with matter). In case on any step the $\chi^2$ per degree of freedom 
 %  of the fit turns out to be higher then 20, this track is rejected. 
  
- \item [--] \textbf{Tracker}: the tracks, reconstructed in the tracking detector only as described in sec. \ref{ssec:trkReco}, 
+ \item \textbf{Tracker}: the tracks, reconstructed in the tracking detector only as described in sec. \ref{ssec:trkReco}, 
  are assigned as muons in case they match at least one hit in the muon sub-detector \cite{TWiki:GlobalMuon}.
  
- \item [--] \textbf{Global}: the muons are reconstructed using 
+ \item \textbf{Global}: the muons are reconstructed using 
  the combined fit of tracks from the muon system and from the inner tracker. Here the standalone and tracker muons are fitted together. The details are given
  in \cite{TWiki:GlobalMuon}.
 \end{itemize}
@@ -151,18 +151,15 @@ One can get three types of muons out of the reconstruction:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Electrons reconstruction}\label{ssec:ElRec}
 
-To reconstruct the electrons a combined information from the tracking detector and ECAL was used. The electron seeds
-are created in two ways as following \cite{CMS-PAS-EGM-10-004}:
+The electrons are reconstructed by comining the tracks from tracker with the clusters from ECAL. The electron seeds
+are created making use of two complementary algorithms as following \cite{CMS-PAS-EGM-10-004}: \textit{tracker driven seeding}, 
+which is performed for the tracks with the $p_{T} < 5$ GeV matching the tracks from the tracker to the ECAL superclusters\footnote
+{A \textit{supercluster} is a group of one or more associated clusters of energy deposits in the ECAL. The transverse energy $E_{T}$
+of the supercluster has to be not lower then 4 GeV.}, and \textit{ECAL driven seeding}, performed for the tracks with $p_{T} \geq 5$ GeV
+fitting the ECAL superclusters to the tracker tracks. All the seeds are fitted with the Gaussian Sum Fitter \cite{GSF_Electron_Reconstruction_CMS}
+using the hypothesis that each track is an electron.
 
-\begin{itemize}
- \item \textbf{Tracker driven seeding}: The tracks with $p_{T} < 5$ GeV from the tracking detector are matched to the superclusters in the ECAL\footnote
- {A \textit{supercluster} is  a group of one or more associated clusters of energy deposits in the ECAL. The transverse energy of a supercluster has to be $E_{T} > \textrm{4 GeV}$}.
- 
- \item \textbf{ECAL driven seeding}: The ECAL superclusters are fitted to the tracks from the tracking detector using the Gaussian Sum Filter\cite{GSF_Electron_Reconstruction_CMS}.
- Thw ECAL driven seeding algorithm is performed to create seeds with $p_{T} \geq 5$ GeV.
-\end{itemize}
-
-The seeding tracks are preselected to decrease the number of fake candidate. The tracker seeds are preselected by the multivariate analysis 
+On the next reconstruction step the fitted seeding tracks are preselected. The tracker seeds are preselected by the multivariate analysis 
 (MVA) as described in \cite{CMS:2010byl}. For the ECAL seeds the restrictions on the GSM matching in $\eta$ and $\phi$ are applied \cite{Baffioni:2006cd}.
 
 The collection of the tracks formed after the preselection is assigned to electrons.
@@ -171,8 +168,7 @@ The collection of the tracks formed after the preselection is assigned to electr
 \subsection{Jet Reconstruction}
 
 A quark or a gluon as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
-A $b$ quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. The LHC proton-proton collisions
-are providing an environment with a fertile hadron activity which makes a jet reconstruction not a straight forward task. Special algorithms are developed
+A $b$ quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. Special algorithms are developed
 to find and reconstruct jets.
 
 \subsubsection{Jet Finder Algorithms}
