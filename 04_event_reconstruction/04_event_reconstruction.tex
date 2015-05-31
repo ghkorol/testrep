@@ -151,13 +151,13 @@ One can get three types of muons out of the reconstruction:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Electrons reconstruction}\label{ssec:ElRec}
 
-The electrons are reconstructed by comining the tracks from tracker with the clusters from ECAL. The electron seeds
+The electrons are reconstructed by coming the tracks from tracker with the clusters from ECAL. The electron seeds
 are created making use of two complementary algorithms as following \cite{CMS-PAS-EGM-10-004}: \textit{tracker driven seeding}, 
 which is performed for the tracks with the $p_{T} < 5$ GeV matching the tracks from the tracker to the ECAL superclusters\footnote
 {A \textit{supercluster} is a group of one or more associated clusters of energy deposits in the ECAL. The transverse energy $E_{T}$
 of the supercluster has to be not lower then 4 GeV.}, and \textit{ECAL driven seeding}, performed for the tracks with $p_{T} \geq 5$ GeV
 fitting the ECAL superclusters to the tracker tracks. All the seeds are fitted with the Gaussian Sum Fitter \cite{GSF_Electron_Reconstruction_CMS}
-using the hypothesis that each track is an electron.
+using the hypothesis that each track is an electron and assuming the dedicated energy losses.
 
 On the next reconstruction step the fitted seeding tracks are preselected. The tracker seeds are preselected by the multivariate analysis 
 (MVA) as described in \cite{CMS:2010byl}. For the ECAL seeds the restrictions on the GSM matching in $\eta$ and $\phi$ are applied \cite{Baffioni:2006cd}.
