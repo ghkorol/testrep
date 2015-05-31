@@ -155,11 +155,8 @@ To reconstruct the electrons a combined information from the tracking detector a
 are created in two ways as following \cite{CMS-PAS-EGM-10-004}:
 
 \begin{itemize}
- \item \textbf{Tracker driven seeding}: The tracks from the tracking detector are matched to the superclusters in the ECAL\footnote
- {A \textit{supercluster} is  a group of one or more associated clusters of energy deposits in the ECAL. It is constructed taking into 
- account its characteristic narrow width in the pseudorapidity $\eta$ and its characteristic spread in $\phi$ due to the bending in the 
- magnetic field of electrons radiating in the tracker material. The transverse energy of a supercluster has to be $E_{T} > \textrm{4 GeV}$}.
- The track driven methods creates seeds with $p_{T} < 5$ GeV.
+ \item \textbf{Tracker driven seeding}: The tracks with $p_{T} < 5$ GeV from the tracking detector are matched to the superclusters in the ECAL\footnote
+ {A \textit{supercluster} is  a group of one or more associated clusters of energy deposits in the ECAL. The transverse energy of a supercluster has to be $E_{T} > \textrm{4 GeV}$}.
  
  \item \textbf{ECAL driven seeding}: The ECAL superclusters are fitted to the tracks from the tracking detector using the Gaussian Sum Filter\cite{GSF_Electron_Reconstruction_CMS}.
  Thw ECAL driven seeding algorithm is performed to create seeds with $p_{T} \geq 5$ GeV.
