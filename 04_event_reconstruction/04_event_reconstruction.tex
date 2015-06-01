@@ -220,14 +220,17 @@ The jets for this analyses were constructed making use of the anti-$k_{T}$ seque
 \subsubsection{Jet Energy Calibration}\label{ssec:JCal}
 
 The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this a factorized jet calibration
-method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed on the Figure \ref{fig:JECsc}.
+method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed:
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/JEC.pdf}
-  \caption{Jet calibration steps applied for the detector data and simulated MC samples.}
-  \label{fig:JECsc}
-\end{figure}
+\begin{itemize}
+ \item \textit{Offset correction} removes extra energy due to electronics noise and pile-up.
+ %
+ \item \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
+ particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$.
+ %
+ 
+\end{itemize}
+
 
 First calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
 Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step. Further correction steps aim to make the jet response
