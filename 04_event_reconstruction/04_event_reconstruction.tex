@@ -186,15 +186,14 @@ Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
  until the stable seed is found.
 \end{itemize}
 
-Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default. This means that the jets constructed this way will
-change if one of the jet components will face a collinear splitting and do not account for additional soft radiation.
+Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default.
 
-The sequential clustering algorithms are both infrared and collinear safe, though may be not that fast. They don't rely on a stable cone. The procedure of constructing
+The sequential clustering algorithms are both infrared and collinear safe. They don't rely on a stable cone. The procedure of constructing
 a jet starts with defining two distances -- $d_{ij}$ (the distance between two objects, particles or pseudojets, $i$ and $j$ in the detector) and $d_{iB}$ (the distance between the object $i$
-and the beam). These two distances are compared:
+and the beam spot). These two distances are compared:
 
 \begin{itemize}
- \item [--] $d_{ij} < d_{iB}$: the objects $i$ and $j$ are combined together to a pseudojet which enters the clustering again as a single object;
+ \item [--] $d_{ij} < d_{iB}$: the objects $i$ and $j$ are combined together to a pseudojet which enters the algorithm again as a single object;
  \item [--] $d_{ij} > d_{iB}$: the object $i$ is taken as a final jet.
 \end{itemize}
 
@@ -207,19 +206,16 @@ The different sequential clustering algorithms differ at the level of the distan
 \end{align}
 
 Here the $k_{Ti}$, $y_{i}$ and $\phi_i$ are the transverse momentum, rapidity and azimuth angle of an object $i$. The $R$ is a cone radius which tells 
-how large the jet can be. A $p$ is the parameter which varies the power of the energy in comparison to the geometrical scale $\Delta_{ij}$.
-The algorithm behaves differently depending on a $p$ value:
+how large the jet can be. A $p$ is the parameter which varies the power of the energetic term in comparison to the geometrical scale $\Delta_{ij}$.
+There are three different sequential clustering algorithms depending on the $p$ value:
 
 \begin{itemize}
  \item $p = 1$ defines the $k_{T}$ algorithm, where the energetic and spatial term are of the same power;
  \item $p = 0$ defines the Cambridge/Aachen algorithm, where the energetic term in eq.\ref{eq:ktDist} is removed thus the spatial part only plays role;
- \item $p = -1$ defines the anti-$k_{T}$ algorithm which produces circular shaped infrared and collinear safe jets.
+ \item $p = -1$ defines the anti-$k_{T}$ algorithm.
 \end{itemize}
 
-The jets for this analyses were constructed making use of the anti-$k_{T}$ sequential clustering algorithm. The procedure was carried out with real and
-simulated data (on the generator level and after the detector simulation).
-
-Jets are reconstructed with a particle flow concept (see sec. \ref{sec:PF}) using the information from all the sub-detector parts.
+The jets for this analyses were constructed making use of the anti-$k_{T}$ sequential clustering algorithm. 
 
 \subsubsection{Jet Energy Calibration}\label{ssec:JCal}
 
