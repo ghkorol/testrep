@@ -223,12 +223,12 @@ The reconstructed jet energy should be corrected for the non-linear and non-unif
 method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed:
 
 \begin{itemize}
- \item \textit{Offset correction} removes extra energy due to electronics noise and pile-up.
+ \item \textit{Offset correction} removes extra energy due to electronics noise and pile-up. Applied on the real and simulated reconstructed data.
  %
  \item \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
- particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$.
+ particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. Applied on the real and simulated reconstructed data.
  %
- 
+ \item \textit{Relative jet energy correction} ensures a flat response depending on $\eta$. 
 \end{itemize}
 
 
