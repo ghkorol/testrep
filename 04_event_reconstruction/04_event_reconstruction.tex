@@ -247,30 +247,19 @@ In general all the corrections factor in the kinematic region of interest for th
 The task of the $b$-jet identification is to distinguish a $b$-quark jet from the light flavour-, $c$- and gluon-jets. In particular,
 a long life time of the B hadrons (in the order of $10^{-12}$ s) which allows it to travel far enough from the primary interaction point (about 500 $\mu$m) before the decay
 may be exploited. The point in space, which corresponds to the place of $B$-hadron decay can be reconstructed in the pixel tracking detector as a \textit{secondary vertex}. 
-The other important parameter which can be used to identify the jet origin is the impact parameter of the tracks arising from the secondary vertex. The discussed properties are 
-displayed in Figure \ref{fig:SV}.
+An important parameter which can be used to identify the jet origin is the impact parameter of the tracks arising from the secondary vertex (see Figure \ref{fig:SV}).
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.5\textwidth]{04_event_reconstruction/plots/btagging_cartoon.png}
   \caption{A sketch of the event with a reconstructed secondary vertex. A light blue circle is the primary vertex and a red circle is the secondary vertex. The impact 
-  parameter is marked with a blue dashed line and a symbol $d_{0}$.}
+  parameter of a track is marked with a blue dashed line and a symbol $d_{0}$.}
   \label{fig:SV}
 \end{figure}
 
-The algorithms which aim to find the jets originating from $b$-quarks are called the \textit{b-tagging algorithms}. All of them define a single discriminator value for each jet.
-The algorithms used for the different analyses of the data recored by the CMS detector in 2012 are listed as follows \cite{CMS-PAS-BTV-13-001}: 
-
-\begin{itemize}
- \item \textit{Track Counting High Purity} (THCP): the discriminator value is defined as a significance of the impact parameter\footnote{A \textit{significance} is a relation 
- of the impact parameter value $d$ to it's measurement uncertainty $\sigma_{d}$: $S = \frac{d}{\sigma_{d}}$} of the track with the third highest
- impact parameter significance;
- %
- \item \textit{Jet Probability} (JP): the discriminator is a likelihood value for all associated tracks to arise from the primary vertex. 
- %
- \item \textit{Combined Secondary Vertex} (CSV): a likelihood-based discriminator uses the secondary vertex and lifetime information to distinguish $b$-jets, $c$-jets
- and light jets. This method was exploited for the analyses presented.
-\end{itemize}
+The $b$-tagging algorithms define a single discriminator value for each jet.
+The algorithm used for this analysis is called \textit{Combined Secondary Vertex} (CSV) \cite{CMS-PAS-BTV-13-001}. It defines a likelihood-based discriminator which uses 
+the secondary vertex and lifetime information to distinguish $b$-jets, $c$-jets and light jets.
 
 The minimum thresholds for the algorithm are defined as three \textit{working points}, loose (L), medium (M) and tight (T), as following \cite{CMS-PAS-BTV-13-001}:
 
