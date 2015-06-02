@@ -226,9 +226,11 @@ method is used \cite{2011JInst...611002C}. Calibration is performed sequentially
  \item \textit{Offset correction} removes extra energy due to electronics noise and pile-up. Applied on the real and simulated reconstructed data.
  %
  \item \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
- particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. Applied on the real and simulated reconstructed data.
+ particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. Applied on the simulated reconstructed data.
  %
- \item \textit{Relative jet energy correction} ensures a flat response depending on $\eta$. 
+ \item \textit{Relative jet energy correction} ensures a flat response depending on $\eta$. Applied on the simulated reconstructed data
+ %
+ \item \textit{Absolute jet energy correction} balances the $p_{T}$ response to be linear. It is calibrated on the well reconstructed $Z^{0}$
 \end{itemize}
 
 
@@ -243,8 +245,8 @@ In general all the corrections factor in the kinematic region of interest for th
 \subsubsection{b-Jets identification}\label{ssec:bTag}
 
 A jet may arise from any parton, not only from a $b$ quark. But there are some properties which may allow to distinguish a $b$-jet from the other jets. In particular
-a long life time of the B hadrons (in the order of $10^{-12}$ s) allows it to travel far enough from the primary interaction point before the decay. The point
-in space, which corresponds to the place of $B$-hadron decay can be reconstructed in the pixel tracking detector as a \textit{secondary vertex}. The other important
+a long life time of the B hadrons (in the order of $10^{-12}$ s) allows it to travel far enough from the primary interaction point (about half a millimeter) before the decay.
+The point in space, which corresponds to the place of $B$-hadron decay can be reconstructed in the pixel tracking detector as a \textit{secondary vertex}. The other important
 parameter which can be used to identify the jet origin is the impact parameter of the tracks arising from the secondary vertex. The discussed properties are 
 displayed on the Figure \ref{fig:SV}.
 
