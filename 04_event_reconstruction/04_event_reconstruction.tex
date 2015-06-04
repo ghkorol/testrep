@@ -288,11 +288,10 @@ In general the efficiency of the CSV algorithm was estimated in data and simulat
 \subsection{Missing Transverse Energy}
 
 Previously the reconstruction methods and algorithms of all the charged objects of the $t\bar{t}$ dilepton final states were described. However the most complicated 
-task is to reconstruct the two neutrinos which are neutral and don't interact with detector material, thus don't provide any direct trace. The only thing to rely on is
-observation of the energy imbalances which may point to the presence of undetected objects. The variable responsible for energy imbalance in the transverse plane is 
-the missing transverse energy $\vec{E^{miss}_{T}}$ (see sec. \ref{sec:CMS}) which is reconstructed using the particle flow algorithm \cite{CMS-PAS-PFT-09-001}
-as a vectorial sum over all reconstructed objects in the event and then taking the opposite of this azimuthal, momentum two-vector. The missing transverse energy is the modulus
-of this vector.
+task is to reconstruct the two neutrinos which are neutral and don't interact with detector material, thus don't provide any direct trace. The thing to rely on is
+observation of the transverse energy imbalances (missing transverse energy $E^{miss}_{T}$) which may point to the presence of undetected objects.
+The missing transverse energy is reconstructed using the particle flow algorithm \cite{CMS-PAS-PFT-09-001} as a vectorial sum over all reconstructed objects in the
+event and then taking the opposite of this azimuthal, momentum two-vector. The missing transverse energy is the module of this vector.
 
 \begin{align}
  \vec{E}_{T}^{miss} & = (E_{T_{x}}^{miss}, \, E_{T_{y}}^{miss}) = - \sum_{leptons} \vec{p}_{T}^{lepton} - \sum_{jets} \vec{p}_{T}^{jet}, \\
