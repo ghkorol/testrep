@@ -288,15 +288,24 @@ In general the efficiency of the CSV algorithm was estimated in data and simulat
 \subsection{Missing Transverse Energy}
 
 Previously the reconstruction methods and algorithms of all the charged objects of the $t\bar{t}$ dilepton final states were described. However the most complicated 
-task is to reconstruct the two neutrinos which are neutral and don't interact with detector material, thus don't provide any direct trace. The measured quantity to rely on is
-observation of the transverse energy imbalances (missing transverse energy $E^{miss}_{T}$) which may point to the presence of undetected objects.
-The missing transverse energy is reconstructed using the particle flow algorithm \cite{CMS-PAS-PFT-09-001} as a vectorial sum over all reconstructed objects in the
-event and then taking the opposite of this azimuthal, momentum two-vector. The missing transverse energy is the module of this vector.
+task is to reconstruct the two neutrinos which are neutral and don't interact with detector material, thus don't provide any direct trace. 
+The observation of the transverse energy imbalances points to the presence of undetected objects.
+
+The sum of the momenta in transverse plane has to be zero. The \textit{missing transverse energy} $E_{T}^{miss}$ is introduced
+to reestablish the transverse energy imbalance: 
 
 \begin{align}
- \vec{E}_{T}^{miss} & = (E_{T_{x}}^{miss}, \, E_{T_{y}}^{miss}) = - \sum_{leptons} \vec{p}_{T}^{lepton} - \sum_{jets} \vec{p}_{T}^{jet}, \\
- E_{T}^{miss} & = \sqrt{E_{T_{x}}^{miss^{2}} + E_{T_{y}}^{miss^{2}}}.
+ \sum_{leptons} \vec{p}_{T}^{lepton} + \sum_{jets} \vec{p}_{T}^{jet} + \vec{E}^{miss}_{T} = 0, \\
+ \vec{E}_{T}^{miss} = - \sum_{leptons} \vec{p}_{T}^{lepton} - \sum_{jets} \vec{p}_{T}^{jet}.
 \end{align}
+
+Thus the missing transverse energy is defined as a vectorial sum over all reconstructed objects in the
+event and then taking the opposite of their azimuthal momentum two-vector \cite{CMS-PAS-PFT-09-001}.
+
+% \begin{align}
+%  \vec{E}_{T}^{miss} & = (E_{T_{x}}^{miss}, \, E_{T_{y}}^{miss}) = - \sum_{leptons} \vec{p}_{T}^{lepton} - \sum_{jets} \vec{p}_{T}^{jet}, \\
+%  E_{T}^{miss} & = \sqrt{E_{T_{x}}^{miss^{2}} + E_{T_{y}}^{miss^{2}}}.
+% \end{align}
 
 Missing transverse energy reconstruction strongly relies on the quality of leptons and jets reconstruction and is sensitive to the pile up objects. To correct for the 
 pile up effects the Multivariate Analysis (MVA) was performed \cite{CMS-PAS-JME-12-002}.
@@ -306,7 +315,7 @@ and simulation are getting larger. To compensate for these discrepancies the \te
 
 A recoil $\vec{u}$ is calculated using the well reconstructed $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and is defined as shown in the eq. \ref{eq:recoil}:
 
-\begin{equation}
+\begin{equation}\label{eq:recoil}
  \vec{u} = - \vec{p}_{T}(Z) - \vec{E}_{T}^{miss}
 \end{equation}
 
