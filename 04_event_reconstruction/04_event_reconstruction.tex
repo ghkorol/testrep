@@ -338,8 +338,13 @@ All the selection requirements are summarized as follows:
 
 \begin{itemize}
  \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT dilepton triggers, which require the presents of two leptons, electrons or muons, with
- minimum transverse momentum of 17 GeV and 8 GeV. 
- %
+ minimum transverse momentum of 17 GeV and 8 GeV.
+ 
+ The efficiency of the trigger selection was determined in the experimental and reconstructed simulated data separately. To correct the differences between the efficiencies
+ from the simulated and experimental data, the \textit{Scale Factors}\footnote{The \textit{Scale Factor} is a ratio between the efficiencies determined in the experimental 
+ and simulated data, $SF = \frac{\epsilon_{data}}{\epsilon_{MC}}$.} 
+ (SF) were applied on the MC data. The trigger SFs were derived double-differentially in bins of two leptons rapidities. 
+ % 
  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
  %
  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
@@ -350,19 +355,88 @@ All the selection requirements are summarized as follows:
  %
  \item [--] \textbf{Lepton isolation}: All the leptons in the event have to be isolated with $I_{rel}\leq 0.15$ in a cone of $\Delta R = 0.3$, where
  $I_{rel}$ is the relative isolation defined as:
-  \begin{equation}
+  \begin{equation}\label{eq:Iso}
    I_{rel} = \frac{\sum E_{Tracker} + \sum E_{ECAL} + \sum E_{HCAL}}{p_{T}(l)}
   \end{equation}
  for a selected $\Delta R$ cone around the lepton track.
- %
- \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. For the
- same flavour channels a window of $76\textrm{ GeV}\leq m(l\bar{l}) \leq 106\textrm{ GeV}$ is cut out.
- %
- \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. Additionally, an event has to contain
- at least one jet, tagged as originating from the $b$-quark with the help of CSVL.
  
- \item [--] \textbf{Missing Transverse Energy selection}: For the same flavour channels only the events with $E_{T}^{miss} > 40$ GeV are accepted.
-\end{itemize}
+ As it is shown in the figure \ref{fig:PFIso}, the lepton isolation requirement cuts on the events which dominated by the QCD background and have a bad 
+ agreement between experimental and simulated data and thus are cut away by the lepton isolation requirement.
+
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/PF_e_Iso.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/PF_mu_Iso.png}
+ \end{subfigure}
+ \caption{The electron (left) and muon (right) relative isolation $I_{rel}$ (\ref{eq:Iso}) control distributions displaying the experimental data points
+ and simulated distributions of signal and different background after the trigger selection.}
+ \label{fig:PFIso}
+ \end{figure}
+ %
+ \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. 
+ %
+ \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. The figure \ref{fig:jetMultiSel} shows 
+ the jet multiplicity in the events, presenting that the events with less than two jets contain a significant fraction of the Drell-Yan background. 
+ 
+ \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/JetMulti.png}
+  \caption{The control distribution of the jet multiplicity in the events after the trigger and lepton selection. The experimental data points
+  and simulated distributions of signal and different background are plotted.}
+  \label{fig:jetMultiSel}
+ \end{figure}
+ 
+ In the figure \ref{fig:mllJetSel} the dilepton mass before and after jet selection is shown, demonstrating a sizable background (especially Drell-Yan) fraction suppression power
+ of the cuts implemented in this selection step.
+ 
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/mll_step4.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/mll_step5.png}
+ \end{subfigure}
+ \caption{The control distribution of the dilepton mass in the events after the trigger and lepton selection (left) and after trigger, lepton and jet selection (right). 
+ The experimental data points and simulated distributions of signal and different background are plotted.}
+ \label{fig:mllJetSel}
+ \end{figure}
+ %
+ \item [--] \textbf{$b$-jets selection}: An event has to contain at least one jet, tagged as originating from the $b$-quark with the help of CSVL. The multiplicity of the $b$-tagged
+ jets is presented in the figure \ref{fig:bjetMultiSel} which shows that cutting out the events with no $b$-tagged jets should remove a sizable background fraction. Indeed, the figure \ref{fig:mllbJetSel} presenting
+ the dilepton mall before and after the $b$-jets selection shows this background reduction.
+ 
+ \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/bJetMulti.png}
+  \caption{The control distribution of the $b$-jet multiplicity in the events after the trigger, lepton and jet selection. The experimental data points
+  and simulated distributions of signal and different background are plotted.}
+  \label{fig:bjetMultiSel}
+  \end{figure}
+  
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/mll_step5.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/mll_step6.png}
+ \end{subfigure}
+ \caption{The control distribution of the dilepton mass in the events after the trigger, lepton and jet selection (left) and after trigger, lepton, jet and $b$-jet selection (right). 
+ The experimental data points and simulated distributions of signal and different background are plotted.}
+ \label{fig:mllbJetSel}
+ \end{figure}
+ %
+ \end{itemize}
 
 The set of selection criteria performs successfully decreasing the fraction of background events. The control distributions which show the data and MC simulation at one plot
 contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process. 
