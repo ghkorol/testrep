@@ -376,16 +376,13 @@ All the selection requirements are summarized as follows:
  \end{figure}
  
  %%%%%
- \item [--] \textbf{Lepton selection}: An event has to contain at least two opposite signed leptons (electron-muon pair) with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$.
- %%%%%
  \item [--] \textbf{Lepton isolation}: All the leptons in the event have to be isolated with $I_{rel}\leq 0.15$ in a cone of $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}} = 0.3$ 
  around the lepton track, where $I_{rel}$ is the relative isolation defined as:
   \begin{equation}\label{eq:Iso}
    I_{rel} = \frac{\sum E_{Tracker} + \sum E_{ECAL} + \sum E_{HCAL}}{p_{T}(l)}
   \end{equation}
  
- As it is shown in the figure \ref{fig:PFIso}, the lepton isolation requirement cuts on the events which dominated by the QCD background and have a bad 
- agreement between experimental and simulated data and thus are cut away by the lepton isolation requirement.
+ As it is shown in the figure \ref{fig:PFIso}, the lepton isolation requirement cuts on the events which dominated by the QCD background.
 
  \begin{figure}[h]
  \centering
@@ -402,9 +399,10 @@ All the selection requirements are summarized as follows:
  \label{fig:PFIso}
  \end{figure}
  %%%%%
- \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. 
+ \item [--] \textbf{Lepton pair selection}: An event has to contain at least two opposite signed leptons (electron-muon pair) with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$.
+ The invariant mass of the system of the leading $p_{T}$ electron and muon has to be less then 20 GeV, otherwise the event is rejected. 
  %%%%%
- \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. The figure \ref{fig:jetMultiSel} shows 
+ \item [--] \textbf{Jets selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. The figure \ref{fig:jetMultiSel} shows 
  the jet multiplicity in the events, presenting that the events with less than two jets contain a significant fraction of the Drell-Yan background. 
  
  \begin{figure}[h]
