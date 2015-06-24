@@ -330,20 +330,24 @@ pile up effects the Multivariate Analysis (MVA) was performed \cite{CMS-PAS-JME-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Event Selection}
+\section{Event Selection and Correction}
 
 The reconstructed objects in each event (which corresponds to one bunch crossing) have to fulfill certain criteria to be accepted for this analysis. These 
 criteria are chosen taken to account the physical result this analysis is aiming for and the technical features of the CMS detector parts.
+
+The incomplete correspondence of the simulation model to the experimental results has to be additionally corrected. The differences in the efficiencies 
+of certain procedures in data and simulation are corrected by applying the \textit{Scale Factors}, $SF = \frac{\epsilon_{data}}{\epsilon_{MC}}$, 
+on the MC distributions. Here $\epsilon_{data}$ is the efficiency determined in the experimental data and $\epsilon_{MC}$ is the efficiency from
+simulation. The overall differences of the experimental data and MC distributions is corrected via reweighing the simulation rates towards the experimental once.
+
 All the selection requirements are summarized as follows:
 
 \begin{itemize}
- \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT dilepton triggers, which require the presents of two leptons, electrons or muons, with
+ \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT (see section \ref{sec:trig}) dilepton triggers, which require the presents of two leptons, electrons or muons, with
  minimum transverse momentum of 17 GeV and 8 GeV.
  
- The efficiency of the trigger selection was determined in the experimental and reconstructed simulated data separately. To correct the differences between the efficiencies
- from the simulated and experimental data, the \textit{Scale Factors}\footnote{The \textit{Scale Factor} is a ratio between the efficiencies determined in the experimental 
- and simulated data, $SF = \frac{\epsilon_{data}}{\epsilon_{MC}}$.} 
- (SF) were applied on the MC data. The trigger SFs were derived double-differentially in bins of two leptons rapidities. 
+ The efficiency of the trigger selection was determined in the experimental and reconstructed simulated data separately. The Scale Factors connected to the
+ trigger selection were applied on the MC data. They were derived double-differentially in bins of two leptons rapidities. 
  %%%%% 
  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
  %%%%%
