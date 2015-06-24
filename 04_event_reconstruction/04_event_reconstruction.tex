@@ -344,15 +344,37 @@ All the selection requirements are summarized as follows:
  from the simulated and experimental data, the \textit{Scale Factors}\footnote{The \textit{Scale Factor} is a ratio between the efficiencies determined in the experimental 
  and simulated data, $SF = \frac{\epsilon_{data}}{\epsilon_{MC}}$.} 
  (SF) were applied on the MC data. The trigger SFs were derived double-differentially in bins of two leptons rapidities. 
- % 
+ %%%%% 
  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
- %
+ %%%%%
  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
- %
+ %%%%%
  \item [--] \textbf{Presence of a good vertex}: Events which contain at least one primary vertex with high reconstruction quality are accepted.
- %
+ Only the hardest vertex (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
+ \\
+ An additional correction is applied on the MC data to correct for the difference between the vertex multiplicity distribution in 
+ the experimental data and in the simulated events. These distributions are presented in the figure \ref{fig:PUweight}, showing how the agreement
+ between the experimental and simulated data improves after this correction is implemented.
+ 
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_noPUw.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_PUw.png}
+ \end{subfigure}
+ \caption{The vertex multiplicity control distribution before (left) and after (right) the vertex correction reweighing after the whole selection.
+ Black dots represent the experimental data and the colorful histograms are the MC simulation divided into signal and backgrounds contributions.
+ The bottom plots represent the ratio between experimental and simulated data rates.}
+ \label{fig:PUweight}
+ \end{figure}
+ 
+ %%%%%
  \item [--] \textbf{Lepton selection}: An event has to contain at least two leptons with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$.
- %
+ %%%%%
  \item [--] \textbf{Lepton isolation}: All the leptons in the event have to be isolated with $I_{rel}\leq 0.15$ in a cone of $\Delta R = 0.3$, where
  $I_{rel}$ is the relative isolation defined as:
   \begin{equation}\label{eq:Iso}
@@ -377,9 +399,9 @@ All the selection requirements are summarized as follows:
  and simulated distributions of signal and different background after the trigger selection.}
  \label{fig:PFIso}
  \end{figure}
- %
+ %%%%%
  \item [--] \textbf{Lepton pair selection}: The mass of the system of two leading $p_{T}$ leptons has to be less then 20 GeV, otherwise the event is rejected. 
- %
+ %%%%%
  \item [--] \textbf{Jet selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. The figure \ref{fig:jetMultiSel} shows 
  the jet multiplicity in the events, presenting that the events with less than two jets contain a significant fraction of the Drell-Yan background. 
  
