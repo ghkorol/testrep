@@ -347,35 +347,34 @@ All the selection requirements are summarized as follows:
  \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT (see section \ref{sec:trig}) dilepton triggers, which require the presents of two leptons, electrons or muons, with
  minimum transverse momentum of 17 GeV and 8 GeV.
  
- The Scale Factors connected to the trigger selection were applied on the MC data. They were derived double-differentially in bins of two leptons rapidities. 
+ The Scale Factors connected to the trigger selection were applied on the MC double-differentially in bins of two leptons rapidities. 
  %%%%% 
- \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
+%  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
  %%%%%
- \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
+%  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
  %%%%%
- \item [--] \textbf{Presence of a good vertex}: Events which contain at least one primary vertex with high reconstruction quality are accepted.
- Only the hardest vertex (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
-%  \\
-%  An additional correction is applied on the MC data to correct for the difference between the vertex multiplicity distribution in 
-%  the experimental data and in the simulated events. These distributions are presented in the figure \ref{fig:PUweight}, showing how the agreement
-%  between the experimental and simulated data improves after this correction is implemented.
-%  
-%  \begin{figure}[h]
-%  \centering
-%  \begin{subfigure}
-%    \centering
-%    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_noPUw.png}
-%  \end{subfigure}
-%  \begin{subfigure}
-%    \centering
-%    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_PUw.png}
-%  \end{subfigure}
-%  \caption{The vertex multiplicity control distribution before (left) and after (right) the vertex correction reweighing after the whole selection.
-%  Black dots represent the experimental data and the colorful histograms are the MC simulation divided into signal and backgrounds contributions.
-%  The bottom plots represent the ratio between experimental and simulated data rates.}
-%  \label{fig:PUweight}
-%  \end{figure}
-%  
+ \item [--] \textbf{Vertex requirement}: Only the hardest vertex (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
+ \\
+ An additional correction is applied on the MC data to correct for the difference between the vertex multiplicity distribution in 
+ the experimental data and in the simulated events. These distributions are presented in the figure \ref{fig:PUweight}, showing how the agreement
+ between the experimental and simulated data improves after this correction is implemented.
+ 
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_noPUw.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_PUw.png}
+ \end{subfigure}
+ \caption{The vertex multiplicity control distribution before (left) and after (right) the vertex correction reweighing after the whole selection.
+ Black dots represent the experimental data and the colorful histograms are the MC simulation divided into signal and backgrounds contributions.
+ The bottom plots represent the ratio between experimental and simulated data rates.}
+ \label{fig:PUweight}
+ \end{figure}
+ 
  %%%%%
  \item [--] \textbf{Lepton selection}: An event has to contain at least two leptons with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$.
  %%%%%
