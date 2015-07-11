@@ -330,7 +330,7 @@ pile up effects the Multivariate Analysis (MVA) was performed \cite{CMS-PAS-JME-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Event Selection and Correction}
+\section{Event Selection and Correction}\label{sec:sel}
 
 The reconstructed objects in each event (which corresponds to one bunch crossing) have to fulfill certain criteria to be accepted for this analysis. These 
 criteria are chosen taken to account the physical result this analysis is aiming for and the technical features of the CMS detector parts.
@@ -432,9 +432,9 @@ All the selection requirements are summarized as follows:
 %  \label{fig:mllJetSel}
 %  \end{figure}
  %
- \item [--] \textbf{$b$-jets selection}: An event has to contain at least one jet, tagged as originating from the $b$-quark with the help of CSVL. The multiplicity of the $b$-tagged
+ \item [--] \textbf{$b$-jets selection}: An event has to contain at least one jet, tagged as originating from the $b$-quark with the CSVL \ref{ssec:bTag}. The multiplicity of the $b$-tagged
  jets is presented in the figure \ref{fig:bjetMultiSel} which shows that cutting out the events with no $b$-tagged jets should remove a sizable background fraction. Indeed, the figure \ref{fig:mllbJetSel} presenting
- the dilepton mall before and after the $b$-jets selection shows this background reduction.
+ the dilepton mass before and after the $b$-jets selection shows this background reduction.
  
  \begin{figure}[h]
   \centering
@@ -457,6 +457,26 @@ All the selection requirements are summarized as follows:
  \caption{The control distribution of the dilepton mass in the events after the trigger, lepton and jet selection (left) and after trigger, lepton, jet and $b$-jet selection (right). 
  The experimental data points and simulated distributions of signal and different background are plotted.}
  \label{fig:mllbJetSel}
+ \end{figure}
+ 
+ The Scale Factors corresponding to the $b$-tagging procedure were applied on the MC improving much the agreement between data and simulation. This effect can be seen in the 
+ figure \ref{fig:bTagDiscr}, which presents the CSV discriminator distribution before and after the $b$-tagging SF reweighing. The data-to-MC ratio plots are getting closer to one with
+ applying the SFs.
+ 
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/bTagDiscr_step6.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/bTagDiscr_step7.png}
+ \end{subfigure}
+ \caption{The control distribution of the $b$-tag discriminator in the events after the whole \ref{sec:sel} selection not applying the $b$-tag Scale Factors (left)
+ and after applying the $b$-tag Scale Factors (right). The experimental data points and simulated distributions of signal and different background are plotted.
+ The bottom plots represent the data-to-MC yield ratio distributions.}
+ \label{fig:bTagDiscr}
  \end{figure}
  %
  \end{itemize}
