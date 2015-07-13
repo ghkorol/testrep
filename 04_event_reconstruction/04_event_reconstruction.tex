@@ -297,7 +297,7 @@ objects arising from the collisions out of the momentum conservation. This can b
 The sum of the undetected objects transverse momentum is the missing transverse energy $E_{T}^{miss}$.
 It can be expressed from the eq. \ref{eq:EnBal} as an opposite vectorial sum of the transverse momenta over all reconstructed objects \cite{CMS-PAS-PFT-09-001}:
 
-\begin{equation}
+\begin{equation}\label{eq:PFMET}
  \vec{E}^{miss}_{T} = - \sum_{detected\; objects} \vec{p}_{T}.
 \end{equation}
 
@@ -307,7 +307,21 @@ It can be expressed from the eq. \ref{eq:EnBal} as an opposite vectorial sum of 
 % \end{align}
 
 Missing transverse energy reconstruction is sensitive to the pile up objects. To correct for the 
-pile up effects the Multivariate Analysis (MVA) was performed \cite{CMS-PAS-JME-12-002}.
+pile up effects a special Boosted Decision Tree (BDT) was trained \cite{CMS-PAS-JME-12-002}.
+
+An additional recoil correction\cite{TWikiMET} was applied. This was done with the help of the 
+Multi Variate Analysis (MVA) and the produced missing transverse energy is called MVA $E_{T}^{miss}$.
+As it is shown in the figure \ref{fig:METres}, the MVA $E_{T}^{miss}$ shows a better resolution compared to the 
+missing transverse energy calculated only from the PF, \ref{eq:PFMET}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{04_event_reconstruction/plots/MET_res.png}
+  \caption{The resolution for the missing transverse energy defined with the PF algorithm only (PF $E_{T}^{miss}$)
+  marked with a red line compared to the MVA $E_{T}^{miss}$ which is marked with a blue line.}
+  \label{fig:METres}
+\end{figure}
+
 % The MVA is trained on the $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and attempts to distinguish between the events emerging from the hard interaction point and
 % pile up vertecies. The improvement in resolution which the exploiting of the MVA for pile up rejection gives is $\sim 6\%$. However, the differences between data
 % and simulation are getting larger. To compensate for these discrepancies the \textit{recoil corrections} are applied \cite{CMS-PAS-JME-12-002}. 
