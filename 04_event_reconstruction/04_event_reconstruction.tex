@@ -496,4 +496,82 @@ All the selection requirements are summarized as follows:
  \end{itemize}
 
 The set of selection criteria performs successfully decreasing the fraction of background events. The control distributions which show the data and MC simulation at one plot
-contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process. 
+contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process.
+
+\section{Control Distributions}
+
+The results of the reconstruction and selection described above can be shown on the control distributions of the objects which are reconstructed for the $t\bar{t}$
+final state definition. The plots show the comparison between the yields in the experimental data and the simulated MC samples.
+The separate background sources are also presented on the distributions. The simulated yields are additionally scaled to the data luminosity of 19.7\;$fb^{-1}$.
+All the plots include the statistical uncertainties only.
+
+The figure \ref{fig:CPetaptLep} shows the lepton $\eta$ and $p_{T}$. The overall good agreement between the data and simulation shapes is observed even in the side $\eta$ regions
+and for the higher $p_{T}$. The control distribution of mass of the dilepton (electron-muon) system is shown on the figure \ref{fig:CPmll}. The simulation and experimental data
+agree well within the statistical uncertainties in the medium values of the mass.
+
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/basic_lepton_eta_step7.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/basic_lepton_pt_step7.png}
+ \end{subfigure}
+ \caption{The control distribution of lepton $\eta$ (left) and lepton $p_{T}$ (right) in the events after the whole \ref{sec:sel} selection. 
+ The experimental data points and simulated distributions of signal and different background are plotted. The error bars of the data points
+ correspond to the statistical uncertainties of the measurement. The bottom plots represent the data-to-MC yield ratio distributions. 
+ Each distribution has two entries per event - for the electron and for the muon.}
+ \label{fig:CPetaptLep}
+ \end{figure}
+ 
+ \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/basic_dilepton_mass_step7.png}
+  \caption{The control distribution of the mass of the electron-muon system in the events after the whole \ref{sec:sel} selection. 
+  The experimental data points and simulated distributions of signal and different background are plotted. The jets $p_{T}$ and multiplicity 
+  distributions are presented in the logarithmic scale. The error bars of the data points
+  correspond to the statistical uncertainties of the measurement. The bottom plots represent the data-to-MC yield ratio distributions.}
+  \label{fig:CPmll}
+ \end{figure}
+ 
+The kinematics of the reconstructed and selected jets is presented in the figure \ref{fig:CPjetskin} which shows the control distributions for the
+jets $\eta$, $p_{T}$ and the jet multiplicity in the events. From these plots one can conclude that there is a MC excess for the jets 
+with the transverse momentum higher than 150\;GeV. The simulation describes better the central rapidity ranges and the jet multiplicities
+smaller than 5.
+ 
+ \begin{figure}[h]
+ \centering
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/basic_jet_eta_step7.png}
+ \end{subfigure}
+ \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/basic_jet_pt_step7.png}
+ \end{subfigure}
+  \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/basic_jet_multiplicity_step7.png}
+ \end{subfigure}
+ \caption{The control distribution of the jet $\eta$ (top left) and jet $p_{T}$ (top right) and jet multiplicity in the events 
+ after the whole \ref{sec:sel} selection. The experimental data with the error bars corresponding to the statistical uncertainties
+ and simulated distributions of signal and different background are plotted. The bottom plots represent the data-to-MC yield ratio distributions. 
+ The top distributions have multiple entries per event, corresponding to all reconstructed jets.}
+ \label{fig:CPjetskin}
+ \end{figure}
+ 
+The multiplicity for the $b$-tagged jets is presented in figure \ref{fig:CPbJetMult} which shows a good agreement for the multiplicities smaller than 4.
+
+ \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/basic_bjet_multiplicity_step7.png}
+  \caption{The control distribution of the $b$-tagged jets multiplicities in the events after the whole \ref{sec:sel} selection. 
+  The experimental data points and simulated distributions of signal and different background are plotted in the logarithmic scales. 
+  The error bars of the data points correspond to the statistical uncertainties of the measurement. 
+  The bottom plots represent the data-to-MC yield ratio distributions.}
+  \label{fig:CPbJetMult}
+ \end{figure}
+ 
+The control distributions are signal dominated which shows a good performance of the criteria for the $t\bar{t}$ final state selection.
