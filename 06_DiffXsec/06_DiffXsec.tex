@@ -11,10 +11,39 @@ in the second section of this chapter.
 The double differential cross sections and their definitions are shown in the last section of the chapter.
 % \section{Selection of Binning}\label{sec:binning}
 
+\section{Background Subtraction}
+This study is performed as counting the events which fulfill certain criteria (e.g. given in chapter \ref{chapt:event_selection} and 
+chapter \ref{chapt:kinReco}). Not all of these events are originating from the $t\bar{t}$ system decay in dileptonic
+channel. The final state, which can be misidentified as $t\bar{t}$, may arise from a different process, called \textit{background}
+for the specific measurement. In this analysis the background rates are estimated from the simulation and Subtracted 
+from the measured event yields:
+
+\begin{equation}\label{eq:bgsub}
+ N^{signal\;measured} = N^{selected} - N^{BG}
+\end{equation}
+
+Here the $N^{BG}$ corresponds to the number of background events. It consists of several processes like:
+
+\begin{itemize}
+ \item $t\bar{t}$ decaying to the other channel;
+ \item single top production;
+ \item Drell-Yan process;
+ \item diboson production;
+ \item associated $t\bar{t}\;+\; W/Z/\gamma$ production;
+ \item associated $W\;+\;jets$ production;
+ \item QCD multijet processes.
+\end{itemize}
+
+Whereas all the background yields are purely simulated, the rate of the background caused by the Drell-Yan production is 
+partially data driven \cite{Chatrchyan:2011nb}. The normalization factor for the simulated Drell-Yan events is determined 
+from the comparison of the reconstructed and simulated $Z$-peak. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Unfolding of the Experimental Results}\label{sec:unfold}
 
-This study is performed as counting of events which fulfill certain criteria (e.g. given in chapter \ref{chapt:event_selection} and 
-chapter \ref{chapt:kinReco}) and grouping them into bins (as described in sec. \ref{sec:binning}). However, a finite precision
+The events after the background  subtraction \ref{eq:bgsub} are grouped to the bins in different $t$-quark variables. However, a finite precision
 of experimental apparatus and reconstruction algorithms may lead to incorrect measurement of kinematic properties of the event.
 Thus, some fraction of events may be reconstructed in the wrong bin. To present the results independent of the detector effects,
 one needs to correct them back.
@@ -90,7 +119,22 @@ This is used to limit the normalization biases if the data $\mathbf{y}$ follow P
 
 The stationary point of the Lagrangian $\mathcal{L}(\mathbf{x}, \lambda)$ is defined by setting the first derivatives to zero. In case no 
 area normalization is performed the Lagrangian $\mathcal{L}$ depends only on $\mathbf{x}$ and $\mathcal{L}_{3}$ term is zero.
-% 
-% \section{Cross Section Definition}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cross Section Definition}
+
+After all the corrections are performed, the signal events grouped to different bins are used to define the normalized double differential cross sections
+of the $t\bar{t}$ production process:
+
+\begin{equation}\label{eq:ddxsecdef}
+ (\frac{1}{\sigma} \frac{d\sigma}{dx\:dy})_{ij} = \frac{1}{\sigma} \frac{N^{signal}_{ij}}{\Delta x_{i}\Delta y_{j} \cdot BR \cdot L}
+\end{equation}
+
+Here $\sigma$ is a total cross section, $BR$ is a branching ratio of the $t\bar{t}$ dilepton decay channel and $L$ is the luminosity
+collected by the CMS detector during the data taking 
+
 % \subsection{Total Production Cross Section}
 % \subsection{Double Differential Production Cross Section}
