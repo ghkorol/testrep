@@ -1,7 +1,80 @@
 \chapter{Systematic Uncertainties}
 
-\section{Determination of Systematic Uncertainties}
+Due to the limited knowledge of the detector features and theory predictions some assumptions and corrections are
+made to obtain the results, which may lead to systematic deviations of the analysis outcome.
+Those are the sources of systematic uncertainties.
 
+To determine the systematic uncertainty the analysis is repeated with changed assumption or correction and compared
+to the nominal result. The systematic variations are applied to the simulated data.
+
+As the measurement of the normalized double differential production cross section $\frac{1}{\sigma} \frac{d\sigma}{dx\:dy}$
+is performed, where $x$ and $y$ are the corresponding kinematic observables, many systematic uncertainties cancel
+out. Only those effects which may influence the distributions shape are relevant to be taken to account.
+
+The systematic uncertainties may be divided into two classes:
+\begin{itemize}
+ \item Experimental uncertainties: variations of the correction factors connected with some reconstruction procedure.
+ \item Model uncertainties: variations of the assumption entering the simulation model.
+\end{itemize}
+
+This chapter gives a detailed overview of the systematic variations performed in the analysis. In the end the way
+of determining the total systematic uncertainty is presented.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Uncertainties}
 
-\section{Model Uncertainties}
+The experimental systematic uncertainties are determined by varying the correction and scale factors applied during the
+analysis procedure within their uncertainty values.
+
+\subsection{Trigger Efficiency}
+
+The trigger scale factor is described in sec. \ref{sec:sel}. The typical precision of their determination is of the order
+of 1\%. The variation of the  is performed within this uncertainty.
+
+\subsection{Pile-up Correction}
+
+The pile-up influences the reconstruction of all the objects. The removal of the pile-up is thus an important procedure
+which has to be taken to account in the systematic uncertainties. Following the recommendations of \cite{TWikiSystPU} the
+pile-up distribution was varied by $\pm$5\%.
+
+\subsection{Luminosity}
+
+The systematic uncertainty due to the luminosity value is canceled out in the normalized double differential cross section,
+while it is relative for the total cross section determination. The luminosity is varied within it's uncertainty of 2.6\%. 
+The luminosity uncertainty was determined in \cite{CMS-PAS-LUM-13-001}.
+
+\subsection{Uncertainty on the Lepton Selection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Determination of the Total Systematic Uncertainties}
+
+The total systematic uncertainty consists of the different experimental and model variations described above.
+Some of them give the results with the lower values compared to the nominal, and some of them are higher.
+The deviations to lower and to higher cross section values are treated independently as follows:
+
+\begin{align}
+ \delta_{syst.\,total,\:ij}^{pos} = \sum_{s}\sqrt{\delta_{s,\;ij}^{high^{2}}}, \\
+ \delta_{syst.\,total,\:ij}^{neg} = \sum_{s} \sqrt{\delta_{s,\;ij}^{low^{2}}}.
+\end{align}
+
+Here the $\delta_{syst.\,total,\:ij}$ is a total systematic uncertainty in the bin $ij$ which consists of the
+$s$ different sources. The $\delta_{s,\;ij}^{high/low^{2}}$ are expressed the following way:
+
+\begin{equation}
+ \delta_{s,\;ij}^{m} = \textrm{Nominal result}_{ij} - \textrm{Varied Result}_{s,\;ij}, 
+\end{equation}
+where $m = high$ if $\delta_{s,\;ij}^{m} \geq 0$ and $m = low$ if $\delta_{s,\;ij}^{m} < 0$ . 
+
+In case all the variations of a certain correction factor or assumption result only in higher (or lower) values 
+compared to the nominal result, the largest deviation is taken for the uncertainty.
+
+The final result is presented the following way:
+
+\begin{equation}
+ \textrm{Result}_{ij}\: = \: \textrm{Nominal Value}_{ij}\: \pm \: \textrm{Stats. uncertainty}_{ij}\:\: { }^{+\:\delta_{syst.\,total,\:ij}^{pos}}_{-\:\delta_{syst.\,total,\:ij}^{neg}}.
+\end{equation}
+
+% \section{Model Uncertainties}
