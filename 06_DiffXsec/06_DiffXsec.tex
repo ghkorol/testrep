@@ -13,7 +13,7 @@ The double differential cross sections and their definitions are shown in the la
 
 \section{Background Subtraction}
 This study is performed as counting the events which fulfill certain criteria (e.g. given in chapter \ref{chapt:event_selection} and 
-chapter \ref{chapt:kinReco}). Not all of these events are originating from the $t\bar{t}$ system decay in dileptonic
+chapter \ref{chapt:kinReco}). Not all of these events are the $signal events$ originating from the $t\bar{t}$ system decay in dileptonic
 channel. The final state, which can be misidentified as $t\bar{t}$, may arise from a different process, called \textit{background}
 for the specific measurement. In this analysis the background rates are estimated from the simulation and Subtracted 
 from the measured event yields:
@@ -25,7 +25,6 @@ from the measured event yields:
 Here the $N^{BG}$ corresponds to the number of background events. It consists of several processes like:
 
 \begin{itemize}
- \item $t\bar{t}$ decaying to the other channel;
  \item single top production;
  \item Drell-Yan process;
  \item diboson production;
@@ -37,6 +36,13 @@ Here the $N^{BG}$ corresponds to the number of background events. It consists of
 Whereas all the background yields are purely simulated, the rate of the background caused by the Drell-Yan production is 
 partially data driven \cite{Chatrchyan:2011nb}. The normalization factor for the simulated Drell-Yan events is determined 
 from the comparison of the reconstructed and simulated $Z$-peak. 
+
+After subtracting all the other backgrounds, the number of signal events is multiplied by the factor to cancel the contribution
+from the other decay channels of $t\bar{t}$:
+
+\begin{equation}\label{eq:bgsub}
+ N^{signal} = N^{signal\;measured} \cdot \frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}.
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,11 +136,72 @@ After all the corrections are performed, the signal events grouped to different 
 of the $t\bar{t}$ production process:
 
 \begin{equation}\label{eq:ddxsecdef}
- (\frac{1}{\sigma} \frac{d\sigma}{dx\:dy})_{ij} = \frac{1}{\sigma} \frac{N^{signal}_{ij}}{\Delta x_{i}\Delta y_{j} \cdot BR \cdot L}
+ (\frac{1}{\sigma} \frac{d\sigma}{dx\:dy})_{ij} = \frac{1}{\sigma} \cdot \frac{1}{\Delta x_{i}\Delta y_{j}} \cdot \frac{N^{signal}_{ij}}{\epsilon \cdot BR \cdot L}
 \end{equation}
 
-Here $\sigma$ is a total cross section, $BR$ is a branching ratio of the $t\bar{t}$ dilepton decay channel and $L$ is the luminosity
-collected by the CMS detector during the data taking 
+Here $\sigma$ is a total cross section, $\epsilon$ is the analysis efficiency, $BR$ is a branching ratio of the $t\bar{t}$ dilepton decay channel and $L$ is the luminosity
+collected by the CMS detector, which corresponds to 19.7 $fb^{-1}$. The $x$ and $y$ are the kinematic variables in which the cross sections 
+are measured. $i$ and $j$ are the number of bins of the variables $x$ and $y$ with the widths $\Delta x_{i}$ and $\Delta y_{i}$.
+The number of corrected and unfolded signal events in the $ij^{\textrm{th}}$ bin is the $N^{signal}_{ij}$.
 
-% \subsection{Total Production Cross Section}
+The total production cross section $\sigma$ is defined as follows:
+
+\begin{equation}
+ \sigma = \frac{N^{signal}}{\epsilon \cdot BR \cdot L}.
+\end{equation}
+
+\subsection{Phase Space Definition}
+
+The analysis efficiency $\epsilon$ (from the eq. \ref{eq:ddxsecdef}) definition is based on the Monte Carlo simulation and predictions.
+It may be defined in two different ways:
+
+\begin{itemize}
+ \item In the \textbf{full phase space}, taking to account the selection and the detector efficiencies:
+ \begin{equation}\label{eq:epsanal}
+  \epsilon = A \cdot \epsilon^{det},
+ \end{equation}
+ \\
+ where $A$ is the \textit{acceptance} which defines the effect of the kinematic selection and $\epsilon^{det}$ is the detector efficiency part.
+ The acceptance is measured on the generator level, to exclude the detector effects:
+ \\
+ \begin{equation}\label{eq:accep}
+  A = \frac{N^{PS\;selection}_{gen}}{N^{total}_{gen}}.
+ \end{equation}
+ \\
+ Here $N^{total}_{gen}$ is the total number of all generated $t\bar{t}$ signal events,
+ The $N_{gen}^{PS\;selection}$ is the number of generated $t\bar{t}$ signal events which pass the so-called phase space selection for the generated leptons and 
+ $b$-jets. This selection fully corresponds to the one applied on the reconstruction level (see sec. \ref{sec:sel}) and requires:
+ \begin{itemize}
+  \item[--] Leptons with $p_{T} \geq 20\;$GeV and $|\eta| \leq 2.4$;
+  \item[--] $b$-jets with $p_{T} \geq 30\;$GeV and $|\eta| \leq 2.4$.
+ \end{itemize}
+ The acceptance extrapolates the measurements outside the phase space selection criteria to the full phase space, taking to account the theory knowledge underlying in the MC generators.
+ \\
+ The jets on the generator level are defined analogously to the reconstructed jets (see sec. \ref{sec:JetAlgo}) applying the anti-$k_{T}$ algorithm with the 
+ cone of $\Delta R$ = 0.5 on the all stable particles after the hadronization. The jets containing the $B$-hadrons originating from the $b$ quarks from the
+ top decay are the $b$-jets used for the phase space selection.
+ \\
+ The detector resolution is defined by cancellation of the selection effects in the following ratio:
+ \\
+ \begin{equation}\label{eq:epsdet}
+  \epsilon^{det} = \frac{N^{selected}_{reco}}{N^{PS\;selection}_{gen}}.
+ \end{equation}
+ \\
+ Here $N^{selected}_{reco}$ is the number of simulated reconstructed events. Thus, combining the equation \ref{eq:epsanal}, \ref{eq:accep} and \ref{eq:epsdet},
+ the analysis efficiency is expressed as following:
+ \\
+ \begin{equation}
+  \epsilon = \frac{N^{selected}_{reco}}{N^{total}_{gen}}.
+ \end{equation}
+ 
+ \item In the \textbf{visible phase space}. This efficiency doesn't take to account the selection efficiency, it consists only from the detector efficiency:
+ \begin{equation}
+  \epsilon = \epsilon^{det} = \frac{N^{selected}_{reco}}{N^{PS\;selection}_{gen}}.
+ \end{equation}
+ This efficiency definition doesn't rely on the theoretical predictions for the region outside the visible phase space, but the cross section will depend on
+ the selection criteria.
+\end{itemize}
+
+The cross sections are measured both in visible and full phase spaces.
+
 % \subsection{Double Differential Production Cross Section}
