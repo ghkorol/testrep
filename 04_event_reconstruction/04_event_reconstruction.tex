@@ -1,6 +1,6 @@
 \chapter{Event Reconstruction and Section}\label{chapt:event_selection}
 
-The reconstruction procedure is interpreting the outcoming detector data as a set of physical objects.
+The reconstruction procedure is interpreting the detector data as a set of physical objects.
 
 In general, for this analysis each object of the $t\bar{t}$ dileptonic final state was reconstructed using the \textit{Particle Flow} (PF)
 algorithm \cite{Beaudette:2014cea}. It is an iterative process which reconstructs the particles and jets exploiting the information from all parts
@@ -8,57 +8,58 @@ of the detector. After an object is reconstructed in one iteration, all the dete
 
 The reconstruction with the PF algorithm following \cite{Beaudette:2014cea} starts with muons as they are the most unambiguous particles to identify.
 After blinding the muon signals in the detector, the charged hadrons are reconstructed. The next step is the electron reconstruction and afterwards
-all the remaining signals are assigned to the neutral hadrons and photons. After all particles are reconstructed and identified, the missing transverse
-energy ($E_{T}^{miss}$) is constructed out of them. A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
+all the remaining signals are assigned to neutral hadrons and photons. After all particles are reconstructed and identified, the missing transverse
+energy ($E_{T}^{miss}$) is constructed using all available information. A complete overview of the PF algorithm can be found in \cite{CMS-PAS-PFT-09-001}. 
 
 Different algorithms and methods are used to reconstruct different objects and some of them (relevant for this analysis -- leptons, jets and missing transverse
-energy, responsible for neutrinos) are discussed in this chapter. Finally the selection which aims to suppress the $t\bar{t}$ like events
-with the similar final state signature and increase the event quality is presented. The selection is based on the CMS Top-Quark-Physics-Analysis group recommendations \cite{TopPAGreco}.
+energy, responsible for neutrinos) are discussed in this chapter. Finally the selection, which aims at suppressing the background events
+with a similar final state signature as the $t\bar{t}$ signal events and increase the event quality, is presented. 
+The selection is based on the CMS Top-Quark-Physics-Analysis group recommendations \cite{TopPAGreco}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Track and Vertex Reconstruction}
 
-Tracks\footnote{A \textit{track} is a set of information about the charged particles trajectory curve and momentum.} and vertecies\footnote{A 
+Tracks\footnote{A \textit{track} is a set of information about the charged particles trajectory and momentum.} and vertices\footnote{A 
 \textit{vertex} is an estimate of a point in space where the particles arise from. It can be either related to the 
-collision point or to the place  where some secondary interaction happened.} are the essential objects used for all the particles reconstruction. 
-However they are not the primer detector output and they have to be reconstructed.
+collision point or to the place  where some secondary interaction or decay happened.} are the essential objects used for all the particles reconstruction. 
+However they are not the primary detector output and they have to be reconstructed.
 
 \subsection{Track Reconstruction}\label{ssec:trkReco}
 
-The track reconstruction has to take place using the information from the inner tracking detectors. The neighboring pixels and strips which
-produce signals are grouped to clusters. A position of a cluster defines a hit which is an estimate of the point where a particle crossed the
-detector material. A particle trajectory can be tracked if fitting the corresponding consequence of hits. A curvature 
-of the trajectory with the known magnetic field gives a momentum estimate of a particle.
+The track reconstruction takes place using the information from the inner tracking detectors. The neighboring pixels and strips which
+produce signals are grouped to clusters. The position of a cluster defines a hit which is an estimate of the point where a particle crossed the
+detector material. A particle trajectory can be tracked by fitting the corresponding sequence of hits. The curvature 
+of the trajectory within the known magnetic field gives a transverse momentum estimate of a particle.
 
 The track reconstruction procedure consists of four main steps as following \cite{Chatrchyan:2014fea}:
 
 \begin{itemize}
- \item \textbf{Seed generation}: all the possible combinations of three points (3 hits in the first layers of pixel tracker or beam spot center\footnote
- {A primary interaction region or a \textit{beam spot} is defined as an average value over all the events and is defined as a most luminous point.} and
- two hits from the first tracker layers) are fitted with a helical trajectory assuming the quasi-uniform magnetic field. Every fitted object is required
- to have some minimum $p_{T}$, maximum beam spot impact parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum
- distance of the track to certain vertex or beam spot in the transverse $x-y$ plane.} and correct charge distribution requirements to be accepted
- as an initial track candidate or seed.
+ \item \textbf{Seed generation}: all the possible combinations of three points (3 hits in the first layers of the pixel tracker or
+ two hits from the first tracker layers an then beam spot center\footnote{The \textit{beam spot} center is 
+ defined as an average value of the $p\bar{p}$ interaction points over many events.}) are used to determine a helical trajectory 
+ assuming a quasi-uniform magnetic field. Every resulted track is required to have some minimum $p_{T}$ and maximum beam spot impact 
+ parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum distance of the track to a certain vertex or 
+ beam spot in the transverse $x-y$ plane.} to be accepted as an initial track candidate or seed.
  %
  \item \textbf{Track finding}: extrapolates the seeding candidates along the expected flight paths to the consecutive tracking detector layers searching 
- for the new hits and reestimating the track parameters respectively. On each consecutive layer all the hits from the 3 sigma region around the seed trajectory
+ for further hits and reestimating the track parameters respectively. On each consecutive layer all the hits from a 3 sigma region around the seed trajectory
  are taken and fitted with a Kalman filter\cite{Fruhwirth:1987fm}. The best $\chi^{2}$ hit is taken and the trajectory
  continues extrapolation to the next layer until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
  accepted if it contains more then one ghost hit.
  %
  \item \textbf{Track fitting}: after finding the hits in all the tracker layers with the track finding, a track candidate is refitted using the Kalman filter. 
- This procedure is performed releasing the constrains set on the seeding stage.
+ This procedure is performed releasing the constraints set on the seeding stage.
  %
  \item \textbf{Track selection}: reduces the rate of fake tracks\footnote{A \textit{fake track} is a track produced by the fit but is actually there was
  no real charged particle which produced this track.} by setting physical and quality constrains on the object produced at the previous step. The requirements
- are based on a good $\chi^{2}$ and reasonable impact parameter value to the beam spot.
+ are based on a good $\chi^{2}$ of the fit and a reasonable value of the impact parameter with respect to the beam spot.
 \end{itemize}
 
 The tracking procedure is repeated in several iterations.
 %Each iteration differs in the set of $p_{T}$ and beam spot impact parameter
 %requirements for the seed tracks generation\cite{Chatrchyan:2014fea}. 
 The first iteration has the hardest requirements - high $p_{T}$ of the tracks
-and a good connection to the beam spot center (such objects are usually easier to reconstruct). After reconstructing the tracks in the first iteration,
+and the smallest impact parameters (such objects are usually easier to reconstruct). After reconstructing the tracks in the first iteration,
 their hits are removed and the second iteration starts with a bit softer requirements on the seed tracks. In total, six iterations are performed.
 % 
 % For the HLT (see sec.\ref{sec:trig}) track reconstruction the information from pixel tracker only is used, repeating the seed generation procedure\cite{Chatrchyan:2014fea}.
@@ -80,23 +81,23 @@ phases described as follows\cite{Chatrchyan:2014fea}:
 \begin{itemize}
 
  \item \textbf{Track selection}: the tracks for the primary vertex reconstruction are chosen with certain requirements such as to be consistent with being produced 
- in the primary interaction region (the significance of the beam spot impact parameter -- it's value over it's uncertainty -- has to be maximum 5), having at least two pixel 
- layers and at least five pixel and strip layers associated with the track and having the $\chi^{2}$ per degree of freedom of the track fit not higher then 20.
+ in the primary interaction region (the significance of the beam spot impact parameter -- it's value over it's uncertainty -- has to be maximum 5), having hits in at least two pixel 
+ layers and at least five pixel and strip layers associated with the track and having a $\chi^{2}$ per degree of freedom for the track fit of not higher then 20.
  %
- \item \textbf{Track clustering}: the main task of the clustering algorithm is to separate the groups of tracks emerging from different primary vertecies, not splitting 
- the tracks from one vertex to two, but also not merging the tracks from different vertecies to one. The tracks are clustered according 
+ \item \textbf{Track clustering}: the main task of the clustering algorithm is to separate the groups of tracks emerging from different primary vertices, not splitting 
+ the tracks from one vertex to two, but also not merging the tracks from different vertices to one. The tracks are clustered according 
  to their $z$-coordinate at the point of closest approach to the beam spot center. 
  \\
- The algorithm used for clustering for the CMS 2012 data is the \textit{deterministic annealing} described in detail in\cite{rose_ieee1998}. The system with many tracks has many degrees
- of freedom and finding the primary vertex regions according to the coordinates of the closes approach to the beam spot center is treated analogically to the problem of a physical 
+ The algorithm used for clustering for the CMS 2012 data is the \textit{deterministic annealing} described in detail in\cite{rose_ieee1998}. A system with many tracks has many degrees
+ of freedom and finding the primary vertex regions according to the $z$-coordinates at the closest approach to the beam spot center is treated analogically to the problem of a physical 
  system approaching a state of minimal energy through a series of gradual temperature reductions.
  %
  \item \textbf{Fitting the position of the vertex}: each clustered group of tracks forms a vertex candidate. Only the candidates with at least two tracks are taken and are fitted
- using the \textit{adaptive vertex fitter}\cite{Frühwirth:1027031}. The output of the fit is the vertex position, it's uncertainty and $\chi^{2}$. The determination of the probability
+ using an \textit{adaptive vertex fitter}\cite{Frühwirth:1027031}. The output of the fit is the vertex position, it's uncertainty and a $\chi^{2}$. The determination of the probability
  of each track to arise from the reconstructed vertex is performed.
 \end{itemize}
 
-The information on all primary vertecies in the event is useful not only for other objects reconstruction but also for separating the signal vertex (with hard interaction) 
+The information on all primary vertices in the event is useful not only for other objects reconstruction but also for separating the signal vertex (with a hard interaction) 
 from the others with no useful physics information.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,22 +105,23 @@ from the others with no useful physics information.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objects Reconstruction}
 
-The reconstruction of the muons, electrons, jets and missing transverse energy ($t\bar{t}$ dileptonic final state objects)
-is presented in this section.
+The reconstruction of the muons, electrons, jets and missing transverse energy (which are needed for the $t\bar{t}$ dileptonic final
+state reconstruction) is presented in this section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Muon Reconstruction}
 
-As it was discussed in section \ref{sec:CMS}, the CMS experiment has a well established setup for the muon reconstruction.
+As discussed in section \ref{sec:CMS} the CMS experiment has a well established setup for the muon reconstruction.
 Muons are the only particles expected to appear in the muon sub-detector system, thus their identification is unambiguous.
-Figure \ref{fig:PFmuons} shows a muon path in the detector compared to the other particles.
+Figure \ref{fig:PFmuons} shows a muon path in the detector compared to other particles.
 One can get three types of muons out of the reconstruction:
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/CMS_Slice.png}
-  \caption{Track reconstruction using different sub-detector information in combination in Particle Flow algorithm. An actual
-  muon track is shown with a curved blue line, an electron track is red and a charged hadron is solid green.}
+  \caption{Track reconstruction using different sub-detector information in combination in Particle Flow algorithm. The different
+  charged particles are shown as curved lines: muon (blue), electron (red) and charged hadron (green). Neutral particles are shown
+  with the strait dashed lines.}
   \label{fig:PFmuons}
 \end{figure}
 
@@ -151,46 +153,45 @@ One can get three types of muons out of the reconstruction:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Electrons reconstruction}\label{ssec:ElRec}
 
-The electrons are reconstructed by coming the tracks from tracker with the clusters from ECAL. The electron seeds
+The electrons are reconstructed by combining tracks from the tracker with clusters from the ECAL. The electron seeds
 are created making use of two complementary algorithms as following \cite{CMS-PAS-EGM-10-004}: \textit{tracker driven seeding}, 
-which is performed for the tracks with the $p_{T} < 5$ GeV matching the tracks from the tracker to the ECAL superclusters\footnote
+which is performed for the tracks with $p_{T} < 5$ GeV, matching the tracks from the tracker to the ECAL superclusters\footnote
 {A \textit{supercluster} is a group of one or more associated clusters of energy deposits in the ECAL. The transverse energy $E_{T}$
 of the supercluster has to be not lower then 4 GeV.}, and \textit{ECAL driven seeding}, performed for the tracks with $p_{T} \geq 5$ GeV
-fitting the ECAL superclusters to the tracker tracks. All the seeds are fitted with the Gaussian Sum Fitter \cite{GSF_Electron_Reconstruction_CMS}
-using the hypothesis that each track is an electron and assuming the dedicated energy losses.
+fitting the ECAL superclusters to the tracker tracks. All the seeds are fitted with the Gaussian Sum Fitter (GSM) \cite{GSF_Electron_Reconstruction_CMS}
+using the hypothesis that each track is an electron and assuming the specific energy losses.
 
-On the next reconstruction step the fitted seeding tracks are preselected. The tracker seeds are preselected by the multivariate analysis 
+On the next reconstruction step the fitted seeding tracks are preselected. The tracker seeds are preselected by a multivariate analysis 
 (MVA) as described in \cite{CMS:2010byl}. For the ECAL seeds the restrictions on the GSM matching in $\eta$ and $\phi$ are applied \cite{Baffioni:2006cd}.
 
-The collection of the tracks formed after the preselection is assigned to electrons.
+The collection of the tracks formed after this selection is assigned to electrons.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Jet Reconstruction}
 
 A quark or a gluon as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
-A quark thus starts to hadronize and form a group of particles (primarily hadrons only) flowing in one direction. These are the jets. Special algorithms are developed
+A quark thus starts to hadronize and form a group of particles (primarily only hadrons) flowing in similar direction. These are the jets. Special algorithms are developed
 to find and reconstruct jets.
 
 \subsubsection{Jet Finder Algorithms}\label{sec:JetAlgo}
 
-The idea which lies behind any algorithm of a jet finding and reconstruction is the merging of the objects which are measured near by in the detector.
+The idea which lies behind any algorithm of jet finding and reconstruction is the merging of objects which are measured nearby in the detector.
 Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
 
 \begin{itemize}
- \item \textit{Sequential clustering}: the particles are sequentially recombined until the closest (regarding the actual distance between measured
- objects) combination is found.
+ \item \textit{Sequential clustering}: the particles are sequentially recombined until the closest (regarding some specific distance measure between the objects) combination is found.
  %
- \item \textit{Cone algorithms}: a jet is defined as a cone around some direction of dominant energy flow. Each or some of the particles are tried 
- in a role of the dominant direction seed. The next step was to define a trial cone around the seed and accept all the particles which enter this cone.
- The sum of the four-momenta of all objects inside the jet candidate area is calculated. This jet candidate is assumed to be a new seed. This iterative process continues
- until the stable seed is found.
+ \item \textit{Cone algorithms}: a jet is defined as a cone around some direction of dominant energy flow, or seed. Each or some of the particles are tried 
+ in a role of the dominant direction seeds. The next step was to define a trial cone around the seed and accept all the particles which enter this cone.
+ The sum of the four-momenta of all objects inside the jet cone is calculated. This jet candidate is assumed to be a new seed. This iterative process continues
+ until stable seeds are found.
 \end{itemize}
 
 Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default.
 
 The sequential clustering algorithms are both infrared and collinear safe. They don't rely on a stable cone. The procedure of constructing
 a jet starts with defining two distances -- $d_{ij}$ (the distance between two objects, particles or pseudojets, $i$ and $j$ in the detector) and $d_{iB}$ (the distance between the object $i$
-and the beam spot). These two distances are compared:
+and the beam direction). These two distances are compared:
 
 \begin{itemize}
  \item [--] $d_{ij} < d_{iB}$: the objects $i$ and $j$ are combined together to a pseudojet which enters the algorithm again as a single object;
@@ -205,32 +206,33 @@ The different sequential clustering algorithms differ at the level of the distan
  \Delta_{ij}^{2} & = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}.
 \end{align}
 
-Here the $k_{Ti}$, $y_{i}$ and $\phi_i$ are the transverse momentum, rapidity and azimuth angle of an object $i$. The $R$ is a cone radius which tells 
-how large the jet can be. A $p$ is the parameter which varies the power of the energetic term in comparison to the geometrical scale $\Delta_{ij}$.
+Here the $k_{Ti}$, $y_{i}$ and $\phi_i$ are the transverse momentum, rapidity and azimuth angle of an object $i$. The $R$ is a cone radius parameter and 
+$p$ is the parameter which varies the power of the energetic term in comparison to the geometrical scale $\Delta_{ij}$.
 There are three different sequential clustering algorithms depending on the $p$ value:
 
 \begin{itemize}
  \item $p = 1$ defines the $k_{T}$ algorithm, where the energetic and spatial term are of the same power;
- \item $p = 0$ defines the Cambridge/Aachen algorithm, where the energetic term in eq.\ref{eq:ktDist} is removed thus the spatial part only plays role;
+ \item $p = 0$ defines the Cambridge/Aachen algorithm, where the energetic term in eq.\ref{eq:ktDist} is removed thus the spatial part plays the only role;
  \item $p = -1$ defines the anti-$k_{T}$ algorithm.
 \end{itemize}
 
-The jets for this analyses were constructed making use of the anti-$k_{T}$ sequential clustering algorithm. 
+The jets for this analyses were constructed using the anti-$k_{T}$ sequential clustering algorithm. 
 
 \subsubsection{Jet Energy Calibration}\label{ssec:JCal}
 
 The reconstructed jet energy should be corrected for the non-linear and non-uniform responses of the calorimeter. For this a factorized jet calibration
-method is used \cite{2011JInst...611002C}. Calibration is performed sequentially in several steps displayed:
+method is used \cite{2011JInst...611002C}. The calibration is performed sequentially in several steps:
 
 \begin{itemize}
- \item \textit{Offset correction} removes extra energy due to electronics noise and pile-up. Applied on the real and simulated reconstructed data.
+ \item The \textit{Offset correction} removes extra energy due to electronics noise and pile-up. It is applied on the real and simulated reconstructed data.
  %
- \item \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
- particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. Applied on the simulated reconstructed data.
+ \item The \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
+ particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. It is applied on the simulated reconstructed data.
  %
- \item \textit{Relative jet energy correction} ensures a flat response depending on $\eta$. Applied on the simulated reconstructed data
+ \item The \textit{Relative jet energy correction} ensures a flat response as a function of $\eta$. It is applied on the simulated reconstructed data.
  %
- \item \textit{Absolute jet energy correction} balances the $p_{T}$ response to be linear. It is calibrated on the well reconstructed $Z^{0}$
+ \item The \textit{Absolute jet energy correction} balances the $p_{T}$ response to be linear. It is calibrated on a sample of well reconstructed $Z^{0}$ bosons 
+ decaying into two jets.
 \end{itemize}
 
 
@@ -240,14 +242,15 @@ flat as a function of $|\eta|$ and $p_{T}$. The correction on the geometrical po
 in the most efficient barrel region using the dijet data events. The $p_{T}$ dependence correction makes use of the Drell-Yan events to exploit a good
 lepton energy and momentum resolutions. Finally the residual corrections are applied on data to correct for some minor disagreement with the simulation.
 
-In general all the corrections factor in the kinematic region of interest for this analysis are smaller then $5\%$.
+In general all the correction factors in the kinematic region of interest for this analysis are smaller than $5\%$.
 
 \subsubsection{b-Jets identification}\label{ssec:bTag}
 
-The task of the $b$-jet identification is to distinguish a $b$-quark jet from the light flavour-, $c$- and gluon-jets. In particular,
-a long life time of the B hadrons (in the order of $10^{-12}$ s) which allows it to travel far enough from the primary interaction point (about 500 $\mu$m) before the decay
-may be exploited. The point in space, which corresponds to the place of $B$-hadron decay can be reconstructed in the pixel tracking detector as a \textit{secondary vertex}. 
-An important parameter which can be used to identify the jet origin is the impact parameter of the tracks arising from the secondary vertex (see Figure \ref{fig:SV}).
+The task of the $b$-jet identification is to distinguish a $b$-quark jet from light flavour-, $c$- and gluon-jets. In particular,
+the long life time of the beauty hadrons (in the order of $10^{-12}$ s) is exploited which allows them to travel far enough from the primary interaction point 
+(about 500 $\mu$m) before decaying. The point in space, which corresponds to the place of the beauty hadron decay can be reconstructed in the pixel tracking 
+detector as a \textit{secondary vertex}. An important parameter which can be used to identify the jet origin is the impact parameter of the tracks arising 
+from the secondary vertex with respect to the primary vertex (see Figure \ref{fig:SV}).
 
 \begin{figure}[t]
   \centering
@@ -263,22 +266,22 @@ the lifetime information to distinguish $b$-jets, $c$-jets and light jets.
 The minimum thresholds for the algorithm are defined as three \textit{working points}, loose (L), medium (M) and tight (T), as following \cite{CMS-PAS-BTV-13-001}:
 
 \begin{itemize}
- \item [--] CSVL sets the threshold on the actual discriminator value as $\geq 0.244$, which has an efficiency $\sim 80\%$ and a misidentification probability of
- light hadron jets close to $10\%$;
+ \item [--] CSVL sets the threshold on the actual discriminator value as $\geq 0.244$, which has a $b$-tagging efficiency $\sim 80\%$ and a misidentification probability of
+ light quark jets close to $10\%$;
  %
  \item [--] CSVM sets a harsher threshold on the discriminator value of $\geq 0.679$, which lowers the misidentification probability to $\sim 1\%$, but also
- reduces the statistics down to 65$\%$;
+ reduces the $b$-tagging efficiency down to 65$\%$;
  %
  \item [--] CSVT has the hardest threshold on the discriminator value of $\geq 0.898$. This lowers the misidentification probability by other factor of 10 ($0.1\%$)
- and reduces the efficiency down to 50$\%$;
+ and reduces the $b$-tagging efficiency down to 50$\%$;
 \end{itemize}
 
-In general the efficiency of the CSV algorithm was estimated in data and simulated QCD events \cite{CMS-PAS-BTV-13-001}. The resulting curve is presenter on the figure \ref{fig:CSVeff}.
+In general the efficiency of the CSV algorithm was estimated in data and simulated QCD events \cite{CMS-PAS-BTV-13-001}. The resulting curve is presented in the figure \ref{fig:CSVeff}.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/Figure_012-b.pdf}
-  \caption{A b-jet tagging efficiency as a function of the discriminator threshold for the CSV algorithm. The three CSV working points are marked with the red arrows on the $x$-axis.
+  \caption{The $b$-jet tagging efficiency as a function of the discriminator threshold for the CSV algorithm. The three CSV working points are marked with the red arrows on the $x$-axis.
   The upper panel shows the efficiency measured in data and predicted from the simulation.
   The lower panel shows the ratio between data and simulation efficiencies, where the blue line represents the combined statistical and systematical uncertainty. The plot is taken from \cite{CMS-PAS-BTV-13-001}.}
   \label{fig:CSVeff}
@@ -287,15 +290,15 @@ In general the efficiency of the CSV algorithm was estimated in data and simulat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Missing Transverse Energy}
 
-There exists no transverse momentum component in the proton-proton collisions. Thus one expects to have a zero sum of the transverse momenta of the 
-objects arising from the collisions out of the momentum conservation. This can be expressed the following way:
+The colliding protons in the LHC have no transverse momentum component. Thus from the momentum conservation one expects to have a zero sum of the transverse momenta of the 
+objects arising from the collisions. This can be expressed the following way:
 
 \begin{equation}\label{eq:EnBal}
  \sum_{detected\; objects} \vec{p}_{T} + \sum_{undetected\; objects} \vec{p}_{T} = 0.
 \end{equation}
 
 The sum of the undetected objects transverse momentum is the missing transverse energy $E_{T}^{miss}$.
-It can be expressed from the eq. \ref{eq:EnBal} as an opposite vectorial sum of the transverse momenta over all reconstructed objects \cite{CMS-PAS-PFT-09-001}:
+It can be expressed from eq. \ref{eq:EnBal} as the opposite vectorial sum of the transverse momenta over all reconstructed objects \cite{CMS-PAS-PFT-09-001}:
 
 \begin{equation}\label{eq:PFMET}
  \vec{E}^{miss}_{T} = - \sum_{detected\; objects} \vec{p}_{T}.
@@ -306,13 +309,13 @@ It can be expressed from the eq. \ref{eq:EnBal} as an opposite vectorial sum of 
 %  E_{T}^{miss} & = \sqrt{E_{T_{x}}^{miss^{2}} + E_{T_{y}}^{miss^{2}}}.
 % \end{align}
 
-Missing transverse energy reconstruction is sensitive to the pile up objects. To correct for the 
+The missing transverse energy reconstruction is sensitive to the pile up objects. To correct for the 
 pile up effects a special Boosted Decision Tree (BDT) was trained \cite{CMS-PAS-JME-12-002}.
 
-An additional recoil correction\cite{TWikiMET} was applied. This was done with the help of the 
-Multi Variate Analysis (MVA) and the produced missing transverse energy is called MVA $E_{T}^{miss}$.
-As it is shown in the figure \ref{fig:METres}, the MVA $E_{T}^{miss}$ shows a better resolution compared to the 
-missing transverse energy calculated only from the PF, as in the eq.(\ref{eq:PFMET}).
+An additional recoil correction\cite{TWikiMET} was applied. This was done with the help of a 
+Multi Variate Analysis (MVA) and the resulting missing transverse energy is called MVA $E_{T}^{miss}$.
+As shown in figure \ref{fig:METres} the MVA $E_{T}^{miss}$ exhibits a better resolution compared to the 
+missing transverse energy calculated only from the PF (eq.(\ref{eq:PFMET})).
 
 \begin{figure}[t]
   \centering
@@ -323,7 +326,7 @@ missing transverse energy calculated only from the PF, as in the eq.(\ref{eq:PFM
 \end{figure}
 
 % The MVA is trained on the $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and attempts to distinguish between the events emerging from the hard interaction point and
-% pile up vertecies. The improvement in resolution which the exploiting of the MVA for pile up rejection gives is $\sim 6\%$. However, the differences between data
+% pile up vertices. The improvement in resolution which the exploiting of the MVA for pile up rejection gives is $\sim 6\%$. However, the differences between data
 % and simulation are getting larger. To compensate for these discrepancies the \textit{recoil corrections} are applied \cite{CMS-PAS-JME-12-002}. 
 
 % A recoil $\vec{u}$ is calculated using the well reconstructed $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and is defined as shown in the eq. \ref{eq:recoil}:
@@ -347,13 +350,17 @@ missing transverse energy calculated only from the PF, as in the eq.(\ref{eq:PFM
 \section{Event Selection and Correction}\label{sec:sel}
 
 The reconstructed objects in each event (which corresponds to one bunch crossing) have to fulfill certain criteria to be accepted for this analysis. These 
-criteria are chosen taken to account the physical result this analysis is aiming for and the technical features of the CMS detector parts.
+criteria are chosen taking to account the physical result this analysis is aiming for and the technical features of the CMS detector parts.
 
-The incomplete correspondence of the simulation model to the experimental results has to be additionally corrected. The differences in the efficiencies 
-of certain procedures in data and simulation are corrected by applying the \textit{Scale Factors}, $SF = \frac{\epsilon_{data}}{\epsilon_{MC}}$, 
+The imperfect correspondence of the simulation model to the real data has to be additionally corrected. The differences in the efficiencies 
+of certain procedures in data and simulation are corrected by applying \textit{Scale Factors}, $SF = \frac{\epsilon_{data}}{\epsilon_{MC}}$, 
 on the MC distributions. Here $\epsilon_{data}$ is the efficiency determined in the experimental data and $\epsilon_{MC}$ is the efficiency from
 simulation. 
 %The overall differences of the experimental data and MC distributions is corrected via reweighing the simulation rates towards the experimental once.
+
+The results are presented in the control distributions. These plots show the comparison between the yields in the experimental data and the simulated MC samples.
+The various background sources are also presented separately in the distributions. The simulated yields are additionally scaled to the data luminosity of 19.7\;$fb^{-1}$.
+All the plots include the statistical uncertainties only.
 
 All the selection requirements are summarized as follows:
 
@@ -361,15 +368,15 @@ All the selection requirements are summarized as follows:
  \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT (see section \ref{sec:trig}) dilepton triggers, which require the presents of two leptons, electrons or muons, with
  minimum transverse momentum of 17 GeV and 8 GeV.
  
- The Scale Factors connected to the trigger selection were applied on the MC double-differentially in bins of two leptons rapidities. 
+ The Scale Factors connected to the trigger selection were applied on the MC double-differentially in bins of the two leptons rapidities. 
  %%%%% 
 %  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
  %%%%%
 %  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
  %%%%%
- \item [--] \textbf{Vertex requirement}: Only the hardest vertex (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
+ \item [--] \textbf{Vertex requirement}: Only the ``hardest vertex'' (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
  \\
- An additional weight correction depending on a vertex multiplicity is applied on the MC. 
+ An additional weight correction depending on the event vertex multiplicity is applied on the MC. 
  The distributions presented in the figure \ref{fig:PUweight} show how the agreement
  between the experimental and simulated data improves after this reweighting is implemented.
  
@@ -383,8 +390,8 @@ All the selection requirements are summarized as follows:
    \centering
    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/vertex_mult_PUw.png}
  \end{subfigure}
- \caption{The vertex multiplicity control distribution before (left) and after (right) the vertex correction reweighing after the whole selection.
- Black dots represent the experimental data and the colorful histograms are the MC simulation divided into signal and backgrounds contributions.
+ \caption{The vertex multiplicity control distribution before (left) and after (right) the vertex correction reweighing after the full event selection.
+ Black dots represent the experimental data and the colored histograms are the MC simulation divided into signal and backgrounds contributions.
  The bottom plots represent the ratio between experimental and simulated data rates.}
  \label{fig:PUweight}
  \end{figure}
@@ -412,19 +419,23 @@ All the selection requirements are summarized as follows:
  and simulated distributions of signal and different background after the trigger selection.}
  \label{fig:PFIso}
  \end{figure}
+ 
+ The efficiencies of the lepton isolation were determined using \textbf{tag and probe} method \cite{TWikiTP}. The corresponding scale factors are applied on the
+ simulation level in bins of $p_{T}$ and $\eta$ of lepton separately for electrons and for muons.
  %%%%%
- \item [--] \textbf{Lepton pair selection}: An event has to contain at least two opposite signed leptons (electron-muon pair) with $p_{T} > 20 \textrm{GeV}$ and $|\eta| < 2.4$.
- The invariant mass of the system of the leading $p_{T}$ electron and muon has to be less then 20 GeV, otherwise the event is rejected. 
+ \item [--] \textbf{Lepton pair selection}: An event has to contain at least two opposite signed leptons (electron-muon pair) with $p_{T} > 20 \; \textrm{GeV}$ and $|\eta| < 2.4$.
+ The invariant mass of the system of the leading $p_{T}$ electron and muon has to be more than 20 GeV, otherwise the event is rejected. 
  %%%%%
- \item [--] \textbf{Jets selection}: The events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. It is natural to expect
- that the events with less than two jets will be dominated by the Drell-Yan background as the Drell-Yan process does not contain jets in final state. This can also
- be seen from the figure \ref{fig:jetMultiSel} with the jet multiplicity in the events. 
+ \item [--] \textbf{Jets selection}: Events which contain at least two jets with $p_{T} > 30$ GeV and $|\eta| \leq 2.4$ are accepted. It is natural to expect
+ that events with less than two jets will be dominated by Drell-Yan background as the leading order Drell-Yan process does not contain jets in the final state. This is also 
+ reflected by the jet multiplicity distribution (Fig. \ref{fig:jetMultiSel}). 
  
  \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/JetMulti.png}
   \caption{The control distribution of the jet multiplicity in the events after the trigger and lepton selection. The experimental data points
-  and simulated distributions of signal and different background are plotted.}
+  and simulated distributions of signal and different backgrounds are plotted. The error bars of the data points
+ correspond to the statistical uncertainties of the measurement. The bottom plots represent the data-to-MC yield ratio distributions.}
   \label{fig:jetMultiSel}
  \end{figure}
  
@@ -446,7 +457,7 @@ All the selection requirements are summarized as follows:
 %  \label{fig:mllJetSel}
 %  \end{figure}
  %
- \item [--] \textbf{$b$-jets selection}: An event has to contain at least one jet, tagged as originating from the $b$-quark with the CSVL \ref{ssec:bTag}. The multiplicity of the $b$-tagged
+ \item [--] \textbf{$b$-jets selection}: An event has to contain at least one jet, tagged as originating from the $b$-quark with the b-tagging probability according to the CSVL (sec. \ref{ssec:bTag}). The multiplicity of the $b$-tagged
  jets is presented in the figure \ref{fig:bjetMultiSel} which shows that cutting out the events with no $b$-tagged jets should remove a sizable background fraction. Indeed, the figure \ref{fig:mllbJetSel} presenting
  the dilepton mass before and after the $b$-jets selection shows this background reduction.
  
@@ -454,7 +465,8 @@ All the selection requirements are summarized as follows:
   \centering
   \includegraphics[width=0.6\textwidth]{04_event_reconstruction/plots/bJetMulti.png}
   \caption{The control distribution of the $b$-jet multiplicity in the events after the trigger, lepton and jet selection. The experimental data points
-  and simulated distributions of signal and different background are plotted.}
+  and simulated distributions of signal and different background are plotted. The error bars of the data points
+  correspond to the statistical uncertainties of the measurement. The bottom plots represent the data-to-MC yield ratio distributions.}
   \label{fig:bjetMultiSel}
   \end{figure}
   
@@ -468,12 +480,13 @@ All the selection requirements are summarized as follows:
    \centering
    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/mll_step6.png}
  \end{subfigure}
- \caption{The control distribution of the dilepton mass in the events after the trigger, lepton and jet selection (left) and after trigger, lepton, jet and $b$-jet selection (right). 
- The experimental data points and simulated distributions of signal and different background are plotted.}
+ \caption{The control distribution of the dilepton mass in the events after the trigger, lepton and jet selection (left) and after applying in addition the $b$-jet selection (right). 
+ The experimental data points and simulated distributions of signal and different background are plotted. The error bars of the data points
+ correspond to the statistical uncertainties of the measurement. The bottom plots represent the data-to-MC yield ratio distributions.}
  \label{fig:mllbJetSel}
  \end{figure}
  
- The Scale Factors corresponding to the $b$-tagging procedure were applied on the MC improving much the agreement between data and simulation. This effect can be seen in the 
+ The scale factors corresponding to the $b$-tagging procedure were applied on the MC improving much the agreement between data and simulation. This effect can be seen in the 
  figure \ref{fig:bTagDiscr}, which presents the CSV discriminator distribution before and after the $b$-tagging SF reweighing. The data-to-MC ratio plots are getting closer to one with
  applying the SFs.
  
@@ -487,27 +500,25 @@ All the selection requirements are summarized as follows:
    \centering
    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/bTagDiscr_step7.png}
  \end{subfigure}
- \caption{The control distribution of the $b$-tag discriminator in the events after the whole \ref{sec:sel} selection not applying the $b$-tag Scale Factors (left)
+ \caption{The control distribution of the $b$-tag discriminator in the events after the full even selection (\ref{sec:sel}) not applying the $b$-tag Scale Factors (left)
  and after applying the $b$-tag Scale Factors (right). The experimental data points and simulated distributions of signal and different background are plotted.
+ The error bars of the data points correspond to the statistical uncertainties of the measurement.
  The bottom plots represent the data-to-MC yield ratio distributions.}
  \label{fig:bTagDiscr}
  \end{figure}
  %
  \end{itemize}
 
-The set of selection criteria performs successfully decreasing the fraction of background events. The control distributions which show the data and MC simulation at one plot
-contain all the background sources as a part of MC, thus providing a visualization of the outcoming results of the event selection process.
+The applied selection criteria dramatically reduced the fraction of background events.
 
 \section{Control Distributions}
 
-The results of the reconstruction and selection described above can be shown on the control distributions of the objects which are reconstructed for the $t\bar{t}$
-final state definition. The plots show the comparison between the yields in the experimental data and the simulated MC samples.
-The separate background sources are also presented on the distributions. The simulated yields are additionally scaled to the data luminosity of 19.7\;$fb^{-1}$.
-All the plots include the statistical uncertainties only.
+The results of the reconstruction and selection described above can be illustrated by control distributions of the objects which are reconstructed for the $t\bar{t}$
+final state definition.
 
-The figure \ref{fig:CPetaptLep} shows the lepton $\eta$ and $p_{T}$. The overall good agreement between the data and simulation shapes is observed in all $\eta$ regions
-and $p_{T}$'s. The control distribution of mass of the dilepton (electron-muon) system is shown on the figure \ref{fig:CPmll}. The simulation and experimental data
-agree well within the statistical uncertainties except for the first bin.
+The figure \ref{fig:CPetaptLep} shows the lepton $\eta$ and $p_{T}$. An overall reasonable agreement between the data and simulation shapes is observed in all $\eta$ regions
+and $p_{T}$'s. The control distribution of the mass of the dilepton (electron-muon) system is shown in figure \ref{fig:CPmll}. The simulation and experimental data
+agree well within the statistical uncertainties except for the first bin where data are higher than simulation.
 
  \begin{figure}[h]
  \centering
@@ -519,7 +530,7 @@ agree well within the statistical uncertainties except for the first bin.
    \centering
    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/basic_lepton_pt_step7.png}
  \end{subfigure}
- \caption{The control distribution of lepton $\eta$ (left) and lepton $p_{T}$ (right) in the events after the whole \ref{sec:sel} selection. 
+ \caption{The control distribution of lepton $\eta$ (left) and lepton $p_{T}$ (right) in the events after the whole event selection (\ref{sec:sel}). 
  The experimental data points and simulated distributions of signal and different background are plotted. The error bars of the data points
  correspond to the statistical uncertainties of the measurement. The bottom plots represent the data-to-MC yield ratio distributions. 
  Each distribution has two entries per event - for the electron and for the muon.}
