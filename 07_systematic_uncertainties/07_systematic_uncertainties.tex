@@ -60,7 +60,19 @@ event is recalculated correspondingly to the change of the jet energies values.
 
 The jet energy resolution has been rescaled by the $\eta$ dependent factors recommended by \cite{TWikiSystJER}.
 
-\subsection{$b$-tagging efficiency}
+\subsection{$b$-tagging fficiency}
+
+The uncertainties due to the $b$-tagging algorithm is taken into account by the $b$-tag scale factors variations within their
+uncertainties \cite{CMS-PAS-BTV-13-001}. The variations are performed antagonistically depending on the $p_{T}$ and $|\eta|$ of the jets.
+If the $p_{T}$ of the jet was greater than a median value (65$\;$GeV for $b$- and $c$-jets and 45$\;$GeV for light-jets) then 
+the $b$-tagging scale factor was varied down by it's uncertainty and vice versa. The same strategy is performed also versus $|\eta|$
+of the jets. The median value for the jet $|\eta|$ is 0.75 for all the jets flavours.
+
+The variations of the $b$-tagging scale factors depending on the jet kinematics are considered as fully uncorrelated and are added
+quadratically to the systematic uncertainty. The variations depending on the jet flavours $c$ and $b$ are considered to be 
+fully correlated and the largest of them is taken, while the variation depending on heavy or light jet flavour are treated as uncorrelated.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
