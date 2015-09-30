@@ -126,11 +126,103 @@ This is used to limit the normalization biases if the data $\mathbf{y}$ follow P
 The stationary point of the Lagrangian $\mathcal{L}(\mathbf{x}, \lambda)$ is defined by setting the first derivatives to zero. In case no 
 area normalization is performed the Lagrangian $\mathcal{L}$ depends only on $\mathbf{x}$ and $\mathcal{L}_{3}$ term is zero.
 
+\subsubsection{Regularization Studies}
+
+The regularization aims to minimize the fluctuations effects. To check the performance of regularization of the TUnfold, the reconstructed signal
+MC sample was unfolded. The outcome of this unfolding should be the generated signal distributions. The number of entries in the reconstructed signal
+MC distributions were fluctuated randomly in each bin independently within their statistical uncertainties. These statistical uncertainties were assumed
+to be Gaussian. The fluctuations were performed 100 times. Each of the 100 fluctuated distributions was unfolded and the following quantities were checked:
+
+\begin{itemize}
+ \item \textbf{RMS over mean error distribution}. All the 100 unfolded distributions are not exactly the same. The statistics in the same bin in each
+ distribution will differ. To quantify if this spread of the values is not disagreeing with the statistical uncertainties, one can look at the 
+ RMS (root mean square) of the values in a certain bin divided by the mean error of these values. In a perfect case this value should be equal to one.
+ The distributions of the RMS over mean errors are shown in the Fig. \ref{fig:RMSovMeanErr}. All the plots show expected behavior.
+ 
+ \item \textbf{Difference between unfolded and generated values.} The mean number of entries in one bin out of 100 fluctuated and unfolded distributions
+ is being compared to the number of entries in the corresponding generated distribution. The quantity which evaluates this comparison is
+ $\frac{N^{meas}_{mean\:i} - N^{gen}_{i}}{\sigma_{mean\:i}}$. Here $N^(meas)_{mean\:i}$ is the mean number of entries in the bin $i$ out of 100 fluctuated and unfolded distributions,
+ $N^{gen}_{i}$ is the number of generated events in the bin $i$ and $\sigma_{mean\:i}$ is the mean error of the fluctuated and unfolded values 
+ in the bin $i$. The distributions of this quantifier is shown in the Fig. \ref{fig:DiffovErr}. The overall deviations from zero are not
+ higher than 20\%, which means there are no big discrepancies in the unfolding outcome.
+ 
+ \item \textbf{$\tau$ scan}. The regularization strength $\tau$ is determined using L-curve scan and minimization of correlation coefficients for every
+ of the 100 fluctuated distributions. The resulting distributions were compared to each other. The regularization strength distributions are shown in
+ Fig. ?? and Fig. ?? The regularization strength defined in the L-curve method has two preferred values which shows instability of $\tau$ definition.
+ Such phenomenon is not observed in the results of the minimization of correlation coefficients method. The single value of the regularization strength
+ is preferred for all the unfolded distributions. Thus, the minimization of correlation coefficients is used for the cross section determination.
+
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
+\end{subfigure}
+\caption{RMS over mean error distributions for the 100 fluctuated and unfolded reconstructed MC signal samples. The distributions are
+         presented in bins of top $p_{T}$ and $y$ (top left), ...}
+\label{fig:RMSovMeanErr}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
+\end{subfigure}
+\caption{The distributions for the 100 fluctuated and unfolded reconstructed MC signal samples. The distributions are
+         presented in bins of top $p_{T}$ and $y$ (top left), ...}
+\label{fig:DiffovErr}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Cross Section Definition}
+\section{The Double Differential $t\bar{t}$ Production Cross Sections}
+
+\subsection{Cross Section Definition}
 
 After all the corrections are performed, the signal events grouped to different bins are used to define the normalized double differential cross sections
 of the $t\bar{t}$ production process:
@@ -204,4 +296,98 @@ It may be defined in two different ways:
 
 The cross sections are measured both in visible and full phase spaces, normalized and not normalized to the total cross section $\sigma$. 
 
-% \subsection{Double Differential Production Cross Section}
+
+\subsection{Double Differential Production Cross Section Measurement}
+
+The production cross sections were measured double differentially in bins of top transverse momentum, rapidity, mass ...
+The binning was chosen to have enough entries in each bin so that the error could be treated as Gaussian.
+
+
+\subsubsection{Cross sections in bins of rapidity and transverse momentum of the top quark}
+
+The production cross section of the $t\bar{t}$ in bins of the rapidity and the transverse momentum of the top quark was
+measured in the bins presented in Fig. \ref{fig:CP_2D_y_pt}. This control distribution is also showing the agreement between 
+the data and reconstructed MC $t\bar{t}$ signal.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/CP_AllBins_top_rapidity_vs_top_pt.pdf}
+  \caption{Control distribution of the $y$ of the top quark in bins of the $p_{T}$ of the top quark. The $y$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_y_pt}
+\end{figure}
+
+The quality of the reconstruction in each bin can be characterized by the three quantities -- \textit{efficiency} $\epsilon$, \textit{purity} $p$ and
+\textit{stability} $s$. They are defined the following way:
+
+\begin{equation}
+ \epsilon_{ij} = \frac{N_{ij}^{reco}}{N_{ij}^{gen\:tot}},
+\end{equation}
+
+\begin{equation}
+ p_{ij} = \frac{N_{ij}^{gen\:and\:reco}}{N_{ij}^{reco}},
+\end{equation}
+
+\begin{equation}
+ s_{ij} = \frac{N_{ij}^{gen\:and\:reco}}{N_{ij}^{gen}}.
+\end{equation}
+
+All of these quantities are determined from the signal MC. Here $ij$ are the bin numbers in the two dimensions. The efficiency 
+$\epsilon_{ij}$ is defined as the number of reconstructed events in the bin $ij$, $N_{ij}^{reco}$ divided by the total number of 
+the generated events $N_{ij}^{gen\:tot}$. The efficiency contains the effects of the detector acceptance and the reconstruction efficiency.
+
+The purity $p_{ij}$ is the fraction of the number of the events which were generated and reconstructed in the same bin ($N_{ij}^{gen\:and\:reco}$)
+and the total number of the reconstructed events in this bin ($N_{ij}^{reco}$). Thus, the purity describes the migrations inside the bin.
+The higher the purity is, the less events migrate inside the bin from the other bins. The highest possible purity value is 1.
+The migrations of the events to the different bins are caused by the detector resolution and the reconstruction effects.
+
+The stability $s_{ij}$ is the quotient of the number of events generated and reconstructed in the same bin ($N_{ij}^{gen\:and\:reco}$) over the 
+number of the generated events inside this bin ($N_{ij}^{gen}$). The stability is quantifying the migrations out of the bin. The higher 
+the stability is the less events migrate outside this bin to the other bins. The highest possible stability value is 1.
+
+The efficiency, purity and stability are shown in the Fig. \ref{fig:EPS_2D_y_pt}. The reconstruction efficiency and stability are better on the
+high $p_{T}$. Although the high rapidity bins have low reconstruction efficiency, the purity and stability there is higher.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_top_rapidity_vs_top_pt.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $y$ of the top quark.}
+  \label{fig:EPS_2D_y_pt}
+\end{figure}
+
+The Fig. \ref{fig:XS_2D_y_pt} represents the production cross sections of the $t\bar{t}$ pair in bins of top rapidity and top transverse momentum.
+The experimentally measured cross sections are compared to the MadGraph+Pythia, Powheg+Pythia, Powheg+Herwig and MC@NLO+Herwig predictions.
+The overall good agreement between theory predictions and experimental results is observed. MadGraph+Pythia describes the higher $p_{T}$ bins
+worth.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_0.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_1.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_2.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_3.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_4.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_5.pdf}
+\end{subfigure}
+\caption{Normalized differential cross sections in bins of top rapidity and transverse momentum.}
+\label{fig:XS_2D_y_pt}
+\end{figure}
