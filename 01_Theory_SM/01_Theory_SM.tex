@@ -107,7 +107,7 @@ The following table shows the rough order of the interaction strengths\footnote{
 interacting objects. That is why the values in the table should be concerned as the measure of order, not an exact number.}, the mediator
 and the theory, which describes these interactions \cite{griffiths2008introduction}:
 
-\begin{center}
+\begin{center}\label{tab:forces}
   \begin{tabular}{ | c | c | c | c | }
     \hline
     \textbf{Interaction} & \textbf{Strength} & \textbf{Theory} & \textbf{Mediator} \\ \hline \hline
@@ -119,12 +119,14 @@ and the theory, which describes these interactions \cite{griffiths2008introducti
   \end{tabular}
 \end{center}
 
-The more details on every interaction is presented in this section.
+More details on every interaction is presented in this section.
 
 \subsection{Electrmagnetic Interaction}
 
 The theory behind the electromagnetic interactions -- quantum electrodynamics (QED) -- was developed earlier than other interactions theories
 and is the most successful one. It describes the interactions between the elementary electrically charged fermions via mediator photons.
+The electromagnetic interaction is such that the oppositely electrically charged objects attract each other while the same sign charges repulse.
+This interaction is present on any distance getting weaker proportionally to the distance squared. The QED is based on the gauge group $U(1)$.
 Every electromagnetic phenomena is ultimately reducible to the following elementary process:
 
 \begin{figure}[h]
@@ -133,7 +135,77 @@ Every electromagnetic phenomena is ultimately reducible to the following element
   \caption{Feynman graph of the elementary QED process.}
   \label{fig:QED_simple}
 \end{figure}
-% \subsection{Strong Interaction}
+
+The more complex processes can be described combining two or more of these elementary verteces.
+
+A coupling constant, or the interaction strength of the electromagnetic interaction is given as following:
+
+\begin{equation}
+ \alpha = \frac{e^{2}}{4\pi\epsilon_{0}\hbar c} \approx \frac{1}{137},
+\end{equation}
+
+where $\epsilon_{0}$ is the permitivity of vacuum, $e$ is the electron charge and $c$ is the speed of light.
+
+As coupling constant is small ($\alpha \ll 1$), it can be used for the expansion in the perturbative calculations.
+Each term of this expansion will have a term of $\alpha$. Thus, the naming of the processes lying beyond each of the term
+is Leading Order process (LO), Next-to-Leading Order process (NLO), Next-to-Next-to-Leading Order process (NNLO), etc.
+
+\subsection{Strong Interaction}
+
+The theory which describes the strong interaction is the Quantum Chromodynamics (QCD), which is based on the gauge group $SU(3)$. Only the
+objects which have a color charge can interact strongly. The color charge (first mentioned in sec. \ref{sec:quark}) has three eigenstates:
+red (r), blue (b) and green (g). As for the any other charge, the color charge eigenstates have also anticharges -- anicolors. The combination
+of the color and corresponding anticolor, as well as the combination of all the colors/anticolors results the colorless state.
+
+The mediators of the strong interaction are gluons. These particles are massless and carry two colors -- color and anticolor. Thus, the strong 
+interaction is the interaction between quarks via gluons. The color charge is conserved during the interaction.
+
+The coupling constant of the strong interaction, $\alpha_{s}$, is a running constant depending on the energy scale $Q$. As shown in the
+Fig. \ref{fig:Alpha_s}, the $\alpha_{s}$ rapidly increases with the lessening of the $Q$. This means that on the larger distances 
+the strength of the interaction increases a lot. This phenomenon is called \textit{confinement} and this is the reason why the quarks
+can't exist in the isolated state. The more the quarks separate from each other in terms of distance, the stronger they interact, the harder
+it becomes to divide them. Even if one always has enough energy to separate quarks more and more from each other, they gluon field will become critically
+high and produce the quark-antiquark pair. This process may repeat sequentially. This constantly happens under the conditions created in the
+particle colliders. The phenomenon of sequential quark pair production is called \textit{hadronization}.
+
+The confinement constrains the maximum distances on which the interaction in terms of the gluon field is observed before producing the quark-antiquark pair.
+The limit of the region of strong interaction impact is of the order of the nucleon size -- $\sim 10^{-15}$ m.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\textwidth]{01_Theory_SM/plots/Alpha_s.png}
+  \caption{Summary of measurements of $\alpha_s$ as a function of the respective energy scale $Q$. The respective degree of QCD perturbation 
+  theory used in the extraction of $\alpha_{s}$ is indicated in brackets (NLO: next-to-leading order; NNLO: next-to-next-to leading order; 
+  res. NNLO: NNLO matched with resummed next-to-leading logs; N3LO: next-to-NNLO). Figure taken from \cite{PDG-2012}.}
+  \label{fig:Alpha_s}
+\end{figure}
+
+The opposite tendency which can be observed in Fig. \ref{fig:Alpha_s} is that the $\alpha_{s}$ is getting smaller for the higher values 
+of the $Q$. This means that for the shorter interaction distances, the coupling constant becomes weaker. This phenomenon carries the 
+name \textit{asymptotic freedom}. Under these conditions the quarks are assumed to be treated as the free particles. The asymptotically 
+free quarks are assumed to be observed in the \textit{quark-gluon plasma} \cite{Bohr1977275} -- the state of matter with extremely high density and/or temperature.
+
+The conjectured QCD states, depending on temperature and density, are shown in Fig. \ref{fig:QGP}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/QGP.png}
+  \caption{Conjectured phase diagram of QCD. The different states and phase curves are shown. The energy and density range of different high energy 
+  physics experiments are marked on the top of the figure.}
+  \label{fig:QGP}
+\end{figure}
+
+\subsection{Weak Interaction}
+
+As it can be seen in the table \ref{tab:forces}, the strength of the weak interaction is many orders of the magnitude smaller than the once for the 
+electromagnetic and strong interaction. This fact explains the name \textit{weak}.
+
+The weak interaction differs from the others in a way that there is no particular name for the charge responsible for this interaction 
+(like electrical charge for the electromagnetism and color charge for the strong interaction). All the leptons and quarks carry the ability to interact
+weakly. A widely known example of the weak interaction is the process of the $\beta$-decay.
+
+There are 
+
 % \subsection{Weak Interaction and Electroweak Symmetry Breaking}
 % \subsection{Gravitation}
 % 
