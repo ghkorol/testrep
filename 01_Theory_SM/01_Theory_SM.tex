@@ -204,9 +204,46 @@ The weak interaction differs from the others in a way that there is no particula
 (like electrical charge for the electromagnetism and color charge for the strong interaction). All the leptons and quarks carry the ability to interact
 weakly. A widely known example of the weak interaction is the process of the $\beta$-decay.
 
-There are 
+There are two kinds of weak interaction: \textit{neutral}, mediated by the $Z$-bosons, and \textit{charged}, mediated by the $W^{\pm}$. The masses of the 
+mediators are shown in the Fig. \ref{fig:SM_Particles}.	In the neutral weak interaction there is no charge as well as no flavour exchange between the 
+interacting particles. The weak interaction boths, the charge and the quark flavour exchange are present. The lepton number and flavour both conserve
+in the weak interaction. In the charged weak interactions the quark flavour can exchange not only within one generation, but also between the generations.
+This intergeneration flavour exchange wouldn't be allowed within the normal quark mass eigenstates:
 
-% \subsection{Weak Interaction and Electroweak Symmetry Breaking}
+\begin{equation}
+\left( \begin{array}{c}
+       u \\ d
+      \end{array} \right)
+\left( \begin{array}{c}
+       c \\ s
+      \end{array} \right)
+\left( \begin{array}{c}
+       t \\ b
+      \end{array} \right)
+\end{equation}
+  
+The weak quark eigenstates differ from the mass ones. There the $d$, $s$ and $t$ states are replaced with their linear combinations $d'$, $s'$ and $b'$,
+expressed as follows:
+
+\begin{equation} \label{eq:CKM_transform}
+\left( \begin{array}{c} d' \\ s' \\ b' \end{array} \right) = 
+\left( \begin{array}{ccc} V_{ud} & V_{us} & V_{ub} \\ V_{cd} & V_{cs} & V_{cb} \\ V_{td} & V_{ts} & V_{tb} \end{array} \right)
+\left( \begin{array}{c} d \\ s \\ b\end{array} \right).
+\end{equation}
+
+The matrix $V$ in \ref{eq:CKM_transform} is the Cabibbo-Kobayashi-Maskawa matrix \cite{Kobayashi:1973fv} (CKM-matrix), which describes the transition probability 
+between different quark favours. Experimentally defined, the matriz elements have the following magnitudes \cite{PDG-2012}:
+
+\begin{equation} \label{eq:CKM}
+ V = \left( \begin{array}{ccc} 0.974 & 0.225 & 0.003 \\ 0.225 & 0.973 & 0.041 \\ 0.009 & 0.040 & 0.999 \end{array} \right).
+\end{equation}
+
+The diagonal elements of the CKM matrix \ref{eq:CKM} are close to 1, being much higher than the off-diagonal elements. Thus, the flavour transformations
+within one generation are preferred.
+
+\subsection{Electroweak Unification and Symmetry Breaking}
+
+
 % \subsection{Gravitation}
 % 
 % \section{Top Physics}
