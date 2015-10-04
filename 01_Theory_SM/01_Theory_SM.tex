@@ -27,7 +27,7 @@ and interactions between them. This theory is overall successfully describing ma
 agrees with the experimental efforts. But there is also a number of challenges which Standard Model
 is facing. In particular
 \begin{itemize}
- \item the gravitation is not described,
+ \item the gravity is not described,
  \item the neutrino oscillations and their non-zero masses are not explained,
  \item dark matter and dark energy do not fit into the model,
  \item the matter-antimatter asymmetry in the Universe is not explained.
@@ -232,7 +232,7 @@ expressed as follows:
 \end{equation}
 
 The matrix $V$ in \ref{eq:CKM_transform} is the Cabibbo-Kobayashi-Maskawa matrix \cite{Kobayashi:1973fv} (CKM-matrix), which describes the transition probability 
-between different quark favours. Experimentally defined, the matriz elements have the following magnitudes \cite{PDG-2012}:
+between different quark favours. Experimentally defined, the matrix elements have the following magnitudes \cite{PDG-2012}:
 
 \begin{equation} \label{eq:CKM}
  V = \left( \begin{array}{ccc} 0.974 & 0.225 & 0.003 \\ 0.225 & 0.973 & 0.041 \\ 0.009 & 0.040 & 0.999 \end{array} \right).
@@ -241,11 +241,94 @@ between different quark favours. Experimentally defined, the matriz elements hav
 The diagonal elements of the CKM matrix \ref{eq:CKM} are close to 1, being much higher than the off-diagonal elements. Thus, the flavour transformations
 within one generation are preferred.
 
+As the masses of the gauge bosons which mediate the weak interaction are quite large (see Fig. \ref{fig:SM_Particles}), the range of the interaction is restricted.
+
 \subsection{Electroweak Unification and Symmetry Breaking}
 
+If one compares the neutral weak interactions and the electromagnetic ones, it becomes obvious that they are very similar, differing mainly on the mediator
+of the interaction. This can be also seen in Fig. \ref{fig:em_weak}.
 
-% \subsection{Gravitation}
-% 
-% \section{Top Physics}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{01_Theory_SM/plots/feynz.png}
+  \caption{$ee$ scattering in the electromagnetic (right) and neutral weak (left) interactions.}
+  \label{fig:em_weak}
+\end{figure}
+
+A natural idea of unification of these two interactions would appear. It is not that simple as replacing the $Z^{0}$ by the photon $\gamma$, one
+should take to account both processes and their interferences.
+
+The theory which describes the electroweak interactions is based on the $SU(2) \times U(1)$ symmetry. To make the Lagrangian of the weak interaction
+symmetric to the $SU(2)$ transformations, three fields are introduced: $W_{\mu}^{1}$, $W_{\mu}^{2}$ and $W_{\mu}^{3}$. These fields couple to fermions with
+the coupling constant $g$. The fields $W_{mu}^{1}$ and $W_{\mu}^{2}$ couple to the left-handed\footnote{The \textit{helicity} of the particle is \textit{right-handed}
+if it's spin and motion directions are the same. In case these directions are opposite, one is talking about the \textit{left-handed} particles.} fermions and
+the $W_{mu}^{3}$ is coupling to the neutrinos. The $W^{\pm}$ couples to the left-handed fermions, thus it can be represented as a linear combination of
+$W_{\mu}^{1}$ and $W_{\mu}^{2}$:
+
+\begin{equation}
+ W^{\pm} = \frac{1}{sqrt{2}}(W_{\mu}^{1} \mp iW_{\mu}^{2}).
+\end{equation}
+
+The symmetry $U(1)$ introduces the additional field $B_{\mu}$ which couples to neutrinos. The related coupling constant is $g'$. To describe the electromagnetic
+field, the $Z_{\mu}$ and $\gamma_{\mu}$ fields are introduced:
+
+\begin{equation}\label{eq:Zmu}
+ Z_{\mu} = \frac{1}{\sqrt{g^{2} + g'^{2}}}(gW^{3}_{\mu} - g'B_{\mu}),
+\end{equation}
+
+\begin{equation}\label{eq:Amu}
+ \gamma_{\mu} = \frac{1}{\sqrt{g^{2} + g'^{2}}}(gW^{3}_{\mu} + g'B_{\mu}).
+\end{equation}
+
+A free parameter of the Standard Model, which is introduced in this concern, is the weak mixing angle $\theta_{W}$, which is expressed as follows:
+
+\begin{equation}
+ cos(\theta_{W}) = \frac{g}{\sqrt{g^{2}+g'^{2}}}.
+\end{equation}
+
+Thus, the fields $Z_{\mu}$ and $\gamma_{\mu}$ can be expressed via this angle:
+
+\begin{equation}
+ Z_{\mu} = W^{3}_{\mu}cos(\theta_{W}) - B_{\mu}sin(\theta_{W}),
+\end{equation}
+
+\begin{equation}
+ \gamma_{\mu} = W^{3}_{\mu}cos(\theta_{W}) + B_{\mu}sin(\theta_{W}).
+\end{equation}
+
+So in fact, the photon $\gamma$ and the $Z^{0}$ mix the states of $W^{3}_{\mu}$ (corresponding to $W^{0}$) and $B_{\mu}$ (corresponding to $B^{0}$).
+The mixing angle $\theta_{W}$ has been measured experimentally \cite{PDG-2012} and corresponds to approximately $30^{o}$.
+
+There is also a charge introduced to describe electroweak interaction, which is called a \textit{hypercharge} $Y$ and is expressed in a Gell-Mann-Nishijima
+equation:
+
+\begin{equation}
+ Y = (2Q - I_{3}).
+\end{equation}
+
+Here $Q$ is an electric charge in units of the electron charge $e$ and $I_{3}$ is the weak isospin.
+
+The whole model, however, is based on the assumption that all gauge bosons have to be massless, which is not the case. The known experimental fact
+is that the $W^{\pm}$ and $Z^{0}$ bosons carry a non-zero mass \cite{PDG-2012}. The masses appear in this theory due to \textit{spontaneous gauge symmetry
+breaking}. In another words, the particles remain massless, but a new field appears. The particles couple to this field and obtain the masses in this
+interaction. The symmetry breaking is accompained with the appearence of one or two massless particles with zero spin, so-called \textit{Goldstone bosons}.
+They are eliminated by the \textit{Higgs mechanism}, which, however, introduces a massive particle with zero spin - \textit{Higgs boson}. At the time when the
+Higgs mechanism was introduced, such particle was not yet discovered. The Higgs-like particle was discovered only in 2012 \cite{Aad20121, Chatrchyan:2012xdj} 
+and it's properties still need to be checked for the concistency to the theoretical predictions.
+
+
+\subsection{Gravity}
+
+The fourth interaction which is present in our Universe is gravity. The gravity is not described in Standard Model, but it has to be mentioned for a concistent 
+picture. The gravitation force is very weak on the small distances, which are typical for the interaction of the elementary particles. It only becomes noticable
+on a very large distance. For example, the movement of the bodies in outer space (planets, stars, asteroids, etc) are to the large extend governed by
+gravity.
+
+The "charge`` which reacts to the gravity is the mass of the body. 
+
+The influence of gravity is negligible for the processes studied in this thesis, thus it is neglected.
+
+
+\section{Top Quark Physics}
 % \subsection{Top Quark Production}
 % \subsection{Top Quark Decay}
