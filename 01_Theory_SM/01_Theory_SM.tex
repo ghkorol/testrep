@@ -311,10 +311,10 @@ Here $Q$ is an electric charge in units of the electron charge $e$ and $I_{3}$ i
 The whole model, however, is based on the assumption that all gauge bosons have to be massless, which is not the case. The known experimental fact
 is that the $W^{\pm}$ and $Z^{0}$ bosons carry a non-zero mass \cite{PDG-2012}. The masses appear in this theory due to \textit{spontaneous gauge symmetry
 breaking}. In another words, the particles remain massless, but a new field appears. The particles couple to this field and obtain the masses in this
-interaction. The symmetry breaking is accompained with the appearence of one or two massless particles with zero spin, so-called \textit{Goldstone bosons}.
+interaction. The symmetry breaking is accompanied with the appearance of one or two massless particles with zero spin, so-called \textit{Goldstone bosons}.
 They are eliminated by the \textit{Higgs mechanism}, which, however, introduces a massive particle with zero spin - \textit{Higgs boson}. At the time when the
 Higgs mechanism was introduced, such particle was not yet discovered. The Higgs-like particle was discovered only in 2012 \cite{Aad20121, Chatrchyan:2012xdj} 
-and it's properties still need to be checked for the concistency to the theoretical predictions.
+and it's properties still need to be checked for the consistency to the theoretical predictions.
 
 
 \subsection{Gravity}
@@ -328,7 +328,63 @@ The "charge`` which reacts to the gravity is the mass of the body.
 
 The influence of gravity is negligible for the processes studied in this thesis, thus it is neglected.
 
-
 \section{Top Quark Physics}
-% \subsection{Top Quark Production}
+
+In this thesis the process of $t\bar{t}$ production is being analyzed. Thus, some more details of the top quark physics should be presented.
+The top quark has unique properties compared to the other elementary particles. Thus, it offers possibilities for numerous studies. This
+section describes the production process of the top quark and its decay.
+
+\subsection{Top Quark Production}
+
+The top quark production cross section depends on the center-of-mass energy of the experiment in which it is produced. From Fig. \ref{fig:SM_XSec_Prod}
+one can judge that under the conditions of the Large Hadron Collider (where the designed center-of-mass energy should approach 14 TeV) we get 
+a top production factory.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{01_Theory_SM/plots/crosssections2013.png}
+  \caption{Standard Model Leading Order cross sections for the different processes depending on the energies. The turquoise vertical line presents the energy
+  of the Large Hadron Collider running in 2012.}
+  \label{fig:SM_XSec_Prod}
+\end{figure}
+
+The top quarks may be produced as single top quarks or in pairs.
+
+\subsubsection{Top Quark Pair Production}
+
+The dominant $t\bar{t}$ production mechanism in SM is the one via strong interaction. In the QCD the inclusive production cross section of the $t\bar{t}$ pair
+from the proton-proton interaction can be expressed as follows \cite{Schilling:2012dx}:
+
+\begin{equation}
+ \sigma_{pp \rightarrow t\bar{t}} (s, m_{t}) = \sum_{i,j = q, \bar{q}, g} \int dx_{i} dx_{j} f_{i}(x_{i}, \mu_{f}^{2}) f_{j}(x_{j}, \mu_{f}^{2}) \cdot \hat{\sigma}_{ij \rightarrow t\bar{t}}(\hat{s}, m_{t}, \mu_{f}, \mu_{r}, \alpha_{s}).
+\end{equation}
+
+Here the sum is running over all quarks and gluons contributing to the process, $m_{t}$ is the mass of the top quark, $s$ is the squared center-of-mass 
+energy for the $pp$ collision, $x$ is the parton momentum fractions with respect to the proton momenta, $f(x, \mu_{f}^{2})$ is the parton distribution
+function (PDF)\footnote{The \textit{Parton Distribution Function}, or the \textit{PDF}, is depending on the parton flavour $i$, parton momentum
+fraction $x_{i}$ and the energy scale of the interaction. A PDF gives a probability that within the interaction of a given scale a parton with a given flavour $i$
+and momentum fraction $x_{i}$ will be found in a proton.}, $\mu_{f,r}$ are the factorization and renormalization scales, $\hat{s} \sim sx_{i}x_{j}$ is the 
+partonic center-of-mass energy and $\alpha_{s}$ is the strong coupling constant. As the mass of the $t\bar{t}$ pair is high, the $\alpha_{s}$ turns out
+to be quite low (see Fig. \ref{fig:Alpha_s}), thus the perturbative expansion is possible.
+
+The PDFs are measured by different groups (for example, HERAfitter \cite{Alekhin:2014irh} or CTEQ \cite{Pumplin:2002vw}). The example of the combined HERA 
+PDFs is shown in Fig. \ref{fig:HERA_PDF}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/herapdf17.png}
+  \caption{PDFs from HERAPDF1.7, which includes charm data, jet data and low energy data as well as the HERA-I and II high energy inclusive data.}
+  \label{fig:HERA_PDF}
+\end{figure}
+
+The $t\bar{t}$ pairs are dominantly produced in the process of gluon-gluon fusion $gg \rightarrow t\bar{t}$ or in quark-antiquark annihilation $q\bar{q} \rightarrow t\bar{t}$.
+These LO production processes are shown in Fig. \ref{fig:LO_tt_prod}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/LO_tt_production.pdf}
+  \caption{Feynman diagrams for the LO $t\bar{t}$ production.}
+  \label{fig:LO_tt_prod}
+\end{figure}
+
 % \subsection{Top Quark Decay}
