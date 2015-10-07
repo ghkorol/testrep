@@ -340,7 +340,7 @@ The top quark production cross section depends on the center-of-mass energy of t
 one can judge that under the conditions of the Large Hadron Collider (where the designed center-of-mass energy should approach 14 TeV) we get 
 a top production factory.
 
-\begin{figure}[t]
+\begin{figure}[h]
   \centering
   \includegraphics[width=1.0\textwidth]{01_Theory_SM/plots/crosssections2013.png}
   \caption{Standard Model Leading Order cross sections for the different processes depending on the energies. The turquoise vertical line presents the energy
@@ -370,21 +370,65 @@ to be quite low (see Fig. \ref{fig:Alpha_s}), thus the perturbative expansion is
 The PDFs are measured by different groups (for example, HERAfitter \cite{Alekhin:2014irh} or CTEQ \cite{Pumplin:2002vw}). The example of the combined HERA 
 PDFs is shown in Fig. \ref{fig:HERA_PDF}.
 
-\begin{figure}[t]
+\begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/herapdf17.png}
+  \includegraphics[width=0.6\textwidth]{01_Theory_SM/plots/herapdf17.png}
   \caption{PDFs from HERAPDF1.7, which includes charm data, jet data and low energy data as well as the HERA-I and II high energy inclusive data.}
   \label{fig:HERA_PDF}
 \end{figure}
 
 The $t\bar{t}$ pairs are dominantly produced in the process of gluon-gluon fusion $gg \rightarrow t\bar{t}$ or in quark-antiquark annihilation $q\bar{q} \rightarrow t\bar{t}$.
-These LO production processes are shown in Fig. \ref{fig:LO_tt_prod}.
+These LO production processes are shown in Fig. \ref{fig:LO_tt_prod}. In the NLO production processes there are also partonic sub-processes with $gq$($g\bar{q}$) present.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/LO_tt_production.pdf}
+  \includegraphics[width=0.6\textwidth]{01_Theory_SM/plots/LO_tt_production.pdf}
   \caption{Feynman diagrams for the LO $t\bar{t}$ production.}
   \label{fig:LO_tt_prod}
 \end{figure}
 
-% \subsection{Top Quark Decay}
+\subsubsection{Single Top Production}
+
+The top quarks can be also produced not in pairs in the weak interaction processes in the $Wtb$ vertex.
+
+There are three production modes of the single top -- $t$-channel, $s$-channel and $tW$-channel. These production channels are shown in Fig. \ref{}.
+
+Single top quark production is interesting for various studies. It is a test of Standard Model and it is directly sensitive to the CKM matrix
+element $|V_{tb}|$.
+
+\subsection{Top Quark Pair Decay}
+
+The top quark decays before hadronizing almost exclusively to a $b$-quark and a $W$-boson, as the value of $|V_{tb}|$ is almost 1 (see CKM matrix \ref{eq:CKM}).
+
+The decay modes of the $t\bar{t}$ pairs can be classified according to the decay mode of the $W$ bosons (see Fig. \ref{tt_decay}):
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{01_Theory_SM/plots/top_pair_decay_channels.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{01_Theory_SM/plots/top_pair_branching_frac.png}
+\end{subfigure}
+\caption{$t\bar{t}$ decay channels. On the right the branching ratio of different decay channels are shown.}
+  \label{fig:tt_decay}
+\end{figure}
+
+\begin{itemize}
+ \item \textit{Full hadronic channel}. Both $W$ bosons decay into quark-antiquark pairs -- $t\bar{t} \rightarrow W^{+}bW^{-}\bar{b} \rightarrow q\bar{q}'bq''\bar{q}'''\bar{b}$.
+ This decay channel has the largest branching ratio\footnote{\textit{Branching ratio} of the specific decay of a particular particle/system is the probability of this particle/system
+ to decay via this decay mode.}. However, this state has a very high pollution in the Large Hadron Collider environment, as the large number of quark and gluon jets is produced.
+ 
+ \item \textit{Semileptonic (lepton+jet) channel}. One $W$ boson decays hadronically, another one - into two leptons:  $t\bar{t} \rightarrow W^{+}bW^{-}\bar{b} \rightarrow q\bar{q}'bl\bar{\nu}_{l}\bar{b}
+ + \bar{l}\nu_{l}bq\bar{q}'\bar{b}$. The high momentum lepton, which occurs in this process, is a signature that helps to identify the decay better. Thus, there is less
+ ambiguity in defining the final state of the semileptonic $t\bar{t}$ decay.
+ 
+ \item \textit{Dileptonic channel}. Both $W$ bosons decay into leptons -- $t\bar{t} \rightarrow W^{+}bW^{-}\bar{b} \rightarrow \bar{l}\nu_{l}bl'\bar{\nu}_{l'}\bar{b}$.
+ This decay channel has the smallest branching ratio, but the two high momentum leptons are a nice sign which helps to distinguish this final state from other processes
+ occurring in the Large Hadron Collider collisions.
+\end{itemize}
+
+This analysis is based on the dileptonic channel. However, only the final states where the electrons or/and muons occur are considered. The once with $\tau$ leptons are 
+not taken to account as signal.
