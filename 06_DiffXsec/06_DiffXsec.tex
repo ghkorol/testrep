@@ -4,8 +4,8 @@ The cross section measurement procedure and results are explained in this sectio
 After applying selection criteria and kinematic reconstruction, one can count the events to determine
 the rate of $t\bar{t}$ production process.
 
-The cross sections were measured double differentially in bins of the kinematic variables of the event.
-A binning choice is explained in the first section.
+The cross sections were measured double differentially in bins of the kinematic variables of top-quark and $t\bar{t}$ system.
+The first section gives an overview of the background processes for the $t\bar{t}$ production.
 The two dimensional unfolding was applied to correct for the detector effect and fluctuations, which is described
 in the second section of this chapter.
 The double differential cross sections and their definitions are shown in the last section of the chapter.
@@ -13,13 +13,13 @@ The double differential cross sections and their definitions are shown in the la
 
 \section{Background Subtraction}
 This study is performed as counting the events which fulfill certain criteria (e.g. given in chapter \ref{chapt:event_selection} and 
-chapter \ref{chapt:kinReco}). Not all of these events are the $signal events$ originating from the $t\bar{t}$ system decay in dileptonic
+chapter \ref{chapt:kinReco}). Not all of these events are the \textbf{signal events} originating from the $t\bar{t}$ system decay in dileptonic
 channel. The final state, which can be misidentified as $t\bar{t}$, may arise from a different process, called \textit{background}
 for the specific measurement. In this analysis the background rates are estimated from the simulation and Subtracted 
 from the measured event yields:
 
 \begin{equation}\label{eq:bgsub}
- N^{signal\;measured} = N^{selected} - N^{BG}
+ N^{signal\;measured}_{reco} = N^{selected}_{reco} - N^{BG}
 \end{equation}
 
 Here the $N^{BG}$ corresponds to the number of background events. It consists of several processes like:
@@ -33,7 +33,7 @@ Here the $N^{BG}$ corresponds to the number of background events. It consists of
  \item QCD multijet processes.
 \end{itemize}
 
-Whereas all the background yields are purely simulated, the rate of the background caused by the Drell-Yan production is 
+Whereas all the background yields are only simulated, the rate of the background caused by the Drell-Yan production is 
 partially data driven \cite{Chatrchyan:2011nb}. The normalization factor for the simulated Drell-Yan events is determined 
 from the comparison of the reconstructed and simulated $Z$-peak. 
 
@@ -41,7 +41,7 @@ After subtracting all the other backgrounds, the number of signal events is mult
 from the other decay channels of $t\bar{t}$:
 
 \begin{equation}\label{eq:bgsub}
- N^{signal} = N^{signal\;measured} \cdot \frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}.
+ N^{signal}_{reco} = N^{signal\;measured}_{reco} \cdot \frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}.
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,9 +49,9 @@ from the other decay channels of $t\bar{t}$:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Unfolding of the Experimental Results}\label{sec:unfold}
 
-The events after the background  subtraction \ref{eq:bgsub} are grouped to the bins in different $t$-quark variables. However, a finite precision
-of experimental apparatus and reconstruction algorithms may lead to incorrect measurement of kinematic properties of the event.
-Thus, some fraction of events may be reconstructed in the wrong bin. To present the results independent of the detector effects,
+The events after the background  subtraction \ref{eq:bgsub} are grouped to the bins in different variables. However, a finite precision
+due to inevitable detector effects and imperfect reconstruction algorithms may lead to incorrect measurement of kinematic properties of the event.
+Thus, some fraction of events may be reconstructed in the wrong bins. To present the results independent of the detector effects,
 one needs to correct them back.
 
 The whole problem can be described as
@@ -62,9 +62,9 @@ The whole problem can be described as
 
 Here the $\tilde{x}_j$ in $m$ bins is a true distribution, independent of the detector effects, which is the aim of the measurement;
 $\tilde{y}_i$ in $n$ bins is a distribution which one gets out of the detector and $A_{ij}$ is a matrix of probabilities describing 
-the migration probabilities to different bins on the detector level; $b_{i}$ is the background, or the contribution of other physical
-processes, in the bin $i$. However, the pure $\tilde{y}_{i}$ distribution is also not available for the final measurements, because it is
-spoiled by the statistical fluctuations, forming the distribution $y_{i}$. The schematic view of the problem is given on the Figure \ref{fig:scUnf}.
+the migrations to different bins on the detector level; $b_{i}$ is the background in the bin $i$. 
+However, the observed event counts $y_{i}$ may be different from $\tilde{y}_{i}$ due to the statistical fluctuations.
+The schematic view of the problem is given in the Figure \ref{fig:scUnf}.
 
 \begin{figure}[t]
   \centering
@@ -74,15 +74,12 @@ spoiled by the statistical fluctuations, forming the distribution $y_{i}$. The s
   \label{fig:scUnf}
 \end{figure}
 
-The most simple solution would be to take $y_{i}$ instead of $\tilde{y}_{i}$ in eq. \ref{eq:UnfoldProb} and invert
-the $A_{ij}$ matrix to obtain $x_{j}$. But it turns out that the statistical fluctuations of $y_{i}$ are greatly 
-amplified this way. To minify these fluctuations the \textit{regularisation} procedure is applied.
-
 The process of restoring the true distribution $\tilde{x}_{j}$ from the known distribution $y_{i}$ which was influenced
-by the detector effects and statistical fluctuations is called \textit{unfolding}. The TUnfold \cite{Schmitt:2012kp} algorithm was used for the
-unfolding in this work.
+by the detector effects and statistical fluctuations is called \textit{unfolding}. To minify these fluctuations the 
+\textit{regularisation} procedure is applied. The TUnfold \cite{Schmitt:2012kp} algorithm was used for the
+unfolding in this analysis.
 
-\subsection{TUnfold Minimization}
+\subsection{TUnfold Minimization}\label{ssec:TUmini}
 
 The TUnfold algorithm is using the least square minimization method and the Tikhonov regularization \cite{Tikhonov:1963}. One of the crucial 
 constrains for a better performance of the method is that the number of degrees of freedom for the minimization ($n - m$) has to be positive,
@@ -103,21 +100,72 @@ The bold symbols here correspond to the matrices and vectors.
 
 The term $\mathcal{L}_{1}$ is expected for the minimization. Vectors $\mathbf{y}$, $\mathbf{x}$ and a matrix $\mathbf{A}$ were
 described in the previous section. Representing the migrations from and into different bins of $\mathbf{y}$, the matrix $\mathbf{A}$
-is often defined from the Monte Carlo\footnote{A matrix $\mathbf{A}$ is
+is defined from the Monte Carlo\footnote{A matrix $\mathbf{A}$ is
 determined from Monte Carlo using the information from the generator particle level and on the reconstructed signal. An extra row is added
 to the matrix $\mathbf{A}$ containing the information about the count of Monte Carlo events which were generated in some bin of $\mathbf{x}$,
-but were not reconstructed in any of the $\mathbf{y}$ bins.}.
+but were not reconstructed in any of the $\mathbf{y}$ bins.}. The zero reconstructed bin for the migration matrix is filled with the events
+which were generated in the corresponding bin, but not reconstructed at all. These zero reconstruction bins are considered in the overall 
+normalization of the matrix elements. And example of such matrix is presented in Fig. \ref{fig:migMat}.
 The $\mathbf{V_{yy}}$ is a covariance matrix of $\mathbf{y}$. 
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/probabilityMatrix_top_arapidity_vs_top_pt.pdf}
+  \caption{Migration matrix for the bins of $p_{T}(t)$ and $|\eta(t)|$. The binning is the following:
+  X axis: the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+          There are 3 $|\eta(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.
+  Y axis: the sequences of eight bins correspond to the $p_{T}(t)$ bins $[0\:\:20\:\:35\:\:50\:\:65\:\:80\:\:100\:\:130\:\:145\:\:170\:\:200\:\:240\:\:300\:\:350\:\:500]$ GeV.
+          There are 8 $|\eta(t)|$ bins -- $[0\:\:0.2\:\:0.4\:\:0.6\:\:0.8\:\:1.0\:\:1.2\:\:1.5\:\:2.5]$ -- in each $p_{T}(t)$ bin.
+  The matrix is obtained from the \MG + \PYTHIA 6 signal sample.}
+  \label{fig:migMat}
+\end{figure}
 
 The term $\mathcal{L}_{2}$ is responsible for the regularization. It is reducing the effect of the statistical fluctuations of $\mathbf{y}$
 during the search of the stationary point of the Lagrangian $\mathcal{L}$. The $\tau^{2}$ is the regularization strength. Matrix $\mathbf{L}$
 represents regularization conditions, having $n$ columns and $n_{R}$ rows which corresponds to $n_{R}$ conditions. $f_{b}$ is a normalization 
 factor. In a very simple case $f_{b} = 0$, $\mathbf{L}$ is a unity matrix and $\mathcal{L}_{2} = \tau^{2} \parallel x \parallel^{2}$, which
 suppresses the large deviations of $\mathbf{x}$ from zero. In case $f_{b} = 1$, the deviations of $\mathbf{x}$ from $\mathbf{x_{0}}$ are
-suppressed. It is very important to choose the optimal regularization strength, as a very weak strength would not damp the fluctuation effects
-from $\mathbf{y}$, whereas a very strong one will bias $\mathbf{x}$ towards $f_{b}\mathbf{x}_{0}$. The L-curve method \cite{Hansen00thel-curve} and the minimization
-of correlation coefficients \cite{VBlobelT} are implemented in TUnfold for an optimal regularization strength choice. A multidimentional
-regularization is possible in TUnfold.
+suppressed. For this analysis $f_{b} = 1$ is used and $x_{0}$ corresponds to the generated distribution. It is very important to choose 
+the optimal regularization strength, as a very weak strength would not damp the fluctuation effects from $\mathbf{y}$, whereas a very strong 
+one will bias $\mathbf{x}$ towards $f_{b}\mathbf{x}_{0}$. The L-curve method \cite{Hansen00thel-curve} and the minimization
+of correlation coefficients \cite{VBlobelT} are implemented in TUnfold for an optimal regularization strength choice. 
+
+The idea of the L-curve method is to look at the graph $L_{x}^{curve}$ vs $L_{y}^{curve}$ and choose the $\tau$ from the point with
+maximal curvature. The $L_{x}^{curve}$ and $L_{y}^{curve}$ are expressed as follows:
+
+\begin{equation}
+ L_{x}^{curve} = log \mathcal{L}_{1},
+\end{equation}
+
+\begin{equation}
+ L_{y}^{curve} = log \frac{\mathcal{L}_{2}}{\tau^{2}}.
+\end{equation}
+
+The method of minimizing the global correlation coefficient chooses the $\tau$ at the point where the average correlation coefficient 
+$\sum_{i} \frac{\rho_{i}}{n}$. Here $i$ is the component of $\mathbf{x}$ with length $n$ and $\rho_{i}$ is given as follows:\
+
+\begin{equation}
+ \rho_{i} = \sqrt{1 - \frac{1}{(\mathbf{V}_{xx}^{-1})_{ii} (\mathbf{V}_{xx})_{ii}}}.
+\end{equation}
+
+$\mathbf{V}_{xx}$ is the covariance matrix for $\mathbf{x}$.
+
+In Fig. \ref{fig:reg_s_m} the example of the performance of both methods of regularization strength determination are shown.
+
+\begin{figure}[p]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/Lcurve_top_arapidity_vs_top_pt.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[page=2,width=0.6\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/logTauRho_top_arapidity_vs_top_pt.pdf}
+\end{subfigure}
+\caption{Illustration of the choice of the optimal regularization strength with the L-curve method (top) and minimization of correlation coefficient
+         (bottom). The red dot represents the point in which the regularization strength $\tau$ is extracted.}
+\label{fig:reg_s_m}
+\end{figure}
 
 The term $\mathcal{L}_{3}$ is an orthogonal area constrain with a Lagrangian parameter $\lambda$. If $\lambda$ is not set to zero,
 which means the area constrain is used, the $\mathbf{x}$ is forced to match the total event count $Y$ correcting for the efficiencies $\mathbf{e}$.
@@ -126,96 +174,70 @@ This is used to limit the normalization biases if the data $\mathbf{y}$ follow P
 The stationary point of the Lagrangian $\mathcal{L}(\mathbf{x}, \lambda)$ is defined by setting the first derivatives to zero. In case no 
 area normalization is performed the Lagrangian $\mathcal{L}$ depends only on $\mathbf{x}$ and $\mathcal{L}_{3}$ term is zero.
 
-\subsubsection{Regularization Studies}
+\subsubsection{Regularization Strength Studies}
 
 The regularization aims to minimize the fluctuations effects. To check the performance of regularization of the TUnfold, the reconstructed signal
 MC sample was unfolded. The outcome of this unfolding should be the generated signal distributions. The number of entries in the reconstructed signal
-MC distributions were fluctuated randomly in each bin independently within their statistical uncertainties. These statistical uncertainties were assumed
-to be Gaussian. The fluctuations were performed 100 times. Each of the 100 fluctuated distributions was unfolded and the following quantities were checked:
+MC distributions were fluctuated randomly in each bin independently within the statistical uncertainties for data in corresponding bin. 
+These statistical uncertainties were assumed to be Gaussian. The fluctuations were performed 3000 times. Each of the 3000 fluctuated distributions 
+was unfolded and the following quantities were checked:
 
 \begin{itemize}
- \item \textbf{RMS over mean error distribution}. All the 100 unfolded distributions are not exactly the same. The statistics in the same bin in each
- distribution will differ. To quantify if this spread of the values is not disagreeing with the statistical uncertainties, one can look at the 
- RMS (root mean square) of the values in a certain bin divided by the mean error of these values. In a perfect case this value should be equal to one.
- The distributions of the RMS over mean errors are shown in the Fig. \ref{fig:RMSovMeanErr}. All the plots show expected behavior.
- 
- \item \textbf{Difference between unfolded and generated values.} The mean number of entries in one bin out of 100 fluctuated and unfolded distributions
- is being compared to the number of entries in the corresponding generated distribution. The quantity which evaluates this comparison is
- $\frac{N^{meas}_{mean\:i} - N^{gen}_{i}}{\sigma_{mean\:i}}$. Here $N^(meas)_{mean\:i}$ is the mean number of entries in the bin $i$ out of 100 fluctuated and unfolded distributions,
- $N^{gen}_{i}$ is the number of generated events in the bin $i$ and $\sigma_{mean\:i}$ is the mean error of the fluctuated and unfolded values 
- in the bin $i$. The distributions of this quantifier is shown in the Fig. \ref{fig:DiffovErr}. The overall deviations from zero are not
- higher than 20\%, which means there are no big discrepancies in the unfolding outcome.
- 
+
  \item \textbf{$\tau$ scan}. The regularization strength $\tau$ is determined using L-curve scan and minimization of correlation coefficients for every
- of the 100 fluctuated distributions. The resulting distributions were compared to each other. The regularization strength distributions are shown in
- Fig. ?? and Fig. ?? The regularization strength defined in the L-curve method has two preferred values which shows instability of $\tau$ definition.
+ of the 3000 fluctuated distributions. The regularization strength distributions are shown in
+ Fig. \ref{fig:tau_scan}. The regularization strength defined in the L-curve method has multiple peaks which shows instability of $\tau$ choice.
  Such phenomenon is not observed in the results of the minimization of correlation coefficients method. The single value of the regularization strength
  is preferred for all the unfolded distributions. Thus, the minimization of correlation coefficients is used for the cross section determination.
+ \begin{figure}[p]
+ \centering
+ \begin{subfigure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/preunfold/emu/top_arapidity-top_pt/L-curve/tauDist_Nominal.png}
+ \end{subfigure}
+ \begin{subfigure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/preunfold/emu/top_arapidity-top_pt/tau-scan-rho/tauDist_Nominal.png}
+ \end{subfigure}
+ \caption{Distribution of the regularization strength $\tau$ found in a toy experiment with the L-curve method (top) and minimization of correlation coefficient
+         (bottom). The red dot represents the regularization strength found by corresponding method in the data.}
+ \label{fig:tau_scan}
+ \end{figure}
+ 
+ \item \textbf{Relative difference between unfolded and generated values.} The mean number of entries in one bin out of 3000 fluctuated and unfolded distributions
+ is being compared to the number of entries in the corresponding generated distribution. The quantity which evaluates this comparison is
+ $\frac{\mathbf{x} - \mathbf{x}_{0}}{\mathbf{x}_{average}}$. The average is taken over all the 3000 fluctuated results.
+ The distributions of this quantifier in different $p_{T}(t)$ and $|y(t)|$ bins obtained using the L-curve method and minimizing the correlation coefficients 
+ are shown in the Fig. \ref{fig:DiffovErr}. The overall relative deviations from zero are not
+ higher than 3\%, which means there are no big discrepancies in the unfolding outcome.
+ \begin{figure}[h]
+ \centering
+ \includegraphics[width=0.6\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/preunfold/emu/top_arapidity-top_pt/relDiff_Nominal.pdf}
+ \caption{The distributions for the 3000 fluctuated and unfolded reconstructed MC signal samples. The distributions are
+         presented in bins of top $p_{T}(t)$ and $y(t)$. The results obtained with the L-curve method are marked with red and 
+         for the correlation coefficient minimization -- with blue.}
+ \label{fig:DiffovErr}
+\end{figure}
+ 
+ \item \textbf{RMS over mean error distribution}. The statistics in the same bin in each of the 3000 unfolded
+ distributions will differ. To quantify if this spread of the values is not disagreeing with the statistical uncertainties, one can look at the 
+ RMS (root mean square) of the values in a certain bin divided by the mean error of these values. This value is expected to equal one.
+ The distributions of the RMS over mean errors in different $p_{T}(t)$ and $|y(t)|$ bins obtained using the L-curve method and minimizing the 
+ correlation coefficients are shown in the Fig. \ref{fig:RMSovMeanErr}. The results obtained with the L-curve method
+ constantly overshoot one. This means, the L-curve method underestimates the errors.
+ \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/preunfold/emu/top_arapidity-top_pt/relDiff_Nominal.pdf}
+  \caption{RMS over mean error distributions for the 3000 fluctuated and unfolded reconstructed MC signal samples. The distributions are
+         presented in bins of top $p_{T}(t)$ and $|y(t)|$. The results obtained with the L-curve method are marked with red and 
+         for the correlation coefficient minimization -- with blue.}
+  \label{fig:RMSovMeanErr}
+ \end{figure}
 
 \end{itemize}
 
-\begin{figure}[h]
-\centering
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/fluctuation_Nominal.png}
-\end{subfigure}
-\caption{RMS over mean error distributions for the 100 fluctuated and unfolded reconstructed MC signal samples. The distributions are
-         presented in bins of top $p_{T}$ and $y$ (top left), ...}
-\label{fig:RMSovMeanErr}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/preunfold/emu/top_rapidity-top_pt/Diff_Nominal.png}
-\end{subfigure}
-\caption{The distributions for the 100 fluctuated and unfolded reconstructed MC signal samples. The distributions are
-         presented in bins of top $p_{T}$ and $y$ (top left), ...}
-\label{fig:DiffovErr}
-\end{figure}
-
+As a consequence of these studies the minimization of the correlation coefficients method for the regularization strength determination was chosen
+to be used in this analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,36 +250,38 @@ After all the corrections are performed, the signal events grouped to different 
 of the $t\bar{t}$ production process:
 
 \begin{equation}\label{eq:ddxsecdef}
- (\frac{1}{\sigma} \frac{d\sigma}{dx\:dy})_{ij} = \frac{1}{\sigma} \cdot \frac{1}{\Delta x_{i}\Delta y_{j}} \cdot \frac{N^{signal}_{ij}}{\epsilon \cdot BR \cdot L}
+ \Delta\;y_{j}: \:\:\:\:\:\:(\frac{1}{\sigma} \frac{d\sigma}{dx\:dy})_{j} = \frac{1}{\sigma} \cdot \frac{1}{\Delta x_{i}} \cdot \frac{N^{signal\:\;unfolded}_{ij}}{\epsilon_{ij} \cdot BR \cdot L}
 \end{equation}
 
-Here $\sigma$ is a total cross section, $\epsilon$ is the analysis efficiency, $BR$ is a branching ratio of the $t\bar{t}$ dilepton decay channel and $L$ is the luminosity
+Here $\sigma$ is a total cross section, $\epsilon_{ij}$ is the analysis efficiency, $BR$ is a branching ratio of the $t\bar{t}$ dilepton decay channel and $L$ is the luminosity
 collected by the CMS detector, which corresponds to 19.7 $fb^{-1}$. The $x$ and $y$ are the kinematic variables in which the cross sections 
 are measured. $i$ and $j$ are the number of bins of the variables $x$ and $y$ with the widths $\Delta x_{i}$ and $\Delta y_{i}$.
-The number of corrected and unfolded signal events in the $ij^{\textrm{th}}$ bin is the $N^{signal}_{ij}$.
+The number of corrected and unfolded signal events in the $ij^{\textrm{th}}$ bin is the $N^{signal\:\;unfolded}_{ij}$.
+Taking to account the construction of the migration matrix (see sec. \ref{ssec:TUmini}), directly the ratio
+$N^{signal\:\;unfolded}_{ij} / \epsilon_{ij}$ can be extracted from the unfolding.
 
 The total production cross section $\sigma$ is defined as follows:
 
 \begin{equation}
- \sigma = \frac{N^{signal}}{\epsilon \cdot BR \cdot L}.
+ \sigma = \frac{N^{signal\;\:unfolded}}{\epsilon \cdot BR \cdot L}.
 \end{equation}
 
 \subsection{Phase Space Definition}
 
-The analysis efficiency $\epsilon$ (from the eq. \ref{eq:ddxsecdef}) definition is based on the Monte Carlo simulation and predictions.
+The analysis efficiency $\epsilon_{ij}$ (from the eq. \ref{eq:ddxsecdef}) definition is based on the Monte Carlo simulation and predictions.
 It may be defined in two different ways:
 
 \begin{itemize}
  \item In the \textbf{full phase space}, taking to account the selection and the detector efficiencies:
  \begin{equation}\label{eq:epsanal}
-  \epsilon = A \cdot \epsilon^{det},
+  \epsilon_{ij} = \mathcal{A} \cdot \epsilon_{ij}^{det},
  \end{equation}
  \\
- where $A$ is the \textit{acceptance} which defines the effect of the kinematic selection and $\epsilon^{det}$ is the detector efficiency part.
+ where $\mathcal{A}$ is the \textit{acceptance} which defines the effect of the kinematic selection and $\epsilon_{ij}^{det}$ is the detector efficiency part.
  The acceptance is measured on the generator level, to exclude the detector effects:
  \\
  \begin{equation}\label{eq:accep}
-  A = \frac{N^{PS\;selection}_{gen}}{N^{total}_{gen}}.
+  \mathcal{A} = \frac{N^{PS\;selection}_{gen}}{N^{total}_{gen}}.
  \end{equation}
  \\
  Here $N^{total}_{gen}$ is the total number of all generated $t\bar{t}$ signal events,
@@ -276,19 +300,19 @@ It may be defined in two different ways:
  The detector resolution is defined by cancellation of the selection effects in the following ratio:
  \\
  \begin{equation}\label{eq:epsdet}
-  \epsilon^{det} = \frac{N^{selected}_{reco}}{N^{PS\;selection}_{gen}}.
+  \epsilon_{ij}^{det} = \frac{N^{selected}_{reco}}{N^{PS\;selection}_{gen}}.
  \end{equation}
  \\
  Here $N^{selected}_{reco}$ is the number of simulated reconstructed events. Thus, combining the equation \ref{eq:epsanal}, \ref{eq:accep} and \ref{eq:epsdet},
  the analysis efficiency is expressed as following:
  \\
  \begin{equation}
-  \epsilon = \frac{N^{selected}_{reco}}{N^{total}_{gen}}.
+  \epsilon_{ij} = \frac{N^{selected}_{reco}}{N^{total}_{gen}}.
  \end{equation}
  
  \item In the \textbf{visible phase space}. This efficiency doesn't take to account the selection efficiency, it consists only from the detector efficiency:
  \begin{equation}
-  \epsilon = \epsilon^{det} = \frac{N^{selected}_{reco}}{N^{PS\;selection}_{gen}}.
+  \epsilon_{ij} = \epsilon_{ij}^{det} = \frac{N^{selected}_{reco}}{N^{PS\;selection}_{gen}}.
  \end{equation}
  This efficiency definition doesn't rely on the theoretical predictions for the region outside the visible phase space, but the cross section will depend on
  the selection criteria.
@@ -323,28 +347,29 @@ The quality of the reconstruction in each bin can be characterized by the three 
 \textit{stability} $s$. They are defined the following way:
 
 \begin{equation}
- \epsilon_{ij} = \frac{N_{ij}^{reco}}{N_{ij}^{gen\:tot}},
+ \epsilon_{ij} = \frac{N^{reco} \cup N_{ij}^{gen}}{N_{ij}^{gen\:tot}},
 \end{equation}
 
 \begin{equation}
- p_{ij} = \frac{N_{ij}^{gen\:and\:reco}}{N_{ij}^{reco}},
+ p_{ij} = \frac{N_{ij}^{gen} \cup N_{ij}^{reco}}{N_{ij}^{reco}},
 \end{equation}
 
 \begin{equation}
- s_{ij} = \frac{N_{ij}^{gen\:and\:reco}}{N_{ij}^{gen}}.
+ s_{ij} = \frac{N_{ij}^{gen} \cup N_{ij}^{reco}}{N_{ij}^{gen} \cup N^{reco}}.
 \end{equation}
 
 All of these quantities are determined from the signal MC. Here $ij$ are the bin numbers in the two dimensions. The efficiency 
-$\epsilon_{ij}$ is defined as the number of reconstructed events in the bin $ij$, $N_{ij}^{reco}$ divided by the total number of 
-the generated events $N_{ij}^{gen\:tot}$. The efficiency contains the effects of the detector acceptance and the reconstruction efficiency.
+$\epsilon_{ij}$ is defined as the number of events in intersection of all reconstructed events and events generated in the bin $ij$, 
+$N^{reco} \cup N_{ij}^{gen}$, divided by the total number of the generated events $N_{ij}^{gen\:tot}$. 
+The efficiency contains the effects of the detector acceptance and the reconstruction efficiency.
 
-The purity $p_{ij}$ is the fraction of the number of the events which were generated and reconstructed in the same bin ($N_{ij}^{gen\:and\:reco}$)
+The purity $p_{ij}$ is the fraction of the number of the events which were generated and reconstructed in the same bin ($N_{ij}^{gen} \cup N_{ij}^{reco}$)
 and the total number of the reconstructed events in this bin ($N_{ij}^{reco}$). Thus, the purity describes the migrations inside the bin.
 The higher the purity is, the less events migrate inside the bin from the other bins. The highest possible purity value is 1.
 The migrations of the events to the different bins are caused by the detector resolution and the reconstruction effects.
 
-The stability $s_{ij}$ is the quotient of the number of events generated and reconstructed in the same bin ($N_{ij}^{gen\:and\:reco}$) over the 
-number of the generated events inside this bin ($N_{ij}^{gen}$). The stability is quantifying the migrations out of the bin. The higher 
+The stability $s_{ij}$ is the quotient of the number of events generated and reconstructed in the same bin ($N_{ij}^{gen} \cup N_{ij}^{reco}$) over the 
+number of the generated events inside this bin ($N_{ij}^{gen} \cup N^{reco}$). The stability is quantifying the migrations out of the bin. The higher 
 the stability is the less events migrate outside this bin to the other bins. The highest possible stability value is 1.
 
 The efficiency, purity and stability are shown in the Fig. \ref{fig:EPS_2D_y_pt}. The reconstruction efficiency and stability are better on the
