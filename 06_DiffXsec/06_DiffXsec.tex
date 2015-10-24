@@ -111,11 +111,11 @@ The $\mathbf{V_{yy}}$ is a covariance matrix of $\mathbf{y}$.
 \begin{figure}[p]
   \centering
   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/probabilityMatrix_top_arapidity_vs_top_pt.pdf}
-  \caption{Migration matrix for the bins of $p_{T}(t)$ and $|\eta(t)|$. The binning is the following:
+  \caption{Migration matrix for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
   X axis: the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-          There are 3 $|\eta(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.
+          There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.
   Y axis: the sequences of eight bins correspond to the $p_{T}(t)$ bins $[0\:\:20\:\:35\:\:50\:\:65\:\:80\:\:100\:\:130\:\:145\:\:170\:\:200\:\:240\:\:300\:\:350\:\:500]$ GeV.
-          There are 8 $|\eta(t)|$ bins -- $[0\:\:0.2\:\:0.4\:\:0.6\:\:0.8\:\:1.0\:\:1.2\:\:1.5\:\:2.5]$ -- in each $p_{T}(t)$ bin.
+          There are 8 $|y(t)|$ bins -- $[0\:\:0.2\:\:0.4\:\:0.6\:\:0.8\:\:1.0\:\:1.2\:\:1.5\:\:2.5]$ -- in each $p_{T}(t)$ bin.
   The matrix is obtained from the \MG + \PYTHIA 6 signal sample.}
   \label{fig:migMat}
 \end{figure}
@@ -323,11 +323,13 @@ The cross sections are measured both in visible and full phase spaces, normalize
 
 \subsection{Double Differential Production Cross Section Measurement}
 
-The production cross sections were measured double differentially in bins of top transverse momentum, rapidity, mass ...
-The binning was chosen to have enough entries in each bin so that the error could be treated as Gaussian.
+The production cross sections were measured double differentially in bins of top transverse momentum, rapidity and Bjorken $x$,
+$t\bar{t}$ mass, rapidity and transverse momentum and the angles $\phi$ and $\eta$ between $t$ and $\bar{t}$.
+The binning was chosen to have enough entries in each bin at the detector level so that the error could be treated as Gaussian.
+It was also checked if the purity, stability and efficiency in each bin are not too low (see the explanation below).
 
 
-\subsubsection{Cross sections in bins of rapidity and transverse momentum of the top quark}
+\subsubsection{Cross sections in bins of $y(t)$ versus $p_{T}(t)$}
 
 The production cross section of the $t\bar{t}$ in bins of the rapidity and the transverse momentum of the top quark was
 measured in the bins presented in Fig. \ref{fig:CP_2D_y_pt}. This control distribution is also showing the agreement between 
@@ -358,13 +360,14 @@ The quality of the reconstruction in each bin can be characterized by the three 
  s_{ij} = \frac{N_{ij}^{gen} \cup N_{ij}^{reco}}{N_{ij}^{gen} \cup N^{reco}}.
 \end{equation}
 
-All of these quantities are determined from the signal MC. Here $ij$ are the bin numbers in the two dimensions. The efficiency 
+All of these quantities are determined from the signal MC. Here $ij$ are the bin numbers in the two dimensions of the variables in which
+the cross section is measured. The efficiency 
 $\epsilon_{ij}$ is defined as the number of events in intersection of all reconstructed events and events generated in the bin $ij$, 
 $N^{reco} \cup N_{ij}^{gen}$, divided by the total number of the generated events $N_{ij}^{gen\:tot}$. 
 The efficiency contains the effects of the detector acceptance and the reconstruction efficiency.
 
 The purity $p_{ij}$ is the fraction of the number of the events which were generated and reconstructed in the same bin ($N_{ij}^{gen} \cup N_{ij}^{reco}$)
-and the total number of the reconstructed events in this bin ($N_{ij}^{reco}$). Thus, the purity describes the migrations inside the bin.
+and the total number of the reconstructed events in this bin ($N_{ij}^{reco}$). The purity describes the migrations inside the bin.
 The higher the purity is, the less events migrate inside the bin from the other bins. The highest possible purity value is 1.
 The migrations of the events to the different bins are caused by the detector resolution and the reconstruction effects.
 
@@ -387,32 +390,34 @@ The experimentally measured cross sections are compared to the MadGraph+Pythia, 
 The overall good agreement between theory predictions and experimental results is observed. MadGraph+Pythia describes the higher $p_{T}$ bins
 worth.
 
-\begin{figure}[t]
+\begin{figure}[p]
 \centering
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_0.pdf}
+  \includegraphics[width=0.4\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_0.pdf}
 \end{subfigure}
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_1.pdf}
+  \includegraphics[width=0.4\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_1.pdf}
 \end{subfigure}
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_2.pdf}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_3.pdf}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_4.pdf}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{06_DiffXsec/plots/Plots/FinalPlot/emu/top_rapidity-top_pt/xSec_top_pt_IN_top_rapidity_5.pdf}
+  \includegraphics[width=0.4\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_2.pdf}
 \end{subfigure}
 \caption{Normalized differential cross sections in bins of top rapidity and transverse momentum.}
 \label{fig:XS_2D_y_pt}
+\end{figure}
+
+Fig. \ref{fig:corr_matr} presents the correlation matrix $\mathbf{V}_{xx}$ with correlation coefficients for the bins in which the 
+cross sections \ref{fig:XS_2D_y_pt} were calculated. There is almost no correlation between the neighboring bins, except for the highest
+once. There is a strong correlation in rapidity observed, which is compensated by the strong anticorrelation in the last transverse momentum
+bins.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
+  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
+  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+          There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
+  \label{fig:corr_matr}
 \end{figure}
