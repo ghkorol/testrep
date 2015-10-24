@@ -219,10 +219,11 @@ Millipede algorithm \cite{1748-0221-3-09-P09002}.
 The neighboring fired pixels on the pixel detector are grouped into clusters.
 
 The tracks were reconstructed using the general broken lines algorithm \cite{Blobel:2006yi}. It takes the multiple scattering
-in the detector planes into account. The particle track is reconstructed using the hits in the first and third telescope planes.
-The second plane is used for the telescope hit resolution determination from the difference between the reconstructed particle
-track position and the actual hit in the second telescope plane. This resolution is stable from run to run and results about
-3.5 $\mu$m.
+in the detector planes into account. 
+
+To define the telescope resolution, first the particle track was reconstructed using the hits in the first and third telescope planes.
+Then the second plane was used to determine the difference between the reconstructed particle track position and the actual hit in the 
+second telescope plane.
 
 This basic information from the telescope and from the prototype chips is used for the further analysis.
 
@@ -297,4 +298,45 @@ bulk after the irradiation.
 \subsubsection{Position Resolution}
 
 The accuracy of the measurement of the position where the particle hit the silicon detector is primarily limited by the size of the silicon pixels.
-However there are ways to improve the resolution. 
+However there is the way to improve the resolution using the charge sharing technique. If the charge from one particle will be collected in more
+than one pixel, the position of the particle will be defined as the weighted average position of these pixels (the weighting is done corresponding 
+to the amount of charge collected by each pixel). The charge sharing may happen either due to the inclined particle tracks with respect to the 
+silicon sensor plane or because of the Lorentz drift in the magnetic field.
+
+The particles from the DESY test beam were flowing only in one direction. For the resolution improvement, the silicon chips were tilted by a certain 
+angle with respect to the particle path to make the particles cross more than one pixel. This aims to obtain an optimal charge sharing.
+
+As it was discussed before, the irradiation introduces the defects in the silicon which trap the charge carriers. This may influence the charge sharing
+and thus the position resolution of the detector. It is also necessary to have the full charge collection to correctly measure the particle position.
+Thus, the optimal bias voltage has to be delivered.
+
+The resolution at the beam test was defined as the difference between the position of the particle hit defined by the DUT chip and the position of the
+track defined in the telescope and extrapolated to the DUT. The telescope resolution (around 4.3 $\mu$m at 5 GeV beam energy and 150 mm spacing between
+the telescope plane) is being subtracted.
+
+To define the optimal tilt angle in the direction of the pixel rows of prototype chip, the DUT was tilted several times on different angles and the 
+pixel row resolution was measured. Fig. \ref{fig:tilt_scan} shows the result of these studies for the prototype chip irradiated with the dose of
+$3.8 \cdot 10^{14}$ p/cm$^2$. As expected, first the resolution is getting better with increasing the tilt angle because the particle starts to meet 
+multiple pixels on it's way and the charge is shared between those pixels. After a certain optimal tilt angle, however, the resolution starts to get 
+worse again. This is explained with a fact that the particle ionizes to many pixels initiating a very low charge in some of them. This charge doesn't
+overcome the threshold\footnote{A threshold on the charge collected is set on every pixel to avoid noise collection} level of a pixel and is lost. 
+The plot shows that the minimum resolution is reached at the angle of around 19-20$^{o}$.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.6\textwidth]{021_pixel_upgrade/plots/tilt_scan.png}
+ \caption{Resolution as a function of the tilt angle for a prototype silicon pixel module irradiated to $3.8 \cdot 10^{14}$ p/cm$^2$. The bias voltage  
+ was set to -200 V and the threshold to 1.8 ke.}
+ \label{fig:tilt_scan}
+\end{figure}
+
+For each point in the Fig. \ref{fig:tilt_scan} the resolution in pixel row direction was determined as in the Fig. \ref{fig:resol}. The plot shown
+is derived with the DUT tilted at 19$^{o}$.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.6\textwidth]{021_pixel_upgrade/plots/resol_dist.png}
+ \caption{Residual between DUT cluster position and telescope track in the direction of the 100 $\mu$m pixel size at a bias voltage of -320 V. The sensor 
+ was tilted by an angle of 19$^{o}$ to the beam direction. The charge threshold was set to 1.8 ke. The fluence is $3.8 \cdot 10^{14}$ p/cm$^2$.}
+ \label{fig:resol}
+\end{figure}
