@@ -2,7 +2,7 @@
 
 The cross section measurement procedure and results are explained in this section.
 After applying selection criteria and kinematic reconstruction, one can count the events to determine
-the rate of $t\bar{t}$ production process.
+the rate of the $t\bar{t}$ production process.
 
 The cross sections were measured double differentially in bins of the kinematic variables of top-quark and $t\bar{t}$ system.
 The first section gives an overview of the background processes for the $t\bar{t}$ production.
@@ -28,12 +28,14 @@ Here the $N^{BG}$ corresponds to the number of background events. It consists of
  \item single top production;
  \item Drell-Yan process;
  \item diboson production;
+ \item $Z/\gamma^{*} \rightarrow \tau\tau$ production;
+ \item $Z/\gamma^{*} \rightarrow ee/\mu\mu$ production;
  \item associated $t\bar{t}\;+\; W/Z/\gamma$ production;
  \item associated $W\;+\;jets$ production;
  \item QCD multijet processes.
 \end{itemize}
 
-Whereas all the background yields are only simulated, the rate of the background caused by the Drell-Yan production is 
+Whereas all the background yields are only simulated, the estimated rate of the background caused by the Drell-Yan production is 
 partially data driven \cite{Chatrchyan:2011nb}. The normalization factor for the simulated Drell-Yan events is determined 
 from the comparison of the reconstructed and simulated $Z$-peak. 
 
@@ -43,6 +45,9 @@ from the other decay channels of $t\bar{t}$:
 \begin{equation}\label{eq:bgsub}
  N^{signal}_{reco} = N^{signal\;measured}_{reco} \cdot \frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}.
 \end{equation}
+
+The whole factor $\frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}$ was derived
+from the simulated data.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,13 +105,13 @@ The bold symbols here correspond to the matrices and vectors.
 
 The term $\mathcal{L}_{1}$ is expected for the minimization. Vectors $\mathbf{y}$, $\mathbf{x}$ and a matrix $\mathbf{A}$ were
 described in the previous section. Representing the migrations from and into different bins of $\mathbf{y}$, the matrix $\mathbf{A}$
-is defined from the Monte Carlo\footnote{A matrix $\mathbf{A}$ is
-determined from Monte Carlo using the information from the generator particle level and on the reconstructed signal. An extra row is added
-to the matrix $\mathbf{A}$ containing the information about the count of Monte Carlo events which were generated in some bin of $\mathbf{x}$,
-but were not reconstructed in any of the $\mathbf{y}$ bins.}. The zero reconstructed bin for the migration matrix is filled with the events
-which were generated in the corresponding bin, but not reconstructed at all. These zero reconstruction bins are considered in the overall 
-normalization of the matrix elements. And example of such matrix is presented in Fig. \ref{fig:migMat}.
-The $\mathbf{V_{yy}}$ is a covariance matrix of $\mathbf{y}$. 
+is defined from the Monte Carlo\footnote{A matrix $\mathbf{\tilde{A}}$ is
+determined from Monte Carlo using the information from the generator particle level and on the reconstructed signal. It describes how many 
+migrations there were out and into a certain bin. An extra "zero`` row is added
+to the matrix $\mathbf{\tilde{A}}$ containing the information about the count of Monte Carlo events which were generated in some bin of $\mathbf{x}$,
+but were not reconstructed in any of the $\mathbf{y}$ bins. \\ The matrix $\mathbf{A}$, which enters the unfolding, is the normalized $\mathbf{\tilde{A}}$
+defined as $\mathbf{A}_{ij} = \frac{\tilde{A}_{ij}}{\sum_{j=0}\tilde{A}_{ij}}$ (the normalization includes the "zero'' row).}. An example of such matrix 
+is presented in Fig. \ref{fig:migMat}. The $\mathbf{V_{yy}}$ is a covariance matrix of $\mathbf{y}$. 
 
 \begin{figure}[p]
   \centering
@@ -150,7 +155,7 @@ $\sum_{i} \frac{\rho_{i}}{n}$. Here $i$ is the component of $\mathbf{x}$ with le
 
 $\mathbf{V}_{xx}$ is the covariance matrix for $\mathbf{x}$.
 
-In Fig. \ref{fig:reg_s_m} the example of the performance of both methods of regularization strength determination are shown.
+In Fig. \ref{fig:reg_s_m} the example of the choices of regularization strength for both methods are shown.
 
 \begin{figure}[p]
 \centering
@@ -257,8 +262,8 @@ Here $\sigma$ is a total cross section, $\epsilon_{ij}$ is the analysis efficien
 collected by the CMS detector, which corresponds to 19.7 $fb^{-1}$. The $x$ and $y$ are the kinematic variables in which the cross sections 
 are measured. $i$ and $j$ are the number of bins of the variables $x$ and $y$ with the widths $\Delta x_{i}$ and $\Delta y_{i}$.
 The number of corrected and unfolded signal events in the $ij^{\textrm{th}}$ bin is the $N^{signal\:\;unfolded}_{ij}$.
-Taking to account the construction of the migration matrix (see sec. \ref{ssec:TUmini}), directly the ratio
-$N^{signal\:\;unfolded}_{ij} / \epsilon_{ij}$ can be extracted from the unfolding.
+Taking to account that the migration matrix is already normalized to the efficiency (see the construction of the matrix in sec. \ref{ssec:TUmini}), 
+directly the ratio $N^{signal\:\;unfolded}_{ij} / \epsilon_{ij}$ can be extracted from the unfolding.
 
 The total production cross section $\sigma$ is defined as follows:
 
@@ -333,13 +338,15 @@ It was also checked if the purity, stability and efficiency in each bin are not 
 
 The production cross section of the $t\bar{t}$ in bins of the rapidity and the transverse momentum of the top quark was
 measured in the bins presented in Fig. \ref{fig:CP_2D_y_pt}. This control distribution is also showing the agreement between 
-the data and reconstructed MC $t\bar{t}$ signal.
+the data and reconstructed MC $t\bar{t}$ signal. The MC slightly underestimates the data for the lower $p_{T}(t)$ bins and 
+in the outer $y(t)$ bins for all the transverse momenta values.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.8\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/CP_AllBins_top_rapidity_vs_top_pt.pdf}
+  \includegraphics[width=0.7\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/CP_AllBins_top_rapidity_vs_top_pt.pdf}
   \caption{Control distribution of the $y$ of the top quark in bins of the $p_{T}$ of the top quark. The $y$ bins are shown on the top 
-  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
   different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
   is presented.}
   \label{fig:CP_2D_y_pt}
@@ -380,7 +387,7 @@ high $p_{T}$. Although the high rapidity bins have low reconstruction efficiency
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.8\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_top_rapidity_vs_top_pt.pdf}
+  \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_top_rapidity_vs_top_pt.pdf}
   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $y$ of the top quark.}
   \label{fig:EPS_2D_y_pt}
 \end{figure}
@@ -394,26 +401,26 @@ worth.
 \centering
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.4\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_0.pdf}
+  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_0.pdf}
 \end{subfigure}
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.4\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_1.pdf}
+  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_1.pdf}
 \end{subfigure}
 \begin{subfigure}
   \centering
-  \includegraphics[width=0.4\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_2.pdf}
+  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_2.pdf}
 \end{subfigure}
 \caption{Normalized differential cross sections in bins of top rapidity and transverse momentum.}
 \label{fig:XS_2D_y_pt}
 \end{figure}
 
 Fig. \ref{fig:corr_matr} presents the correlation matrix $\mathbf{V}_{xx}$ with correlation coefficients for the bins in which the 
-cross sections \ref{fig:XS_2D_y_pt} were calculated. There is almost no correlation between the neighboring bins, except for the highest
-once. There is a strong correlation in rapidity observed, which is compensated by the strong anticorrelation in the last transverse momentum
-bins.
+cross sections \ref{fig:XS_2D_y_pt} were calculated. There is almost no correlation between the neighboring bins, except for the highest $p_{T}(t)$
+bins (shown as the last bins in Fig. \ref{fig:corr_matr}). There is a strong correlation in rapidity observed, which is explained by the strong 
+anticorrelation in the last transverse momentum bins.
 
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
   \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
