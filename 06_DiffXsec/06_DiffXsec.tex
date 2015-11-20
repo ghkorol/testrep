@@ -1,4 +1,4 @@
-\chapter{Cross Section Measurement}
+\chapter{Cross Section Measurement}\label{chapt:xsec}
 
 The cross section measurement procedure and results are explained in this section.
 After applying selection criteria and kinematic reconstruction, one can count the events to determine
@@ -332,25 +332,15 @@ The production cross sections were measured double differentially in bins of top
 $t\bar{t}$ mass, rapidity and transverse momentum and the angles $\phi$ and $\eta$ between $t$ and $\bar{t}$.
 The binning was chosen to have enough entries in each bin at the detector level so that the error could be treated as Gaussian.
 It was also checked if the purity, stability and efficiency in each bin are not too low (see the explanation below).
+The regularization strength used to determine each set of the cross sections is listed in the appendix \ref{}.
 
 %%%
-\subsubsection{Cross sections in bins of $y(t)$ versus $p_{T}(t)$}
+\subsubsection{Cross sections in bins of $|y(t)|$ versus $p_{T}(t)$}
 
 The production cross section of the $t\bar{t}$ in bins of the rapidity and the transverse momentum of the top quark was
 measured in the bins presented in Fig. \ref{fig:CP_2D_y_pt}. This control distribution is also showing the agreement between 
 the data and reconstructed MC $t\bar{t}$ signal. The MC slightly underestimates the data for the lower $p_{T}(t)$ bins and 
 in the outer $y(t)$ bins for all the transverse momenta values.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.7\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/CP_AllBins_top_rapidity_vs_top_pt.pdf}
-  \caption{Control distribution of the $y$ of the top quark in bins of the $p_{T}$ of the top quark. The $y$ bins are shown on the top 
-  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-  bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-  is presented.}
-  \label{fig:CP_2D_y_pt}
-\end{figure}
 
 The quality of the reconstruction in each bin can be characterized by the three quantities -- \textit{efficiency} $\epsilon$, \textit{purity} $p$ and
 \textit{stability} $s$. They are defined the following way:
@@ -385,17 +375,204 @@ the stability is the less events migrate outside this bin to the other bins. The
 The efficiency, purity and stability are shown in the Fig. \ref{fig:EPS_2D_y_pt}. The reconstruction efficiency and stability are better in the
 high $p_{T}$. Although the high rapidity bins have low reconstruction efficiency, the purity and stability there is higher.
 
+The migrations are taken to account in the unfolding by exploiting the migration matrix $\mathbf{A}$ (see sec.\ref{sec:unfold}). An illustration 
+of this matrix on example of the bins of the $p_{T}(t)$ and $|y(t)|$ is given in fig. \ref{fig:MigMat_2D_y_pt}.
+
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/}
+%   \caption{}
+%   \label{fig:MigMat_2D_y_pt}
+% \end{figure}
+
+The Fig. \ref{fig:XS_2D_y_pt} represents the production cross sections of the $t\bar{t}$ pair in bins of top rapidity and top transverse momentum.
+The experimentally measured cross sections are compared to the \MG+\PYTHIA, \Powheg+\PYTHIA, \Powheg+\HERWIG and \MCNLO+\HERWIG predictions.
+The overall good agreement between theory predictions and experimental results is observed. \MG+\PYTHIA describes the higher $p_{T}$ bins
+worth.
+
+Fig. \ref{fig:corr_matr} presents the correlation matrix $\mathbf{V}_{xx}$ with correlation coefficients for the bins in which the 
+cross sections \ref{fig:XS_2D_y_pt} were calculated. There is almost no correlation between the neighboring bins, except for the highest $p_{T}(t)$
+bins (shown as the last bins in Fig. \ref{fig:corr_matr}). There is a strong correlation in rapidity observed, which is explained by the strong 
+anticorrelation in the last transverse momentum bins.
+
+%%%
+
+\subsubsection{Cross sections in bins of $p_{T}(t\bar{t})$ versus $|y(t\bar{t})|$}
+
+Another pair of variables in bins of which the cross section was measured is the $p_{T}$ and $|y|$ of the $t\bar{t}$ system. 
+The control distribution in bins of the is presented in the Fig. \ref{fig:CP_2D_pttt_ytt}.
+
+Fig. \ref{fig:EPS_2D_ptt_ytt} shows efficiency, purity and stability in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$.
+
+The production cross sections in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$ are shown in fig. \ref{fig:XS_2D_pttt_ytt}.
+
+The correlation matrix $\mathbf{V}_{xx}$ is presented in fig. \ref{fig:corr_matr_pttt_ytt}.
+
+%%%
+
+\subsubsection{Cross sections in bins of $M(t\bar{t})$ versus $|y(t)|$}
+
+Another measurement has been performed in bins of $M(t\bar{t})$ and $|y(t)|$. Fig. \ref{fig:CP_2D_Mtt_y} represents the control distribution in bins of these variables.
+
+The purities, stabilities and efficiencies in bins of $M(t\bar{t})$ and $|y(t)|$ are presented in fig. \ref{fig:EPS_2D_Mtt_yt}
+
+%%%
+
+\subsubsection{Cross sections in bins of $p_{T}(t)$ versus $M(t\bar{t})$}
+
+The other pair of variables in which the $t\bar{t}$ production cross section was measured double differentially is $p_{T}(t)$ and $M(t\bar{t})$.
+The control plot, which shows the binning and the comparison between data and simulation, is presented in Fig. \ref{fig:CP_2D_Mtt_pt}. The MC underestimates 
+the data for the firs three $p_{T}(t)$ bins and this disagreement grows with the $M(t\bar{t})$. For the last two $p_{T}(t)$ bins, there is
+no disagreement observed.
+
+% The efficiency-purity-stability plot is presented in Fig. \ref{fig:EPS_2D_Mtt_pt}.
+% 
+
+The double differential production cross sections in bins of $M(t\bar{t})$ and $p_{T}(t)$ are presented in Fig. \ref{fig:XS_2D_Mtt_pt}. A slight underestimation is 
+observed in the lowest $p_{T}(t)$ bin. The worst description is in the highest $M(t\bar{t})$ bin.
+
+The Fig. \ref{fig:corr_matr_Mtt_pt} shows the correlation matrix $\mathbf{V}_{xx}$ in bins for which the cross sections are calculated. There are no strong correlations
+observed.
+
+%%%
+\subsubsection{Cross section in bins of $\Delta\phi(t\bar{t})$ versus $M(t\bar{t})$}
+
+The measurement of the cross section has been performed in bins of the polar angle between top and antitop, $\Delta\phi(t\bar{t})$, and the mass
+of the $t\bar{t}$ system, $M(t\bar{t})$.
+
+The control distribution in bins of these variable pair is presented in Fig. \ref{fig:CP_2D_phi_Mtt}. The simulation describes the data well, however
+the best agreement is observed in the highest $M(t\bar{t})$ bin.
+
+The Fig. \ref{fig:XS_2D_phi_Mtt} presents the double differential production cross sections of the $t\bar{t}$ pairs in bins of $\Delta\phi(t\bar{t})$ and $M(t\bar{t})$.
+All the predictions provide a reasonable description of the measured cross sections. However, the agreement is getting slightly worse for the higher bins of the $M(t\bar{t})$.
+
+The correlation matrix $\mathbf{V}_{xx}$ in bins used for the cross sections measurement is shown in Fig. \ref{fig:corr_matr_phi_Mtt}. There is no significant correlation
+(0.4 at most) observed between any bins.
+
+%%%
+\subsubsection{Cross section in bins of $\Delta\eta(t\bar{t})$ versus $M(t\bar{t})$}
+
+The azimuthal angle between the $t$ and $\bar{t}$ is represented with the pseudorapidity $\Delta\eta(t\bar{t})$. The cross section has been measured
+double differentially in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$.
+
+The control distribution in Fig. \ref{fig:CP_2D_eta_Mtt} shows that the simulation slightly overestimates the experimental data in low $M(t\bar{t})$
+and high $\Delta\eta(t\bar{t})$. For the higher $M(t\bar{t})$, however, the situation is completely opposite: the MC underestimates the data and the disagreement
+is worse the higher the $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ are.
+
+The double differential production cross sections in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ is presented in Fig. \ref{fig:XS_2D_eta_Mtt}. The \MG + \PYTHIA
+prediction shows the worst agreement. There is a slight tendency that the higher the mass is, the more MC underestimates the data for the higher $\Delta\eta(t\bar{t})$.
+
+The Fig. \ref{fig:corr_matr_eta_Mtt} shows the correlation matrix. There are no outstanding correlations observed.
+
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%Plots%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%Control Plots%%%%%%%%%
+
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.7\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_top_rapidity_vs_top_pt.pdf}
+  \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/CP_AllBins_top_rapidity_vs_top_pt.pdf}
+  \caption{Control distribution of the $y$ of the top quark in bins of the $p_{T}$ of the top quark. The $y$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_y_pt}
+\end{figure}
+
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/CP_AllBins_ttbar_mass_vs_top_pt.pdf}
+%   \caption{Control distribution of the $M(t\bar{t})$ of the top quark in bins of the $p_{T}$ of the top quark. The $M(t\bar{t})$ bins are shown on the top 
+%   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+%   bars on the data points represent the statistical uncertainty only. The 
+%   different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+%   is presented.}
+%   \label{fig:CP_2D_pttt_ytt}
+% \end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_arapidity/CP_AllBins_ttbar_mass_vs_top_arapidity.pdf}
+  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $|y(t)|$. The $|y(t)|$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_Mtt_y}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/CP_AllBins_ttbar_mass_vs_top_pt.pdf}
+  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $p_{T}$ of the top quark. The $M(t\bar{t})$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_Mtt_pt}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_delta_eta-ttbar_mass/CP_AllBins_ttbar_delta_eta_vs_ttbar_mass.pdf}
+  \caption{Control distribution of the $\Delta\eta$ between the $t$ and $\bar{t}$ in bins of the $M(t\bar{t})$. The $\Delta\eta$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_eta_Mtt}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_phi/CP_AllBins_ttbar_mass_vs_ttbar_delta_phi.pdf}
+  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $\Delta\phi$ between the $t$ and $\bar{t}$. The $M(t\bar{t})$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_phi_Mtt}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%EPS%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_top_rapidity_vs_top_pt.pdf}
   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $y$ of the top quark.}
   \label{fig:EPS_2D_y_pt}
 \end{figure}
 
-The Fig. \ref{fig:XS_2D_y_pt} represents the production cross sections of the $t\bar{t}$ pair in bins of top rapidity and top transverse momentum.
-The experimentally measured cross sections are compared to the MadGraph+Pythia, Powheg+Pythia, Powheg+Herwig and MC@NLO+Herwig predictions.
-The overall good agreement between theory predictions and experimental results is observed. MadGraph+Pythia describes the higher $p_{T}$ bins
-worth.
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_}
+%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $|y|$ of the $t\bar{t}$ pair.}
+%   \label{fig:EPS_2D_ptt_ytt}
+% \end{figure}
+
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_}
+%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $|y(t)|$.}
+%   \label{fig:EPS_2D_Mtt_yt}
+% \end{figure}
+
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/EPS_AllBins_ttbar_mass_vs_top_pt.pdf}
+%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $p_{T}(t)$.}
+%   \label{fig:EPS_2D_Mtt_pt}
+% \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%XSec%%%%%%%%%%%%%%%%
 
 \begin{figure}[p]
 \centering
@@ -411,54 +588,51 @@ worth.
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_2.pdf}
 \end{subfigure}
-\caption{Normalized differential cross sections in bins of top rapidity and transverse momentum.}
+\caption{Normalized differential cross sections in bins of top rapidity and transverse momentum. The inner error bands are the statistical uncertainties from the data.
+         The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
+         \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
 \label{fig:XS_2D_y_pt}
 \end{figure}
 
-Fig. \ref{fig:corr_matr} presents the correlation matrix $\mathbf{V}_{xx}$ with correlation coefficients for the bins in which the 
-cross sections \ref{fig:XS_2D_y_pt} were calculated. There is almost no correlation between the neighboring bins, except for the highest $p_{T}(t)$
-bins (shown as the last bins in Fig. \ref{fig:corr_matr}). There is a strong correlation in rapidity observed, which is explained by the strong 
-anticorrelation in the last transverse momentum bins.
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
-  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
-  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-          There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
-  \label{fig:corr_matr}
-\end{figure}
-
-%%%
-\subsubsection{Cross sections in bins of $p_{T}(t)$ versus $M(t\bar{t})$}
-
-The other pair of variables in which the $t\bar{t}$ production cross section was measured double differentially is $p_{T}(t)$ and $M(t\bar{t})$.
-The control plot, which shows the binning and the comparison between data and simulation, is presented in Fig. \ref{fig:CP_2D_Mtt_pt}. The MC underestimates 
-the data for the firs three $p_{T}(t)$ bins and this disagreement grows with the $M(t\bar{t})$. For the last two $p_{T}(t)$ bins, there is
-no disagreement observed.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/CP_AllBins_ttbar_mass_vs_top_pt.pdf}
-  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $p_{T}$ of the top quark. The $M(t\bar{t})$ bins are shown on the top 
-  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-  bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-  is presented.}
-  \label{fig:CP_2D_Mtt_pt}
-\end{figure}
-
-% The efficiency-purity-stability plot is presented in Fig. \ref{fig:EPS_2D_Mtt_pt}.
-% 
-% \begin{figure}[t]
+% \begin{figure}[p]
+% \centering
+% \begin{subfigure}
 %   \centering
-%   \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/EPS_AllBins_ttbar_mass_vs_top_pt.pdf}
-%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $p_{T}(t)$.}
-%   \label{fig:EPS_2D_Mtt_pt}
+%   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_0.pdf}
+% \end{subfigure}
+% \begin{subfigure}
+%   \centering
+%   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_1.pdf}
+% \end{subfigure}
+% \begin{subfigure}
+%   \centering
+%   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/top_arapidity-top_pt/xSec_top_pt_IN_top_arapidity_2.pdf}
+% \end{subfigure}
+% \caption{Normalized differential cross sections in bins of top pair absolute rapidity and transverse momentum. The inner error bands are the statistical uncertainties from the data.
+%          The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
+%          \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
+% \label{fig:XS_2D_pttt_ytt}
 % \end{figure}
 
-The double differential production cross sections in bins of $M(t\bar{t})$ and $p_{T}(t)$ are presented in Fig. \ref{fig:XS_2D_Mtt_pt}. A slight underestimation is 
-observed in the lowest $p_{T}(t)$ bin. The worst description is in the highest $M(t\bar{t})$ bin.
+% \begin{figure}[p]
+% \centering
+% \begin{subfigure}
+%   \centering
+%   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-top_pt/xSec_top_pt_IN_ttbar_mass_0.pdf}
+% \end{subfigure}
+% \begin{subfigure}
+%   \centering
+%   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-top_pt/xSec_top_pt_IN_ttbar_mass_1.pdf}
+% \end{subfigure}
+% \begin{subfigure}
+%   \centering
+%   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-top_pt/xSec_top_pt_IN_ttbar_mass_2.pdf}
+% \end{subfigure}
+% \caption{Normalized differential cross sections in bins of $M(t\bar{t})$ and $|y(t)|$. The inner error bands are the statistical uncertainties from the data.
+%          The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
+%          \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
+% \label{fig:XS_2D_Mtt_pt}
+% \end{figure}
 
 \begin{figure}[p]
 \centering
@@ -475,101 +649,10 @@ observed in the lowest $p_{T}(t)$ bin. The worst description is in the highest $
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-top_pt/xSec_top_pt_IN_ttbar_mass_2.pdf}
 \end{subfigure}
 \caption{Normalized differential cross sections in bins of $M(t\bar{t})$ and $p_{T}(t)$. The inner error bands are the statistical uncertainties from the data.
-         The outer error bars are the combines statistical and systematical uncertainties on the data.}
+         The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
+         \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
 \label{fig:XS_2D_Mtt_pt}
 \end{figure}
-
-The Fig. \ref{fig:corr_matr_Mtt_pt} shows the correlation matrix $\mathbf{V}_{xx}$ in bins for which the cross sections are calculated. There are no strong correlations
-observed.
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/rhoIJtotal_ttbar_mass_vs_top_pt.pdf}
-  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $p_{T}(t)$. The binning is the following:
-  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-          There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $p_{T}(t)$ bin.}
-  \label{fig:corr_matr_Mtt_pt}
-\end{figure}
-
-
-%%%
-\subsubsection{Cross section in bins of $\Delta\phi(t\bar{t})$ versus $M(t\bar{t})$}
-
-The measurement of the cross section has been performed in bins of the polar angle between top and antitop, $\Delta\phi(t\bar{t})$, and the mass
-of the $t\bar{t}$ system, $M(t\bar{t})$.
-
-The control distribution in bins of these variable pair is presented in Fig. \ref{fig:CP_2D_phi_Mtt}. The simulation describes the data well, however
-the best agreement is observed in the highest $M(t\bar{t})$ bin.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_phi/CP_AllBins_ttbar_mass_vs_ttbar_delta_phi.pdf}
-  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $\Delta\phi$ between the $t$ and $\bar{t}$. The $M(t\bar{t})$ bins are shown on the top 
-  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-  bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-  is presented.}
-  \label{fig:CP_2D_phi_Mtt}
-\end{figure}
-
-The Fig. \ref{fig:XS_2D_phi_Mtt} presents the double differential production cross sections of the $t\bar{t}$ pairs in bins of $\Delta\phi(t\bar{t})$ and $M(t\bar{t})$.
-All the predictions provide a reasonable description of the measured cross sections. However, the agreement is getting slightly worse for the higher bins of the $M(t\bar{t})$.
-
-\begin{figure}[p]
-\centering
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_phi/xSec_ttbar_delta_phi_IN_ttbar_mass_0.pdf}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_phi/xSec_ttbar_delta_phi_IN_ttbar_mass_1.pdf}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_phi/xSec_ttbar_delta_phi_IN_ttbar_mass_2.pdf}
-\end{subfigure}
-\caption{Normalized differential cross sections in bins of $M(t\bar{t})$ and $\Delta\phi(t\bar{t})$. The inner error bands are the statistical uncertainties from the data.
-         The outer error bars are the combines statistical and systematical uncertainties on the data.}
-\label{fig:XS_2D_phi_Mtt}
-\end{figure}
-
-The correlation matrix $\mathbf{V}_{xx}$ in bins used for the cross sections measurement is shown in Fig. \ref{fig:corr_matr_phi_Mtt}. There is no significant correlation
-(0.4 at most) observed between any bins.
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_phi/rhoIJtotal_ttbar_mass_vs_ttbar_delta_phi.pdf}
-  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $\Delta\phi(t\bar{t})$. The binning is the following:
-  the sequences of three bins (1-3, 4-6, 7-9) correspond to the $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV.
-          There are 3 $\Delta\phi(t\bar{t})$ bins $[0\:\:1.2\:\:2.6\:\:3.14]$ rad -- in each $M(t\bar{t})$ bin.}
-  \label{fig:corr_matr_phi_Mtt}
-\end{figure}
-
-
-%%%
-\subsubsection{Cross section in bins of $\Delta\eta(t\bar{t})$ versus $M(t\bar{t})$}
-
-The azimuthal angle between the $t$ and $\bar{t}$ is represented with the pseudorapidity $\Delta\eta(t\bar{t})$. The cross section has been measured
-double differentially in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$.
-
-The control distribution in Fig. \ref{fig:CP_2D_eta_Mtt} shows that the simulation slightly overestimates the experimental data in low $M(t\bar{t})$
-and high $\Delta\eta(t\bar{t})$. For the higher $M(t\bar{t})$, however, the situation is completely opposite: the MC underestimates the data and the disagreement
-is worse the higher the $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ are.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_delta_eta-ttbar_mass/CP_AllBins_ttbar_delta_eta_vs_ttbar_mass.pdf}
-  \caption{Control distribution of the $\Delta\eta$ between the $t$ and $\bar{t}$ in bins of the $M(t\bar{t})$. The $\Delta\eta$ bins are shown on the top 
-  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-  bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-  is presented.}
-  \label{fig:CP_2D_eta_Mtt}
-\end{figure}
-
-The double differential production cross sections in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ is presented in Fig. \ref{fig:XS_2D_eta_Mtt}. The \MG + \PYTHIA
-prediction shows the worst agreement. There is a slight tendency that the higher the mass is, the more MC underestimates the data for the higher $\Delta\eta(t\bar{t})$.
 
 \begin{figure}[p]
 \centering
@@ -586,11 +669,70 @@ prediction shows the worst agreement. There is a slight tendency that the higher
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_eta/xSec_ttbar_delta_eta_IN_ttbar_mass_2.pdf}
 \end{subfigure}
 \caption{Normalized differential cross sections in bins of $M(t\bar{t})$ and $\Delta\eta(t\bar{t})$. The inner error bands are the statistical uncertainties from the data.
-         The outer error bars are the combines statistical and systematical uncertainties on the data.}
+         The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
+         \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
 \label{fig:XS_2D_eta_Mtt}
 \end{figure}
 
-The Fig. \ref{fig:corr_matr_eta_Mtt} shows the correlation matrix. There are no outstanding correlations observed.
+\begin{figure}[p]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_phi/xSec_ttbar_delta_phi_IN_ttbar_mass_0.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_phi/xSec_ttbar_delta_phi_IN_ttbar_mass_1.pdf}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/FinalPlot/emu/ttbar_mass-ttbar_delta_phi/xSec_ttbar_delta_phi_IN_ttbar_mass_2.pdf}
+\end{subfigure}
+\caption{Normalized differential cross sections in bins of $M(t\bar{t})$ and $\Delta\phi(t\bar{t})$. The inner error bands are the statistical uncertainties from the data.
+         The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
+         \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
+\label{fig:XS_2D_phi_Mtt}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%Corr matrices%%%%%%%
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
+  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
+  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+          There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
+  \label{fig:corr_matr}
+\end{figure}
+
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
+%   \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$. The binning is the following:
+%   the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+%           There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
+%   \label{fig:corr_matr_pttt_ytt}
+% \end{figure}
+
+% \begin{figure}[p]
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/rhoIJtotal_ttbar_mass_vs_top_pt.pdf}
+%   \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $|y(t)|$. The binning is the following:
+%   the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+%           There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $p_{T}(t)$ bin.}
+%   \label{fig:corr_matr_yt_Mtt}
+% \end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/rhoIJtotal_ttbar_mass_vs_top_pt.pdf}
+  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $p_{T}(t)$. The binning is the following:
+  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+          There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $p_{T}(t)$ bin.}
+  \label{fig:corr_matr_Mtt_pt}
+\end{figure}
 
 \begin{figure}[p]
   \centering
@@ -601,36 +743,17 @@ The Fig. \ref{fig:corr_matr_eta_Mtt} shows the correlation matrix. There are no 
   \label{fig:corr_matr_eta_Mtt}
 \end{figure}
 
-
-%%%
-\subsubsection{Cross sections in bins of $M(t\bar{t})$ versus $|y(t)|$}
-
-Another measurement has been performed in bins of $M(t\bar{t})$ and $|y(t)|$. Fig. \ref{fig:CP_2D_Mtt_y} represents the control distribution in bins of these variables.
-
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_arapidity/CP_AllBins_ttbar_mass_vs_top_arapidity.pdf}
-  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $|y(t)|$. The $|y(t)|$ bins are shown on the top 
-  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-  bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-  is presented.}
-  \label{fig:CP_2D_Mtt_y}
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_phi/rhoIJtotal_ttbar_mass_vs_ttbar_delta_phi.pdf}
+  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $\Delta\phi(t\bar{t})$. The binning is the following:
+  the sequences of three bins (1-3, 4-6, 7-9) correspond to the $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV.
+          There are 3 $\Delta\phi(t\bar{t})$ bins $[0\:\:1.2\:\:2.6\:\:3.14]$ rad -- in each $M(t\bar{t})$ bin.}
+  \label{fig:corr_matr_phi_Mtt}
 \end{figure}
 
-%%%
-\subsubsection{Cross sections in bins of $p_{T}(t\bar{t})$ versus $|y(t\bar{t})|$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Another pair of variables in bins of which the cross section was measured is the $p_{T}$ and $|y|$ of the $t\bar{t}$ system. 
-The control distribution in bins of the is presented in the Fig. \ref{fig:CP_2D_pttt_ytt}.
-
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/CP_AllBins_ttbar_mass_vs_top_pt.pdf}
-%   \caption{Control distribution of the $M(t\bar{t})$ of the top quark in bins of the $p_{T}$ of the top quark. The $M(t\bar{t})$ bins are shown on the top 
-%   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-%   bars on the data points represent the statistical uncertainty only. The 
-%   different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-%   is presented.}
-%   \label{fig:CP_2D_pttt_ytt}
-% \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
