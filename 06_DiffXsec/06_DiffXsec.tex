@@ -328,7 +328,8 @@ The cross sections are measured both in visible and full phase spaces, normalize
 
 \subsection{Double Differential Production Cross Section Measurement}
 
-The production cross sections were measured double differentially in bins of top transverse momentum, rapidity and Bjorken $x$,
+The production cross sections were measured double differentially in bins of top transverse momentum, rapidity and Bjorken $x_{1}$,
+which corresponds to the parton momentum transfered to the $t$-quark,
 $t\bar{t}$ mass, rapidity and transverse momentum and the angles $\phi$ and $\eta$ between $t$ and $\bar{t}$.
 The binning was chosen to have enough entries in each bin at the detector level so that the error could be treated as Gaussian.
 It was also checked if the purity, stability and efficiency in each bin are not too low (see the explanation below).
@@ -373,17 +374,27 @@ number of the generated events inside this bin ($N_{ij}^{gen} \cup N^{reco}$). T
 the stability is the less events migrate outside this bin to the other bins. The highest possible stability value is 1.
 
 The efficiency, purity and stability are shown in the Fig. \ref{fig:EPS_2D_y_pt}. The reconstruction efficiency and stability are better in the
-high $p_{T}$. Although the high rapidity bins have low reconstruction efficiency, the purity and stability there is higher.
+high $p_{T}$. Although the high rapidity bins have low reconstruction efficiency, the purity and stability there do not drop. The level of purity
+is stable for all of the $p_{T}(t)$ bins and reaches roughly 40\%. The stability is at the same level as purity, however in the highest $p_{T}(t)$
+bin it raises up to 60\%. This means that all the bins have the same level of migrations in and out of the bin, except for the highest $p_{T}(t)$
+bin, where there are less migrations out of the bins.
 
 The migrations are taken to account in the unfolding by exploiting the migration matrix $\mathbf{A}$ (see sec.\ref{sec:unfold}). An illustration 
-of this matrix on example of the bins of the $p_{T}(t)$ and $|y(t)|$ is given in fig. \ref{fig:MigMat_2D_y_pt}.
+of this matrix on example of the bins of the $p_{T}(t)$ and $|y(t)|$ is given in fig. \ref{fig:MigMat_2D_y_pt}. This matrix is expected to be mostly 
+diagonal, which is observed in this plot. The migrations are present mostly between the neighboring bins.
 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=0.7\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/}
-%   \caption{}
-%   \label{fig:MigMat_2D_y_pt}
-% \end{figure}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/migration/probMatrix_top_arapidity_top_pt.pdf}
+  \caption{Normalized migration matrix $\mathbf{A}$ (probability matrix) in bins of $p_{T}(t)$ and $|y(t)|$. The generated binning is the following:
+          the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+          There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $p_{T}(t)$ bin.
+          Detector binning:
+          the sequences of eight bins (1-8, 9-16, 17-24, 25-32, 33-40, 41-48, 49-56, 57-64, 65-72, 73-80, 81-88, 89-96, 97-104, 105-112) correspond 
+          to the $p_{T}(t)$ bins $[0\:\:20\:\:35\:\:50\:\:65\:\:80\:\:100\:\:130\:\:145\:\:170\:\:200\:\:240\:\:300\:\:350\:\:500]$ GeV.
+          There are eight $|y(t)|$ bins -- $[0.0\:\:0.2\:\:0.4\:\:0.6\:\:0.8\:\:1.0\:\:1.2\:\:1.5\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
+  \label{fig:MigMat_2D_y_pt}
+\end{figure}
 
 The Fig. \ref{fig:XS_2D_y_pt} represents the production cross sections of the $t\bar{t}$ pair in bins of top rapidity and top transverse momentum.
 The experimentally measured cross sections are compared to the \MG+\PYTHIA, \Powheg+\PYTHIA, \Powheg+\HERWIG and \MCNLO+\HERWIG predictions.
@@ -400,9 +411,14 @@ anticorrelation in the last transverse momentum bins.
 \subsubsection{Cross sections in bins of $p_{T}(t\bar{t})$ versus $|y(t\bar{t})|$}
 
 Another pair of variables in bins of which the cross section was measured is the $p_{T}$ and $|y|$ of the $t\bar{t}$ system. 
-The control distribution in bins of the is presented in the Fig. \ref{fig:CP_2D_pttt_ytt}.
+The control distribution in bins of the is presented in the Fig. \ref{fig:CP_2D_pttt_ytt}. The agreement between data and MC is overall nice, 
+except for the highest $p_{T}(t\bar{t})$ bin. The MC slightly underestimates the data for the first three $p_{T}(t\bar{t})$ bins, while
+for the highest measured $p_{T}(t\bar{t})$ bin the MC overestimates data. 
 
-Fig. \ref{fig:EPS_2D_ptt_ytt} shows efficiency, purity and stability in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$.
+Fig. \ref{fig:EPS_2D_ptt_ytt} shows efficiency, purity and stability in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$. Given this plot, the efficiency
+slightly increases towards the higher transverse momentum of top pairs and significantly grows towards the central rapidities of the $t\bar{t}$. It varies
+between 20\% and 30\%. Purity
+and stability have similar behavior and are higher for low $p_{T}(t\bar{t})$ and central rapidity bin. They vary between 40\% and almost 70\%.
 
 The production cross sections in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$ are shown in fig. \ref{fig:XS_2D_pttt_ytt}.
 
@@ -413,8 +429,12 @@ The correlation matrix $\mathbf{V}_{xx}$ is presented in fig. \ref{fig:corr_matr
 \subsubsection{Cross sections in bins of $M(t\bar{t})$ versus $|y(t)|$}
 
 Another measurement has been performed in bins of $M(t\bar{t})$ and $|y(t)|$. Fig. \ref{fig:CP_2D_Mtt_y} represents the control distribution in bins of these variables.
+The agreement between the data and MC prediction is good in the lower $t\bar{t}$ mass bins. However, the MC starts to underestimate data for the highest $M(t\bar{t})$.
+In general, the agreement in the outer rapidity bin is always slightly worse than for the central rapidity bins.
 
-The purities, stabilities and efficiencies in bins of $M(t\bar{t})$ and $|y(t)|$ are presented in fig. \ref{fig:EPS_2D_Mtt_yt}
+The purities, stabilities and efficiencies in bins of $M(t\bar{t})$ and $|y(t)|$ are presented in fig. \ref{fig:EPS_2D_Mtt_yt}. The efficiencies get higher with the 
+growth of the $M(t\bar{t})$ and are always lower for the high rapidities of the top-quark. The efficiency in general alters around 30\%. Purity and stabilities
+do not vary much between the different bins of the $M(t\bar{t})$ and are higher for the most central rapidity bin. 
 
 %%%
 
@@ -422,11 +442,11 @@ The purities, stabilities and efficiencies in bins of $M(t\bar{t})$ and $|y(t)|$
 
 The other pair of variables in which the $t\bar{t}$ production cross section was measured double differentially is $p_{T}(t)$ and $M(t\bar{t})$.
 The control plot, which shows the binning and the comparison between data and simulation, is presented in Fig. \ref{fig:CP_2D_Mtt_pt}. The MC underestimates 
-the data for the firs three $p_{T}(t)$ bins and this disagreement grows with the $M(t\bar{t})$. For the last two $p_{T}(t)$ bins, there is
-no disagreement observed.
+the data for the lower $p_{T}(t)$ bins and this disagreement grows with the $M(t\bar{t})$. For the last two $p_{T}(t)$ bins, the MC overestimates data. A clear
+linear trend is observed at the MC-to-data ratio plots.
 
-% The efficiency-purity-stability plot is presented in Fig. \ref{fig:EPS_2D_Mtt_pt}.
-% 
+The efficiency-purity-stability plot is presented in Fig. \ref{fig:EPS_2D_Mtt_pt}. The efficiencies grow with increasing $p_{T}(t)$ and the slope is higher with
+the higher $M(t\bar{t})$. Purities and stabilities alter from 20\% to 50 \%.
 
 The double differential production cross sections in bins of $M(t\bar{t})$ and $p_{T}(t)$ are presented in Fig. \ref{fig:XS_2D_Mtt_pt}. A slight underestimation is 
 observed in the lowest $p_{T}(t)$ bin. The worst description is in the highest $M(t\bar{t})$ bin.
@@ -435,13 +455,37 @@ The Fig. \ref{fig:corr_matr_Mtt_pt} shows the correlation matrix $\mathbf{V}_{xx
 observed.
 
 %%%
+\subsubsection{Cross section in bins of $\Delta\eta(t\bar{t})$ versus $M(t\bar{t})$}
+
+The azimuthal angle between the $t$ and $\bar{t}$ is represented with the pseudorapidity $\Delta\eta(t\bar{t})$. The cross section has been measured
+double differentially in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$.
+
+The control distribution in Fig. \ref{fig:CP_2D_eta_Mtt} shows that the simulation slightly overestimates the experimental data in lowest $M(t\bar{t})$
+bin. However, there is a strong disagreement in between MC and data in the $\Delta\eta(t\bar{t})$ spectra for the two higher $M(t\bar{t})$ bins. There is a 
+clear negative slope in the MC-to-data ratio plots in these two bins.
+
+Efficiencies, purities and stabilities in the corresponding bins are shown in fig. \ref{fig:EPS_2D_Mtt_eta}.
+
+The double differential production cross sections in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ is presented in Fig. \ref{fig:XS_2D_eta_Mtt}. The \MG + \PYTHIA
+prediction shows the worst agreement. There is a slight tendency that the higher the mass is, the more MC underestimates the data for the higher $\Delta\eta(t\bar{t})$.
+
+The Fig. \ref{fig:corr_matr_eta_Mtt} shows the correlation matrix. There are no outstanding correlations observed. Efficiencies and stabilities decrease with the
+growth of $\Delta\eta(t\bar{t})$ in all $M(t\bar{t})$ bins. The purity, however, decreases with $\Delta\eta(t\bar{t})$ in first two $M(t\bar{t})$ bins and stabilizes
+in the highest mass bin.
+
+%%%
 \subsubsection{Cross section in bins of $\Delta\phi(t\bar{t})$ versus $M(t\bar{t})$}
 
 The measurement of the cross section has been performed in bins of the polar angle between top and antitop, $\Delta\phi(t\bar{t})$, and the mass
 of the $t\bar{t}$ system, $M(t\bar{t})$.
 
-The control distribution in bins of these variable pair is presented in Fig. \ref{fig:CP_2D_phi_Mtt}. The simulation describes the data well, however
-the best agreement is observed in the highest $M(t\bar{t})$ bin.
+The control distribution in bins of these variable pair is presented in Fig. \ref{fig:CP_2D_phi_Mtt}. The simulation describes the data well in the lowest $M(t\bar{t})$ bin, 
+however at the higher mass bins, MC starts to underestimate data in the $\Delta\phi(t\bar{t})$ spectra. There is a positive linear slope observed in the MC-to-data ratio plots
+in these $M(t\bar{t})$ bins.
+
+Fig. \ref{fig:EPS_2D_Mtt_phi} shows efficiencies, purities and stabilities in bins of these variables. This figure shows that purities and stabilities grow with the 
+increase of the $\Delta\phi(t\bar{t})$. The efficiencies show the same tendency, except for the lowest invariant mass bin. There efficiencies decrease while $\Delta\phi(t\bar{t})$
+increases.
 
 The Fig. \ref{fig:XS_2D_phi_Mtt} presents the double differential production cross sections of the $t\bar{t}$ pairs in bins of $\Delta\phi(t\bar{t})$ and $M(t\bar{t})$.
 All the predictions provide a reasonable description of the measured cross sections. However, the agreement is getting slightly worse for the higher bins of the $M(t\bar{t})$.
@@ -450,21 +494,49 @@ The correlation matrix $\mathbf{V}_{xx}$ in bins used for the cross sections mea
 (0.4 at most) observed between any bins.
 
 %%%
-\subsubsection{Cross section in bins of $\Delta\eta(t\bar{t})$ versus $M(t\bar{t})$}
+\subsubsection{Cross section in bins of $|y(t\bar{t})|$ versus $M(t\bar{t})$}
 
-The azimuthal angle between the $t$ and $\bar{t}$ is represented with the pseudorapidity $\Delta\eta(t\bar{t})$. The cross section has been measured
-double differentially in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$.
+The control distribution in bins of $|y(t\bar{t})|$ and $M(t\bar{t})$ is shown in fig. \ref{fig:CP_2D_ytt_Mtt}. The agreement between data and MC is overall nice.
+However a slight linear slope in the MC-to-data plots can be observed. The higher the invariant mass of the top pair is, the stronger the slope gets.
 
-The control distribution in Fig. \ref{fig:CP_2D_eta_Mtt} shows that the simulation slightly overestimates the experimental data in low $M(t\bar{t})$
-and high $\Delta\eta(t\bar{t})$. For the higher $M(t\bar{t})$, however, the situation is completely opposite: the MC underestimates the data and the disagreement
-is worse the higher the $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ are.
-
-The double differential production cross sections in bins of $\Delta\eta(t\bar{t})$ and $M(t\bar{t})$ is presented in Fig. \ref{fig:XS_2D_eta_Mtt}. The \MG + \PYTHIA
-prediction shows the worst agreement. There is a slight tendency that the higher the mass is, the more MC underestimates the data for the higher $\Delta\eta(t\bar{t})$.
-
-The Fig. \ref{fig:corr_matr_eta_Mtt} shows the correlation matrix. There are no outstanding correlations observed.
+The efficiency, purity and stability for each bin of rapidity and invariant mass of the top pair are presented in fig. \ref{fig:EPS_2D_ytt_Mtt}. This plot
+shows that the efficiencies are slightly larger for larger masses of the top pairs and more central $|y(t\bar{t})|$. The purity is decreasing with the
+growth of $M(t\bar{t})$. In general, purities and stabilities have similar behavior versus $M(t\bar{t})$ and $|y(t\bar{t})|$ and vary between 40\% and 60\%.
 
 %%%
+\subsubsection{Cross section in bins of $|p_{T}(t\bar{t})|$ versus $M(t\bar{t})$}
+
+Another measurement of the cross sections was performed in bins of $|p_{T}(t\bar{t})|$ and $M(t\bar{t})$.
+The control distribution in bins of $|p_{T}(t\bar{t})|$ and $M(t\bar{t})$ is presented in fig. \ref{fig:CP_2D_pttt_Mtt}. In all of the $M(t\bar{t})$
+bins there is the same trend in the way how the simulation describes the experimentally measured $p_{T}(t\bar{t})$ spectrum. The MC slightly underestimates
+the data for the lower $p_{T}(t\bar{t})$, while for the highest transverse momentum of the top-pair the significant overestimation is observed.
+
+Fig. \ref{fig:EPS_2D_pttt_Mtt} shows efficiencies, purities and stabilities in each bin of $|p_{T}(t\bar{t})|$ and $M(t\bar{t})$. Efficiency increases 
+in both, mass and transverse momentum of the $t\bar{t}$ system indicating that the quality of reconstruction for the system with higher energy is better.
+Purities and stabilities increase with transverse momentum of top pair system, not taking to account the lowest $p_{T}(t\bar{t})$ bin, which for all 
+bins of $M(t\bar{t})$ shows significantly higher purities and stabilities.
+
+%%%
+\subsubsection{Cross section in bins of $p_{T}(t\bar{t})$ versus Bjorken $x_{1}$}
+
+The $t\bar{t}$ cross section was measured in bins of $p_{T}(t\bar{t})$ and Bjorken $x_{1}$.
+The corresponding control plot is shown in fig. \ref{fig:CP_2D_pttt_x1}. The agreement between simulation and data is overall nice, except for the highest
+$x_{1}$ bin for all of the $p_{T}(t\bar{t})$, where MC overestimates data.
+
+The quality of the events in each bin of $p_{T}(t\bar{t})$ and Bjorken $x_{1}$ are represented with efficiencies, purities and stabilities shown in fig. \ref{fig:EPS_2D_ptt_x1}.
+This plot shows that efficiencies, purities and stabilities increase with $p_{T}(t\bar{t})$. Additionally, purities and stabilities constantly decrease with 
+increasing Bjorken $x_{1}$. Efficiencies start to decrease starting from the middle $x_{1}$ bin. The lowest bin in Bjorken $x_{1}$ has the lowest efficiencies
+(with minimum less than 10\%) purities (down to 15\%) and stabilities (down to 20\%).
+
+
+%%%
+\subsubsection{Cross section in bins of $M(t\bar{t})$ versus Bjorken $x_{1}$}
+
+The control distributions of $x_{1}$ in bins of $M(t\bar{t})$ are shown in fig. \ref{fig:CP_2D_Mtt_x1}. The agreement between simulation and data is overall nice.
+A slight underestimation of the data by simulation is observed for the highest $M(t\bar{t})$ bin.
+
+Fig. \ref{fig:EPS_2D_Mtt_x1} shows that the efficiencies, purities and stabilities are getting lower the higher $x_{1}$ gets. The dependence on $M(t\bar{t})$
+is the opposite -- efficiencies, purities and stabilities grow with $M(t\bar{t})$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%Plots%%%%%%%%%%%%%%%
@@ -472,103 +544,189 @@ The Fig. \ref{fig:corr_matr_eta_Mtt} shows the correlation matrix. There are no 
 
 %%%%%Control Plots%%%%%%%%%
 
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/CP_AllBins_top_rapidity_vs_top_pt.pdf}
-  \caption{Control distribution of the $y$ of the top quark in bins of the $p_{T}$ of the top quark. The $y$ bins are shown on the top 
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_top_arapidity_vs_top_pt.pdf}
+  \caption{Control distribution of the $y$ of the top quark in bins of the $p_{T}$ of the top quark. The $|y|$ bins are shown on the top 
   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
   bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
   is presented.}
   \label{fig:CP_2D_y_pt}
 \end{figure}
 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/CP_AllBins_ttbar_mass_vs_top_pt.pdf}
-%   \caption{Control distribution of the $M(t\bar{t})$ of the top quark in bins of the $p_{T}$ of the top quark. The $M(t\bar{t})$ bins are shown on the top 
-%   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
-%   bars on the data points represent the statistical uncertainty only. The 
-%   different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
-%   is presented.}
-%   \label{fig:CP_2D_pttt_ytt}
-% \end{figure}
-
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_arapidity/CP_AllBins_ttbar_mass_vs_top_arapidity.pdf}
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_ttbar_arapidity_vs_ttbar_pt.pdf}
+  \caption{Control distribution of the $p_{T}(t\bar{t})$ in bins of the $|y(t\bar{t})|$. The $|y(t\bar{t})|$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_pttt_ytt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_top_arapidity_vs_ttbar_mass.pdf}
   \caption{Control distribution of the $M(t\bar{t})$ in bins of the $|y(t)|$. The $|y(t)|$ bins are shown on the top 
   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
   bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
   is presented.}
   \label{fig:CP_2D_Mtt_y}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/CP_AllBins_ttbar_mass_vs_top_pt.pdf}
-  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $p_{T}$ of the top quark. The $M(t\bar{t})$ bins are shown on the top 
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_top_pt_vs_ttbar_mass.pdf}
+  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $p_{T}$ of the top quark. The $p_{T}(t)$ bins are shown on the top 
   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
   bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
   is presented.}
   \label{fig:CP_2D_Mtt_pt}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_delta_eta-ttbar_mass/CP_AllBins_ttbar_delta_eta_vs_ttbar_mass.pdf}
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_ttbar_delta_eta_vs_ttbar_mass.pdf}
   \caption{Control distribution of the $\Delta\eta$ between the $t$ and $\bar{t}$ in bins of the $M(t\bar{t})$. The $\Delta\eta$ bins are shown on the top 
   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
   bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
   is presented.}
   \label{fig:CP_2D_eta_Mtt}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_phi/CP_AllBins_ttbar_mass_vs_ttbar_delta_phi.pdf}
-  \caption{Control distribution of the $M(t\bar{t})$ in bins of the $\Delta\phi$ between the $t$ and $\bar{t}$. The $M(t\bar{t})$ bins are shown on the top 
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_ttbar_delta_phi_vs_ttbar_mass.pdf}
+  \caption{Control distribution of the $\Delta\phi$ between the $t$ and $\bar{t}$ in bins of the $M(t\bar{t})$. The $\Delta\phi$ bins are shown on the top 
   of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
   bars on the data points represent the statistical uncertainty only. The 
-  different background contributions are also shown. On the bottom part of the plot the ratio between data and MC statistics in each bin
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
   is presented.}
   \label{fig:CP_2D_phi_Mtt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_ttbar_arapidity_vs_ttbar_mass.pdf}
+  \caption{Control distribution of the $|y(t\bar{t})|$ in bins of the $M(t\bar{t})$. The $|y(t\bar{t})|$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_ytt_Mtt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_ttbar_pt_vs_ttbar_mass.pdf}
+  \caption{Control distribution of the $|p_{T}(t\bar{t})|$ in bins of the $M(t\bar{t})$. The $|p_{T}(t\bar{t})|$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_pttt_Mtt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_ttbar_pt_vs_x1.pdf}
+  \caption{Control distribution of the $p_{T}(t\bar{t})$ in bins of $x_{1}$. The $p_{T}(t\bar{t})$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_pttt_x1}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/CP/CP_AllBins_x1_vs_ttbar_mass.pdf}
+  \caption{Control distribution of $x_{1}$ in bins of $M(t\bar{t})$. The $x_{1}$ bins are shown on the top 
+  of the plot. The experimental data are marked with the black dots and the reconstructed MC signal is marked with the red area. The error
+  bars on the data points represent the statistical uncertainty only. The 
+  different background contributions are also shown. On the bottom part of the plot the ratio between MC and data statistics in each bin
+  is presented.}
+  \label{fig:CP_2D_Mtt_x1}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%EPS%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[t]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_top_rapidity_vs_top_pt.pdf}
-  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $y$ of the top quark.}
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_top_arapidity_vs_top_pt.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $|y|$ of the top quark.}
   \label{fig:EPS_2D_y_pt}
 \end{figure}
 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_}
-%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $|y|$ of the $t\bar{t}$ pair.}
-%   \label{fig:EPS_2D_ptt_ytt}
-% \end{figure}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_ttbar_arapidity_vs_ttbar_pt.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $p_{T}$ and $|y|$ of the $t\bar{t}$ pair.}
+  \label{fig:EPS_2D_ptt_ytt}
+\end{figure}
 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{06_DiffXsec/plots/Plots/Nominal/emu/top_rapidity-top_pt/EPS_AllBins_}
-%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $|y(t)|$.}
-%   \label{fig:EPS_2D_Mtt_yt}
-% \end{figure}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_top_arapidity_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $|y(t)|$.}
+  \label{fig:EPS_2D_Mtt_yt}
+\end{figure}
 
-% \begin{figure}[t]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/EPS_AllBins_ttbar_mass_vs_top_pt.pdf}
-%   \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $p_{T}(t)$.}
-%   \label{fig:EPS_2D_Mtt_pt}
-% \end{figure}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_top_pt_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $p_{T}(t)$.}
+  \label{fig:EPS_2D_Mtt_pt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_ttbar_delta_eta_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $\Delta\eta$ between top and anti top.}
+  \label{fig:EPS_2D_Mtt_eta}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_ttbar_delta_phi_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of the $M(t\bar{t})$ and $\Delta\phi$ between top and anti top.}
+  \label{fig:EPS_2D_Mtt_phi}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_ttbar_arapidity_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of absolute rapidity and invariant mass of the top pair.}
+  \label{fig:EPS_2D_ytt_Mtt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_ttbar_pt_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of transverse momentum and invariant mass of the top pair.}
+  \label{fig:EPS_2D_pttt_Mtt}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_ttbar_pt_vs_x1.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of transverse momentum of the $t$-quark and Bjorken $x_{1}$.}
+  \label{fig:EPS_2D_ptt_x1}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/EPS/EPS_AllBins_x1_vs_ttbar_mass.pdf}
+  \caption{The efficiency (green circles), purity (blue triangles) and stability (red triangles) in bins of $M(t\bar{t})$ and Bjorken $x_{1}$.}
+  \label{fig:EPS_2D_Mtt_x1}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
