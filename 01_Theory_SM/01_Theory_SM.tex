@@ -1,7 +1,7 @@
 \chapter{The Standard Model of Particle Physics}\label{chapt:SM}
 
-This chapter is an introduction to Elementary Particle Physics as described by the Standard Model.
-First the particles are described, then the way they interact is shown. A short introduction
+This chapter provides an introduction to Elementary Particle Physics as described by the Standard Model (SM).
+First the particles of the SM are described, then the way they interact is shown. A short introduction
 to the physics of the top quark is given in the end.
 
 \section{Introduction. Elementary Particle physics}
@@ -12,10 +12,11 @@ the structure of matter were made already in ancient Greece by the philosopher-a
 claimed that everything around us consists of tiny undevidable chunks called \textit{atomos}\cite{yangcn}.
 But the elementary particle physics (elementary here means unstructured) in a modern sense started with 
 J.J. Thomson's discovery of the \textit{electron}\cite{jjthome} in 1897. The electrons were correctly surmised to be constituents
-of atoms. The full picture of the atom structure was obtained after Ernest Rutherford's scattering experiment\cite{rutherford},
-thus proving atoms to be non-elementary particles. It actually consists of a heavy positively charged core, called 
+of atoms. A much more detailed picture of the atom structure was obtained after Ernest Rutherford's scattering experiment\cite{rutherford},
+proving atom cores to be much smaller than the full atoms and showing that an atom consists of a heavy positively charged core, called 
 \textit{nucleus} and very light negatively charged electrons, moving around like satellites. 
-The nucleus was later proven to be non-elementary. However, up to date no structure of electron was discovered 
+The nucleus was later proven to be non-elementary, consisting of elementary particles called \textit{quarks}. 
+However, up to date no structure of electron was discovered 
 and it is nowadays known as one of the elementary particles. 
 
 Many other elementary particles were subsequently discovered during the last sixty years. Now having an idea 
@@ -36,7 +37,7 @@ is facing. In particular
 \section{Elementary Particles}
 
 This section describes the answer, which the Standard Model gives to the question '\textit{What is the matter made of?}'.
-The Standard Model asserts that all the material in the Universe is made up of the elementary \textit{fermions} (particles
+The Standard Model asserts that all the material in the Universe is made up of elementary \textit{fermions} (particles
 which have half-integer spin -- $\frac{n}{2}\hbar$, $n = 1, 3, 5, ...$) interacting through the fields, carried 
 by \textit{bosons} (particles which have integer spin -- $n\hbar$, $n = 0, 1, 2, 3, ...$). 
 % The names of the particles 
@@ -45,7 +46,7 @@ by \textit{bosons} (particles which have integer spin -- $n\hbar$, $n = 0, 1, 2,
 % bosons in a system, the wave function does not change, it is symmetric to the exchange of bosons. While the wave function
 % of fermions changes the sign, it is asymmetric.
 
-The Fig.\ref{fig:SM_Particles} shows all the elementary constituents of matter and fields.
+The Fig.\ref{fig:SM_Particles} shows all the known elementary constituents of matter and fields.
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.6\textwidth]{01_Theory_SM/plots/Standard_Model_of_Elementary_Particles.png}
@@ -78,7 +79,7 @@ Neutral leptons, neutrinos $\nu$, also have antiparticles, antineutrinos $\bar{\
 neutrino: $\nu_{e}$, $\nu_{\mu}$ and $\nu_{\tau}$. Each type of the leptons has a lepton number (an electron and an electron neutrino 
 have a lepton number $l_{e}$, muon and it's neutrino have a lepton number $l_{\mu}$ and the $\tau$ with it's neutrino have the 
 lepton number $l_{\tau}$).  In this rule leptons have positive lepton numbers and
-antileptons -- negative ones. It is believed that the lepton number is conserved during the interactions.
+antileptons -- negative ones. The lepton number is conserved during the interactions.
 
 \subsection{Quarks}\label{sec:quark}
 
@@ -121,14 +122,15 @@ and the theory, which describes these interactions \cite{griffiths2008introducti
   \end{tabular}
 \end{center}
 
+All the equations and values listed in this work are presented assuming that $\hbar = c = 1$. This is called the \textit{natural units}. 
 More details on every interaction is presented in the following section.
 
 \subsection{Electrmagnetic Interaction}
 
 The theory behind the electromagnetic interactions -- quantum electrodynamics (QED) -- was developed earlier than other interactions theories
 and is the most successful one. It describes the interactions between the elementary electrically charged fermions via mediator photons.
-The electromagnetic interaction is such that the oppositely electrically charged objects attract each other while the same sign charges repulse.
-This interaction is present on any distance getting weaker proportionally to the distance squared. The QED is based on the gauge group $U(1)$.
+The electromagnetic interaction is such that the oppositely electrically charged objects attract each other while same sign charges repulse.
+This interaction is present at any distance, getting weaker proportionally to the distance squared. QED is based on the gauge group $U(1)$.
 Every electromagnetic phenomena is ultimately reducible to the following elementary process:
 
 \begin{figure}[h]
@@ -138,17 +140,17 @@ Every electromagnetic phenomena is ultimately reducible to the following element
   \label{fig:QED_simple}
 \end{figure}
 
-The more complex processes can be described combining two or more of these elementary verteces.
+The more complex processes can be described combining two or more of these elementary vertices.
 
-A coupling constant, or the interaction strength of the electromagnetic interaction is given as following:
+The coupling constant, or the interaction strength of the electromagnetic interaction is given as following:
 
 \begin{equation}
- \alpha = \frac{e^{2}}{4\pi\epsilon_{0}\hbar c} \approx \frac{1}{137},
+ \alpha = \frac{e^{2}}{4\pi\epsilon_{0}} \approx \frac{1}{137},
 \end{equation}
 
 where $\epsilon_{0}$ is the permitivity of vacuum, $e$ is the electron charge and $c$ is the speed of light.
 
-As coupling constant is small ($\alpha \ll 1$), it can be used for the expansion in the perturbative calculations (observable ~ $\sum_{k=0}^{\infty} c_{k}\cdot\alpha^{k}$).
+As the coupling constant is small ($\alpha \ll 1$), it can be used for expansion in perturbative calculations (observable ~ $\sum_{k=0}^{\infty} c_{k}\cdot\alpha^{k}$).
 The naming of the processes lying beyond each of the terms of the expansion
 is Leading Order process (LO, which takes into account the first term with non-zero $c_{k}$), Next-to-Leading Order process (NLO, also takes
 to account the next term, additionally to the LO), Next-to-Next-to-Leading Order process (NNLO), etc.
@@ -350,7 +352,8 @@ which is not possible to do with any other quark. This section describes the pro
 
 The top quark production cross section depends on the center-of-mass energy of the experiment in which it is produced. From Fig. \ref{fig:SM_XSec_Prod}
 one can judge that under the conditions of the Large Hadron Collider (where the designed center-of-mass energy should approach 14 TeV) acts like 
-a top production factory.
+a top production factory. The top production cross section ($\sigma_{top}$) at the LHC scale is almost an order of magnitude larger than for the
+TEVATRON.
 
 \begin{figure}[p]
   \centering
@@ -442,15 +445,15 @@ The decay modes of the $t\bar{t}$ pairs can be classified according to the decay
 \end{figure}
 
 \begin{itemize}
- \item \textit{Full hadronic channel}. Both $W$ bosons decay into quark-antiquark pairs -- $t\bar{t} \rightarrow W^{+}bW^{-}\bar{b} \rightarrow q\bar{q}'bq''\bar{q}'''\bar{b}$.
+ \item \textit{Full hadronic channel}. Both $W$ bosons decay into quark-antiquark pairs -- $t\bar{t} \rightarrow (W^{+} \rightarrow q\bar{q}')b\:(W^{-} \rightarrow q''\bar{q}''')\bar{b}$.
  This decay channel has the largest branching ratio\footnote{\textit{Branching ratio} of the specific decay of a particular particle/system is the probability of this particle/system
  to decay via this decay mode.}. However, this state has a very high pollution in the Large Hadron Collider environment, as the large number of quark and gluon jets is produced.
  
- \item \textit{Semileptonic (lepton+jet) channel}. One $W$ boson decays hadronically, another one - into two leptons:  $t\bar{t} \rightarrow W^{+}bW^{-}\bar{b} \rightarrow q\bar{q}'bl\bar{\nu}_{l}\bar{b}
- + \bar{l}\nu_{l}bq\bar{q}'\bar{b}$. The high momentum lepton, which occurs in this process, is a signature that helps to identify the decay better. Thus, there is less
+ \item \textit{Semileptonic (lepton+jet) channel}. One $W$ boson decays hadronically, another one - into two leptons:  $t\bar{t} \rightarrow (W^{\pm} \rightarrow q\bar{q}')b \: (W^{\mp} \rightarrow l^{\mp}\nu)\bar{b}$.
+ The high momentum lepton, which occurs in this process, is a signature that helps to identify the decay better. Thus, there is less
  ambiguity in defining the final state of the semileptonic $t\bar{t}$ decay.
  
- \item \textit{Dileptonic channel}. Both $W$ bosons decay into leptons -- $t\bar{t} \rightarrow W^{+}bW^{-}\bar{b} \rightarrow \bar{l}\nu_{l}bl'\bar{\nu}_{l'}\bar{b}$.
+ \item \textit{Dileptonic channel}. Both $W$ bosons decay into leptons -- $t\bar{t} \rightarrow (W^{+} \rightarrow l^{+}\nu_{l^{-}})b \: (W^{-} \rightarrow l^{-}\bar{\nu}_{l^{-}})\bar{b}$.
  This decay channel has the smallest branching ratio, but the two high momentum leptons are a nice sign which helps to distinguish this final state from other processes
  occurring in the Large Hadron Collider collisions.
 \end{itemize}
@@ -464,6 +467,8 @@ The studies of the $t\bar{t}$ production process provide a very important test o
 
 In particular, the $t\bar{t}$ production in the $pp$ collisions at the LHC is dominated by gluon-gluon fusion (sec. \ref{ssec:tprod}, fig.\ref{fig:LO_tt_prod}), which 
 is precisely measured in the QCD. Thus, the $t\bar{t}$ production cross section measurement can provide constrains for the PDF and the strong coupling constant $\alpha_s$.
+The total $t\bar{t}$ production cross section is accurately calculated up to NNLO, which means that the experimental measurement of this cross sections provide a 
+test of perturbative QCD.
 On the other hand, the deviation from the QCD predictions may point to some processes beyond the Standard Model, as, e.g., to the SUSY particles production, which decay
 to the $t\bar{t}$ pairs. In addition, a measurement of the $t\bar{t}$ production cross sections may deliver information about various top properties, e.g. mass or spin
 of the $t$-quark.

@@ -26,10 +26,10 @@ For this purpose LHC is supported by preacceleration system.
 
 
 The way of the protons literally starts from a bottle of hydrogen gas.
-H$_{2}$ molecules are entering a metallic cylinder (duoplasmatron[?]) with electron gas under magnetic field  where they are smashed 
-into atoms and stripped off the electrons. The protons produced by a duoplasmatron have to satisfy very stringent needs of the LHC -- 
+H$_{2}$ molecules are entering a duoplasmatron proton source\cite{Scrivens:1382102} where they are stripped off the electrons. 
+The protons produced by the source have to go through the chain of preaccelerators to satisfy very stringent needs of the LHC -- 
 many high intensity proton bunches (2808 per LHC ring) with small transverse and well defined longitudinal emittances.
-To reach the stated goals the following acceleration injector chain is used(Fig. \ref{fig:AccelCERN}): 
+The following acceleration injector chain is used for the LHC (fig. \ref{fig:AccelCERN}): 
 
 \begin{figure}[t]
   \centering
@@ -40,11 +40,11 @@ To reach the stated goals the following acceleration injector chain is used(Fig.
 \end{figure}
 
 \begin{itemize}
- \item[--] Protons first enter the \textit{Linac2}[?] where they are accelerated up to 50 MeV and sent to the Proton Synchrotron Booster (PSB);
- \item[--] \textit{PSB}[?] is composed of four synchrotron rings (to avoid charge repulsion) which raise the energy of the particles to 1.4 GeV
+ \item[--] Protons first enter the \textit{Linac2} \cite{Arnaudon:1004186} where they are accelerated up to 50 MeV and sent to the Proton Synchrotron Booster (PSB);
+ \item[--] \textit{PSB}\cite{Benedikt:2000bs} is composed of four synchrotron rings (to avoid charge repulsion) which raise the energy of the particles to 1.4 GeV
  for injection into the Proton Synchrotron (PS);
- \item[--] \textit{PS}[?] increases the energy up to 26 GeV and it takes 3.6 s to inject the protons to the Super Proton Synchrotron (SPS); 
- \item[--] \textit{SPS}[?] is the second largest accelerator at CERN which provides 450 GeV protons injected to the LHC.
+ \item[--] \textit{PS}\cite{Benedikt:2000bs} increases the energy up to 26 GeV and it takes 3.6 s to inject the protons to the Super Proton Synchrotron (SPS); 
+ \item[--] \textit{SPS}\cite{Benedikt:2000bs} is the second largest accelerator at CERN which provides 450 GeV protons injected to the LHC.
 \end{itemize}
 
 The most important accelerator characteristic is the number of protons 
@@ -87,7 +87,7 @@ These detectors have different construction according to slightly different phys
  state of matter provides a unique possibility to find a bare quark and also to study the early
  Universe which was so dense at the first moments after the Big Bang.
  \\
- The ALICE detector weights 10000 tons and is 26 m long, 16 m high and 16 m wide. It sits at a depth of
+ The ALICE detector weights 10000 tons and is 26 m long, 16 m high and 16 m wide. It lies on a depth of
  56 m below the ground on the territory of France.
  
  \item LHCb (Large Hadron Collider beauty)\cite{LHCb} is investigating $CP$ violation and heavy flavour physics via
@@ -131,7 +131,8 @@ The analysis presented in this work was performed on the data recorded by the Co
 run period in proton-proton collisions with center-of-mass energy $\sqrt{s} = $8 TeV. This section will describe in more detail 
 the construction and performance of the CMS detector.
 
-Any particle detector is being constructed with respect to the measurements which are planned to be done with it. Different physical
+Any particle detector is being constructed with respect to the measurements which are planned to be done with it. The main purpose of the CMS detector
+is the accurate measurement of the trajectories and momenta of all particles produced in a energetic $p-p$ collision. Different physical
 tasks provide special requirements for specific experimental setup parts. If the plan is to measure Standard Model decays
 ($W$, $H$, $Z'$ decays with leptons in final state), the detector complex has to comprise precise electromagnetic calorimetry and 
 muon systems for lepton reconstruction. To measure QCD processes with jets in final states, a
@@ -141,7 +142,9 @@ regions, providing backgrounds for the heavy resonances decay products. A partic
 particles differently corresponding to their transverse momentum component and charge. Thus it is important to choose the optimal magnet
 shape and power. However, a magnet alone doesn't provide a measurement. To reconstruct precisely the trajectory of the particle in the detector, thus
 gain an information about curvature (momentum and charge), a detector has to contain a tracking detector. The latter has to manage not only the momentum
-reconstruction, which is crucial for any physical process, but also a precise $b$- and $\tau$ identification. This is reached with the help of the silicon
+reconstruction, which is crucial for any physical process, but also a precise $b$-identification. $B$ mesons have a relatively long lifetime and are able 
+to travel away from the collision point before they decay. The separated from the primary $p-p$ interaction point of the particle decay is called a secondary
+vertex. This feature can be utilized to identify $B$-hadrons (for more details see sec. \ref{ssec:bTag}). A precise secondary vertex reconstruction is reached with the help of the silicon
 pixels of at least micron resolution. To make the measurement of the missing energy possible, the detector has to possibly cover the whole solid angle
 around the collision point.
 
@@ -193,7 +196,7 @@ They are defined in the $(x-y)$ plane. Another variable representing the energy 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solenoid magnet}\label{ssec:solenoid}
 
-The 4T superconducting CMS solenoid, 13 m in length and 6 m in diameter, is shown in the Fig.\ref{fig:solenoid}. 
+The 3.8 T superconducting CMS solenoid, 13 m in length and 6 m in diameter, is shown in the Fig.\ref{fig:solenoid}. 
 The flux is returned through a 10000 ton heavy yoke \cite{CMSatLHC}. A very strong magnet allows not only curving
 high momentum muons for their better transverse  momentum reconstruction, but also keeps soft particles with a small bending radius
 inside the inner detector layers. This reduces occupancy inside the calorimeters allowing only higher
