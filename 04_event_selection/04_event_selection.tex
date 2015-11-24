@@ -32,24 +32,50 @@ for the specific measurement. In this analysis the background rates are estimate
 The following background processes are discussed in frames of this analysis:
 
 \begin{itemize}
- \item single top production;
- \item Drell-Yan process;
- \item diboson production;
- \item $Z/\gamma^{*} \rightarrow \tau\tau$ production;
- \item $Z/\gamma^{*} \rightarrow ee/\mu\mu$ production;
- \item associated $t\bar{t}\;+\; W/Z/\gamma$ production;
- \item associated $W\;+\;jets$ production;
- \item QCD multijet processes.
+ \item $t\bar{t}\rightarrow$other. This background source includes the other $t\bar{t}$ decay modes (see sec. \ref{ssec:tdecay}).
+ \item single top production, which was simulated using \Powheg + \PYTHIA;
+ \item Drell-Yan process, which was generated utilizing \PYTHIA. It can be mistreated as $t\bar{t}$ signal, as it also has a dileptonic
+ final state signature. However, only the same flavour leptons are produced in Drell-Yan processes. Therefore, the fraction of these
+ background events in the $e\mu$ final state is small;
+ \item diboson production, simulated using \PYTHIA. These events also have the leptonic final state and may be picked as a $t\bar{t}$
+ candidate;
+ \item $Z/\gamma^{*} \rightarrow \tau\tau$ production, which was generated using \PYTHIA. Here the $\tau$-leptons decay further
+ to $e$, $\mu$ and neutrinos;
+ \item $Z/\gamma^{*} \rightarrow ee/\mu\mu$ production, generated using \PYTHIA;
+ \item associated $t\bar{t}\;+\; W/Z/\gamma$ production, simulated in \MG + \PYTHIA;
+ \item associated $W\;+\;jets$ production, generated using \MG + \PYTHIA;
+ \item QCD multijet processes, generated in \PYTHIA.
 \end{itemize}
+
+To be able to compare these generated background samples, they were normalized to the data integrated luminosity of 19.7 fb$^{-1}$ and
+to their production cross sections\cite{TWikiXSec}.
 
 The selection, which will be introduced in this section, is aiming to distinguish the $t\bar{t}$ events
 from the background processes exploiting physical features of each process.
+
+\section{Good Runs}
+
+For the work presented in this thesis the following CMS data samples were used:
+
+\begin{center}\label{tab:samples}
+  \begin{tabular}{| c c c |}
+    \hline
+    \textbf{Samples} & \textbf{Events} & \textbf{Run Range} \\ \hline
+    /MuEG/Run2012A-22Jan2013-v1/AOD & 2.5M & 190456 - 193621 \\ 
+    /MuEG/Run2012B-22Jan2013-v1/AOD & 15M & 193834 - 196531 \\
+    /MuEG/Run2012C-22Jan2013-v1/AOD & 21M & 198022 - 203742 \\
+    /MuEG/Run2012D-22Jan2013-v1/AOD & 22M & 203777 -  208686 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+Only the good runs from the LHC certified good run list\cite{JSON} are selected for the analysis out of these data sets.
 
 \section{$t\bar{t}$ Event Selection and Correction}\label{sec:sel}
 
 Various selection criteria and related scale factors are presented in this section.
 
-The results are presented in the control distributions. These plots show the comparison between the yields in the experimental data and the simulated MC samples.
+The results of the selection are presented in the control distributions. These plots show the comparison between the yields in the experimental data and the simulated MC samples.
 The various background sources are also presented separately in the distributions. The simulated yields are additionally scaled to the data luminosity of 19.7\;$fb^{-1}$.
 All the plots include the statistical uncertainties only.
 
@@ -60,12 +86,16 @@ All the selection requirements are summarized as follows:
  minimum transverse momentum of 17 GeV and 8 GeV.
  
  The Scale Factors connected to the trigger selection were applied on the MC double-differentially in bins of the two leptons rapidities. 
- %%%%% 
-%  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
- %%%%%
-%  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
- %%%%%
- \item [--] \textbf{Vertex requirement}: Only the ``hardest vertex'' (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
+ %%%% 
+ \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more then 10 in case at least quarter of them has high quality of reconstruction.
+ %%%%
+ \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
+ %%%%
+ \item [--] \textbf{Vertex requirement}: Events with at least one "good" primary vertex are selected.
+ This means that the number of associated tracks should be larger then 4 and a vertex should be positioned centrally in the detector
+ \footnote{Only the events with the vertex position $|z| < \textrm{24 cm}$ and $|\rho| < \textrm{2 cm}$ are accepted. All the coordinates
+ are given with respect to the CMS coordinate system (see sec.\ref{sec:CMS})}. Only the ``hardest vertex'' 
+ (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
  \\
  An additional weight correction depending on the event vertex multiplicity is applied on the MC. 
  The distributions presented in the figure \ref{fig:PUweight} show how the agreement
