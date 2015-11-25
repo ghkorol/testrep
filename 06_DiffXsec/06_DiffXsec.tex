@@ -4,10 +4,10 @@ The cross section measurement procedure and results are explained in this sectio
 After applying selection criteria and kinematic reconstruction, one can count the events to determine
 the rate of the $t\bar{t}$ production process.
 
-The cross sections were measured double differentially in bins of the kinematic variables of top-quark and $t\bar{t}$ system.
-The first section gives an overview of the background processes for the $t\bar{t}$ production.
-The two dimensional unfolding was applied to correct for the detector effect and fluctuations, which is described
-in the second section of this chapter.
+The cross sections were measured double differentially in bins of the kinematic variables of the top-quark and the $t\bar{t}$ system.
+The first section shortly describes the way how the background yields were subtracted.
+The two dimensional unfolding applied to correct for the detector effect and fluctuations is described
+in the second section.
 The double differential cross sections and their definitions are shown in the last section of the chapter.
 % \section{Selection of Binning}\label{sec:binning}
 
@@ -19,14 +19,10 @@ chapter \ref{chapt:kinReco}).
  N^{signal\;measured}_{reco} = N^{selected}_{reco} - N^{BG}
 \end{equation}
 
-Here the $N^{BG}$ corresponds to the number of background events. The background sources were introduced in sec. \ref{sec:bg_intro}.
+Here $N^{BG}$ corresponds to the estimated number of background events. The background sources were introduced in sec. \ref{sec:bg_intro}.
 
-Whereas all the background yields are only simulated, the estimated rate of the background caused by the Drell-Yan production is 
-partially data driven \cite{Chatrchyan:2011nb}. The normalization factor for the simulated Drell-Yan events is determined 
-from the comparison of the reconstructed and simulated $Z$-peak. 
-
-After subtracting all the other backgrounds, the number of signal events is multiplied by the factor to cancel the contribution
-from the other decay channels of $t\bar{t}$:
+After subtracting all the non-$t\bar{t}$ backgrounds, the number of signal events is multiplied by a factor to correct for the contribution
+from other decay channels of $t\bar{t}$:
 
 \begin{equation}\label{eq:bgsub}
  N^{signal}_{reco} = N^{signal\;measured}_{reco} \cdot \frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}.
@@ -40,8 +36,8 @@ from the simulated data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Unfolding of the Experimental Results}\label{sec:unfold}
 
-The events after the background  subtraction \ref{eq:bgsub} are grouped to the bins in different variables. However, a finite precision
-due to inevitable detector effects and imperfect reconstruction algorithms may lead to incorrect measurement of kinematic properties of the event.
+The signal yields after the background  subtraction \ref{eq:bgsub} are grouped to the bins in different variables. However, the kinematic properties
+of the events are measured with finite precision due to inevitable detector effects and imperfect reconstruction algorithms.
 Thus, some fraction of events may be reconstructed in the wrong bins. To present the results independent of the detector effects,
 one needs to correct them back.
 
@@ -51,11 +47,11 @@ The whole problem can be described as
  \tilde{y}_i = \sum_{j = 1}^{m} A_{ij}\tilde{x}_{j} + b_{i}, \;\;\; 1 \leq i \leq n.
 \end{equation}
 
-Here the $\tilde{x}_j$ in $m$ bins is a true distribution, independent of the detector effects, which is the aim of the measurement;
-$\tilde{y}_i$ in $n$ bins is a distribution which one gets out of the detector and $A_{ij}$ is a matrix of probabilities describing 
-the migrations to different bins on the detector level; $b_{i}$ is the background in the bin $i$. 
+Here the $\tilde{x}_j$ in $m$ bins denotes the true distribution, independent of the detector effects, which is the aim of the measurement;
+$\tilde{y}_i$ in $n$ bins is the distribution which one gets out of the detector and $A_{ij}$ is a matrix of probabilities describing 
+the migrations from true leven bin $j$ to detector level bin $i$ to different bins on the detector level; $b_{i}$ is the background in the bin $i$. 
 However, the observed event counts $y_{i}$ may be different from $\tilde{y}_{i}$ due to the statistical fluctuations.
-The schematic view of the problem is given in the Figure \ref{fig:scUnf}.
+A schematic view of the problem is given in the Figure \ref{fig:scUnf}.
 
 \begin{figure}[t]
   \centering
@@ -65,18 +61,18 @@ The schematic view of the problem is given in the Figure \ref{fig:scUnf}.
   \label{fig:scUnf}
 \end{figure}
 
-The process of restoring the true distribution $\tilde{x}_{j}$ from the known distribution $y_{i}$ which was influenced
-by the detector effects and statistical fluctuations is called \textit{unfolding}. To minify these fluctuations the 
+The process of estimating the true distribution $\tilde{x}_{j}$ from the observed distribution $y_{i}$ which was influenced
+by detector effects is called \textit{unfolding}. To minify the statistical fluctuations the smoothing  
 \textit{regularisation} procedure is applied. The TUnfold \cite{Schmitt:2012kp} algorithm was used for the
 unfolding in this analysis.
 
 \subsection{TUnfold Minimization}\label{ssec:TUmini}
 
-The TUnfold algorithm is using the least square minimization method and the Tikhonov regularization \cite{Tikhonov:1963}. One of the crucial 
-constrains for a better performance of the method is that the number of degrees of freedom for the minimization ($n - m$) has to be positive,
-or $n > m$. This means that the true unfolded distribution $\tilde{x}_j$ will have coarser binning than the measured one, $y_{i}$.
+The TUnfold algorithm is using a method based on least square minimization plus Tikhonov regularization \cite{Tikhonov:1963}. One of the ingredients 
+for a good performance of the method is that the number of degrees of freedom for the minimization ($n - m$) has to be positive,
+or $n > m$. This means that the unfolded distribution $\tilde{x}_j$ will have coarser binning than the measured one, $y_{i}$.
 
-The unfolding algorithm of the TUnfold determines the stationary point or minimum of the Lagrangian:
+The unfolding algorithm of the TUnfold determines the stationary point or minimum of the following Lagrangian:
 
 \begin{align}
  \mathcal{L}(x, \lambda) & = \mathcal{L}_{1} + \mathcal{L}_{2} + \mathcal{L}_{3}, \;\;\;\;\;\;\;\;\;\; \textrm{where}\\
@@ -87,17 +83,17 @@ The unfolding algorithm of the TUnfold determines the stationary point or minimu
  e_{j} & = \sum_{i} A_{ij}.
 \end{align}
 
-The bold symbols here correspond to the matrices and vectors.
+The bold symbols here correspond to matrices and vectors.
 
-The term $\mathcal{L}_{1}$ is expected for the minimization. Vectors $\mathbf{y}$, $\mathbf{x}$ and a matrix $\mathbf{A}$ were
-described in the previous section. Representing the migrations from and into different bins of $\mathbf{y}$, the matrix $\mathbf{A}$
-is defined from the Monte Carlo\footnote{A matrix $\mathbf{\tilde{A}}$ is
-determined from Monte Carlo using the information from the generator particle level and on the reconstructed signal. It describes how many 
-migrations there were out and into a certain bin. An extra "zero`` row is added
+The term $\mathcal{L}_{1}$ is expected for a least square minimization. The vectors $\mathbf{y}$, $\mathbf{x}$ and the matrix $\mathbf{A}$ were
+described in the previous section. Representing the migrations into different bins of $\mathbf{y}$, the matrix $\mathbf{A}$
+is defined from the $t\bar{t}$ signal Monte Carlo simulation\footnote{The matrix $\mathbf{\tilde{A}}$ is
+determined from Monte Carlo using the information from the generator particle level and on the reconstructed level. It describes how many 
+migrations there are out and into a certain bin. An extra "zero`` row is added
 to the matrix $\mathbf{\tilde{A}}$ containing the information about the count of Monte Carlo events which were generated in some bin of $\mathbf{x}$,
 but were not reconstructed in any of the $\mathbf{y}$ bins. \\ The matrix $\mathbf{A}$, which enters the unfolding, is the normalized $\mathbf{\tilde{A}}$
 defined as $\mathbf{A}_{ij} = \frac{\tilde{A}_{ij}}{\sum_{j=0}\tilde{A}_{ij}}$ (the normalization includes the "zero'' row).}. An example of such matrix 
-is presented in Fig. \ref{fig:migMat}. The $\mathbf{V_{yy}}$ is a covariance matrix of $\mathbf{y}$. 
+is shown in fig. \ref{fig:migMat}. The $\mathbf{V_{yy}}$ is the covariance matrix of $\mathbf{y}$. 
 
 \begin{figure}[p]
   \centering
@@ -111,11 +107,11 @@ is presented in Fig. \ref{fig:migMat}. The $\mathbf{V_{yy}}$ is a covariance mat
   \label{fig:migMat}
 \end{figure}
 
-The term $\mathcal{L}_{2}$ is responsible for the regularization. It is reducing the effect of the statistical fluctuations of $\mathbf{y}$
-during the search of the stationary point of the Lagrangian $\mathcal{L}$. The $\tau^{2}$ is the regularization strength. Matrix $\mathbf{L}$
-represents regularization conditions, having $n$ columns and $n_{R}$ rows which corresponds to $n_{R}$ conditions. $f_{b}$ is a normalization 
-factor. In a very simple case $f_{b} = 0$, $\mathbf{L}$ is a unity matrix and $\mathcal{L}_{2} = \tau^{2} \parallel x \parallel^{2}$, which
-suppresses the large deviations of $\mathbf{x}$ from zero. In case $f_{b} = 1$, the deviations of $\mathbf{x}$ from $\mathbf{x_{0}}$ are
+The term $\mathcal{L}_{2}$ is responsible for the regularization. It is reducing the effect of the statistical fluctuations from $\tilde{\mathbf{y}}$ on $\mathbf{x}$
+during the search of the stationary point of the Lagrangian $\mathcal{L}$. The $\tau^{2}$ is the regularization strength. The matrix $\mathbf{L}$
+represents the so-called regularization conditions, having $n$ columns and $n_{R}$ rows which corresponds to $n_{R}$ conditions. $f_{b}$ is a normalization 
+factor and $\mathbf{x_{0}}$ is the bias vector. In a very simple case $f_{b} = 0$, $\mathbf{L}$ is a unity matrix and $\mathcal{L}_{2} = \tau^{2} \parallel x \parallel^{2}$, which
+suppresses large deviations of $\mathbf{x}$ from zero. In case $f_{b} = 1$, the deviations of $\mathbf{x}$ from $\mathbf{x_{0}}$ are
 suppressed. For this analysis $f_{b} = 1$ is used and $x_{0}$ corresponds to the generated distribution. It is very important to choose 
 the optimal regularization strength, as a very weak strength would not damp the fluctuation effects from $\mathbf{y}$, whereas a very strong 
 one will bias $\mathbf{x}$ towards $f_{b}\mathbf{x}_{0}$. The L-curve method \cite{Hansen00thel-curve} and the minimization
@@ -235,7 +231,7 @@ to be used in this analysis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Double Differential $t\bar{t}$ Production Cross Sections}
 
-\subsection{Cross Section Definition}
+\subsection{Cross Section Definition}\label{ssec:xsec_def}
 
 After all the corrections are performed, the signal events grouped to different bins are used to define the normalized double differential cross sections
 of the $t\bar{t}$ production process:
@@ -312,7 +308,7 @@ It may be defined in two different ways:
 The cross sections are measured both in visible and full phase spaces, normalized and not normalized to the total cross section $\sigma$. 
 
 
-\subsection{Double Differential Production Cross Section Measurement}
+\subsection{Double Differential Production Cross Section Measurement}\label{ssec:xsec_mes}
 
 The production cross sections were measured double differentially in bins of top transverse momentum, rapidity and Bjorken $x_{1}$,
 which corresponds to the parton momentum transfered to the $t$-quark,
@@ -320,6 +316,10 @@ $t\bar{t}$ mass, rapidity and transverse momentum and the angles $\phi$ and $\et
 The binning was chosen to have enough entries in each bin at the detector level so that the error could be treated as Gaussian.
 It was also checked if the purity, stability and efficiency in each bin are not too low (see the explanation below).
 The regularization strength used to determine each set of the cross sections is listed in the appendix \ref{appendix:tau}.
+
+This sections is presenting only the normalized double differential $t\bar{t}$ production cross sections. The corresponding
+unnormalized cross sections are shown in the appendix \ref{appendix:unnorm_XSec}. All the numerical values for the cross sections
+and their uncertainties are listed in appendix \ref{appendix:xsec_table}.
 
 %%%
 \subsubsection{Cross sections in bins of $|y(t)|$ versus $p_{T}(t)$}
@@ -388,10 +388,19 @@ The overall good agreement between theory predictions and experimental results i
 worth.
 
 Fig. \ref{fig:corr_matr} presents the correlation matrix $\mathbf{V}_{xx}$ with correlation coefficients for the bins in which the 
-cross sections \ref{fig:XS_2D_y_pt} were calculated. There is almost no correlation between the neighboring bins, except for the highest $p_{T}(t)$
-bins (shown as the last bins in Fig. \ref{fig:corr_matr}). There is a strong correlation in rapidity observed, which is explained by the strong 
-anticorrelation in the last transverse momentum bins.
+cross sections \ref{fig:XS_2D_y_pt} were calculated. There is no strong correlation between the neighboring bins, except for the highest $p_{T}(t)$
+bins (shown as the last bins in Fig. \ref{fig:corr_matr}).
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/covX/histCovXnorm_top_arapidity_vs_top_pt.pdf}
+  \caption{Correlation matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
+  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
+          There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
+  \label{fig:corr_matr}
+\end{figure}
+
+The correlation matrices for all the other measurements described below are shown in appendix \ref{appendix:corr_m}.
 %%%
 
 \subsubsection{Cross sections in bins of $p_{T}(t\bar{t})$ versus $|y(t\bar{t})|$}
@@ -1139,64 +1148,6 @@ high $M(t\bar{t})$ bins are also poorly described. For the lower $x_{1}$ bin, \M
          The outer error bars are the combines statistical and systematical uncertainties on the data. The cross sections predicted different models are also presented:
          \MG + \PYTHIA (red line), \Powheg + \PYTHIA (blue line), \Powheg + \HERWIG (orange line) and \MCNLO + \HERWIG (green line).}
 \label{fig:XS_2D_x1_pttt1}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% %%%%%%%Corr matrices%%%%%%%
-% 
-% \begin{figure}[p]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
-%   \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t)$ and $|y(t)|$. The binning is the following:
-%   the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-%           There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
-%   \label{fig:corr_matr}
-% \end{figure}
-% 
-% \begin{figure}[p]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/top_arapidity-top_pt/rhoIJtotal_top_arapidity_vs_top_pt.pdf}
-%   \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$. The binning is the following:
-%   the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-%           There are 3 $|y(t)|$ bins -- $[0\:\:0.6\:\:1.2\:\:2.5]$ -- in each $p_{T}(t)$ bin.}
-%   \label{fig:corr_matr_pttt_ytt}
-% \end{figure}
-
-% \begin{figure}[p]
-%   \centering
-%   \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/rhoIJtotal_ttbar_mass_vs_top_pt.pdf}
-%   \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $|y(t)|$. The binning is the following:
-%   the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-%           There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $p_{T}(t)$ bin.}
-%   \label{fig:corr_matr_yt_Mtt}
-% \end{figure}
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-top_pt/rhoIJtotal_ttbar_mass_vs_top_pt.pdf}
-  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $p_{T}(t)$. The binning is the following:
-  the sequences of three bins (1-3, 4-6, 7-9, 10-12, 13-15) correspond to the $p_{T}(t)$ bins $[0\:\:65\:\:130\:\:200\:\:300\:\:500]$ GeV.
-          There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $p_{T}(t)$ bin.}
-  \label{fig:corr_matr_Mtt_pt}
-\end{figure}
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_eta/rhoIJtotal_ttbar_mass_vs_ttbar_delta_eta.pdf}
-  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $\Delta\eta(t\bar{t})$. The binning is the following:
-  the sequences of three bins (1-3, 4-6, 7-9) correspond to the $\Delta\phi(t\bar{t})$ bins $[0\:\:1.2\:\:2.6\:\:3.14]$ rad.
-          There are 3 $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV -- in each $\Delta\phi(t\bar{t})$ bin.}
-  \label{fig:corr_matr_eta_Mtt}
-\end{figure}
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=1.0\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/Plots/Nominal/emu/ttbar_mass-ttbar_delta_phi/rhoIJtotal_ttbar_mass_vs_ttbar_delta_phi.pdf}
-  \caption{Covariance matrix $\mathbf{V}_{xx}$ for the bins of $M(t\bar{t})$ and $\Delta\phi(t\bar{t})$. The binning is the following:
-  the sequences of three bins (1-3, 4-6, 7-9) correspond to the $M(t\bar{t})$ bins -- $[340\:\:450\:\:600\:\:1000]$ GeV.
-          There are 3 $\Delta\phi(t\bar{t})$ bins $[0\:\:1.2\:\:2.6\:\:3.14]$ rad -- in each $M(t\bar{t})$ bin.}
-  \label{fig:corr_matr_phi_Mtt}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
