@@ -1,4 +1,4 @@
-\chapter{Reconstruction of the $t\bar{t}$ Kinematics}\label{chapt:kinReco}
+\chapter{Reconstruction of the top-pair Kinematics}\label{chapt:kinReco}
 
 The two neutrinos are not detected, thus additional
 assumptions are needed to define the full final state kinematics of the $t\bar{t}$ reconstructed in dilepton decay channel.
@@ -65,15 +65,15 @@ or first order), as it was constructed, can not have analytically three or one r
 of the eq. \ref{eq:eqLSf}. However, due to the limited computing accuracy, there may be cases when two solutions are indistinguishable and treated as one. This phenomenon can create
 three out of four or one out of two solutions.
 
-The distribution of the number of solutions for the generated $t\bar{t}$ signal sample (\MG + \PYTHIA,
-see chapt. \ref{chapt:MC}) is shown in Figure \ref{fig:LSNsol}. Two (four) solutions per event are expected in approx. 80$\%$ (20\%) of the cases.
+The distribution of the number of solutions for the generated \MG + \PYTHIA $t\bar{t}$ signal sample 
+is shown in Figure \ref{fig:LSNsol}. Two (four) solutions per event are expected in approx. 80$\%$ (20\%) of the cases.
 The cases, when there are one or three solutions found, have a rate of about 0.1\%.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\textwidth]{05_kinReco/plots/KinReco_Nsolutions.png}
   \caption{Number of solutions of the equation \ref{eq:eqLSf}. The distribution is normalized to unity. The information used for this plot is taken
-  from the generator level MC used for this analysis.}
+  from the generated \MG + \PYTHIA $t\bar{t}$ signal for this analysis.}
   \label{fig:LSNsol}
 \end{figure}
 
@@ -216,7 +216,10 @@ To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps
 
 Only the events in which solutions of kinematic equations are found are accepted for this analysis. 
 Figure \ref{fig:EffSF} shows the efficiencies and scale factors for the $t\bar{t}$ kinematic reconstruction procedure depending on jet multiplicity in the event, 
-lepton and $b$-jets kinematics and missing transverse energy. The integrated efficiency of the kinematic reconstruction method is 93 $\%$. Overall, the scale factors 
+lepton and $b$-jets kinematics and missing transverse energy. The integrated efficiency of the kinematic reconstruction method is 93 $\%$. The remaining 7\%
+inefficiency originates from the events, where the kinematic reconstruction failed due to the wrong jet choice or due to the detector resolution.
+
+Overall, the scale factors 
 show a flat behavior depending on different variables, thus the value of 0.9909 for the scale factor is used for the analysis. This value was determined 
 out of the histogram with only one bin for the whole kinematic range.
 

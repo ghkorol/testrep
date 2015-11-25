@@ -25,7 +25,7 @@ Resulting event yields are represented in the control distributions, showing the
 
 \section{Background Sources}\label{sec:bg_intro}
 
-Not all of these events which have two leptons and two jets in the final state are the \textbf{signal events} 
+Not all of these events which have two leptons and two jets in the final state are signal events
 originating from the $t\bar{t}$ system decay in dileptonic channel. The final state, which can be 
 misidentified as $t\bar{t}$, may arise from a different process, called \textit{background}
 for the specific measurement. In this analysis the background rates are estimated from the simulation.
@@ -33,7 +33,8 @@ The following background processes are discussed in frames of this analysis:
 
 \begin{itemize}
  \item $t\bar{t}\rightarrow$other. This background source includes the other $t\bar{t}$ decay modes (see sec. \ref{ssec:tdecay}).
- \item single top production, which was simulated using \Powheg + \PYTHIA;
+ \item single top production, which was simulated using \Powheg + \PYTHIA. A top is produced in association a $W$ boson, which can be 
+ mistreated as a $W$ boson from the top decay. That is why the process of the $tW$ production can be misidentified as a $t\bar{t}$ production;
  \item Drell-Yan process, which was generated utilizing \PYTHIA. It can be mistreated as $t\bar{t}$ signal, as it also has a dileptonic
  final state signature. However, only the same flavour leptons are produced in Drell-Yan processes. Therefore, the fraction of these
  background events in the $e\mu$ final state is small;
@@ -49,6 +50,10 @@ The following background processes are discussed in frames of this analysis:
 
 To be able to compare these generated background samples, they were normalized to the data integrated luminosity of 19.7 fb$^{-1}$ and
 to their production cross sections\cite{TWikiXSec}.
+
+Whereas all the other background yields are only simulated, the estimated total rate of the background caused by Drell-Yan production is 
+partially data driven \cite{Chatrchyan:2011nb}. The normalization factor for the simulated Drell-Yan events is determined 
+from the comparison of the reconstructed and simulated $Z$-peak. 
 
 The selection, which will be introduced in this section, is aiming to distinguish the $t\bar{t}$ events
 from the background processes exploiting physical features of each process.
