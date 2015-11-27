@@ -20,10 +20,11 @@
 \usepackage{rotating}
 \usepackage{wrapfig}
 \usepackage{fancyhdr} 
-\fancyhf{}
-\cfoot{\thepage}
-\pagestyle{fancy} 
+% \fancyhf{}
+% \cfoot{\thepage}
+% \pagestyle{fancy} 
 
+\usepackage{booktabs}
 \usepackage[none]{hyphenat}
 \usepackage[morefloats=24]{morefloats}
 \usepackage{color}   %May be necessary if you want to color links
@@ -33,7 +34,7 @@
     linktoc=all,     %set to all if you want both sections and subsections linked
     linkcolor=blue,  %choose some color if you want links to stand out
 }
-%\usepackage{biblatex}
+
 
 % page settings
 \textwidth=16cm
@@ -123,6 +124,7 @@
 \input{10_appendices/unnorm_XSec.tex}
 \input{10_appendices/corr_m.tex}
 \input{10_appendices/xsec_table.tex}
+\input{10_appendices/syst_unnorm.tex}
 % 
 % bibliography
 \bibliographystyle{ieeetr}
