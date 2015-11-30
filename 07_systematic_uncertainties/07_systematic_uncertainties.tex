@@ -7,10 +7,6 @@ These are the sources of systematic uncertainties.
 To determine the systematic uncertainty the analysis is repeated with changed assumptions or corrections and compared
 to the nominal result. The systematic variations are applied on the MC only.
 
-As measurement of \textit{normalized} double differential production cross section $\frac{1}{\sigma} \frac{d\sigma}{dx\:dy}$
-is performed, where $x$ and $y$ are the corresponding kinematic observables, many systematic uncertainties cancel
-out. Only those effects which may influence the distributions shape are relevant to be taken to account.
-
 The systematic uncertainties may be divided into two classes:
 \begin{itemize}
  \item Experimental uncertainties: variations of the correction factors connected with some reconstruction procedure.
@@ -18,7 +14,8 @@ The systematic uncertainties may be divided into two classes:
 \end{itemize}
 
 This chapter gives a detailed overview of the systematic variations performed in the analysis. The way
-of determining the total systematic uncertainty is presented.
+of determining the total systematic uncertainty is presented. The sources of uncertainties, which are taken into
+account in this analysis, are relevant for the normalized differential cross sections measurements.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,8 +32,9 @@ of 1\%. The variation of the factor is performed within this uncertainty.
 
 \subsection{Pile-up Correction}
 
-The pile-up influences the reconstruction of the detector objects. The removal of the pile-up is thus an important procedure
-which has to be taken to account in the systematic uncertainties. Following the recommendations of \cite{TWikiSystPU} the
+% The pile-up influences the reconstruction of the detector objects. The removal of the pile-up is thus an important procedure
+% which has to be taken to account in the systematic uncertainties. 
+Following the recommendations of \cite{TWikiSystPU} the
 pile-up distribution was varied by $\pm$5\%.
 
 \subsection{Luminosity}
@@ -104,9 +102,10 @@ in this section.
 
 \subsection{Uncertainties Related to PDFs}
 
-The proton structure parametrization used in the vent generation are defined by the set of PDFs (see sec. \ref{ssec:tprod}). To check for possible biases 
-introduced by this choice a different set of PDFs, namely XXX, was used for the generator input and the analysis results
-were compared to the nominal ones. This procedure follows the expert's recommendations \cite{}.
+The uncertainty due to the chosen PDF model is estimated following the recommendations in \cite{Lai:2010vv}. There were 26 parameter variations
+performed and the uncertainties of the same sign\footnote{The sign of the systematic variation is determined by the deviation caused by this
+variation. If the variation gave higher results than the nominal ones, then the sign of this variation is "+``. If the variation resulted
+in lower cross section values, then the sign of this variation is "-".} of each variation were added in quadrature.
 
 \subsection{Uncertainties Related to the Hard Scattering Model}
 
@@ -149,7 +148,7 @@ adopted by the CMS experiment.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Determination of the Total Systematic Uncertainties}
+\section{Determination of the Total Systematic Uncertainties}\label{sec:syst_det}
 
 The total systematic uncertainty consists of the different experimental and model variations described above.
 Some of them give results with lower values compared to the nominal ones, and some of them higher.
@@ -169,10 +168,17 @@ $s$ different sources. The $\delta_{s,\;ij}^{high/low}$ are expressed the follow
 where $m = high$ if $\delta_{s,\;ij}^{m} \geq 0$ and $m = low$ if $\delta_{s,\;ij}^{m} < 0$ . 
 
 In case all the variations of a certain correction factor or assumption result only in higher (or lower) values 
-compared to the nominal result, the largest deviation is taken for the uncertainty.
+compared to the nominal result, the largest deviation is taken for the uncertainty. These numbers are presented
+in tables from appendix \ref{appendix:xsec_table}.
 
 All the uncertainties derived from the experimental and model systematic sources described in this chapter are listed in the tables in appendix \ref{appendix:syst_unnorm},
 for all the cross sections described in sec. \ref{ssec:xsec_mes} and appendix \ref{appendix:unnorm_XSec}. 
+
+% The final result is presented the following way:
+% 
+% \begin{equation}
+%  \textrm{Result}_{ij}\: = \: \textrm{Nominal Value}_{ij}\: \pm \: \textrm{Stats. uncertainty}_{ij}\:\: { }^{+\:\delta_{syst.\,total,\:ij}^{pos}}_{-\:\delta_{syst.\,total,\:ij}^{neg}}.
+% \end{equation}
 
 \subsection{Correlated and Uncorrelated Uncertainties}
 
@@ -185,19 +191,11 @@ The following uncertainties could be treated as uncorrelated:
 \begin{itemize}
  \item Jet Energy Scale uncertainties
  \item Jet Energy Resolution uncertainties
- \item PDF model uncertainties
  \item Hadrd scattering model uncertainties
  \item Hadronization and showering model uncertainties
 \end{itemize}
 
 All the other uncertainties should be treated as correlated.
-
-
-% The final result is presented the following way:
-% 
-% \begin{equation}
-%  \textrm{Result}_{ij}\: = \: \textrm{Nominal Value}_{ij}\: \pm \: \textrm{Stats. uncertainty}_{ij}\:\: { }^{+\:\delta_{syst.\,total,\:ij}^{pos}}_{-\:\delta_{syst.\,total,\:ij}^{neg}}.
-% \end{equation}
 
 % \subsection{Summary of Systematic Uncertainties}
 % 

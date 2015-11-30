@@ -368,7 +368,7 @@ The top quarks may be produced as single top quarks or in pairs.
 \subsubsection{Top Quark Pair Production}
 
 The dominant $t\bar{t}$ production mechanism in SM is the one via gluon fusion. This process is the strong interaction. In the QCD the inclusive production cross section of the $t\bar{t}$ pair
-from the proton-proton interaction can be expressed as follows \cite{Schilling:2012dx}:
+from the proton-proton interaction can be factorized as follows \cite{Schilling:2012dx}:
 
 \begin{equation} \label{eq:pptt}
  \sigma_{pp \rightarrow t\bar{t}} (s, m_{t}) = \sum_{i,j = q, \bar{q}, g} \int dx_{i} dx_{j} f_{i}(x_{i}, \mu_{f}^{2}) f_{j}(x_{j}, \mu_{f}^{2}) \cdot \hat{\sigma}_{ij \rightarrow t\bar{t}}(\hat{s}, m_{t}, \mu_{f}, \mu_{r}, \alpha_{s}).
@@ -379,14 +379,18 @@ energy for the $pp$ collision, $x$ is the parton momentum fractions with respect
 scales, $\hat{s} \sim sx_{i}x_{j}$ is the partonic center-of-mass energy, $\alpha_{s}$ is the strong coupling constant and  $f(x, \mu_{f}^{2})$ is the parton distribution
 function (PDF). 
 
-The formula \ref{eq:pptt} is a convolution of the proton densities and hard scattering cross sections. As the mass of the $t\bar{t}$ pair is high, the $\alpha_{s}$ turns out
+The formula \ref{eq:pptt} is a convolution of long-distance contributions (proton densities) and short distance contributions (hard scattering cross sections). 
+As the mass of the $t\bar{t}$ pair is high, the $\alpha_{s}$ turns out
 to be quite low (see Fig. \ref{fig:Alpha_s}), thus the perturbative expansion of the hard scattering cross sections is possible.
-The \textit{Parton Distribution Function}, or the \textit{PDF}, is depending on the parton flavour $i$, parton momentum
+The \textit{Parton Density Function}, or the \textit{PDF}, is depending on the parton flavour $i$, parton momentum
 fraction $x_{i}$ and the energy scale of the interaction. A PDF gives a probability that within the interaction of a given scale a parton with a given flavour $i$
-and momentum fraction $x_{i}$ will be found in a proton. According to the DGLAP evolution\cite{Altarelli:1977zs, Dokshitzer:1977sg, Gribov:1972ri}, it is a sum of the 
-densities of all the quark (valent and from the sea) and gluon constituents. 
+and momentum fraction $x_{i}$ will be found in a proton. PDFs can't be expanded in pQCD, thus need a parametrization, depending on $x$ and scale $Q$. The dependence
+on scale $Q$ is described in the DGLAP evolution\cite{Altarelli:1977zs, Dokshitzer:1977sg, Gribov:1972ri}. A scale is chosen arbitrary for particular needs.
+This scale is called a \textit{factorization scale} $\mu_{f}$.
+% , it is a sum of the 
+% densities of all the quark (valent and from the sea) and gluon constituents. 
 
-The proton densities can not be calculated in the perturabtive QCD. They are obtained as a result of experimental data fit.
+The proton densities are obtained as a result of experimental data fit.
 The PDFs are measured by different groups (for example, HERAfitter \cite{Alekhin:2014irh} or 
 CTEQ \cite{Pumplin:2002vw}). An example of the combined HERA PDFs is shown in Fig. \ref{fig:HERA_PDF}.
 

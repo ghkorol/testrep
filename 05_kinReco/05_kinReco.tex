@@ -169,7 +169,7 @@ missing transverse energy for the $i^{th}$ smearing will be expressed as followi
 \end{equation}
 
 Here the $E^{miss \; from \, reconstruction}_{T_{x,y}}$, $p^{jets \; not\,smeared}_{x,y}$, $p^{leptons\;not\,smeared}_{x,y}$ are the missing transverse energy and momenta
-components taken directly from the detector reconstruction (see chapt. \ref{chapt:event_selection}) without applying any variations; the $p^{jets\;i}_{x,y}$ and $p^{leptons\;i}_{x,y}$
+components taken directly from the detector reconstruction (see chapt. \ref{chapt:event_selection} and \ref{chapt:event_sel}) without applying any variations; the $p^{jets\;i}_{x,y}$ and $p^{leptons\;i}_{x,y}$
 are the smeared jets and leptons momenta respectively on the $i^{th}$ of the 100 variation step.
 
 \subsection{Single solution choice}
@@ -186,7 +186,7 @@ To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps
  $m^{\bar{l}b}$ and $m^{l\bar{b}}$ are the reconstructed invariant masses of the lepton-jet pairs from the top and the anti-top 
  decays, respectively. The distribution of the $m(l\bar{b}) \& m(\bar{l}b)$ is shown in Fig. \ref{fig:mlb}. 
  These weights are calculated from the spectrum of the lepton-jet pairs in top decays obtained from the signal MC on the 
- particle level after all kinematic cuts described in chapter \ref{chapt:event_selection}. This reduces the number of the possible candidates to maximum
+ particle level after all kinematic cuts described in chapter \ref{chapt:event_sel}. This reduces the number of the possible candidates to maximum
  $100 \otimes 4$.
  
  \begin{figure}[t]
@@ -295,7 +295,7 @@ the control distributions of the kinematic quantities of the top quark system. T
 shows a good agreement between experimental data and simulation in the small and middle $p_{T}$. However the higher $p_{T}$ range is not well
 described by the MC. A slight slope is observed in the data-to-MC ratio plot. The rapidity is well described by the simulation in the central region, 
 whereas for the edges MC slightly underestimates the data.
-An overall good agreement is observed in the Bjorken $x_{1}$\footnote{Bjorken $x_{1}$ is a fraction of a parton momentum transfered to a $t$ quark} 
+An overall good agreement is observed in the  $x_{1}$\footnote{ $x_{1}$ is a fraction of a parton momentum transfered to a $t$ quark} 
 distribution.
 
 \begin{figure}[h]
@@ -312,7 +312,7 @@ distribution.
   \centering
   \includegraphics[width=0.49\textwidth]{05_kinReco/plots/CP_x1.png}
 \end{subfigure}
-\caption{Control distributions of the top quark $p_{T}$ (top left), rapidity (top right) and Bjorken $x_{1}$ in the events 
+\caption{Control distributions of the top quark $p_{T}$ (top left), rapidity (top right) and  $x_{1}$ in the events 
  after the kinematic reconstruction. The experimental data with the error bars corresponding to the statistical uncertainties
  and simulated distributions of signal and different background are plotted. The bottom subplots represent the data-to-MC yield ratio distributions. 
  The distributions are presented for the $t$ quark only.}
@@ -342,4 +342,31 @@ observed for the higher mass values starting from 1400 GeV.
  after the kinematic reconstruction. The experimental data with the error bars corresponding to the statistical uncertainties
  and simulated distributions of signal and different backgrounds are plotted. The bottom subplots represent the data-to-MC yield ratio distributions.}
 \label{fig:CPkinTTbar}
+\end{figure}
+
+\section{Usage of the Kinematic Reconstruction in TOP-12-028}
+
+The kinematic reconstruction as described in this chapter has also been implemented into the analysis, which measured the single differential $t\bar{t}$
+production cross sections in the dilepton channel at $\sqrt{s} = $8 TeV, TOP-12-028 \cite{TWikiTOP12028} \cite{Khachatryan:2015oqa}. 
+It was an alternative to the kinematic reconstruction utilized in the measurement of the single differential $t\bar{t}$
+production cross sections in the dilepton channel at $\sqrt{s} = $7 TeV \cite{Chatrchyan:2012saa}, where no smearing of the leptons and 
+jets energies and directions were performed, and on the other hand the top-quark mass was scanned.
+
+The results obtained in TOP-12-028 exploiting the kinematic reconstruction are presented in fig. \ref{fig:xsec_top12028}.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{05_kinReco/plots/DiffXS_HypToppT.png}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{05_kinReco/plots/DiffXS_HypTTBarpT.png}
+\end{subfigure}
+\caption{Normalised differential $t\bar{t}$ production cross section as a function of the $p_{T}$ of the top quarks or antiquarks and $t\bar{t}$-pairs. 
+         The superscript 't' refers to both top quarks and antiquarks. The inner (outer) error bars indicate the statistical (combined statistical and 
+         systematic) uncertainty. The measurement is compared to predictions from \MG, \Powheg and \MCNLO Monte Carlo generators. The \MG prediction is 
+         shown both as a curve and as a binned histogram. The figures are taken from \cite{TWikiTOP12028} \cite{Khachatryan:2015oqa}.}
+\label{fig:xsec_top12028}
 \end{figure}
