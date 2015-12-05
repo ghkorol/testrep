@@ -1,41 +1,68 @@
 \chapter{Summary and Outlook}\label{chapt:conc}
 
-In this work, measurement the double differential $t\bar{t}$ production cross section in proton-proton collisions at 8 TeV was presented.
-The results were obtained after analyzing a data set collected by the CMS detector at the LHC in 2012, which corresponds to the 
-luminosity of 19.7 fb$^{-1}$. The measurement was done using only the $t\bar{t}$ pairs, which decay to the final state with an
-electron, muon, two $b$-jets and two neutrinos.
+\section{Summary}
 
-The kinematic reconstruction procedure was employed to reconstruct the full final state of the $t\bar{t}$ pair. It sets six constraints 
+A top-quark is the heaviest known elementary particle. It provides possibilities for unique probes of Standard
+Model due to its properties. A top-quark has a lifetime, which is shorter than the typical hadronization time.
+It decays before it can hadronize. Thus, the studies of a top-quark provide the knowledge of bare quark 
+properties.
 
-% In this work, a measurement of charm and beauty quark production in deep inelastic scattering at HERA was presented.
-% A data set collected by the ZEUS detector in the period from 2003 to 2007, corresponding to an integrated luminosity of \SI{354}{\per\pico\barn}, was analysed.
-% A secondary vertex technique was employed to tag heavy flavours.
-% The method makes use of the fact that charm and beauty hadrons have long lifetimes and large decay lengths, hence they can be separated from the light flavour background.
-% The advantage of the method is that no specific final state is required, every charm or beauty hadron decay with at least two charged tracks can be potentially reconstructed.
-% 
-% A detailed evaluation of the systematic uncertainties was performed in this thesis;
-% a substantial reduction of uncertainties from certain sources was achieved, compared to the previous study~\cite{Roloff}.
-% As an example, the systematics due to a large uncertainty on the ZEUS tracking efficiency was reduced thanks to dedicated studies of hadronic interactions performed in this work.
-% % The uncertainties on the acceptance determination were reduced by tuning of the Monte Carlo simulation to data.
-% 
-% Differential cross-sections of jet production in charm and beauty events were measured and compared to NLO QCD calculations in the fixed flavour number scheme.
-% Within uncertainties, an agreement between data and theory was found.
-% The central values of predictions for charm are however typically below the data.
-% 
-% The contributions $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ of charm and beauty quark production to the inclusive proton structure function $F_2$ were determined from the double differential cross sections.
-% NLO QCD predictions were used to extrapolate the cross sections from the visible to the full phase space.
-% % Reliable description of the shape of the cross sections in the jet transverse energy \ETjet and pseudorapidity \etajet ensure reliability of this procedure.
-% The obtained results can be compared to theory predictions in various schemes.
-% The extracted $F_2^{b\overline{b}}$ represent the most precise measurement among the published HERA results.
-% The $F_2^{c\overline{c}}$ is competitive  compared to the previous measurements.
-% In future, these data will be used for the combination of H1 and ZEUS results
-% which will be the ultimate results on $F_2^{c\overline{c}}$ and $F_2^{b\overline{b}}$ from HERA.
-% A QCD analysis of them can potentially improve understanding of heavy flavour production as well as allow more precise determinations of the quark masses.
-% 
-% The work was also devoted to beam test studies of the ATLAS pixel sensors, within the Insertable B-layer (IBL) upgrade programme.
-% The test beam data analysis software EUTelescope was extended, which allowed efficient analysis and characterisation of ATLAS pixel sensors.
-% At CERN SPS, a simultaneous beam test characterisation of two sensor types, the Planar and 3D was performed with the EUDET pixel telescope.
-% Usage a single experimental setup ensured that all conditions are the same and hence the results are comparable.
-% The results that were obtained such as the hit efficiency or charge collection were consistent to the previous studies,
-% thus ensuring understanding of the new tools, which was an important step in the programme.
-% The ATLAS pixel data acquisition system for IBL beam tests called USBPix was integrated to the EUDET Telescope, allowing its usage for final IBL testbeams.
+In this work, normalized double differential cross sections for the $t\bar{t}$ production in the electron-muon final state 
+in proton-proton collisions at 8 TeV are presented.
+The results were obtained after analyzing a data set collected with the CMS detector at the LHC in 2012, which corresponds to a 
+luminosity of 19.7 fb$^{-1}$.
+
+A kinematic reconstruction procedure was employed to reconstruct the full final state of the $t\bar{t}$ pair. It is based on six constraints:
+top- and antitop-quark mass constraint, $W^{\pm}$ mass constraint and the assumption that all the MET in the event is arising
+from top neutrinos only. These assumptions allow to solve the system of kinematic equations analytically. The kinematic reconstruction
+algorithm requires lepton, antilepton, $b$-jet, $\bar{b}$-jet momenta and MET as an input. To account for possible fluctuations due 
+to detector effects, the energies and directions of leptons and $b$-jets were smeared 100 times. The output of the kinematic reconstruction
+algorithm are neutrino and antineutrino momenta.
+
+The kinematic reconstruction algorithm is performing with 93\% efficiency. The reconstructed kinematics of the top- and antitop-quarks
+show, according to MC simulations, no biases and trends. This kinematic reconstruction algorithm was also employed to obtain the 
+results in the recent publication related
+to the measurement of the single differential $t\bar{t}$ production cross sections in the dilepton channel at $\sqrt{s} = $8 TeV
+at CMS \cite{Khachatryan:2015oqa}.
+
+The central topic of this work is the first measurement of the normalized double differential $t\bar{t}$ production cross 
+sections at $\sqrt{s}$ = 8 TeV. This measurement is important to test Standard Model predictions. Detailed knowledge of the 
+top-pair production properties is also important for searches beyond SM.
+
+The normalized double differential $t\bar{t}$ production cross sections were measured in bins of 10 different combinations of
+variables, which describe top or top-pair kinematics. The precision of these measurements allows the visual comparison to different 
+Standard Model predictions implemented to $\MG+\PYTHIA$, $\Powheg+\PYTHIA$, $\Powheg+\HERWIG$ and $\MCNLO+\HERWIG$ Monte Carlo
+event generators. In general, no significant disagreements between Standard Model predictions and measured double differential
+$t\bar{t}$ production cross sections.
+
+The results show that the top-quark transverse momentum is generally softer in data than in the MC predictions for the central
+top-quark rapidity bins. The best description of the top-quark transverse momentum spectra is provided by the $\Powheg+\HERWIG$
+model.
+
+The cross sections in bins of $p_{T}(t)$ and $|y(t)|$ are generally poorly described by the models for the higher invariant masses
+of the top-quark pairs.
+
+The angular distributions, $\Delta\eta(t\bar{t})$, show that the top and antitop quarks in data are more often back-to-back
+than in Monte Carlo predictions. This effect is more pronounced in $\MG+\PYTHIA$. This tendency may point to the dominance of
+hard scale component in irradiation in the Monte Carlo models.
+
+The relevant sources of systematic uncertainties for the normalized cross section measurement were taken to account in this analysis.
+The result showed that the measurement is dominated by statistical uncertainties.
+
+To account for the migrations between different bins, a two-dimensional unfolding is performed. In this work the TUnfold 
+algorithm\cite{Schmitt:2012kp} (based on $\chi^{2}$ minimization and Tikhonov regularization \cite{Tikhonov:1963}) is utilized. 
+The minimum global correlation coefficient method\cite{VBlobelT} is exploited to choose the 
+optimal regularization strength. The unfolding is performed simultaneously in bins of two variables in which the cross
+sections are measured.
+
+This measurement confirmed the observations made previously in single differential $t\bar{t}$ production cross section measurement
+at $\sqrt{s}$ = 8 TeV\cite{Asin2014Auth} in dileptonic final state. The same tendency to the softer $p_{T}$ of the top-quark in 
+data is seen similarly to what has been presented in this work.
+
+\section{Outlook}
+
+The measurement of double differential $t\bar{t}$ production cross section, as presented in this work, is dominated by the statistical
+uncertainty. There is a room for improvement with exploiting the upcoming data set, which is going to be collected at the high-energy LHC
+run with the collision center-of-mass energy of $\sqrt{s}$ = 13-14 TeV. A more intense top-pair production is expected, which will ensure
+a higher statistics in the data samples to be analyzed. A better precision gained in this way will allow to confirm the tendencies 
+observed in this analysis and to perform the test of Standard Model predictions in more detail.

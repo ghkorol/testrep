@@ -1,14 +1,14 @@
 \chapter{Monte Carlo Simulation}\label{chapt:MC}
 
-To analyze the data from the large particle physics experiment, modeling of the events and the detector
-plays an essential role. The processes of the $pp$ interaction and particle production are usually complicated
-to resolve analytically. The same applies to the interactions within the detector volume. However, these 
+To analyze the data from a large particle physics experiment, modeling of the events and the detector
+plays an essential role. The processes of the $pp$ interaction and particle production are usually too complicated
+to describe every aspect analytically. The same applies to the interactions within the detector volume. However, these 
 tasks can be solved with the help of Monte Carlo (MC) simulation programs. These programs can be used to predict
 the event yields and detector performance, to estimate the detector efficiencies, background processes rates etc.
 
-In frames of this analysis it is needed to simulate the whole process of $pp \rightarrow t\bar{t} \rightarrow \bar{l}\nu bl\bar{\nu}\bar{b}$
-in all the subprocesses (see Fig. \ref{fig:pp_all}). Therefor first the hard scattering tool has to be applied to simulate the collision and
-production of the partons. The parton showering tools have to be applied to describe the electromagnetic and QCD
+In this analysis it is needed to simulate the whole process $pp \rightarrow t\bar{t} \rightarrow \bar{l}\nu bl\bar{\nu}\bar{b}$ 
+and including the subsequent reaction steps (see Fig. \ref{fig:pp_all}). Therefore first a hard scattering tool has to be applied to simulate the collision and
+production of the partons. Then parton showering tools have to be applied to describe the electromagnetic and QCD
 radiation of the final step particles. In the end of the process all the radiation finishes with forming the 
 hadrons. There is also a possibility of interaction with the proton remnants. This interaction is described with
 the underlying event process.
@@ -21,13 +21,13 @@ the underlying event process.
 \end{figure}
 
 There are a number of general-purpose Monte Carlo (GPMC) generators (HERWIG \cite{Corcella:2000bw}, \PYTHIA6 \cite{Sjostrand:2006za}, SHERPA \cite{Gleisberg:2003xi})
-on the market, which provide fully exclusive simulation of high-energy collisions. They consist of several components,
+on the market, which provide a full simulation of high-energy collisions. They consist of several components,
 which describe the process starting from the very small distance scale up to the scale of hadrons and their decays. 
 
 To finalize the analysis modeling, after simulating the particle production and decay processes, it is necessary 
-to push the products of these simulation through a model-detector. The model-detector simulated all the particles 
-interaction with matter and possible noises. Such a detector model can be used also to predict the performance 
-of the future facilities.
+to ``push" the products of these simulation through a model-detector. The model-detector simulates the interaction of particles 
+with the detector materials and the detector response including noise. Such a detector model can be used also to predict the performance 
+of future facilities.
 
 This chapter gives a brief overview of the processes which were simulated for this analysis, and tools used for 
 the simulation.
@@ -39,21 +39,20 @@ for this analysis are listed and briefly described.
 
 \subsection{Hard Scattering Models}
 
-The \textit{hard scattering} describes the interaction of partons, which emerged out of the proton (in the case of 
-this analysis - two gluons or quark-antiquark pair) and take part in the production process which is being studied.
+The \textit{hard scattering} describes the interaction of partons, which emerged out of the proton (in the case of this analysis 
+-- two gluons or quark-antiquark pair) and take part in the production process which is being studied. The initial momenta 
+of partons are to be chosen randomly according to the used PDFs.
 
 The parton interaction is taking place in the high energy regime, so that $\alpha_{s} \ll 1$ (see sec. \ref{sec:strong_int}). 
-This allows the perturbative calculations of the process -- expansion the equations according to the order of $\alpha_{s}$.
-Thus, the processes of hard interaction may be calculated in different orders of $\alpha_{s}$: the higher the order accepted
-for the calculations, the more precise the calculation should be. However, there are many subtleties with calculating the 
+This allows to perturbativly calculate of the process in different orders of $\alpha_{s}$: the higher the order accepted
+for the calculations, the more precise the calculation should be. However, there are many subtleties with calculating 
 higher orders, that is why the MC generators are usually limited to LO or NLO calculations.
 
-The initial momenta of partons are to be chosen taking to account the PDFs.
 
 \subsection{Parton Showering}
 
-The hard scattering models are fixed to some order of perturbative calculations. This is not sufficient to describe the 
-whole picture of the event. That is why the special \textit{parton showering} techniques were developed to simulate the 
+The hard scattering models are restricted to some order of perturbation theory. This is not sufficient to describe the 
+whole picture of the event. That is why the special \textit{parton showering} techniques were developed to simulate 
 higher order effects. It describes the irradiation of the colored objects in the initial (partons) and final state,
 following the momentum transfer from the higher interaction scales down to the lowest scales of confinement (hadronization) --
 to the order of 1 GeV.
@@ -71,30 +70,30 @@ state of the hard scattering.
  the process such that the colored objects out of the shower collapse back to the initial partons out of the protons.
 \end{itemize}
 
-Now if the parton shower is simply added to the hard scattering, the same process can be modeled twice. Some radiation
-may be already taken to account in the hard interaction but it is still produced in the parton showering. This means 
-there has to be a way to allow only one mechanism to produce this process.
+If the parton shower is simply added to the hard scattering, the same process can be modeled twice. Some radiation
+may be already taken to account in the hard interaction but it is still produced in the parton showering. The problem 
+is treated by employing matching mechanisms \cite{Buckley:2011ms}.
 
 \subsection{Hadronization Models}
 
 In context of the MC generators, the \textit{hadronization} is the process by which a set of colored objects (after showering)
 is transformed into color-singlet particles, hadrons, which can further decay into another hadrons. This transition is non-perturbative
-with the scale $Q_{had}$ (with $\alpha_{s} \sim 1$), which is identical to she shower energy limit. Thus, the full QCD calculations
+with the scale $Q_{had}$ (with $\alpha_{s} \sim 1$), which is identical to she shower energy limit. Thus, full QCD calculations
 are not possible. The hadronization scale may be defined slightly different in different generators.
-
-The main difference between the MC hadronization model and fragmentation function description of hadronization in QCD, is that former
-is defined only at the hadronization scale, while the letter is defined at any scale.
+% 
+% The main difference between the MC hadronization model and fragmentation function description of hadronization in QCD, is that former
+% is defined only at the hadronization scale, while the letter is defined at any scale.
 
 There are two models which may be the basis for the MC generator hadronization:
 
 \begin{itemize}
  \item \textbf{String model}. The basics for this model were taken from the string model of elementary particle physics \cite{Artru:1974hr}.
- the main feature being exploited is that the so called \textit{linear confinement}, or that the potential of the color dipole 
- between the color and anticolor is growing with separation of the charges on the distances of about a femtometer.
+ The main feature being exploited is that the so called \textit{linear confinement}, or that the potential of the color dipole 
+ between the color and anticolor is growing linearly with the separation of the color charges up to distances of about a femtometer.
  
  One of the most popular generator string models is the \textit{Lund model}. The linear color potential between the quarks is 
- expressed as $V(r) = \kappa r$, which can be described as a string with tension $\kappa \sim 1\,GeV/fm \sim 0.2\,GeV^{2}$. 
- The Coulomb interaction is neglected in the Lund model. The physical picture of this potential is the colored tube between quark
+ expressed as $V(r) = \kappa r$, which can be described as a string with tension $\kappa \sim 1\,\text{GeV}/fm \sim 0.2\,\text{GeV}^{2}$. 
+ The Coulomb interaction is neglected in the Lund model. The physical picture of this potential is a colored tube between quark
  and antiquark. As the quarks start to separate in space, the string grows and finally breaks via the process of a new quark-antiquark
  pair creation, $(q\bar{q}) \rightarrow (q\bar{q}') + (q')\bar{q}$. The illustration of this process is shown in Fig. \ref{fig:Lund}.
  
@@ -102,24 +101,24 @@ There are two models which may be the basis for the MC generator hadronization:
   \centering
   \includegraphics[width=0.8\textwidth]{03_simulation/plots/Lund_hadr.pdf}
   \caption{Illustration of string breaking by quark pair-creation in the string field. Black spots are the quarks and the red
-  stripes are the field illustration.}
+  strips are the field illustration.}
   \label{fig:Lund}
  \end{figure}
  
- The gluons are represented with the transverse kinks in the strings. They have to be connected to the field strings from both
- sides, while quarks have the connection only from one side.
+ The gluons are represented with transverse kinks in the strings. They have to be connected to the field strings from both
+ sides, while quarks have connection only from one side.
  
- The mechanism described above is producing mesons, as the states with two quarks are formed. The baryons can be also produced
- in Lund model, but in the process where the string breaking produces the pair of diquarks.
+ In the mechanism described above the mesons are produced if after the string breaking states with two quarks are formed. 
+ The baryons can be also produced in the Lund model, but in the process where the string breaking produces a pair of diquarks.
  
- The hadronization stops after reaching the point when there is not enough energy to create a hadron.
+ The hadronization stops after reaching the point when there is not enough energy to create another hadron.
  
  \item \textbf{Cluster model}. This hadronization model is based on the \textit{preconfinement} \cite{Amati:1979fg}, or the
- observation that the color-singlet parton subsystems, called \textit{clusters}, occur with the universal mass distribution
+ observation that the color-singlet parton subsystems, called \textit{clusters}, occur with universal mass distribution
  depending only on the scale $Q_{0}$ at which they were formed, and not on the starting scale of the showering.
  
- The other key idea of the model is that the gluons are forced to split into quark-antiquark pair at the end of the parton shower.
- The clusters formed by the gluon splitting are then forced to decay into the on-shell hadrons.
+ The other key idea of the model is that the gluons are forced to split into a quark-antiquark pair at the end of the parton shower.
+ The clusters formed by the gluon splitting are then forced to decay into on-shell hadrons.
  
 \end{itemize}
 
@@ -145,12 +144,12 @@ might also differ from generator to generator.
 
 \subsection{Underlying Event}
 
-The \textit{underlying event} (UE), in terms of the MC generators, is the activity beyond the basic process, like multiple parton-parton interactions
+The \textit{underlying event} (UE), is, in terms of the MC generators, the activity beyond the basic process, like multiple parton-parton interactions
 (MPI) between the beam particles. The MPI may sometimes give a rise to two or more back-to-back jets (if there were more hard parton-parton interactions
 in one proton-proton collision). This case is, however, very rare. The main impact is coming from the soft MPI. They may affect, for example, the 
-missing $E_{T}$ distribution or increase the activity in forward direction (break-up of the beam remnants).
+missing $E_{T}$ distribution or increase the activity in the forward direction (break-up of the beam remnants).
 
-The first and the basic Monte Carlo model for the UE is given in \cite{PhysRevD.36.2019}. There are some basic assumptions involved into
+The basic Monte Carlo model for the UE is given in \cite{PhysRevD.36.2019}. There are some basic assumptions involved into
 this model, like, for example, the interactions can't use more momentum than it is available in the parent hadron (proton in case of this analysis).
 
 The UE models are usually tuned to the experimental conditions and on experimental data. The model derived on the CMS data collected at $\sqrt{s} = 0.9\, TeV$
@@ -160,15 +159,14 @@ and $\sqrt{s} = 8\,TeV$ is called the $Z2*$ model \cite{Chatrchyan:2011id}.
 \subsection{Monte Carlo Generators}
 
 After describing the main principles behind the MC simulation of the events for the experiments in the field of elementary particle
-physics, the list of the generators used for this analysis will be given.
+physics, the list of the generators used for this analysis will be given in the following:
 
 \subsubsection{$\PYTHIA$ 6}
 
-\PYTHIA \cite{Sjostrand:2006za} is the general-purpose event generator. It is set to describe the collisions between hadrons
-or the same generation leptons. \PYTHIA includes more than 200 hardcoded
-hard subprocesses, which include the Standard Model events but also some exotic and beyond Standard Model processes \cite{Buckley:2011ms}.
+\PYTHIA \cite{Sjostrand:2006za} is a general-purpose event generator. It models the $pp$, $e^{-}p$ and $e^{+}e^{-}$ collisions. \PYTHIA includes more than 200 hardcoded
+hard subprocesses, which include the Standard Model reactions but also some exotic beyond Standard Model processes \cite{Buckley:2011ms}.
 
-For this analysis \PYTHIA is used with the LO QCD accuracy.
+The matrix elements of the hard parton scattering are calculated in \PYTHIA in LO QCD accuracy.
 
 For the parton showering, the kinematic limit is set on the transverse momentum related variables.
 
@@ -178,12 +176,12 @@ The $Z2*$ model for the UE simulation is conventionally used in \PYTHIA for the 
 
 \subsubsection{$\HERWIG$}
 
-\HERWIG \cite{Corcella:2000bw} is a general-purpose generator as \PYTHIA. It can model hadron-hadron, lepton-lepton and hadron-lepron collisions.
+\HERWIG \cite{Corcella:2000bw} is a general-purpose LO matrix element plus parton shower generator as \PYTHIA. It can model hadron-hadron, 
+lepton-lepton and hadron-lepton collisions.
 
-\HERWIG is able to produce a fairly large variety Standard Model QCD and electroweak processes and elementary subprocesses beyond the standard model.
-For this analysis this generator is used with the LO precision.
+\HERWIG is able to produce a fairly large variety of Standard Model QCD and electroweak processes and elementary subprocesses beyond the standard model.
 
-The parton showering is limited by the scale $Q^{2} \sim 1 - cos\theta$, where $\theta$ is an angle between the parent and emitted partons.
+The parton showering is limited by the scale $Q^{2} \sim 1 - \cos\theta$, where $\theta$ is the angle between the parent and emitted partons.
 
 The cluster model is used for the hadronization in \HERWIG.
 
@@ -191,12 +189,12 @@ The model for the UE used by \HERWIG was originally derived by ATLAS and is call
 
 \subsubsection{MadGraph}
 
-Unlike \PYTHIA and \HERWIG, \MG is not a general-purpose generator. It is used to generate the hadron-hadron $pp$ and $p\bar{p}$ collisions.
-It gives the LO precision outcome for the hard processes with maximum 8 particles in the final state. 
+\MG is another general-purpose generator. It can be used to generate the hadron-hadron $pp$ and $p\bar{p}$, as well as the other types of collisions.
+It gives the LO precision outcome for hard processes with up to 8 particles in the final state. 
 
-\MG is a matrix element generator. It doesn't include hadronization and provides only leptons, quarks and gluons as the result. These outcome
-is afterwards interfaced to some general-purpose generator to generate the rest of the information. The combination \MG+\PYTHIA provides a better
-results compared to \PYTHIA only, as the \MG hard interaction is more specifically tuned for the needs of hadron-hadron collisions. 
+\MG is a pure matrix element generator. It doesn't include hadronization and provides only leptons, quarks and gluons as outgoing hard particles. 
+This outcome is afterwards interfaced to some general-purpose generator to generate further steps (parton showering, hadronization). The combination $\MG+\PYTHIA$ 
+provides a better results compared to \PYTHIA only, as the \MG hard interaction is more specifically tuned than \PYTHIA for the needs of hadron-hadron collisions. 
 
 The problem of double counting of objects in showering, while interfacing \MG to the general-purpose generator, is solved with the help of the 
 MLM scheme \cite{Mrenna:2003if}.
@@ -204,7 +202,7 @@ MLM scheme \cite{Mrenna:2003if}.
 \subsubsection{Powheg}
 
 The \Powheg (Positive Weight Hardest Emission Generator) event generator \cite{Frixione:2007vw} provides the modeling of the hard interaction 
-with the NLO accuracy. The \Powheg method doesn't have parton showering included. Thus, it has to be also interfaced with \PYTHIA or
+with the accuracy. The \Powheg method doesn't have parton showering included. Thus, it has to be also interfaced with \PYTHIA or
 \HERWIG for a full event description.
 
 \subsection{MC@NLO}
@@ -220,9 +218,10 @@ lepton pairs and associated $H+W/Z$.
 
 \section{Detector simulation}
 
-After the bare event with all the particles was simulated, it can be pushed through a detector simulation. That means that all of the particles 
-will interact with the material and fields of the model of a real detector. This allows the close to experimental measurements, estimation of the 
-detector efficiencies and performance, prediction of the performance and comparison of the theoretical models encoded in the event generators to
+After the bare event with all the particles was simulated, it can be ``pushed through" a detector simulation. That means that all of the particles 
+will interact with the materials and fields of the model of a real detector. This allows estimation of 
+detector efficiencies and smearing of observables such as particles energies, prediction of the performance and comparison of the theoretical 
+models encoded in the event generators to
 the experimental measurements. The simulation of the detector is performed by means of the Geant simulation toolkit.
 
 \subsubsection{Geant 4}
@@ -233,16 +232,16 @@ tracking of particles through materials and electromagnetic fields, the physics 
 sensitive detector components, the storage of events and tracks, the vizualization of detector and particle trajectories and the analysis of
 the data on different levels of details.
 
-Geant can handle the particle interactions on a very wide energy scale. It also includes a large amount of known particle interaction models
-from all over the world.
+Geant can handle the particle interactions on a very wide energy scale. It also includes a large amount of known particle interaction models.
 
-For the needs of the CMS experiment it was also tuned to correct the deviations between the experimental data and simulation.
+For the needs of the CMS experiment Geant4 is also used for the detector simulation, which allowed to correct the deviations between the experimental 
+data and simulation.
 
-An example of the display of fully simulated event is shown in Fig. \ref{fig:Evt_display}.
+An example of the display of a fully simulated event is shown in Fig. \ref{fig:Evt_display}.
 
  \begin{figure}[h]
   \centering
   \includegraphics[width=1.0\textwidth]{03_simulation/plots/CMS1stEvent.png}
   \caption{Display of the simulated event in the CMS detector model.}
-  \label{fig:Lund}
+  \label{fig:Evt_display}
  \end{figure}
