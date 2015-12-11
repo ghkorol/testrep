@@ -52,7 +52,7 @@ the differences between Drell-Yan and $t\bar{t}$ event topologies \cite{AN-2012-
 
 $p_{T}$ and $\eta$ dependent jet energy scale correction uncertainties are taken from \cite{CMS-PAS-JME-10-010}, which are of the
 order of a few percent. The simulated jet energy was scaled up and down by the values of these uncertainties. The missing energy in the 
-event is recalculated correspondingly to the change of the jet energies values.
+event is recalculated correspondingly to the change of the jet energy values.
 
 \subsection{Jet Energy Resolution}
 
@@ -63,13 +63,13 @@ The jet energy resolution has been rescaled by $\eta$ dependent factors followin
 The uncertainties due to the $b$-tagging algorithm is taken into account by the $b$-tag scale factors variations within their estimated
 uncertainties \cite{CMS-PAS-BTV-13-001}. The variations are performed antagonistically depending on the $p_{T}$ and $|\eta|$ of the jets.
 This means that if the $p_{T}$ of the jet was greater than a median value (65$\;$GeV for $b$- and $c$-jets and 45$\;$GeV for light-jets) then 
-the $b$-tagging scale factor was varied down by it's uncertainty and if the $p_{T}$ of the jet is larger than the median -- the $b$tagging 
+the $b$-tagging scale factor was varied down by it's uncertainty and if the $p_{T}$ of the jet is larger than the median -- the $b$-tagging 
 scale factor was varied up by it's uncertainty. The same strategy is performed also versus $|\eta|$
 of the jets. The median value for the jet $|\eta|$ is 0.75 for all the jets flavours.
 
 The variations of the $b$-tagging scale factors in $p_{T}$ and $\eta$ are considered as fully uncorrelated and are added
 quadratically to the systematic uncertainty. The variations depending on the jet flavours $c$ and $b$ are considered to be 
-fully correlated and the largest of them is taken, while the variation depending on heavy or light jet flavour are treated as uncorrelated.
+fully correlated and the largest of them is taken, while the variation depending on the heavy or light jet flavour are treated as uncorrelated.
 
 \subsection{Missing Transverse Energy Uncertainty}
 
@@ -78,25 +78,25 @@ after each variation connected to the jets or leptons kinematics. This matches w
 
 \subsection{Uncertainty Related to the $t\bar{t}$ Kinematic Reconstruction}
 
-The scale factors related to the $t\bar{t}$ kinematic reconstruction were presented in sec. \ref{sec:kinRecPerf}. They were varied 
-within their errors to estimate the related systematic uncertainty.
+The uniform scale factor related to the $t\bar{t}$ kinematic reconstruction was presented in sec. \ref{sec:kinRecPerf}. It was varied 
+within its errors to estimate the related systematic uncertainty.
 
 \subsection{Uncertainty on the Background Normalization}
 
 The normalization of each background is scaled up and down by 30$\%$\cite{Asin2014Auth}. This conservative variation covers both the 
-total normalization uncertainty and local deficiencies mismodelling of the shapes of the distributions. 
+total normalization uncertainty and local deficiencies due to mismodelling of the shapes of the distributions. 
 
 \subsection{Branching Ratio}
 
-The uncertainties on the branching ratios of the $W$ decays are propagated from their individual uncertainties.
+The uncertainties on the branching ratios of the $W$ decays are propagated from their individual uncertainties \cite{PDG-2012}.
 They largely cancel for the normalized cross sections.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model Uncertainties}
 
-Model uncertainty is defined by using for the unfolding of double differential cross section different $t\bar{t}$ simulation signal 
-obtained from the different generators and/or setting
+The model uncertainty is defined by using for the unfolding of double differential cross sections different $t\bar{t}$ signal simulations 
+obtained from different generators and/or setting
 different parameters for the generator input. A summary of all the uncertainties taken to account in this analysis is presented 
 in this section.
 
@@ -109,40 +109,41 @@ in lower cross section values, then the sign of this variation is "-".} of each 
 
 \subsection{Uncertainties Related to the Hard Scattering Model}
 
-The nominal $t\bar{t}$ MC sample used for this analysis is generated exploiting $\MG+\PYTHIA$. Hard scattering model is simulated
-in \MG with the LO precision. The systematic variation was performed using \Powheg instead of \MG for the hard scattering simulation.
+The nominal $t\bar{t}$ MC sample used for this analysis is generated with $\MG+\PYTHIA$. The hard scattering model is simulated
+in \MG with LO precision. A systematic variation was performed using \Powheg instead of \MG for the hard scattering simulation.
 \Powheg is also interfaced with \PYTHIA for the showering simulation. All the differences between the results produced with $\MG+\PYTHIA$
-and $\Powheg+\PYTHIA$ are assumed to originate only from the difference in hard scatter model. The performance of \PYTHIA is assumed 
+and $\Powheg+\PYTHIA$ are assumed to originate only from the difference in the hard scattering model. The performance of \PYTHIA is assumed 
 to be the same in both samples.
 
 \subsection{Hadronization and Parton Showering Model Uncertainties}
 
 As discussed in chapter \ref{chapt:MC}, \PYTHIA and \HERWIG generators have different algorithms for parton showering and hadronization.
 Thus, the generated $t\bar{t}$ signal samples interfaced with \PYTHIA and \HERWIG are compared to measure this uncertainty. In this work
-the samples generated with $\MCNLO+\HERWIG$ and $\Powheg+\PYTHIA$ were compared. Both, \MCNLO and \Powheg are generating hard scattering
-with NLO precision, so they are assumed to have similar performance. Thus, all the differences in the results measured exploiting the
-$\MCNLO+\HERWIG$ and $\Powheg+\PYTHIA$ $t\bar{t}$ signal samples are assumed to originate from the differences between parton showering
+the samples generated with $\Powheg+\HERWIG$ and $\Powheg+\PYTHIA$ were compared. All the differences in the results measured exploiting the
+$\Powheg+\HERWIG$ and $\Powheg+\PYTHIA$ $t\bar{t}$ signal samples are assumed to originate from the differences between parton showering
 and hadronization models.
 
 \subsection{Top Quark Mass Assumption}
 
-The nominal $t\bar{t}$ simulated sample exploited in this analysis was generated with the top mass $m(t) = 172.5$ GeV. The experimentally measured
+The nominal $t\bar{t}$ simulated sample used in this analysis was generated with the top mass $m(t) = 172.5$ GeV. The experimentally measured
 value of this mass is $m_{exp}(t) = 172.4 \pm 0.74$ GeV \cite{ATLAS:2014wva}. To account for the experimental uncertainty of the top-quark
 mass, two additional samples were generated, in which the masses of the top-quark were assumed to be $m(t) = 171.5$ GeV and
-$m(t) = 173.5$ GeV.
+$m(t) = 173.5$ GeV. The results were recalculated using these samples and the differences to the nominal results are assumed to
+be the uncertainties related to the top quark mass assumption.
 
-The procedure of the full kinematic reconstruction of the $t\bar{t}$ system exploited in this analysis (see chapter \ref{chapt:kinReco})
-assumes the fixed top-quark mass of 172.5 GeV. The variation of this mass by $\pm$ 1 GeV produced only minor difference to the nominal
-results and negligible compared to the statistical uncertainties.
+The procedure of the full kinematic reconstruction of the $t\bar{t}$ system applied in this analysis (see chapter \ref{chapt:kinReco})
+assumes a fixed top-quark mass of 172.5 GeV. This mass was varied separately for the kinematic reconstruction procedure by $\pm$ 1 GeV. 
+This variation produced only minor difference to the nominal results, negligible compared to the statistical uncertainties.
 
 \subsection{Matching Scale Variation}
 
-The scale at which the parton shower is matched to the hard process was varied by factor 0.5 and 2 up and down compared to the nominal
-value of 20 GeV.
+The scale at which the parton shower is matched to the hard process was varied up and down by factors 2 and 0.5 compared to the nominal
+value of 20 GeV. The resulting variations in cross sections are the corresponding systematic uncertainties.
 
 \subsection{Hard Scale Variation}
 
-Hard scale Q has been varied by factor 2 and 0.5 up and down compared to the nominal value. This variation follows the convention 
+The hard scale Q was varied by factors
+2 and 0.5 up and down compared to the nominal value. This variation follows the convention 
 adopted by the CMS experiment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,11 +169,9 @@ $s$ different sources. The $\delta_{s,\;ij}^{high/low}$ are expressed the follow
 where $m = high$ if $\delta_{s,\;ij}^{m} \geq 0$ and $m = low$ if $\delta_{s,\;ij}^{m} < 0$ . 
 
 In case all the variations of a certain correction factor or assumption result only in higher (or lower) values 
-compared to the nominal result, the largest deviation is taken for the uncertainty. These numbers are presented
+compared to the nominal result, the largest deviation is taken for the higher (lower) uncertainty and the corresponding 
+lower (higher) uncertainty is set to zero. These numbers are presented
 in tables from appendix \ref{appendix:xsec_table}.
-
-All the uncertainties derived from the experimental and model systematic sources described in this chapter are listed in the tables in appendix \ref{appendix:syst_unnorm},
-for all the cross sections described in sec. \ref{ssec:xsec_mes} and appendix \ref{appendix:unnorm_XSec}. 
 
 % The final result is presented the following way:
 % 
@@ -197,10 +196,32 @@ for all the cross sections described in sec. \ref{ssec:xsec_mes} and appendix \r
 % 
 % All the other uncertainties should be treated as correlated.
 
-% \subsection{Summary of Systematic Uncertainties}
+\section{Summary of Systematic Uncertainties}
+
+An example of the table with all the sources of systematic uncertainties is presented in table \ref{tab:ex}. It shows the 
+systematic uncertainties for the double differential $t\bar{t}$ production cross sections in bins of $p_{T}(t)$ and $|y(t)|$.
+The uncertainties are unsymmetrised. However, the total uncertainties result in namely symmetric positive and negative uncertainties.
+
+The biggest contributions to the total systematic uncertainties are the JES (up to $\sim 5\%$), top quark mass variation (up to
+$\sim 13\%$), hard scale variation (up to $\sim 12\%$), matching scale variation (up to $\sim 8\%$) and hadronization model
+(up to $\sim 13\%$) uncertainties. A large value of the uncertainty related to the $b$-tagging in the high $p_{T}(t)$ bin 
+is caused by the statistical effects.
+
+The uncertainties related to the kinematic reconstruction scale factor variation, background variation and PDF variation are 
+constantly small from bin to bin.
+
+The following uncertainties are slightly increasing with $p_{T}(t)$: JER (up to $\sim 7\%$), JES (up to $\sim 5\%$), pile up
+reweighting (up to $\sim 1.5\%$), matching scale (up to $\sim 5-8\%$). The uncertainties related to the top quark mass variation,
+hard scale variation and hadronization model variation are increasing with the $p_{T}(t)$ stronger. On the other hand, the uncertainties
+related to the trigger and lepton scale factor variations are slightly decreasing with $p_{T}(t)$ -- from 0.4 to $\sim0$ both.
+
+\input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_top_pt-top_arapidity.tex}
+
+All the uncertainties derived from the experimental and model systematic sources described in this chapter are listed in the tables in appendix \ref{appendix:syst_unnorm},
+for all the cross sections described in sec. \ref{ssec:xsec_mes} and appendix \ref{appendix:unnorm_XSec}. 
 % 
 % 
-% \input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_top_pt-top_arapidity.tex}
+
 % \input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_top_arapidity-top_pt.tex}
 % 
 % \input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_ttbar_pt-ttbar_arapidity.tex}

@@ -8,7 +8,7 @@ The cross sections were measured double differentially in bins of the kinematic 
 The first section shortly describes the way how the background yields were subtracted.
 The two dimensional unfolding applied to correct for the detector effect and fluctuations is described
 in the second section.
-The double differential cross sections and their definitions are shown in the last section of the chapter.
+The double differential cross sections definitions are shown in the last section of the chapter.
 % \section{Selection of Binning}\label{sec:binning}
 
 \section{Background Subtraction}
@@ -269,31 +269,31 @@ was unfolded and the following quantities were checked:
 As a consequence of these studies the minimization of the correlation coefficients method for the regularization strength determination was chosen
 to be used in this analysis.
 
-\subsubsection{Closure Tests}
+\subsubsection{Closure Tests}\label{ssec:clT}
 
 The unfolding procedure with all its assumptions should be able to reproduce the distributions, which are distorted in shape much stronger
 than the possible statistical fluctuations compared to the shape of the simulated $t\bar{t}$ signal, out of which the migration matrix for unfolding
-is calculated. To test this, \textit{pseudodata} is unfolded.
+is calculated. To test this, \textit{pseudo-data} is unfolded.
 
-The pseudodata is created by reweighting the $t\bar{t}$ signal $\MG+\PYTHIA$ distributions in bins of $p_{T}(t)$ and $|y(t)|$ with the following
+The pseudo-data is created by reweighting the $t\bar{t}$ signal $\MG+\PYTHIA$ distributions in bins of $p_{T}(t)$ and $|y(t)|$ with the following
 weights:
 
-\begin{equation}
- \omega(p_{T}(t)) = a_{1} \cdot p_{T}(t) + b_{1},
+\begin{equation}\label{eq:clTw1}
+ \omega(p_{T}(t)) = max(0.1,\:\:\:a_{1} \cdot p_{T}(t) + b_{1}),
 \end{equation}
-\begin{equation}
+\begin{equation}\label{eq:clTw2}
  \omega(|y(t)|) = a_{2} \cdot |y(t)|^{2} + b_{2}.
 \end{equation}
 
 Here the $a_{1,2}$ and the $b_{1,2}$ are arbitrary parameters. For the studies presented in this work the values for the parameters were the 
 following: 
 \begin{itemize}
- \item For the $p_{T}(t)$ distribution reweighting: $a_{1} = 0.002$, $b_{1} = 0.8$ and $a_{1} = -0.002$, $b_{1} = 1.2$. 
- \item For the $|y(t)|$ distribution reweighting: $a_{2} = 0.208$, $b_{2} = 0.8$ and $a_{2} = -0.208$, $b_{2} = 1.2$.
+ \item For the $p_{T}(t)$ distribution reweighting: $a_{1} = 0.0015$, $b_{1} = 0.8$ and $a_{1} = -0.0015$, $b_{1} = 1.2$. 
+ \item For the $|y(t)|$ distribution reweighting: $a_{2} = 0.17$, $b_{2} = 0.7$ and $a_{2} = -0.17$, $b_{2} = 1.3$.
 \end{itemize}
 
-The results of the unfolding of the pseudodata are presented in Appendix \ref{appendix:closT}. They show that the unfolding is reproducing
-the shape of the distorted pseudodata without any biases towards the distributions, which were exploited to construct the migration matrices.
+The results of the unfolding of the pseudo-data are presented in Appendix \ref{appendix:closT}. They show that the unfolding is reproducing
+the shape of the distorted pseudo-data without any biases towards the distributions, which were exploited to construct the migration matrices.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
