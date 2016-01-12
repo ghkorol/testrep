@@ -2,8 +2,9 @@
 
 The two neutrinos are not detected, thus additional
 assumptions are needed to define the full final state kinematics of the $t\bar{t}$ reconstructed in dilepton decay channel.
-This section describes the method used for the full kinematics reconstruction of this system. The mathematical
-background (sec. \ref{sec:MatBg}) as well as a performance description of the method (sec. \ref{sec:SolSer} -- \ref{sec:kinRecPerf}) are revealed.
+This section describes the method used for the full kinematics reconstruction of this system. The analytical solution of the
+kinematic equations (sec. \ref{sec:MatBg}) as well as a performance description of the method 
+(sec. \ref{sec:SolSer} -- \ref{sec:kinRecPerf}) are revealed.
 
 \section{Analytical Solution of Kinematic Equations}\label{sec:MatBg}
 
@@ -88,7 +89,9 @@ There are several problems arising during the $t\bar{t}$ dilepton final state ki
 \begin{itemize}
  \item \textit{Fluctuations of measurement}. There might be no solutions of the equation \ref{eq:eqLSf} found for a combination
  of leptons, jets and missing transverse energy arising from the $t\bar{t}$ system due to reconstruction effects, e.g. detector resolution,
- jet overlapping, badly reconstructed missing transverse energy, etc.
+ jet overlapping, badly reconstructed missing transverse energy, etc. Due to these effects, the kinematics of the reconstructed 
+ jets and leptons may be estimated with distortions. Thus, the input parameters of the equations \ref{eq:eqLSf} will be distorted,
+ which will result in the impossibility to find a real solution of the equations.
  %
  \item \textit{Multiple solutions of the kinematic equations}. As discussed in section \ref{sec:MatBg} the equation \ref{eq:eqLSf}
  has up to four mathematical solutions while only one of them corresponds to the correct kinematics of the neutrino.
@@ -127,15 +130,15 @@ If, due to the energy smearing, the lepton or jet $p_{T}$ is reduced to the valu
   \centering
   \includegraphics[width=0.48\textwidth]{05_kinReco/plots/fE_lep.png}
 \end{subfigure}
-\caption{Distributions of the energy correction factors used for the energy smearing in the kinematic
+\caption{Distributions of the energy resolution response used for the energy smearing in the kinematic
 reconstruction of the top-quark kinematics. The distribution of the factor for jets is shown on the left and for
-leptons on the right.}
+leptons (electrons and muons) on the right.}
 \label{fig:fE}
 \end{figure}
 
 The directional smearing is applied by rotating the actual momentum vectors relatively to the nominal vector direction
 as shown in Fig. \ref{fig:angleRot}. 
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
  \includegraphics[width=0.2\textwidth]{05_kinReco/plots/angle_rot.pdf}
  \caption{Sketch of the directional smearing of leptons and jets as applied in the $t\bar{t}$ kinematic reconstruction.}
@@ -156,7 +159,7 @@ the MC distributions presented in Fig. \ref{fig:dAngle}. The azimuthal angle $\o
   \includegraphics[width=0.48\textwidth]{05_kinReco/plots/dan_lep.png}
 \end{subfigure}
 \caption{Distributions of the angle between the particle level direction and the detector level direction.
-The angle distribution for the $b$-quarks is shown on the left and for the leptons on the right.}
+The angle distribution for the $b$-quarks is shown on the left and for the leptons (electrons and muons) on the right.}
 \label{fig:dAngle}
 \end{figure}
 
@@ -165,29 +168,29 @@ assuming the transverse energy component, which does not refer to the leptons an
 missing transverse energy for the $i^{th}$ smearing will be expressed as following:
 
 \begin{equation}\label{eq:weigh_av}
- E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reconstruction}_{T_{x,y}} + p^{jets \; not\,smeared}_{x,y} + p^{leptons\;not\,smeared}_{x,y} - (p^{jets\;i}_{x,y} + p^{leptons\;i}_{x,y}).
+ E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reco}_{T_{x,y}} + p^{jets \; reco}_{x,y} + p^{leptons\;reco}_{x,y} - (p^{jets\;i}_{x,y} + p^{leptons\;i}_{x,y}).
 \end{equation}
 
-Here the $E^{miss \; from \, reconstruction}_{T_{x,y}}$, $p^{jets \; not\,smeared}_{x,y}$, $p^{leptons\;not\,smeared}_{x,y}$ are the missing transverse energy and momenta
+Here the $E^{miss \; from \, reco}_{T_{x,y}}$, $p^{jets \; reco}_{x,y}$, $p^{leptons\;reco}_{x,y}$ are the missing transverse energy and momenta
 components taken directly from the detector reconstruction (see chapt. \ref{chapt:event_selection} and \ref{chapt:event_sel}) without applying any variations; the $p^{jets\;i}_{x,y}$ and $p^{leptons\;i}_{x,y}$
 are the smeared jets and leptons momenta respectively on the $i^{th}$ of the 100 variation step.
 
 \subsection{Single solution choice}
 
 The equation \ref{eq:eqLSf} is solved for every of the 100 event reconstructions. Each equation may have up to four solutions, thus each event
-has up to ($100 \otimes 4 \otimes N_{jet}!$) reconstructed $t\bar{t}$ candidates ($N_{jet}!$ component has already been discussed is sec. \ref{sec:SolSer}). 
-To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps are undertaken:
+has up to ($100 \times 4 \times N_{jet}!$) reconstructed $t\bar{t}$ candidates (the factor $N_{jet}!$ has already been discussed is sec. \ref{sec:SolSer}). 
+To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps are followed:
 
 \begin{itemize}
 
- \item [--] First, the single combination of leptons and jets is selected (getting rid of the combinatorics part $N_{jet}!$). The priority goes to
- the lepton-jet combination where there are two $b$-tagged jets (see sec. \ref{ssec:bTag}). The further indeterminacy connected with the single lepton-jet
- combination is resolved by requiring the combination with the highest weight $\omega = \omega_{m^{\bar{l}b}} \cdot \omega_{m^{l\bar{b}}}$. Here 
+ \item [--] First, the single combination of leptons and jets is selected (getting rid of the combinatorics part $N_{jet}!$). The lepton-jet 
+ combination with two $b$-tagged jets (see sec. \ref{ssec:bTag}) is prioritized. If there is further indeterminacy connected with the single 
+ lepton-jet combination, then to each combination is a weight $\omega = \omega_{m^{\bar{l}b}} \cdot \omega_{m^{l\bar{b}}}$ is assigned. Here 
  $m^{\bar{l}b}$ and $m^{l\bar{b}}$ are the reconstructed invariant masses of the lepton-jet pairs from the top and the anti-top 
  decays, respectively. The distribution of the $m(l\bar{b}) \& m(\bar{l}b)$ is shown in Fig. \ref{fig:mlb}. 
  These weights are calculated from the spectrum of the lepton-jet pairs in top decays obtained from the signal MC on the 
- particle level after all kinematic cuts described in chapter \ref{chapt:event_sel}. This reduces the number of the possible candidates to maximum
- $100 \otimes 4$.
+ particle level after all kinematic cuts described in chapter \ref{chapt:event_sel}. A combination of leptons and jets with the highest weight 
+ is taken for the further analysis. This reduces the number of the possible candidates to maximum $100 \times 4$.
  
  \begin{figure}[t]
   \centering
@@ -205,22 +208,23 @@ To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps
  \item [--] For the remaining up to 100 candidates (these number is related only to the energy and directional smearing, see sec. \ref{ssec:smear}), the $t$ ($\bar{t}$) 
  momentum is constructed as a weighted average of all smeared solutions as following:
  \begin{equation}
-  \langle{\vec{p}(t,\bar{t})}\rangle = \frac{\sum\limits_{i=1}^{100} \omega_{i} \vec{p}(t,\bar{t})_i}{\sum\limits_{i=1}^{100} \omega_i}.
+  \langle{\vec{p}(t/\bar{t})}\rangle = \frac{\sum\limits_{i=1}^{100} \omega_{i} \vec{p}(t/\bar{t})_i}{\sum\limits_{i=1}^{100} \omega_i}.
  \end{equation}
- Here $\omega_i$ is a weight and $\vec{p}(t, \bar{t})_{i}$ is a $t$ or $\bar{t}$ momentum three vector for the $i^{th}$ variation in the event. 
+ Here $\omega_i$ is a weight and $\vec{p}(t/ \bar{t})_{i}$ is a $t$ or $\bar{t}$ momentum three vector for the $i^{th}$ variation in the event. 
  In case that for the $i^{th}$ variation no solution of the kinematic equations is found, both weight and momentum three vector are set to zero. To complete the kinematics,
- the $t$ and $\bar{t}$ energies are calculated taking $\langle{\vec{p}(t,\bar{t})}\rangle$ and assuming the top mass $m(t) = m(\bar{t}) = $ 172.5 GeV.
+ the $t$ and $\bar{t}$ energies are calculated taking $\langle{\vec{p}(t/\bar{t})}\rangle$ and assuming the top mass $m(t) = m(\bar{t}) = $ 172.5 GeV.
 \end{itemize}
 
 \section{Performance}\label{sec:kinRecPerf}
 
 Only the events in which solutions of kinematic equations are found are accepted for this analysis. 
-Fig. \ref{fig:EffSF} shows the efficiencies and scale factors for the $t\bar{t}$ kinematic reconstruction procedure depending on jet multiplicity in the event, 
+Fig. \ref{fig:EffSF} shows the efficiencies and scale factors (as defined in \ref{chapt:event_sel}) for the $t\bar{t}$ kinematic reconstruction procedure 
+depending on jet multiplicity in the event, 
 lepton and $b$-jets kinematics and missing transverse energy. The integrated efficiency of the kinematic reconstruction method is 93 $\%$. The remaining 7\%
 inefficiency possibly originates from the events, where the kinematic reconstruction failed due to the wrong jet choice or due to the detector resolution.
 
 Overall, the scale factors 
-show a flat behavior depending on different variables, thus the value of 0.9909 for the scale factor is used for the analysis. This value was determined 
+show a flat behavior depending on different variables, thus the value of 0.99 for the scale factor is used for the analysis. This value was determined 
 out of the histogram with only one bin for the whole kinematic range.
 
 \begin{figure}[t]
@@ -256,7 +260,7 @@ out of the histogram with only one bin for the whole kinematic range.
 \label{fig:EffSF}
 \end{figure}
 
-The scatter plots on Fig. \ref{fig:ScatterPl} show the correlation between the kinematic variables after the selection and kinematic reconstruction in the simulated
+The scatter plots in Fig. \ref{fig:ScatterPl} show the correlation between the kinematic variables after the selection and kinematic reconstruction in the simulated
 signal and the actual characteristics of the $t\bar{t}$ system and decay on the particle level. There are no shifts and trends observed, thus showing 
 the trustful behavior of the kinematic reconstruction algorithm.
 
@@ -282,7 +286,7 @@ the trustful behavior of the kinematic reconstruction algorithm.
   \centering
   \includegraphics[width=0.45\textwidth]{05_kinReco/plots/scatter/mtt-scaterPlot.png}
 \end{subfigure}
-\caption{Plots which show the reconstructed vs generated variables: the transverse momentum of the $t$ and $t\bar{t}$ (top left and right respectively), 
+\caption{Plots which show the reconstructed vs. generated variables: the transverse momentum of the $t$ and $t\bar{t}$ (top left and right respectively), 
         the rapidity of the $t$ and $t\bar{t}$ (middle left and right respectively) and the invariant mass of the $t\bar{t}$ system, obtained from the 
         signal MC.}
 \label{fig:ScatterPl}
@@ -292,9 +296,9 @@ the trustful behavior of the kinematic reconstruction algorithm.
 
 The kinematic reconstruction method shows desirable results over the complete kinematic range of the top system. The Fig. \ref{fig:CPkinTop} shows
 the control distributions of the kinematic quantities of the top quark system. The distribution of the transverse momentum of the top quark
-shows a good agreement between experimental data and simulation in the small and middle $p_{T}$. However the higher $p_{T}$ range is not well
-described by the MC. A slight slope is observed in the data-to-MC ratio plot. The rapidity is well described by the simulation in the central region, 
-whereas for the edges MC slightly underestimates the data.
+shows a good agreement between experimental data and simulation at the small and intermediate $p_{T}$. However the higher $p_{T}$ range is not well
+described by the MC. The measured spectrum in $p_{T}$ is overall softer than the simulation. The rapidity is well described by the simulation in the central region, 
+whereas for the edges MC slightly underestimates the data -- the simulation is more central.
 An overall good agreement is observed in the  $x_{1}$\footnote{ $x_{1}$ is a fraction of a parton momentum transfered to a $t$ quark} 
 distribution.
 
@@ -314,14 +318,14 @@ distribution.
 \end{subfigure}
 \caption{Control distributions of the top quark $p_{T}$ (top left), rapidity (top right) and  $x_{1}$ in the events 
  after the kinematic reconstruction. The experimental data with the error bars corresponding to the statistical uncertainties
- and simulated distributions of signal and different background are plotted. The bottom subplots represent the data-to-MC yield ratio distributions. 
+ and simulated distributions of signal and different background are plotted. The plots each show in the bottom panel the data-to-MC yield ratio distributions. 
  The distributions are presented for the $t$ quark only.}
 \label{fig:CPkinTop}
 \end{figure}
 
 In figure \ref{fig:CPkinTTbar} the control distributions of the kinematic variables of the $t\bar{t}$ system are presented. The transverse momentum is overall
 well described by the simulation. A slight data excess is observed in central rapidity $y^{t\bar{t}}$ and the edges have also slightly worse agreement between
-experimental data and MC. The invariant mass of the $t\bar{t}$ system is well described by the simulation for the lower mass values. A worse agreement is
+experimental data and MC. The invariant mass of the $t\bar{t}$ system is well described by the simulation for the lower mass values. Significant deviations are
 observed for the higher mass values starting from 1400 GeV.
 
 \begin{figure}[h]
@@ -340,7 +344,7 @@ observed for the higher mass values starting from 1400 GeV.
 \end{subfigure}
 \caption{Control distributions of the $p_{T}$ (top left), rapidity (top right) and invariant mass of the $t\bar{t}$ system in the events 
  after the kinematic reconstruction. The experimental data with the error bars corresponding to the statistical uncertainties
- and simulated distributions of signal and different backgrounds are plotted. The bottom subplots represent the data-to-MC yield ratio distributions.}
+ and simulated distributions of signal and different backgrounds are plotted. The plots each show in the bottom panel the data-to-MC yield ratio distributions.}
 \label{fig:CPkinTTbar}
 \end{figure}
 
@@ -352,7 +356,8 @@ It was an alternative to the kinematic reconstruction utilized in the measuremen
 production cross sections in the dilepton channel at $\sqrt{s} = $7 TeV \cite{Chatrchyan:2012saa}, where no smearing of the leptons and 
 jets energies and directions were performed, and on the other hand the top-quark mass was scanned.
 
-The results obtained in TOP-12-028 exploiting the kinematic reconstruction are presented in Fig. \ref{fig:xsec_top12028}.
+The results obtained in TOP-12-028 \cite{TWikiTOP12028} \cite{Khachatryan:2015oqa} exploiting the kinematic reconstruction are presented 
+in Fig. \ref{fig:xsec_top12028}.
 
 \begin{figure}[h]
 \centering

@@ -24,10 +24,10 @@ However they are not the primary detector output and they have to be reconstruct
 
 \subsection{Track Reconstruction}\label{ssec:trkReco}
 
-The track reconstruction takes place using the information from the inner tracking detectors. The neighboring pixels and strips which
+The track reconstruction uses the information from the inner tracking detectors. The neighboring pixels and strips which
 produce signals are grouped to clusters. The position of a cluster defines a hit which is an estimate of the point where a particle crossed the
 detector material. A particle trajectory can be tracked by fitting the corresponding sequence of hits. The curvature 
-of the trajectory within the known magnetic field gives a transverse momentum estimate of a particle.
+of the trajectory within the known magnetic field gives the transverse momentum estimate of a particle.
 
 The track reconstruction procedure consists of four main steps as following \cite{Chatrchyan:2014fea}:
 
@@ -40,16 +40,16 @@ The track reconstruction procedure consists of four main steps as following \cit
  beam spot in the transverse $x-y$ plane.} to be accepted as an initial track candidate or seed.
  %
  \item \textbf{Track finding}: extrapolates the seeding candidates along the expected flight paths to the consecutive tracking detector layers searching 
- for further hits and reestimating the track parameters respectively. On each consecutive layer all the hits from a 3 sigma region around the seed trajectory
- are taken and fitted with a Kalman filter\cite{Fruhwirth:1987fm}. The best $\chi^{2}$ hit is taken and the trajectory
- continues extrapolation to the next layer until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
+ for further hits and reestimating the track parameters respectively. On each consecutive layer all hits from a 3 sigma region around the seed trajectory
+ are tried out and fitted with a Kalman filter\cite{Fruhwirth:1987fm}. The smallest $\chi^{2}$ hit is finally taken and the trajectory
+ continues to the next layer is continued until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
  accepted if it contains more then one ghost hit.
  %
  \item \textbf{Track fitting}: after finding the hits in all the tracker layers with the track finding, a track candidate is refitted using the Kalman filter. 
  This procedure is performed releasing the constraints set on the seeding stage.
  %
- \item \textbf{Track selection}: reduces the rate of fake tracks\footnote{A \textit{fake track} is a track produced by the fit but is actually there was
- no real charged particle which produced this track.} by setting physical and quality constrains on the object produced at the previous step. The requirements
+ \item \textbf{Track selection}: reduces the rate of fake tracks\footnote{A \textit{fake track} is a track produced by the fit but actually there was
+ no real charged particle which produced this track.} by setting physical and quality constraints on the object produced at the previous step. The requirements
  are based on a good $\chi^{2}$ of the fit and a reasonable value of the impact parameter with respect to the beam spot.
 \end{itemize}
 
@@ -73,26 +73,27 @@ phases described as follows\cite{Chatrchyan:2014fea}:
 \begin{figure}[t]
   \centering
   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/url.png}
-  \caption{Magnified view of the event showing 29 distinct vertices reconstructed corresponding to 29 distinct collisions within a single crossing of the LHC beam.}
+  \caption{Magnified view of the event showing 29 distinct vertices reconstructed corresponding to 29 distinct collisions within a single crossing of the LHC beams.}
   \label{fig:HugePU}
 \end{figure}
 \begin{itemize}
 
  \item \textbf{Track selection}: the tracks for the primary vertex reconstruction are chosen with certain requirements such as to be consistent with being produced 
  in the primary interaction region (the significance of the beam spot impact parameter -- it's value over it's uncertainty -- has to be maximum 5), having hits in at least two pixel 
- layers and at least five pixel and strip layers associated with the track and having a $\chi^{2}$ per degree of freedom for the track fit of not higher then 20.
+ layers and at least five pixel and strip layers associated with the track and having a $\chi^{2}$ per degree of freedom for the track fit of not higher than 20.
  %
  \item \textbf{Track clustering}: the main task of the clustering algorithm is to separate the groups of tracks emerging from different primary vertices, not splitting 
  the tracks from one vertex to two, but also not merging the tracks from different vertices to one. The tracks are clustered according 
  to their $z$-coordinate at the point of closest approach to the beam spot center. 
  \\
- The algorithm used for clustering for the CMS 2012 data is the \textit{deterministic annealing} described in detail in\cite{rose_ieee1998}. A system with many tracks has many degrees
- of freedom and finding the primary vertex regions according to the $z$-coordinates at the closest approach to the beam spot center is treated analogically to the problem of a physical 
- system approaching a state of minimal energy through a series of gradual temperature reductions.
+ The algorithm used for the clustering in the CMS 2012 data is the \textit{deterministic annealing} described in detail in\cite{rose_ieee1998}. 
+%  A system with many tracks has many degrees
+%  of freedom and finding the primary vertex regions according to the $z$-coordinates at the closest approach to the beam spot center is treated analogically to the problem of a physical 
+%  system approaching a state of minimal energy through a series of gradual temperature reductions.
  %
  \item \textbf{Fitting the position of the vertex}: each clustered group of tracks forms a vertex candidate. Only the candidates with at least two tracks are taken and are fitted
- using an \textit{adaptive vertex fitter}\cite{Frühwirth:1027031}. The output of the fit is the vertex position, it's uncertainty and a $\chi^{2}$. The determination of the probability
- of each track to arise from the reconstructed vertex is performed.
+ using an \textit{adaptive vertex fitter}\cite{Frühwirth:1027031}. The output of the fit is the vertex position, it's uncertainty and a $\chi^{2}$. The probability
+ of each track to arise from the reconstructed vertex is determined.
 \end{itemize}
 
 The information on all primary vertices in the event is useful not only for other objects reconstruction but also for separating the signal vertex (with a hard interaction) 
@@ -103,7 +104,7 @@ from the others with no useful physics information.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objects Reconstruction}
 
-The reconstruction of the muons, electrons, jets and missing transverse energy (which are needed for the $t\bar{t}$ dileptonic final
+The reconstruction of muons, electrons, jets and missing transverse energy (which are needed for the $t\bar{t}$ dileptonic final
 state reconstruction) is presented in this section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,9 +118,9 @@ One can get three types of muons out of the reconstruction:
 \begin{figure}[t]
   \centering
   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/CMS_Slice.png}
-  \caption{Track reconstruction using different sub-detector information in combination in Particle Flow algorithm. The different
+  \caption{Track reconstruction using different sub-detector information in combination in the Particle Flow algorithm. The different
   charged particles are shown as curved lines: muon (blue), electron (red) and charged hadron (green). Neutral particles are shown
-  with the strait dashed lines.}
+  with the dashed straight lines.}
   \label{fig:PFmuons}
 \end{figure}
 
@@ -154,12 +155,12 @@ The electrons are reconstructed by combining tracks from the tracker with cluste
 are created making use of two complementary algorithms as following \cite{CMS-PAS-EGM-10-004}: \textit{tracker driven seeding}
 and \textit{ECAL driven seeding}. The former is performed for the tracks with $p_{T} < 5$ GeV, matching them to the ECAL superclusters\footnote
 {A \textit{supercluster} is a group of one or more associated clusters of energy deposits in the ECAL. The transverse energy $E_{T}$
-of the supercluster has to be not lower then 4 GeV.}. The ECAL driven seeding is performed for the tracks with $p_{T} \geq 5$ GeV
-fitting the ECAL superclusters to the tracker tracks. All the seeds are fitted with the Gaussian Sum Fitter (GSM) \cite{GSF_Electron_Reconstruction_CMS}
-using the hypothesis that each track is an electron and assuming the specific energy losses.
+of the supercluster has to be not lower than 4 GeV.}. The ECAL driven seeding is performed for the tracks with $p_{T} \geq 5$ GeV
+fitting the ECAL superclusters to the tracker tracks. All the seeds are fitted with a Gaussian Sum Fitter (GSM) \cite{GSF_Electron_Reconstruction_CMS}
+using the hypothesis that each track is an electron and assuming specific energy losses.
 
 On the next reconstruction step the fitted seeding tracks are preselected. The tracker seeds are preselected by a multivariate analysis 
-(MVA) as described in \cite{CMS:2010byl}. For the ECAL seeds the restrictions on the GSM matching in $\eta$ and $\phi$ are applied \cite{Baffioni:2006cd}.
+(MVA) as described in \cite{CMS:2010byl}. For the ECAL seeds restrictions on the GSM matching in $\eta$ and $\phi$ are applied \cite{Baffioni:2006cd}.
 
 The collection of the tracks formed after this selection is assigned to electrons.
 
@@ -167,8 +168,8 @@ The collection of the tracks formed after this selection is assigned to electron
 \subsection{Jet Reconstruction}
 
 A quark or a gluon as a colorful object can't exist singly due to the confinement property (see sec. \ref{sec:quark}).
-A quark thus starts to hadronize and form a group of particles (primarily only hadrons) flowing in similar direction. These are the jets. Special algorithms are developed
-to find and reconstruct jets.
+A quark thus starts to hadronize and form a group of particles (primarily only hadrons) flowing in a similar direction. These sprays of 
+particles are called jets. Special algorithms are developed to find and reconstruct jets.
 
 \subsubsection{Jet Finder Algorithms}\label{sec:JetAlgo}
 
@@ -176,15 +177,18 @@ The idea which lies behind any algorithm of jet finding and reconstruction is th
 Generally a jet can be reconstructed using two strategies \cite{Salam:2007xv}:
 
 \begin{itemize}
- \item \textit{Sequential clustering}: the particles are sequentially recombined until the closest (regarding some specific distance measure between the objects) combination is found.
+ \item \textit{Sequential clustering}: the particles are sequentially recombined according to some distance criterion.
+ %until the closest (regarding some specific distance measure between the objects) combination is found.
  %
  \item \textit{Cone algorithms}: a jet is defined as a cone around some direction of dominant energy flow, or seed. Each or some of the particles are tried 
- in a role of the dominant direction seeds. The next step was to define a trial cone around the seed and accept all the particles which enter this cone.
+ in a role of the dominant direction seeds. The next step is to define a trial cone around the seed and accept all the particles which enter this cone.
  The sum of the four-momenta of all objects inside the jet cone is calculated. This jet candidate is assumed to be a new seed. This iterative process continues
  until stable seeds are found.
 \end{itemize}
 
-Although the cone algorithms are fast and simplistic they are not collinear and infrared safe by default.
+Although the cone algorithms are fast and simplistic they are not collinear and infrared safe\footnote{\textit{Infrared} and \textit{collinear safety} 
+is the property that if one modifies an event by a collinear splitting or the addition of a soft emission, the set of hard jets that are found in the event 
+should remain unchanged.} by default.
 
 The sequential clustering algorithms are both infrared and collinear safe. They don't rely on a stable cone. The procedure of constructing
 a jet starts with defining two distances -- $d_{ij}$ (the distance between two objects, particles or pseudojets, $i$ and $j$ in the detector) and $d_{iB}$ (the distance between the object $i$
@@ -213,7 +217,8 @@ There are three different sequential clustering algorithms depending on the $p$ 
  \item $p = -1$ defines the anti-$k_{T}$ algorithm.
 \end{itemize}
 
-The jets for this analyses were constructed using the anti-$k_{T}$ sequential clustering algorithm. 
+The jets for this analyses were constructed using the anti-$k_{T}$ sequential clustering algorithm. Being infrared and collinear safe, this algorithm reconstructs 
+circular-shaped jets.
 
 \subsubsection{Jet Energy Calibration}\label{ssec:JCal}
 
@@ -221,22 +226,24 @@ The reconstructed jet energy should be corrected for the non-linear and non-unif
 method is used \cite{2011JInst...611002C}. The calibration is performed sequentially in several steps:
 
 \begin{itemize}
- \item The \textit{Offset correction} removes extra energy due to electronics noise and pile-up. It is applied on the real and simulated reconstructed data.
+ \item The \textit{Offset correction} removes extra energy due to electronics noise and pile-up. It is applied on the reconstructed experimental data and 
+ on the simulated reconstructed jets.
  %
  \item The \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
- particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. It is applied on the simulated reconstructed data.
+ particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. It is applied on the simulated reconstructed jets.
  %
- \item The \textit{Relative jet energy correction} ensures a flat response as a function of $\eta$. It is applied on the simulated reconstructed data.
+ \item The \textit{Relative jet energy correction} ensures a flat response as a function of $\eta$. It is applied on the reconstructed experimental data.
  %
  \item The \textit{Absolute jet energy correction} balances the $p_{T}$ response to be linear. It is calibrated on a sample of well reconstructed $Z^{0}$ bosons 
- decaying into two jets.
+ decaying into two jets. This correction is applied on the reconstructed experimental data.
 \end{itemize}
 
 First calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
-Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step. Further correction steps aim to make the jet response
+Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step. The MC corrections aim to make the jet response
 flat as a function of $|\eta|$ and $p_{T}$. The correction on the geometrical position dependence corrects all the energies as if they were measured 
 in the most efficient barrel region using the dijet data events. The $p_{T}$ dependence correction makes use of the Drell-Yan events to exploit a good
-lepton energy and momentum resolutions. Finally the residual corrections are applied on data to correct for some minor disagreement with the simulation.
+lepton energy and momentum resolutions. Finally the residual corrections (relative and absolute energy corrections) are applied on data to correct for 
+some minor disagreement with the simulation.
 
 In general all the correction factors in the kinematic region of interest for this analysis are smaller than $5\%$.
 

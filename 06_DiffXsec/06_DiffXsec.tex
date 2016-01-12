@@ -8,12 +8,12 @@ The cross sections were measured double differentially in bins of the kinematic 
 The first section shortly describes the way how the background yields were subtracted.
 The two dimensional unfolding applied to correct for the detector effect and fluctuations is described
 in the second section.
-The double differential cross sections definitions are shown in the last section of the chapter.
+The double differential cross sections definitions are elucidated in the last section of the chapter.
 % \section{Selection of Binning}\label{sec:binning}
 
 \section{Background Subtraction}
-This study is performed as counting the events which fulfill certain criteria (e.g. given in chapter \ref{chapt:event_sel} and 
-chapter \ref{chapt:kinReco}). 
+The first step of the cross sections measurement is the counting of the events which fulfill certain criteria (e.g. given in 
+chapter \ref{chapt:event_sel} and chapter \ref{chapt:kinReco}) and subtracting background: 
 
 \begin{equation}\label{eq:bgsub}
  N^{signal\;measured}_{reco} = N^{selected}_{reco} - N^{BG}
@@ -21,8 +21,8 @@ chapter \ref{chapt:kinReco}).
 
 Here $N^{BG}$ corresponds to the estimated number of background events. The background sources were introduced in sec. \ref{sec:bg_intro}.
 
-After subtracting all the non-$t\bar{t}$ backgrounds, the number of signal events is multiplied by a factor to correct for the contribution
-from other decay channels of $t\bar{t}$:
+After subtracting all the non-$t\bar{t}$ backgrounds, the number of signal events is multiplied by a factor in each each cross section bin
+individually to correct for the contribution from other $t\bar{t}$ decay channels:
 
 \begin{equation}\label{eq:bgsub}
  N^{signal}_{reco} = N^{signal\;measured}_{reco} \cdot \frac{N^{t\bar{t} \rightarrow e\mu}_{reco}}{N^{t\bar{t} \rightarrow e\mu}_{reco} + N^{t\bar{t} \rightarrow other}_{reco}}.
@@ -49,7 +49,7 @@ The whole problem can be described as
 
 Here the $\tilde{x}_j$ in $m$ bins denotes the true distribution, independent of the detector effects, which is the aim of the measurement;
 $\tilde{y}_i$ in $n$ bins is the distribution which one gets out of the detector and $A_{ij}$ is a matrix of probabilities describing 
-the migrations from true leven bin $j$ to detector level bin $i$ to different bins on the detector level; $b_{i}$ is the background in the bin $i$. 
+the migrations from true level bin $j$ to detector level bin $i$ to different bins on the detector level; $b_{i}$ is the background in the bin $i$. 
 However, the observed event counts $y_{i}$ may be different from $\tilde{y}_{i}$ due to the statistical fluctuations.
 A schematic view of the problem is given in the Figure \ref{fig:scUnf}.
 
@@ -62,9 +62,9 @@ A schematic view of the problem is given in the Figure \ref{fig:scUnf}.
 \end{figure}
 
 The process of estimating the true distribution $\tilde{x}_{j}$ from the observed distribution $y_{i}$ which was influenced
-by detector effects is called \textit{unfolding}. To minify the statistical fluctuations the smoothing  
-\textit{regularisation} procedure is applied. The TUnfold \cite{Schmitt:2012kp} algorithm was used for the
-unfolding in this analysis.
+by detector effects and statistical fluctuations is called \textit{unfolding}. To suppress statistical fluctuations of imprecisely
+determined high frequency components of the solution $x$ a smoothing \textit{regularisation} procedure is applied. 
+The TUnfold \cite{Schmitt:2012kp} algorithm was used for the unfolding in this analysis.
 
 \subsection{TUnfold Minimization}\label{ssec:TUmini}
 

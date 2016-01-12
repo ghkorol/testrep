@@ -20,7 +20,7 @@ If the collisions with higher energies and frequencies are provided by the accel
 be overloaded with information and some of its parts might be damaged by the higher radiation. That is why 
 the CMS is also being upgraded simultaneously with the LHC.
 
-The silicon pixel tracker (see the decription in sec. \ref{sec:tracker}) is the innermost part of the CMS 
+The silicon pixel tracker (see the description in sec. \ref{sec:tracker}) is the innermost part of the CMS 
 detector mounted around the beam pipe and being the closest detector to the collision point. That means that
 it receives the highest irradiation dose and operates in a very dense particle environment. After the upgrade 
 in 2015 the conditions for the pixel tracker will get even more severe. That is why it has to be significantly 
@@ -50,13 +50,14 @@ LHC run after 2017. In addition the innermost layer of the detector is moved clo
 the layers 2 and 3 are almost unchanged in the position. The beam pipe
 will also be made smaller to allow the closer approach to the interactions.
 
-Each layer will consist of the various number of 22 mm wide facets, each consisting of 1184 rectangular pixel modules. Each module
+Each layer will constructed of various number of 22 mm wide facets, in total consisting of 1184 rectangular pixel modules. Each module
 consists of 16 pixel chips. The total number of pixels will be increased from roughly 48 M to 79 M.
 
 \begin{figure}[t]
  \centering
  \includegraphics[width=1.0\textwidth]{021_pixel_upgrade/plots/pixel_phase1_4_layers.png}
- \caption{The model of the barrel pixel tracker before (on the left) and after the Phase 1 upgrade (on the right).}
+ \caption{The model of the barrel pixel tracker before (on the left) and after the Phase 1 upgrade (on the right). Figure taken from
+ \cite{CMS:2012sda}.}
  \label{fig:tracker_4}
 \end{figure}
 
@@ -64,8 +65,8 @@ Addition of the fourth layer increases the amount of material which the particle
 the desired feature for the innermost detectors. There are several ways planned to decrease the material amount on the 
 way of the particle. So the volume of the material, which the detector is made of, has to be decreased. 
 First of all, the readout system itself is planned to be thinner (it is easy to see in the Fig. \ref{fig:tracker_4},
-where the new pixel barrels are thinner). And secondly, the cooling system will be changed to the $CO_{2}$ cooling \cite{CMS:2012sda} with 
-light-weight mechanical support, allowing the electronic boards to be moved out of the detector volume.
+where the new pixel barrels are thinner). And secondly, the electronic boards will be moved out of the detector volume. 
+Additionally, a new $CO_{2}$ cooling system \cite{CMS:2012sda} with a light-weight mechanical support will save material budget.
 
 The improvements planned will lead to the higher efficiencies, lower fake track rates (see sec. \ref{ssec:trkReco}), lower read-out dead time,
 and extended lifetime of the detector. This results the better identification of the particles for offline analysis and HLT.
@@ -111,7 +112,7 @@ These pixels collect electrons from oxygenated high-resistivity $n$-type silicon
   \includegraphics[width=0.4\textwidth]{021_pixel_upgrade/plots/prototype_chip.png}
  \end{subfigure}
  \caption{The photo of the prototype silicon pixel chip for the Phase I upgrade of the CMS BPIX, 4 layer, mounted to the readout panel (on the left)
- and the magnified microscope shot of the sensitive silicon pixel area (on the right).}
+ and a magnified readout chip layout print (on the right).}
  \label{fig:prototype}
 \end{figure}
 
@@ -137,8 +138,8 @@ expected to absorb 40 MRad (0.4 MGy), layer 3 -- 20 MRad (0.2 MGy) and layer 4 -
 \end{figure}
 
 Here the studies of the properties of the irradiated prototype chips for the layer 4 of BPIX will be presented. For these needs the prototype
-chips were irradiated at CERN PS [??] with the 23 GeV protons up to fluences of 3.8 $\cdot$ 10$^{14}$ $p/cm^{2}$ which corresponds to the lifetime
-dose of the layer 4 of the BPIX (approximately 16 MRad). 
+chips were irradiated at CERN PS \cite{CERNTB} with the 23 GeV protons up to fluences of 3.8 $\cdot$ 10$^{14}$ $p/cm^{2}$ which corresponds to the lifetime
+dose of the layer 4 of the BPIX. %(approximately 16 MRad). 
 
 The prototype chips were irradiated such that the silicon sensor side was facing the beam. The readout chips on the back side received the dose
 up to 130 kGy. The tests  in the laboratory at DESY \cite{DESYWeb} showed the full functionality of the irradiated ROCs.
@@ -152,7 +153,7 @@ facility was exploited.
 The DESY beam test facility makes use of the electron-positron synchrotron DESY II \cite{Hemmie:1982xq, DESYIIWeb}, which provides the electron
 and positron beams with up to 1000 particles per cm$^{2}$ at the energies of up to 6 GeV. However, these are not the particles which are directed
 to the beam test areas. The circulating DESY II beam meets the 25$\mu$m thick carbon fiber and emits bremsstrahlung. The resulting photons are afterwards 
-converted to the electron-positron pairs on the converter, which is actually a metal plane. The resulting beam is passed to a dipole magnet for
+converted to the electron-positron pairs on the converter, which is actually a copper plane. The resulting beam is passed to a dipole magnet for
 separating the particles with needed momentum. Afterwards the beam is collimated and brought to the area where it can be exploited for the
 experimental needs. The scheme of the facility which delivers the beam for the tests is shown in Fig. \ref{fig:desy_tb}.
 
@@ -179,10 +180,10 @@ system. Each sensor plate can be moved along the beam axis to meet some particul
 \end{figure}
 
 The telescope serves as a device, which measures the particle path with a very good precision so that it is assumed to be known.
-The EUDET telescope is equipped with the silicon pixels. The telescope sensors have the point precision of 2-3 $\mu$m and they
+The EUDET telescope is equipped with the silicon pixels. The telescope sensors have the point precision of 3.4 $\mu$m and they
 are made with a minimum of material (their thickness is only 50 $\mu$m), so that the precision doesn't drop even on the lowest 
 energy border of the test beam ($\sim$ 1 GeV), when the contribution of the interaction of the particles with matter becomes 
-sizable. The Mimosa (Minimum Ionazing MOS Active Pixel Sensor) sensors (of the size of $21 \times 11$ mm$^{2}$ with squared 
+sizable. The Mimosa (Minimum Ionizing MOS Active Pixel Sensor) sensors (of the size of $21 \times 11$ mm$^{2}$ with squared 
 pixels of size of 18.4 $\mu$m) developed for the EUDET telescope made use of the MAPS (Monolitic Active Pixel Sensors) 
 technology \cite{2001NIMPA.458..677T, Fischer:2002bv}.
 
@@ -200,7 +201,8 @@ This enables the studies of the detector behavior with inclined particle tracks 
 \end{figure}
 
 There is a second CMS prototype chip placed downstream at the end of the beam telescope. It had to serve as a reference for the
-measurement of the DUT efficiency.
+measurement of the DUT efficiency, as it has the same time of the working cycle as the DUT (25 ns). The Mimosa has a much longer
+cycle (115 $\mu$s) and it can't be used as a reference for the DUT.
 
 On the front before and in the end right after the telescope plains two crossed scintillators are located. They serve as a trigger. 
 If their signals coincide, the particle has passed all the way through the telescope.
@@ -216,10 +218,9 @@ about the particles hit the detector plane.  Afterwards the received data had to
 To gain the better knowledge of the geometry of the setup, the alignment procedure is done. The alignment was done with the
 Millipede algorithm \cite{1748-0221-3-09-P09002}.
 
-The neighboring fired pixels on the pixel detector are grouped into clusters.
-
-The tracks were reconstructed using the general broken lines algorithm \cite{Blobel:2006yi}. It takes the multiple scattering
-in the detector planes into account. 
+The neighboring fired pixels on the pixel detector are grouped into clusters and the centers of the clusters are the hits.
+The tracks were reconstructed from the hits using the general broken lines algorithm \cite{Blobel:2006yi}. It takes the multiple 
+scattering in the detector planes into account. 
 
 To define the telescope resolution, first the particle track was reconstructed using the hits in the first and third telescope planes.
 Then the second plane was used to determine the difference between the reconstructed particle track position and the actual hit in the 
@@ -237,7 +238,7 @@ tests on the DESY beam test.
 The external bias voltage is needed to collect all the charge which was released due to the particle crossing the sensitive silicon
 pixel of the detector. If the bias voltage is not high enough, not all the charge is collected and the particle energy may be defined
 incorrectly. The voltage at which the full charge starts to be collected is called \textit{depletion voltage}. The bias voltage is
-applied on the $p$-implant side. The schematic path of the ionizing particle through the silicon sensor is displayed at the following sketch:
+applied on the $p$-implant side. The schematic path of the ionizing particle through the silicon sensor is displayed at the sketch \ref{fig:depl_volt}.
 
 \begin{figure}[h]
  \centering
