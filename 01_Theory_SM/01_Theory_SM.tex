@@ -154,7 +154,7 @@ The coupling constant, or the interaction strength of the electromagnetic intera
 
 where $\epsilon_{0}$ is the permitivity of vacuum and $e$ is the electron charge.
 
-As the coupling constant is small ($\alpha \ll 1$), it can be used for expansion in perturbative calculations (observable ~ $\sum_{k=0}^{\infty} c_{k}\cdot\alpha^{k}$).
+As the coupling constant is small ($\alpha \ll 1$), it can be used for expansion in perturbative calculations (observable $\sim\sum_{k=0}^{\infty} c_{k}\cdot\alpha^{k}$).
 The naming of the processes, described by each of the terms of the $\alpha$ expansion
 is Leading Order process (LO, which takes into account the first term with non-zero $c_{k}$), Next-to-Leading Order process (NLO, also takes
 to account the next term, additionally to the LO), Next-to-Next-to-Leading Order process (NNLO), etc.
@@ -170,7 +170,7 @@ The mediators of the strong interaction are gluons. These particles are massless
 interaction is the interaction between quarks and gluons via gluons. The color charge is conserved during the interaction.
 
 The coupling constant of the strong interaction, $\alpha_{s}$, is depending on the energy scale $Q$. As shown in the
-Fig. \ref{fig:Alpha_s}, $\alpha_{s}$ rapidly increases with decreasing of $Q$. This means that at larger distances 
+Fig. \ref{fig:Alpha_s}, $\alpha_{s}$ rapidly increases with decreasing $Q$. This means that at larger distances 
 the strength of the interaction increases a lot. This phenomenon is called \textit{confinement} and this means that the quarks
 can't exist in an isolated state. The more the quarks separate from each other in terms of distance, the stronger they interact, the harder
 it becomes to separate them further. Even if enough energy is present to separate quarks more and more from each other, the gluon field will become critically
@@ -193,7 +193,7 @@ The limit of the region of strong interaction impact is of the order of the nucl
 
 The opposite tendency which can be observed in Fig. \ref{fig:Alpha_s} is that the $\alpha_{s}$ is getting smaller for higher values 
 of the $Q$. This means that for the shorter interaction distances, the coupling constant becomes weaker. This phenomenon carries the 
-name \textit{asymptotic freedom}\cite{PhysRevLett.30.1343}. Under these conditions the quarks are assumed to be treated as the free particles. The asymptotically 
+name \textit{asymptotic freedom}\cite{PhysRevLett.30.1343}. Under these conditions the quarks can be effectively treated as free particles. The asymptotically 
 free quarks are assumed to be observed in the \textit{quark-gluon plasma} \cite{Bohr1977275} -- the state of matter with extremely high density and/or temperature.
 
 % The conjectured QCD states, depending on temperature and density, are shown in Fig. \ref{fig:QGP}.
@@ -211,23 +211,21 @@ free quarks are assumed to be observed in the \textit{quark-gluon plasma} \cite{
 As it can be seen in the table \ref{tab:forces}, the strength of the weak interaction is many orders of magnitude smaller than the one for the 
 electromagnetic and strong interaction. This fact explains the name \textit{weak}.
 
-A charge, which is responsible for the weak interaction is the \textit{weak isospin} $I_{3}$.
+A charge, which is responsible for the weak interaction is the \textit{weak isospin} $I_{3}$. All the left-handed\footnote{The 
+\textit{chirality} of the particle defines it's handnessness. The left-handed and right-handed states are different components of the Dirac spinor\cite{aitchison2003gauge}. 
+The parity transformation change the chirality (from left-handed to right handed and vise versa). For massless particles chirality is the same as helicity 
+-- the property of the particle, which describes the coincidence of the spin and motion directions.} leptons and quarks carry the ability to interact
+weakly.
 % The weak interaction differs from the others in a way that there is no particular name for the charge responsible for this interaction 
 % (like electrical charge for the electromagnetism and color charge for the strong interaction). 
-All the left-handed\footnote{The \textit{chirality} of the particle defines it's handnessness.
-The left-handed and right-handed states are the different components of the Dirac spinor\cite{aitchison2003gauge}. The parity transformation change the chirality (from
-left-handed to right handed and vise versa). For the massless particles chirality is the same as helicity -- the property of the particle, which describes the coincide
-of the spin and motion directions.} leptons and quarks carry the ability to interact weakly.
 A widely known example of the weak interaction is the process of the $\beta$-decay. The lepton number and lepton flavour both conserve in the weak interaction.
 
 There are two kinds of weak interaction: \textit{neutral}, mediated by the 
 $Z$-bosons, and \textit{charged}, mediated by the $W^{\pm}$. The masses of the 
 mediators are shown in the Fig. \ref{fig:SM_Particles}.	In the neutral weak interaction there is no electric charge as well as no quark flavour exchange between the 
-interacting particles. In the charged weak interaction, both the electric charge and the quark flavour exchange, are present. In the charged weak interactions 
-the quark flavour can exchange not only within one generation, but also between the generations.
-
-The intergeneration flavour exchange is described using Cabbibo-Kobayashi-Maskawa (CKM) matrix\cite{Kobayashi:1973fv}.
-To introduce it 
+interacting particles. In the charged weak interaction, both the electric charge and the quark flavour exchange, are present.  
+In the charged weak interactions the quark flavour can exchange not only within one generation, but also between the generations.
+This intergeneration flavour exchange is described the following way. 
 \begin{equation}
 \left( \begin{array}{c}
        u \\ d
@@ -248,7 +246,7 @@ their linear combinations $d'$, $s'$ and $b'$, expressed as follows:
 \left( \begin{array}{c} d \\ s \\ b\end{array} \right).
 \end{equation}
 
-The matrix $V$ in \ref{eq:CKM_transform} is the Cabibbo-Kobayashi-Maskawa matrix (CKM-matrix), which describes the transition probability 
+The matrix $V$ in \ref{eq:CKM_transform} is the Cabibbo-Kobayashi-Maskawa matrix (CKM-matrix)\cite{Kobayashi:1973fv}, which describes the transition probability 
 between different quark flavours. Experimentally defined, the matrix elements have the following magnitudes \cite{PDG-2012}:
 
 \begin{equation} \label{eq:CKM}
@@ -259,7 +257,7 @@ The diagonal elements of the CKM matrix (\ref{eq:CKM}) are close to 1, being muc
 within one generation are preferred.
 
 As the masses of the gauge bosons which mediate the weak interaction are quite large (see Fig. \ref{fig:SM_Particles}), the range of the interaction is restricted
-to a size of $\sim \frac{\hbar}{M_{W}c}$.
+to a size of $\sim \frac{1}{M_{W}}$, where $M_{W}$ is the mass of the $W^{\pm}$ boson, 80.4 GeV.
 
 \subsection{Electroweak Unification and Symmetry Breaking}
 
@@ -276,7 +274,7 @@ of the interaction. This can be also seen in Fig. \ref{fig:em_weak}.
 A unification of these two interactions would seem to be a natural idea. It is not that simple as replacing the $Z^{0}$ by the photon $\gamma$, one
 should take to account both processes and their interferences.
 
-The theory which describes the unified electroweak interactions is based on the $SU(2) \times U(1)$ symmetry. To make the Lagrangian of the weak interaction
+The theory \cite{Bilenky:1982ms} which describes the unified electroweak interactions is based on the $SU(2) \times U(1)$ symmetry. To make the Lagrangian of the weak interaction
 symmetric to the $SU(2)$ transformations, three fields are introduced: $W_{\mu}^{1}$, $W_{\mu}^{2}$ and $W_{\mu}^{3}$. These fields couple to fermions with
 the coupling constant $g$. The fields $W_{\mu}^{1}$ and $W_{\mu}^{2}$ couple to the left-handed fermions and
 the $W_{\mu}^{3}$ is coupling to the neutrinos. The $W^{\pm}$ couples to the left-handed fermions, thus it can be represented as a linear combination of
@@ -321,9 +319,7 @@ equation:
 
 \begin{equation}
  Y = (2Q - I_{3}).
-\end{equation}
-
-Here $Q$ is an electric charge in units of the electron charge $e$ and $I_{3}$ is the weak isospin.
+\end{equation}Here $Q$ is an electric charge in units of the electron charge $e$ and $I_{3}$ is the weak isospin.
 
 The whole model, however, is based on the assumption that all gauge bosons have to be massless, which is not the case. The known experimental fact
 is that the $W^{\pm}$ and $Z^{0}$ bosons carry a non-zero mass \cite{PDG-2012}. The masses appear in this theory due to \textit{spontaneous gauge symmetry
@@ -336,12 +332,11 @@ and it's properties still need to be checked for the consistency to the theoreti
 
 \subsection{Gravity}
 
-The fourth interaction which is present in our Universe is gravity. The gravity is not described in Standard Model, but it has to be mentioned for a consistent 
+The fourth interaction which is present in our Universe is gravity. The gravity is not described in the Standard Model, but it has to be mentioned for a consistent 
 picture. The gravity is described by the \textit{general relativity}, which is a classical non-quantum field theory. Up to now it couldn't be combined with the
 Standard Model. The Standard Model breaks down at the large scale, where gravity starts to play role. Although the extension of the Standard Model is predicting 
-the existence of a gravity gauge boson - a \textit{graviton} with a spin 2 and zero mass. However, there has been no experimental proof of it's existence to date.
-
-The "charge`` which reacts to the gravity is the mass of the body.
+the existence of a gravity gauge boson -- a \textit{graviton} with a spin 2 and zero mass -- there has been no experimental proof of it's existence to date.
+The "charge`` which reacts to the gravity is the mass of the interacting object.
 
 The gravitation force between the elementary particles is very weak, even though the distances are very small (the gravity strength is proportional to $\sim\frac{1}{r^{2}}$). 
 The reason for that are very low masses of the interacting particles. Gravity only becomes noticable
@@ -353,14 +348,14 @@ The influence of gravity is negligible for the processes studied in this thesis,
 \section{Top Quark Physics}
 
 In this thesis the process of $t\bar{t}$ production is being analyzed. Some more details of the top quark physics should be presented.
-The top quark has unique properties compared to the other elementary particles: it is the heaviest known elementary particles and its mass is so large, that its the lifetime 
+The top quark has unique properties compared to the other elementary particles: it is the heaviest known elementary particles and its mass is so large that its the lifetime 
 is smaller than the typical hadronization time. Thus, the top quark decays 
 faster than it can hadronize, which means that studying the top quark is gaining knowledge about a bare quark. This section describes the production process of the top quark and its decay.
 
 \subsection{Top Quark Production}\label{ssec:tprod}
 
 The top quark production cross section depends on the center-of-mass energy of the experiment in which it is produced. From Fig. \ref{fig:SM_XSec_Prod}
-one can judge that under the conditions of the Large Hadron Collider (where the designed center-of-mass energy should approach 14 TeV) acts like 
+one can judge that the LHC with its large center-of-mass energy (design energy of 14 TeV) acts like 
 a top production factory. The top production cross section ($\sigma_{top}$) at the LHC scale is almost an order of magnitude larger than for the
 TEVATRON.
 
@@ -374,9 +369,26 @@ TEVATRON.
 
 The top quarks may be produced as single top quarks or in pairs.
 
+\subsubsection{Single Top Production}
+
+Single top quarks can be produced in the weak interaction processes via the $Wtb$ vertex.
+
+There are three production modes of the single top -- $t$-channel, $s$-channel and $tW$-channel. These production channels are shown in Fig. \ref{fig:single_t_prod}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{01_Theory_SM/plots/single_top_uniform.png}
+  \caption{Feynman diagrams for the LO single $t$-quark production. Three different production channels for single top quarks are illustrated: 
+  the $s$-channel (a), the $t$-channel (b) and the W-associated $tW$-channel (c).}
+  \label{fig:single_t_prod}
+\end{figure}
+
+Single top quark production is interesting for various studies. It is a test of the Standard Model and it is directly sensitive to the CKM matrix
+element $|V_{tb}|$.
+
 \subsubsection{Top Quark Pair Production}\label{ssec:tt_prod}
 
-The dominant $t\bar{t}$ production mechanism in SM is the one via gluon fusion. In the QCD the inclusive production cross section of the $t\bar{t}$ pair
+The dominant SM $t\bar{t}$ production mechanism at the LHC is the gluon-gluon fusion. In the QCD the inclusive production cross section of the $t\bar{t}$ pair
 from the proton-proton interaction can be factorized as follows \cite{Schilling:2012dx}:
 
 \begin{equation} \label{eq:pptt}
@@ -393,25 +405,29 @@ As the mass of the $t\bar{t}$ pair is high, the $\alpha_{s}$ turns out
 to be quite low (see Fig. \ref{fig:Alpha_s}), thus the perturbative expansion of the hard scattering cross sections is possible.
 The \textit{Parton Density Function}, or the \textit{PDF}, is depending on the parton flavour $i$, parton momentum
 fraction $x_{i}$ and the energy scale of the interaction. A PDF gives a probability that within the interaction of a given scale a parton with a given flavour $i$
-and momentum fraction $x_{i}$ will be found in a proton. PDFs can't be expanded in pQCD, thus need a parametrization, depending on $x$ and scale $Q$. The dependence
-on scale $Q$ is described in the DGLAP evolution\cite{Altarelli:1977zs, Dokshitzer:1977sg, Gribov:1972ri}. A scale is chosen arbitrary for particular needs.
+and momentum fraction $x_{i}$ will be found in a proton. PDFs can't be expanded in perturbative QCD (pQCD), thus need a parametrization, depending on $x$ and 
+the scale $Q$. The dependence on the scale $Q$ is described in the DGLAP evolution\cite{Altarelli:1977zs, Dokshitzer:1977sg, Gribov:1972ri}. A scale is chosen arbitrary.
+%for particular needs.
 This scale is called a \textit{factorization scale} $\mu_{f}$.
 % , it is a sum of the 
 % densities of all the quark (valent and from the sea) and gluon constituents. 
 
-The proton densities are obtained as a result of experimental data fit.
-The PDFs are measured by different groups (for example, HERAfitter \cite{Alekhin:2014irh} or 
-CTEQ \cite{Pumplin:2002vw}). An example of the combined HERA PDFs is shown in Fig. \ref{fig:HERA_PDF}.
+The proton densities are obtained as a result of fits to experimental data. 
+The PDFs are determined by different groups (for example, HERAfitter \cite{Alekhin:2014irh} or 
+CTEQ \cite{Pumplin:2002vw}). The backbone of any modern PDFs are inclusive $ep$ scattering cross sections
+measured in deep inelastic $ep$ scattering (DIS) over a wide kinematic range of proton momentum fractions $x$ and hard scales $Q$. 
+An example of PDFs obtained by the HERA experiments H1 and ZEUS from fits to their combined inclusive DIS data are shown in Fig. \ref{fig:HERA_PDF}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/herapdf17.png}
-  \caption{PDFs from HERAPDF1.7, which includes charm data, jet data and low energy data as well as the HERA-I and II high energy inclusive data. Plot taken from \cite{CooperSarkar:2011aa}.}
+  \includegraphics[width=0.8\textwidth]{01_Theory_SM/plots/d15-039f23.png}
+  \caption{PDFs from HERAPDF2.0 \cite{Abramowicz:2015mha}.}
   \label{fig:HERA_PDF}
 \end{figure}
 
-The $t\bar{t}$ pairs are dominantly produced in the process of gluon-gluon fusion $gg \rightarrow t\bar{t}$ or in quark-antiquark annihilation $q\bar{q} \rightarrow t\bar{t}$.
-These LO production processes are shown in Fig. \ref{fig:LO_tt_prod}. In the NLO production processes there are also partonic sub-processes with $gq$($g\bar{q}$) present.
+At the LHC $t\bar{t}$ pairs are dominantly produced in the process of gluon-gluon fusion $gg \rightarrow t\bar{t}$ (at 80\% of the cases at 8 TeV $pp$ collisions) 
+and to somewhat lesser extent in quark-antiquark annihilation $q\bar{q} \rightarrow t\bar{t}$ (at 20\% of the cases). These LO production processes are shown in 
+Fig. \ref{fig:LO_tt_prod}. In the NLO production processes there are also partonic sub-processes with $gq$($g\bar{q}$) present.
 
 \begin{figure}[h]
   \centering
@@ -420,26 +436,17 @@ These LO production processes are shown in Fig. \ref{fig:LO_tt_prod}. In the NLO
   \label{fig:LO_tt_prod}
 \end{figure}
 
-\subsubsection{Single Top Production}
-
-The top quarks can be also produced not in pairs in the weak interaction processes in the $Wtb$ vertex.
-
-There are three production modes of the single top -- $t$-channel, $s$-channel and $tW$-channel. These production channels are shown in Fig. \ref{fig:single_t_prod}.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=1.0\textwidth]{01_Theory_SM/plots/single_top_uniform.png}
-  \caption{Feynman diagrams for the LO single $t$-quark production. Three different production channels for single top quarks are illustrated: 
-  the $s$-channel (a), the $t$-channel (b) and the W-associated $tW$-channel (c).}
-  \label{fig:single_t_prod}
-\end{figure}
-
-Single top quark production is interesting for various studies. It is a test of Standard Model and it is directly sensitive to the CKM matrix
-element $|V_{tb}|$.
+The studies of the $t\bar{t}$ production process provide a very important test of the Standard Model. 
+In particular, the process of $t\bar{t}$ production in the $pp$ collisions at the LHC (sec. \ref{ssec:tprod}, Fig.\ref{fig:LO_tt_prod})
+is precisely measured in the QCD. Thus, the $t\bar{t}$ production cross section measurement can provide constraints for the PDF and the strong coupling constant $\alpha_s$.
+The total $t\bar{t}$ production cross section is accurately calculated up to NNLO, which means that the experimental measurement of this cross sections provide a 
+test of perturbative QCD.
+On the other hand, the deviation from the QCD predictions may point to some processes beyond the Standard Model. In addition, a measurement of the $t\bar{t}$ production 
+cross sections may deliver information about various top properties, e.g. mass or spin of the $t$-quark.
 
 \subsection{Top Quark Pair Decay}\label{ssec:tdecay}
 
-The top quark decays before hadronizing almost exclusively to a $b$-quark and a $W$-boson, as the value of $|V_{tb}|$ is almost 1 (see CKM matrix \ref{eq:CKM}).
+The top quark decays before hadronizing almost exclusively to a $b$-quark and a $W$-boson, as the value of $|V_{tb}|$ is almost 1 (see eq. \ref{eq:CKM}).
 
 The decay modes of the $t\bar{t}$ pairs can be classified according to the decay mode of the $W$ bosons. The decay modes and their branching ratios are presented
 in Fig. \ref{fig:tt_decay}:
@@ -460,13 +467,14 @@ in Fig. \ref{fig:tt_decay}:
 
 \begin{itemize}
  \item \textit{Full hadronic channel}. Both $W$ bosons decay into quark-antiquark pairs -- $t\bar{t} \rightarrow (W^{+} \rightarrow q\bar{q}')b\:(W^{-} \rightarrow q''\bar{q}''')\bar{b}$.
- This decay channel has the largest branching ratio\footnote{\textit{Branching ratio} of the specific decay of a particular particle/system is the probability of this particle/system
- to decay via this decay mode.}. However, this state has a not very pure quality in the Large Hadron Collider environment, as the large number of quark and gluon jets is produced.
+ This decay channel has the largest branching ratio\footnote{The \textit{branching ratio} of a specific decay of a particular particle/system is the probability of this particle/system
+ to decay via this decay mode.}. However, this state has a not very pure quality in the Large Hadron Collider environment, as a large number of quark and gluon jets is produced and similar
+ final states are produced in many other non top production processes at the LHC.
  
  \item \textit{Semileptonic (lepton+jet) channel}. One $W$ boson decays hadronically, another one - into two leptons:  $t\bar{t} \rightarrow (W^{\pm} \rightarrow q\bar{q}')b \: (W^{\mp} \rightarrow l^{\mp}\nu)\bar{b}$.
- The high momentum lepton, which occurs in this process, is a signature that helps to identify the decay better. Thus, there is less
- ambiguity in defining the final state of the semileptonic $t\bar{t}$ decay. The semileptonic decay is an over-constrained system with 22 known components of four vector components of
- jets and leptons and two $W$-mass constraints.
+ The high momentum lepton, which occurs in this process, is a signature that helps to identify the decay.
+%  The semileptonic decay is an over-constrained system with 22 known components of four vector components of
+%  jets and leptons and two $W$-mass constraints.
  
  \item \textit{Dileptonic channel}. Both $W$ bosons decay into leptons -- $t\bar{t} \rightarrow (W^{+} \rightarrow l^{+}\nu_{l^{-}})b \: (W^{-} \rightarrow l^{-}\bar{\nu}_{l^{-}})\bar{b}$.
  This decay channel has the smallest branching ratio, but the two high momentum leptons are a clear signature which helps to distinguish this final state from other processes
@@ -476,13 +484,13 @@ in Fig. \ref{fig:tt_decay}:
 This analysis is based on the dileptonic channel. However, only the final states where the electrons or/and muons occur are considered. The ones with $\tau$ leptons are 
 not taken to account as signal.
 
-\subsection{Studies of the $t\bar{t}$ Production}
+% \subsection{Studies of the $t\bar{t}$ Production}
 
-The studies of the $t\bar{t}$ production process provide a very important test of the Standard Model. 
-
-In particular, the $t\bar{t}$ production in the $pp$ collisions at the LHC is dominated by gluon-gluon fusion (sec. \ref{ssec:tprod}, Fig.\ref{fig:LO_tt_prod}), which 
-is precisely measured in the QCD. Thus, the $t\bar{t}$ production cross section measurement can provide constrains for the PDF and the strong coupling constant $\alpha_s$.
-The total $t\bar{t}$ production cross section is accurately calculated up to NNLO, which means that the experimental measurement of this cross sections provide a 
-test of perturbative QCD.
-On the other hand, the deviation from the QCD predictions may point to some processes beyond the Standard Model. In addition, a measurement of the $t\bar{t}$ production 
-cross sections may deliver information about various top properties, e.g. mass or spin of the $t$-quark.
+% The studies of the $t\bar{t}$ production process provide a very important test of the Standard Model. 
+% 
+% In particular, the $t\bar{t}$ production in the $pp$ collisions at the LHC is dominated by gluon-gluon fusion (sec. \ref{ssec:tprod}, Fig.\ref{fig:LO_tt_prod}), which 
+% is precisely measured in the QCD. Thus, the $t\bar{t}$ production cross section measurement can provide constraints for the PDF and the strong coupling constant $\alpha_s$.
+% The total $t\bar{t}$ production cross section is accurately calculated up to NNLO, which means that the experimental measurement of this cross sections provide a 
+% test of perturbative QCD.
+% On the other hand, the deviation from the QCD predictions may point to some processes beyond the Standard Model. In addition, a measurement of the $t\bar{t}$ production 
+% cross sections may deliver information about various top properties, e.g. mass or spin of the $t$-quark.

@@ -111,13 +111,20 @@ There are two models which are the basis for the MC generator hadronization:
  observation that the color-singlet parton subsystems, called \textit{clusters}, occur with universal mass distribution
  depending only on the scale $Q_{0}$ at which they were formed, and not on the starting scale of the showering.
  The other key idea of the model is that the gluons are forced to split into a quark-antiquark pair at the end of the parton shower.
- The clusters formed by the gluon splitting are then forced to decay into on-shell hadrons. The cluster hadronization is represented 
- in Fig. \ref{fig:clustHad}.
+ The clusters formed by the gluon splitting are then forced to decay into on-shell hadrons. The cluster hadronization in comparison
+ to string hadronization is represented in Fig. \ref{fig:clustHad}.
  
  \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{03_simulation/plots/Figures_MonteCarlo_clustr_had.png}
-  \caption{Illustration of cluster hadronization model. The figure is taken from \cite{Webber:1999ui}.}
+  \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{03_simulation/plots/Figures_MonteCarlo_clustr_had.png}
+  \end{subfigure}
+  \begin{subfigure}
+   \centering
+   \includegraphics[width=0.49\textwidth]{03_simulation/plots/Figures_MonteCarlo_string_had.png}
+  \end{subfigure}
+  \caption{Illustration of cluster (left) and string (right) hadronization model. The figure is taken from \cite{Webber:1999ui}.}
   \label{fig:clustHad}
  \end{figure} 
  
@@ -145,13 +152,14 @@ might also differ from generator to generator.
 
 \subsection{Underlying Event}
 
-The \textit{underlying event} (UE), is, in terms of the MC generators, the activity beyond the main hard process, like multiple parton-parton interactions
-(MPI) between the beam particles. The MPI may sometimes give a rise to two or more back-to-back jets (if there were more hard parton-parton interactions
-in one proton-proton collision). This case is, however, very rare. The main impact is coming from the soft MPI. They may affect, for example, the 
-missing $E_{T}$ distribution or increase the activity in the forward direction (break-up of the beam remnants).
+The \textit{underlying event} (UE), is, in terms of the MC generators, the activity beyond the hard process, like multiple parton-parton interactions
+(MPI) between the beam particles and the hadronization of beam-beam remnants (BBR) \cite{Khachatryan:2015pea}. The BBR include hadrons from the partons 
+which do not exchange any appreciable $p_{T}$ in the collision. The MPI may sometimes give a rise to two or more back-to-back jets (if there were more 
+hard parton-parton interactions in one proton-proton collision). This case is, however, very rare. The main impact is coming from the soft MPI. They may 
+affect, for example, the missing $E_{T}$ distribution or increase the activity in the forward direction (break-up of the beam remnants).
 
-The basic Monte Carlo model for the UE is given in \cite{PhysRevD.36.2019}. There are some basic assumptions involved in
-this model, like, for example, the interactions can't use more momentum than it is available in the parent hadron (proton in case of this analysis).
+% The basic Monte Carlo model for the UE is given in \cite{PhysRevD.36.2019}. There are some basic assumptions involved in
+% this model, like, for example, the interactions can't use more momentum than it is available in the parent hadron (proton in case of this analysis).
 
 The UE models are usually tuned to the experimental conditions and on experimental data. The model derived on the CMS data collected at $\sqrt{s} = 0.9\, TeV$
 and $\sqrt{s} = 8\,TeV$ is called the $Z2*$ tune \cite{Chatrchyan:2011id}.
@@ -166,15 +174,15 @@ physics, the list of the generators used for this analysis will be given in the 
 
 \PYTHIA \cite{Sjostrand:2006za} is a general-purpose event generator. It models $pp$, $\gamma p$ and $e^{+}e^{-}$ collisions. \PYTHIA includes more than 200 hardcoded
 hard subprocesses, which include the Standard Model reactions but also some exotic beyond Standard Model processes \cite{Buckley:2011ms}.
-
+%
 The matrix elements of the hard parton scattering are calculated in \PYTHIA in LO QCD accuracy.
-
+%
 For the parton showering, the parton emissions are ordered by the transverse momentum of the radiating parton, $Q^{2} = p_{T}(part.)$.
-
+%
 For the hadronization, the Lund string model is used.
-
+%
 Particle decays are included in $\PYTHIA$, using specific decay tables containing all relevant decay branching ratios.
-
+%
 The $Z2*$ tune for the UE simulation is conventionally (for the CMS experiment) used in \PYTHIA for the UE simulation for this analysis.
 
 \subsubsection{$\HERWIG$ 6}
@@ -182,7 +190,7 @@ The $Z2*$ tune for the UE simulation is conventionally (for the CMS experiment) 
 \HERWIG \cite{Corcella:2000bw} is a general-purpose LO matrix element plus parton shower generator like \PYTHIA. It can model hadron-hadron, 
 lepton-lepton and hadron-lepton collisions.
 
-\HERWIG is able to produce a fairly large variety of Standard Model QCD and electroweak processes and elementary subprocesses beyond the standard model.
+\HERWIG is able to produce a fairly large variety of Standard Model QCD, electroweak processes and elementary subprocesses beyond the standard model.
 
 The parton showering is ordered by the scale $Q^{2} \sim 1 - \cos\theta$, where $\theta$ is the angle between the parent and emitted partons.
 

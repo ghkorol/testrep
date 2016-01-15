@@ -1,10 +1,10 @@
 \chapter{Reconstruction of the top-pair Kinematics}\label{chapt:kinReco}
 
-The two neutrinos are not detected, thus additional
-assumptions are needed to define the full final state kinematics of the $t\bar{t}$ reconstructed in dilepton decay channel.
-This section describes the method used for the full kinematics reconstruction of this system. The analytical solution of the
-kinematic equations (sec. \ref{sec:MatBg}) as well as a performance description of the method 
-(sec. \ref{sec:SolSer} -- \ref{sec:kinRecPerf}) are revealed.
+The two neutrinos are not detected, thus additional information and
+assumptions are needed to determine the full final state kinematics of the $t\bar{t}$ system reconstructed in the dilepton decay channel.
+This section describes the method used for the full reconstruction. The analytical solution of the
+kinematic equations (sec. \ref{sec:MatBg}) as well as a performance test of the method 
+(sec. \ref{sec:SolSer} -- \ref{sec:kinRecPerf}) are discussed.
 
 \section{Analytical Solution of Kinematic Equations}\label{sec:MatBg}
 
@@ -17,7 +17,7 @@ The following constraints are being used:
  \item The whole missing transverse energy $E_{T}^{miss}$ of the event is assumed to arise entirely
  from the two neutrinos from the $t\bar{t}$ decay;
  \item \textit{The $W^{\pm}$ masses} ($m_{W\pm}$) are assumed to be known. As $W^{\pm}$ are resonances with a very small lifetime, their masses 
- are distributed according to the Breit-Wigner function. For this reconstruction, the $W^{\pm}$ masses are constrained to values randomly taken 
+ are distributed according to a Breit-Wigner function. For this reconstruction, the $W^{\pm}$ masses are set to values randomly taken 
  from the generator Breit-Wigner $W^{\pm}$ mass spectrum.
 \end{itemize}
 
@@ -42,7 +42,7 @@ These assumptions lead to a system of six equations which describe the conservat
 Here the $E_{l^{\pm}}$ and $p_{l^{\pm}_{x,y,z}}$ correspond to the lepton(antilepton) energy and momentum components respectively; 
 $E_{b/\bar{b}}$ and $p_{b/\bar{b}_{x,y,z}}$ are the $b$/$\bar{b}$-jet energy and momentum components respectively; the $E^{miss}_{T_{x,y}}$ are
 the two components of the missing transverse energy; the $p_{\nu/\bar{\nu}_{x,y,z}}$ are the neutrino (antineutrino) momenta components.
-The neutrino energies $ E_{\nu/\bar{\nu}}$ are composed from momenta:
+The neutrino energies $ E_{\nu/\bar{\nu}}$ are determined from their momenta:
 
 \begin{equation}
  E_{\nu/\bar{\nu}}^{2} = p_{\nu/\bar{\nu}_{x}}^{2} + p_{\nu/\bar{\nu}_{y}}^{2} + p_{\nu/\bar{\nu}_{z}}^{2}
@@ -61,10 +61,9 @@ the system is reduced to a fourth order polynomial equation for the neutrino mom
 where the coefficients $h_{0} - h_{4}$ \cite{LSpaper, LSerrat} depend on the missing transverse energy $E_{T}^{miss}$ and four-momenta of the
 leptons, antileptons, $b$- and $\bar{b}$-jets. 
 
-There can be up to four solutions for the equation \ref{eq:eqLSf}. This equation (in case if the coefficients $h$ are such that the equation can't be simplified to the third, second
-or first order), as it was constructed, can not have analytically three or one real solutions, as proven in \cite{LSpaper}. Thus, it is expected to get either two, or four solutions
-of the eq. \ref{eq:eqLSf}. However, due to the limited computing accuracy, there may be cases when two solutions are indistinguishable and treated as one. This phenomenon can create
-three out of four or one out of two solutions.
+There can be up to four solutions for equation \ref{eq:eqLSf}. This equation (in case if the coefficients $h$ are such that the equation can't be simplified to the third, second
+or first order) can not have analytically three or one real solutions as proven in \cite{LSpaper}, thus, it is expected to get either two or four solutions. However, due to the 
+limited computing accuracy, there may be cases when two solutions are indistinguishable and treated as one. This phenomenon can create three out of four or one out of two solutions.
 
 The distribution of the number of solutions for the generated \MG + \PYTHIA $t\bar{t}$ signal sample 
 is shown in Fig. \ref{fig:LSNsol}. Two (four) solutions per event are expected in approx. 80$\%$ (20\%) of the cases.
@@ -87,11 +86,11 @@ The cases, when there are one or three solutions found, have a rate of about 0.1
 There are several problems arising during the $t\bar{t}$ dilepton final state kinematics reconstruction:
 
 \begin{itemize}
- \item \textit{Fluctuations of measurement}. There might be no solutions of the equation \ref{eq:eqLSf} found for a combination
+ \item \textit{Fluctuations of measurement}. There might be no real solutions of the equation \ref{eq:eqLSf} found for a combination
  of leptons, jets and missing transverse energy arising from the $t\bar{t}$ system due to reconstruction effects, e.g. detector resolution,
  jet overlapping, badly reconstructed missing transverse energy, etc. Due to these effects, the kinematics of the reconstructed 
  jets and leptons may be estimated with distortions. Thus, the input parameters of the equations \ref{eq:eqLSf} will be distorted,
- which will result in the impossibility to find a real solution of the equations.
+ which will result in the impossibility to find a real (physical) solution of the equations.
  %
  \item \textit{Multiple solutions of the kinematic equations}. As discussed in section \ref{sec:MatBg} the equation \ref{eq:eqLSf}
  has up to four mathematical solutions while only one of them corresponds to the correct kinematics of the neutrino.
@@ -120,7 +119,7 @@ leptons matched to the particle level $b$-quarks and leptons arising from the de
 
 If, due to the energy smearing, the lepton or jet $p_{T}$ is reduced to the value beyond the selection criteria (see sec. \ref{sec:sel}), they are still accepted.
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \begin{subfigure}
   \centering
@@ -171,9 +170,10 @@ missing transverse energy for the $i^{th}$ smearing will be expressed as followi
  E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reco}_{T_{x,y}} + p^{jets \; reco}_{x,y} + p^{leptons\;reco}_{x,y} - (p^{jets\;i}_{x,y} + p^{leptons\;i}_{x,y}).
 \end{equation}
 
-Here the $E^{miss \; from \, reco}_{T_{x,y}}$, $p^{jets \; reco}_{x,y}$, $p^{leptons\;reco}_{x,y}$ are the missing transverse energy and momenta
-components taken directly from the detector reconstruction (see chapt. \ref{chapt:event_selection} and \ref{chapt:event_sel}) without applying any variations; the $p^{jets\;i}_{x,y}$ and $p^{leptons\;i}_{x,y}$
-are the smeared jets and leptons momenta respectively on the $i^{th}$ of the 100 variation step.
+Here the $E^{miss \; from \, reco}_{T_{x,y}}$, $p^{jets \; reco}_{x,y}$ and $p^{leptons\;reco}_{x,y}$ are the missing transverse energy and momenta
+components taken directly from the detector reconstruction (see chapt. \ref{chapt:event_selection} and \ref{chapt:event_sel}) without applying any 
+variations; the $p^{jets\;i}_{x,y}$ and $p^{leptons\;i}_{x,y}$ are the smeared jets and leptons momenta respectively on the $i^{th}$ of the 100 
+variation step.
 
 \subsection{Single solution choice}
 
@@ -195,8 +195,8 @@ To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps
  \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\textwidth]{05_kinReco/plots/mlb_distr.png}
-  \caption{The distribution of the invariant mass of the lepton -- $b$-jet system originating from one $t/\bar{t}$-quark. This distribution is obtained on the
-  generator level.}
+  \caption{Distribution of the invariant mass of the lepton -- $b$-jet system originating from one $t/\bar{t}$-quark. This distribution is obtained from the
+  generator level $t\bar{t}$ signal MC.}
   \label{fig:mlb}
  \end{figure}
  

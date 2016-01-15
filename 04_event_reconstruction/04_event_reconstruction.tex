@@ -73,7 +73,8 @@ phases described as follows\cite{Chatrchyan:2014fea}:
 \begin{figure}[t]
   \centering
   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/url.png}
-  \caption{Magnified view of the event showing 29 distinct vertices reconstructed corresponding to 29 distinct collisions within a single crossing of the LHC beams.}
+  \caption{Magnified view of the event showing 29 distinct vertices reconstructed corresponding to 29 distinct collisions within a single crossing of the LHC beams. The figure
+  is taken from \cite{MultipleVert}.}
   \label{fig:HugePU}
 \end{figure}
 \begin{itemize}
@@ -120,7 +121,7 @@ One can get three types of muons out of the reconstruction:
   \includegraphics[width=1.0\textwidth]{04_event_reconstruction/plots/CMS_Slice.png}
   \caption{Track reconstruction using different sub-detector information in combination in the Particle Flow algorithm. The different
   charged particles are shown as curved lines: muon (blue), electron (red) and charged hadron (green). Neutral particles are shown
-  with the dashed straight lines.}
+  with the dashed straight lines. The plot taken from \cite{PFMuon}.}
   \label{fig:PFmuons}
 \end{figure}
 
@@ -238,11 +239,11 @@ method is used \cite{2011JInst...611002C}. The calibration is performed sequenti
  decaying into two jets. This correction is applied on the reconstructed experimental data.
 \end{itemize}
 
-First calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
-Obviously this correction produces the factor always smaller then 1 thus the jet energy reduces on this step. The MC corrections aim to make the jet response
+The first calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
+Obviously this correction produces a factor always smaller than 1, thus the jet energy reduces on this step. The MC corrections aim to make the jet response
 flat as a function of $|\eta|$ and $p_{T}$. The correction on the geometrical position dependence corrects all the energies as if they were measured 
-in the most efficient barrel region using the dijet data events. The $p_{T}$ dependence correction makes use of the Drell-Yan events to exploit a good
-lepton energy and momentum resolutions. Finally the residual corrections (relative and absolute energy corrections) are applied on data to correct for 
+in the most efficient barrel region using a sample of dijet data events. The $p_{T}$ dependence correction makes use of ($\gamma */Z \rightarrow ll$) events to exploit a good
+lepton energy and momentum resolutions. Finally residual corrections (relative and absolute energy corrections) are applied on data to correct for 
 some minor disagreement with the simulation.
 
 In general all the correction factors in the kinematic region of interest for this analysis are smaller than $5\%$.
@@ -251,20 +252,20 @@ In general all the correction factors in the kinematic region of interest for th
 
 The task of the $b$-jet identification is to distinguish a $b$-quark jet from light flavour-, $c$- and gluon-jets. In particular,
 the long life time of the beauty hadrons (in the order of $10^{-12}$ s) is exploited which allows them to travel far enough from the primary interaction point 
-(about 500 $\mu$m) before decaying. The point in space, which corresponds to the place of the beauty hadron decay can be reconstructed in the pixel tracking 
-detector as a \textit{secondary vertex}. An important parameter which can be used to identify the jet origin is the impact parameter of the tracks arising 
-from the secondary vertex with respect to the primary vertex (see Fig. \ref{fig:SV}).
+($c\tau \sim 500\:\mu$m) before decaying. The point in space, which corresponds to the place of the beauty hadron decay can be reconstructed with the trends
+precisely measured in the silicone pixel detector as a \textit{secondary vertex}. The jet flavour identification algorithm combines information on identified 
+secondary vertex and track impact parameter (see Fig. \ref{fig:SV}) to the primary vertex.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.5\textwidth]{04_event_reconstruction/plots/btagging_cartoon.png}
   \caption{A sketch of the event with a reconstructed secondary vertex. A light blue circle is the primary vertex and a red circle is the secondary vertex. The impact 
-  parameter of a track is marked with a blue dashed line and a symbol $d_{0}$.}
+  parameter of a track is marked with a blue dashed line and a symbol $d_{0}$. The sketch is taken from \cite{Galtieri:2011yd}.}
   \label{fig:SV}
 \end{figure}
 
-The algorithm used for this analysis is called \textit{Combined Secondary Vertex} (CSV) \cite{CMS-PAS-BTV-13-001}. It defines a likelihood-based discriminator which uses 
-the lifetime information to distinguish $b$-jets, $c$-jets and light jets.
+The algorithm used for this analysis is called \textit{Combined Secondary Vertex} (CSV) \cite{CMS-PAS-BTV-13-001}. It defines a likelihood-based discriminator 
+to distinguish $b$-jets, $c$-jets and light jets.
 
 The minimum thresholds for the algorithm are defined as three \textit{working points}, loose (L), medium (M) and tight (T), as following \cite{CMS-PAS-BTV-13-001}:
 
@@ -275,7 +276,7 @@ The minimum thresholds for the algorithm are defined as three \textit{working po
  \item [--] CSVM sets a harsher threshold on the discriminator value of $\geq 0.679$, which lowers the misidentification probability to $\sim 1\%$, but also
  reduces the $b$-tagging efficiency down to 65$\%$;
  %
- \item [--] CSVT has the hardest threshold on the discriminator value of $\geq 0.898$. This lowers the misidentification probability by other factor of 10 ($0.1\%$)
+ \item [--] CSVT has the hardest threshold on the discriminator value of $\geq 0.898$. This lowers the misidentification probability by another factor of 10 ($0.1\%$)
  and reduces the $b$-tagging efficiency down to 50$\%$;
 \end{itemize}
 
@@ -293,7 +294,7 @@ In general the efficiency of the CSV algorithm was estimated in data and simulat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Missing Transverse Energy}
 
-The colliding protons in the LHC have no transverse momentum component. Thus from the momentum conservation one expects to have a zero sum of the transverse momenta of the 
+The colliding protons in the LHC have no transverse momentum component. Thus from momentum conservation one expects to have a zero sum of the transverse momenta of the 
 objects arising from the collisions. This can be expressed the following way:
 
 \begin{equation}\label{eq:EnBal}
@@ -315,16 +316,17 @@ It can be expressed from eq. \ref{eq:EnBal} as the opposite vectorial sum of the
 The missing transverse energy reconstruction is sensitive to the pile up objects. To correct for the 
 pile up effects a special Boosted Decision Tree (BDT) was trained \cite{CMS-PAS-JME-12-002}.
 
-An additional recoil correction\cite{TWikiMET} was applied. This was done with the help of a 
-Multi Variate Analysis (MVA) and the resulting missing transverse energy is called MVA $E_{T}^{miss}$.
-As shown in Fig. \ref{fig:METres} the MVA $E_{T}^{miss}$ exhibits a better resolution compared to the 
+An additional ``recoil correction''\cite{TWikiMET} was applied. This was done with the help of a 
+Multi Variate Analysis (MVA) and the resulting missing transverse energy is called ``MVA $E_{T}^{miss}$''.
+As shown in Fig. \ref{fig:METres}, the MVA $E_{T}^{miss}$ exhibits a better resolution compared to the 
 missing transverse energy calculated only from the PF (eq.(\ref{eq:PFMET})).
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\textwidth]{04_event_reconstruction/plots/MET_res.png}
-  \caption{The resolution for the missing transverse energy defined with the PF algorithm only (PF $E_{T}^{miss}$)
-  marked with a red line compared to the MVA $E_{T}^{miss}$ which is marked with a blue line.}
+  \caption{The distribution of the resolution of the missing transverse energy defined with the PF algorithm only (PF $E_{T}^{miss}$)
+  marked with a red line compared to the MVA $E_{T}^{miss}$ which is marked with a blue line. The results were obtained with simulated
+  data. The plot is taken from \cite{}.}
   \label{fig:METres}
 \end{figure}
 

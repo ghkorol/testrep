@@ -1,9 +1,9 @@
 \chapter{Event Selection}\label{chapt:event_sel}
  
-This work is aiming to reconstruct the $t\bar{t}$ pair in the dilepton decay channel, or
-$t\bar{t} \to W^{+}b\,W^{-}\bar{b} \to \bar{l}\nu b\,l\bar{\nu}\bar{b}$, thus 
-looking for events in the detector with two leptons of different sign and two jets. The 
-neutrino can't be measured directly, their presence is reflected by a non-zero transverse
+This work is aiming at reconstructing the $t\bar{t}$ pair in the dilepton $e\mu$ decay channel, or
+$t\bar{t} \to W^{+}b\,W^{-}\bar{b} \to e^{+}(\mu^{+})\nu b\,\mu^{-}(e^{-})\bar{\nu}\bar{b}$, thus 
+looking for events in the detector with electron and muon of different sign and two jets. The 
+neutrino can't be measured directly but their presence is reflected by a non-zero transverse
 missing energy $E_{T}^{miss}$. The low branching ratio of the dileptonic decay channel
 ($BR \simeq 4.8\%$) is compensated by an excellent lepton identification and reconstruction, 
 which reduces the fraction of background events to large extent.
@@ -20,13 +20,13 @@ data and $\epsilon_{MC}$ is the efficiency from simulation.
 
 This chapter gives an overview of the $t\bar{t}$ event selection. The 
 procedures are based on the CMS Top-Quark-Physics-Analysis group recommendations \cite{TopPAGreco}.
-The full chain of event selection is described. 
-Resulting event yields are represented in control distributions, showing the data, simulated signal and backgrounds.
+The full chain of the event selection is described. 
+The resulting event yields are represented in control distributions, showing the data, simulated signal and backgrounds.
 
 \section{Background Sources}\label{sec:bg_intro}
 
 Not all of the events which have two identified leptons and two jets in the final state are signal events
-originating from the $t\bar{t}$ system decay in dileptonic channel. Events may arise from different processes, 
+originating from the $t\bar{t}$ system decaying in the dileptonic channel. Events may arise from different processes, 
 called \textit{background} for the specific measurement. In this analysis the background rates are estimated 
 from the simulation. The following background processes are relevant for this analysis:
 
@@ -35,19 +35,23 @@ from the simulation. The following background processes are relevant for this an
  This background source is dominated by the semileptonic channel as it contains a lepton in the final state;
  \item single top production, which was simulated using \Powheg + \PYTHIA. A top is produced in association with a $W$ boson, which can be 
  mistreated as a $W$ boson from the top decay;
- \item Drell-Yan processes, $Z/\gamma^{*} \rightarrow \tau\tau$ and $Z/\gamma^{*} \rightarrow ee/\mu\mu$, which ware generated utilizing \PYTHIA. 
+ \item Drell-Yan processes, $Z/\gamma^{*} \rightarrow \tau\tau$ and $Z/\gamma^{*} \rightarrow ee/\mu\mu$, which are generated utilizing \PYTHIA. 
  Since they also has a dileptonic final state signature, they can be misidentified as $t\bar{t}$ signal. However, only same flavour leptons 
  are produced in Drell-Yan processes. Therefore, the fraction of these
  background events in the $e\mu$ final state is small;
  \item $WW$, $WZ$, $ZZ$ diboson production, simulated using \PYTHIA. These events can also have a dileptonic final state and may be 
  picked as a $t\bar{t}$ candidate;
- \item associated $t\bar{t}\;+\; W/Z/\gamma$ production, simulated with \MG + \PYTHIA. For this process one expects only one ore none 
- hard leptons in the final state. However, the production rates are high and occasionally one or two leptons, which originate from hadron
- decays or from hadrons misidentified as leptons, can be picked up;
+ \item associated $t\bar{t}\;+\; W/Z/\gamma$ production, simulated with \MG + \PYTHIA;
  \item associated $W\;+\;jets$ production, generated using \MG + \PYTHIA. The reason why this process can be misidentified as a $t\bar{t}$
  production is similar to the previous case;
  \item QCD multijet processes, generated with \PYTHIA.
 \end{itemize}
+For the latter two processes, one expects only one ore none hard leptons in the final state. However, the production rates are high and 
+occasionally one or two leptons, which originate from hadron decays or from hadrons misidentified as leptons, can be picked up.
+
+For all the mentioned above background sources with one (zero) top produced, the events can only be misidentified as $t\bar{t}$ signal
+if there are also at least one (two) jets present in the final state which can be misidentified as $b$-jet candidates. This requirement
+suppresses the background processes further.
 
 The simulated background samples were normalized to the data integrated luminosity of 19.7 fb$^{-1}$ and
 scaled to the total cross sections predicted by higher order calculations\cite{TWikiXSec}.
@@ -79,26 +83,29 @@ Only the good runs from the LHC certified good run list\cite{JSON} are selected 
 
 \section{$t\bar{t}$ Event Selection and Correction}\label{sec:sel}
 
-The analysis follows closely a previous measurement selection strategy described in \cite{Asin2014Auth}. Various selection criteria and related scale factors are presented in this section.
-
-The results of the selection are presented in the control distributions. These plots show the comparison between the yields in the experimental data and the simulated MC samples.
-% The various background sources are also presented separately in the distributions. 
-% The simulated yields are additionally scaled to the data luminosity of 19.7\;fb$^{-1}$.
-All the plots include the statistical uncertainties only.
-
-All the selection requirements are summarized as follows:
+The analysis follows closely a previous measurement selection strategy described in \cite{Asin2014Auth}. The various selection criteria and related scale factors are 
+% presented.
+% 
+% The results of the selection are presented in the control distributions. These plots show the comparison between the yields in the experimental data and the simulated MC samples.
+% % The various background sources are also presented separately in the distributions. 
+% % The simulated yields are additionally scaled to the data luminosity of 19.7\;fb$^{-1}$.
+% All the plots include the statistical uncertainties only.
+% 
+% All the selection requirements are 
+summarized as follows:
 
 \begin{itemize}
  \item [--] \textbf{Trigger selection}: The events have to be accepted by the HLT (see section \ref{sec:trig}) dilepton triggers, which require the presence of two leptons, electron and muon, with
  minimum transverse momentum of 17 GeV and 8 GeV, respectively.
  
- As the triggers may perform with different efficiencies for the data and for MC, the scale factor corrections were applied. As all the data taken in the detector is being selected by 
- at least one trigger, there is no ``reference'' data before the trigger selection. That is why the efficiency of the particular trigger can be determined only with respect to another
- spectator trigger. A spectator should be as independent from the tested trigger as possible. The efficiencies for the trigger scale factors in this work were 
- determined using the $E_{T}^{miss}$-based trigger as a spectator \cite{Asin2014Auth}. The scale factors connected to the trigger selection were applied on the MC 
- double differentially in bins of the two leptons pseudorapidities. 
+ As the triggers may perform with different efficiencies for the data and for MC, scale factor corrections were applied for the latter. As all the data taken with 
+ the detector is selected by at least one trigger, there is no ``reference'' data before the trigger selection. That is why the efficiency of the particular trigger 
+ can be determined only relative to another ``spectator'' trigger. A spectator trigger should be as independent from the tested trigger as possible. The efficiencies 
+ for the trigger scale factors in this work were determined using the $E_{T}^{miss}$-based trigger as a spectator \cite{Asin2014Auth}. The scale factors connected 
+ to the trigger selection were applied on the MC double differentially in bins of the two leptons pseudorapidities. 
  %%%% 
- \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more than 10 in case at least quarter of them has high quality of reconstruction.
+ \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more than 10 in case at least quarter of them has high reconstruction 
+ quality.
  %%%%
  \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
  %%%%
@@ -124,8 +131,9 @@ All the selection requirements are summarized as follows:
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/PileUPw/Nominal/emu/vertMulti_PU.pdf}
  \end{subfigure}
  \caption{The vertex multiplicity control distribution before (left) and after (right) the vertex correction reweighing after the full event selection.
- Black dots represent the experimental data and the colored histograms are the MC simulation divided into signal and backgrounds contributions.
- The bottom plots represent the ratio between experimental and simulated data rates.}
+  The experimental data points (black dots) are shown as well as the simulated distributions (colored histograms) of signal and different backgrounds 
+  are shown. The error bars of the data points correspond to the statistical uncertainties. The bottom plot shows the ratio of the event yields in data 
+  and MC (sum of all contributions) with error bars representing the statistical uncertainties of the data and MC.}
  \label{fig:PUweight}
  \end{figure}
  
@@ -134,7 +142,8 @@ All the selection requirements are summarized as follows:
  around the lepton track, where $I_{rel}$ is the relative isolation defined as:
   \begin{equation}\label{eq:Iso}
    I_{rel} = \frac{\sum E_{Tracker} + \sum E_{ECAL} + \sum E_{HCAL}}{p_{T}(l)}
-  \end{equation}
+  \end{equation}.
+ Here $E_{Tracker}$, $E_{ECAL}$ and $E_{HCAL}$ are the energy deposits in the tracking detector, ECAL and HCAL respectively.
  
  As it is shown in the Fig. \ref{fig:PFIso}, the lepton isolation requirement cuts mainly on the QCD background.
 
@@ -148,9 +157,8 @@ All the selection requirements are summarized as follows:
    \centering
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/PFiso/Plots/Nominal/emu/PF_mu_Iso.pdf}
  \end{subfigure}
- \caption{Control distribution electron (left) and muon (right) relative isolation ($I_{rel}$) (\ref{eq:Iso}) after the trigger selection. The experimental data points (black dots)
-  and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
-  correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions. The vertical dashed lines show the isolation cut value.}
+ \caption{Electron (left) and muon (right) relative isolation ($I_{rel}$) (\ref{eq:Iso}) after the trigger selection. The vertical dashed lines 
+  show the isolation cut value. Other details as in Fig. \ref{fig:PUweights}.}
  \label{fig:PFIso}
  \end{figure}
  
@@ -168,9 +176,8 @@ All the selection requirements are summarized as follows:
  \begin{figure}[h]
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/diLep_mass_jet_mult_bjet_mult/Nominal/emu/basic_jet_multiplicity_step4.pdf}
-  \caption{Control distribution of the jet multiplicity in events after the trigger and lepton selection. The experimental data points (black dots)
-  and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
- correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions. The vertical dashed line shows cut value on the jet multiplicity.}
+  \caption{Control distribution of the jet multiplicity after the trigger and lepton selection. The vertical dashed line shows cut value on the 
+  jet multiplicity. Other details as in Fig. \ref{fig:PUweights}.}
   \label{fig:jetMultiSel}
  \end{figure}
  
@@ -199,9 +206,8 @@ All the selection requirements are summarized as follows:
  \begin{figure}[h]
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/diLep_mass_jet_mult_bjet_mult/Nominal/emu/basic_bjet_multiplicity_step5.pdf}
-  \caption{Control distribution of the $b$-jet multiplicity in events after the trigger and lepton selection. The experimental data points (black dots)
-  and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
- correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions. The vertical dashed line shows the cut value on the $b$-jet multiplicity.}
+  \caption{Control distribution of the $b$-jet multiplicity after the trigger and lepton selection. The vertical dashed line shows the cut value on the $b$-jet multiplicity.
+   Other details as in Fig. \ref{fig:PUweights}.}
   \label{fig:bjetMultiSel}
   \end{figure}
   
@@ -216,8 +222,7 @@ All the selection requirements are summarized as follows:
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/diLep_mass_jet_mult_bjet_mult/Nominal/emu/basic_dilepton_mass_step7.pdf}
  \end{subfigure}
  \caption{Control distribution of the dilepton mass in events after the trigger, lepton and jet selection (left) and after applying in addition the $b$-jet selection (right). 
- The experimental data points (black dots) and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
- correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions.}
+ Other details as in Fig. \ref{fig:PUweights}.}
  \label{fig:mllbJetSel}
  \end{figure}
  
@@ -236,10 +241,8 @@ All the selection requirements are summarized as follows:
    \centering
    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/bTagDiscr_step7.png}
  \end{subfigure}
- \caption{Control distribution of the $b$-tag discriminator in events after the full even selection (\ref{sec:sel}) not applying the $b$-tag scale factors (left)
- and after applying the $b$-tag scale factors (right). The experimental data points (black dots)
- and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
- correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions.}
+ \caption{Control distribution of the $b$-tag discriminator in events not applying the $b$-tag scale factors (left)
+ and after applying the $b$-tag scale factors (right). Other details as in Fig. \ref{fig:PUweights}.}
  \label{fig:bTagDiscr}
  \end{figure}
  %
@@ -252,9 +255,10 @@ The applied selection criteria dramatically reduce the fraction of background ev
 The results of the selection described above can be illustrated by control distributions of the objects which are reconstructed for the $t\bar{t}$
 final state definition.
 
-The Fig. \ref{fig:CPetaptLep} shows the lepton $\eta$ and $p_{T}$. An overall reasonable agreement between the data and simulation shapes is observed in all $\eta$ regions
-and $p_{T}$'s. The control distribution of the mass of the leading dilepton (electron-muon) system is shown in Fig. \ref{fig:CPmll}. The simulation and experimental data
-agree well within the statistical uncertainties except for the first bin where data are higher than simulation.
+The Fig. \ref{fig:CPetaptLep} shows the lepton $\eta$ and $p_{T}$. An overall reasonable agreement between the data and simulation shapes is observed in all $\eta$ and $p_{T}$
+regions. 
+% The control distribution of the mass of the leading dilepton (electron-muon) system is shown in Fig. \ref{fig:CPmll}. The simulation and experimental data
+% agree well within the statistical uncertainties except for the first bin where data are higher than simulation.
 
  \begin{figure}[h]
  \centering
@@ -267,10 +271,7 @@ agree well within the statistical uncertainties except for the first bin where d
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/Plots-CPs-step7/Nominal/emu/basic_lepton_pt_step7.pdf}
  \end{subfigure}
  \caption{Control distribution of lepton $\eta$ (left) and lepton $p_{T}$ (right) in events after the whole event selection described in sec. \ref{sec:sel}. 
- The experimental data points (black dots)
- and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
- correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions.
- Each distribution has two entries per event - one for the electron and one for the muon.}
+ Other details as in Fig. \ref{fig:PUweights}.}
  \label{fig:CPetaptLep}
  \end{figure}
 %  
@@ -285,16 +286,14 @@ agree well within the statistical uncertainties except for the first bin where d
 %  \end{figure}
  
 The kinematics of the reconstructed and selected jets is presented in the Fig. \ref{fig:CPjetskin} which shows the control distributions for the
-jets $\eta$, $p_{T}$ and the jet multiplicity in the events. The simulation describes better the central rapidity ranges. For the jet multiplicities
-smaller than 5 a good agreement between experimental data and MC is observed.
+jets $\eta$, $p_{T}$ and the jet multiplicity in the events. The simulation describes better the central rapidity ranges. For jet multiplicities
+smaller than 5 the MC describes the jet multiplicity distribution of the data well.
  
  \begin{figure}[h]
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/Plots-CPs-step7/Nominal/emu/basic_bjet_multiplicity_step7.pdf}
   \caption{Control distribution the $b$-tagged jets multiplicities in events after the whole event selection described in sec. \ref{sec:sel}. 
-  The experimental data points (black dots)
-  and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
-  correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions.}
+  Other details as in Fig. \ref{fig:PUweights}.}
   \label{fig:CPbJetMult}
  \end{figure}
  
@@ -314,14 +313,11 @@ smaller than 5 a good agreement between experimental data and MC is observed.
  \end{subfigure}
  \caption{Control distribution the jet $\eta$ (top left) and jet $p_{T}$ (top right) for all selected jets and the jet multiplicity in events 
   after the whole event selection described in sec. \ref{sec:sel}. 
-  The experimental data points (black dots)
-  and simulated distributions (colored histograms) of signal and different backgrounds are shown. The error bars of the data points
-  correspond to the statistical uncertainties. The bottom plot represent the data-to-MC yield ratio distributions.
-  The top distributions have multiple entries per event, corresponding to all reconstructed jets.}
+  Other details as in Fig. \ref{fig:PUweights}.}
  \label{fig:CPjetskin}
  \end{figure}
  
-The multiplicity for the $b$-tagged jets is presented in Fig. \ref{fig:CPbJetMult} which shows a good agreement for the multiplicities smaller than 4.
+The multiplicity for the $b$-tagged jets is presented in Fig. \ref{fig:CPbJetMult} which shows a good agreement for multiplicities smaller than 4.
  
 The control distributions are signal dominated which shows a good performance of the criteria for the $t\bar{t}$ final state selection.
 
