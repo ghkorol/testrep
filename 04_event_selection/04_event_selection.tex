@@ -2,10 +2,10 @@
  
 This work is aiming at reconstructing the $t\bar{t}$ pair in the dilepton $e\mu$ decay channel, or
 $t\bar{t} \to W^{+}b\,W^{-}\bar{b} \to e^{+}(\mu^{+})\nu b\,\mu^{-}(e^{-})\bar{\nu}\bar{b}$, thus 
-looking for events in the detector with electron and muon of different sign and two jets. The 
+looking for events in the detector with electron and muon of different electrical charge and two jets. The 
 neutrino can't be measured directly but their presence is reflected by a non-zero transverse
-missing energy $E_{T}^{miss}$. The low branching ratio of the dileptonic decay channel
-($BR \simeq 4.8\%$) is compensated by an excellent lepton identification and reconstruction, 
+missing energy $E_{T}^{miss}$. The low branching ratio of the $e\mu$ decay channel
+($BR \simeq 2.4\%$) is compensated by an excellent lepton identification and reconstruction, 
 which reduces the fraction of background events to large extent.
 
 The reconstructed objects in each event (which corresponds to one bunch crossing) have to fulfill certain 
@@ -31,8 +31,8 @@ called \textit{background} for the specific measurement. In this analysis the ba
 from the simulation. The following background processes are relevant for this analysis:
 
 \begin{itemize}
- \item $t\bar{t}\rightarrow$other. This background source includes the other $t\bar{t}$ decay modes (see sec. \ref{ssec:tdecay}).
- This background source is dominated by the semileptonic channel as it contains a lepton in the final state;
+ \item $t\bar{t}\rightarrow$other. This background source includes the other $t\bar{t}$ decay modes (see sec. \ref{ssec:tdecay}) and it
+ is dominated by the dileptonic channel via $\tau$ leptons as it has the same final state but with extra neutrinos;
  \item single top production, which was simulated using \Powheg + \PYTHIA. A top is produced in association with a $W$ boson, which can be 
  mistreated as a $W$ boson from the top decay;
  \item Drell-Yan processes, $Z/\gamma^{*} \rightarrow \tau\tau$ and $Z/\gamma^{*} \rightarrow ee/\mu\mu$, which are generated utilizing \PYTHIA. 
@@ -107,18 +107,22 @@ summarized as follows:
  \item [--] \textbf{Beam scrapping}: Accept only events with maximum 10 reconstructed tracks, or more than 10 in case at least quarter of them has high reconstruction 
  quality.
  %%%%
- \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed.
+ \item [--] \textbf{Calorimeter noise removal}: Event with anomalous calorimeter noise are removed\cite{HCALNoise}. This noise is caused by the instrumentation issues with Hybrid 
+ Photo Diodes and Readout BoXes. The best HCAL specific algorithm to detect noise are based on analysing the shapes of detected pulses.
  %%%%
  \item [--] \textbf{Vertex requirement}: Events with at least one "good" primary vertex are selected.
- This means that the number of associated tracks should be larger then 4 and a vertex should be positioned centrally in the detector
+ This means that the number of associated tracks should be larger than 4 and a vertex should be positioned centrally in the detector
  \footnote{Only the events with a vertex position $|z| < \textrm{24 cm}$ and $|\rho| = |\sqrt{x^{2} + y^{2}}| < \textrm{2 cm}$ are accepted. All the coordinates
  are given with respect to the CMS coordinate system (see sec.\ref{sec:CMS})}. Only the ``hardest vertex'' 
  (with the highest sum of the $p_{T}^{2}$ of the assigned tracks) is taken for the analysis. 
  \\
- The distribution of the number of secondary vertices differs in the data and in the MC. The weight correction depending on the event vertex multiplicity is applied
- event-by-event on the MC to make it match the data distribution.
+%  The distribution of the number of primary vertices differs in the data and in the MC. 
+ The weight correction depending on the event primary vertex multiplicity is applied
+ event-by-event on the MC to make it match the data distribution. This is called a \textit{pileup correction}. For estimation of the correction value
+ the distribution of the measured luminosity in each bunch crossing \cite{CMS:2012rua}
+ multiplied by the total $pp$ inelastic cross section $\sigma_{pp}$ \cite{TWikiSystPU} is taken.
  The Fig. \ref{fig:PUweight} shows how the agreement
- between the experimental and simulated data improves after this reweighting is implemented.
+ between the experimental and simulated data improves after this reweighting is applied.
  
  \begin{figure}[h]
  \centering
@@ -158,12 +162,14 @@ summarized as follows:
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/PFiso/Plots/Nominal/emu/PF_mu_Iso.pdf}
  \end{subfigure}
  \caption{Electron (left) and muon (right) relative isolation ($I_{rel}$) (\ref{eq:Iso}) after the trigger selection. The vertical dashed lines 
-  show the isolation cut value. Other details as in Fig. \ref{fig:PUweights}.}
+  show the isolation cut value. Other details as in Fig. \ref{fig:PUweight}.}
  \label{fig:PFIso}
  \end{figure}
  
  The efficiencies of the lepton isolation were determined using a \textbf{tag and probe} method \cite{TWikiTP}. The corresponding scale factors are applied on the
- simulation level in bins of $p_{T}$ and $\eta$ of lepton separately for electrons and for muons.
+ simulation reconstructed level in bins of $p_{T}$ and $\eta$ of lepton separately for electrons and for muons.
+ 
+ To correct for pileup the $\delta\beta$ correction was applied for muon and electron isolation was applied \cite{TWikidbeta, Chatrchyan:2012xi}.
  %%%%%
  \item [--] \textbf{Lepton pair selection}: An event has to contain at least two opposite signed leptons (electron-muon pair) with $p_{T} > 20 \; \textrm{GeV}$ and $|\eta| < 2.4$.
  The invariant mass of the system of the leading $p_{T}$ electron and muon has to be more than 20 GeV, otherwise the event is rejected. In the following analysis steps
@@ -177,7 +183,7 @@ summarized as follows:
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/diLep_mass_jet_mult_bjet_mult/Nominal/emu/basic_jet_multiplicity_step4.pdf}
   \caption{Control distribution of the jet multiplicity after the trigger and lepton selection. The vertical dashed line shows cut value on the 
-  jet multiplicity. Other details as in Fig. \ref{fig:PUweights}.}
+  jet multiplicity. Other details as in Fig. \ref{fig:PUweight}.}
   \label{fig:jetMultiSel}
  \end{figure}
  
@@ -207,7 +213,7 @@ summarized as follows:
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/diLep_mass_jet_mult_bjet_mult/Nominal/emu/basic_bjet_multiplicity_step5.pdf}
   \caption{Control distribution of the $b$-jet multiplicity after the trigger and lepton selection. The vertical dashed line shows the cut value on the $b$-jet multiplicity.
-   Other details as in Fig. \ref{fig:PUweights}.}
+   Other details as in Fig. \ref{fig:PUweight}.}
   \label{fig:bjetMultiSel}
   \end{figure}
   
@@ -222,12 +228,12 @@ summarized as follows:
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/diLep_mass_jet_mult_bjet_mult/Nominal/emu/basic_dilepton_mass_step7.pdf}
  \end{subfigure}
  \caption{Control distribution of the dilepton mass in events after the trigger, lepton and jet selection (left) and after applying in addition the $b$-jet selection (right). 
- Other details as in Fig. \ref{fig:PUweights}.}
+ Other details as in Fig. \ref{fig:PUweight}.}
  \label{fig:mllbJetSel}
  \end{figure}
  
- The scale factors corresponding to the $b$-tagging procedure are measured by the BTV group \cite{CMS-PAS-BTV-13-001} for $b$, $c$ and light jets. These scale factors were applied on the MC 
- improving much the agreement between data and simulation. This effect can be seen in the 
+ The scale factors corresponding to the $b$-tagging procedure are measured by the BTV group \cite{CMS-PAS-BTV-13-001} for $b$, $c$ and light jets. These scale factors were applied on the MC, 
+ separately for the $b$-jets, $c$-jets and light jets, improving much the agreement between data and simulation. This effect can be seen in the 
  Fig. \ref{fig:bTagDiscr}, which presents the CSV discriminator distribution before and after the $b$-tagging SF reweighing. The data-to-MC ratio plots are getting closer to one with
  applying the SFs.
  
@@ -242,7 +248,7 @@ summarized as follows:
    \includegraphics[width=0.49\textwidth]{04_event_reconstruction/plots/bTagDiscr_step7.png}
  \end{subfigure}
  \caption{Control distribution of the $b$-tag discriminator in events not applying the $b$-tag scale factors (left)
- and after applying the $b$-tag scale factors (right). Other details as in Fig. \ref{fig:PUweights}.}
+ and after applying the $b$-tag scale factors (right). Other details as in Fig. \ref{fig:PUweight}.}
  \label{fig:bTagDiscr}
  \end{figure}
  %
@@ -271,7 +277,7 @@ regions.
    \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/Plots-CPs-step7/Nominal/emu/basic_lepton_pt_step7.pdf}
  \end{subfigure}
  \caption{Control distribution of lepton $\eta$ (left) and lepton $p_{T}$ (right) in events after the whole event selection described in sec. \ref{sec:sel}. 
- Other details as in Fig. \ref{fig:PUweights}.}
+ Other details as in Fig. \ref{fig:PUweight}.}
  \label{fig:CPetaptLep}
  \end{figure}
 %  
@@ -293,7 +299,7 @@ smaller than 5 the MC describes the jet multiplicity distribution of the data we
   \centering
   \includegraphics[width=0.49\textwidth]{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/04_event_selection/Plots-CPs-step7/Nominal/emu/basic_bjet_multiplicity_step7.pdf}
   \caption{Control distribution the $b$-tagged jets multiplicities in events after the whole event selection described in sec. \ref{sec:sel}. 
-  Other details as in Fig. \ref{fig:PUweights}.}
+  Other details as in Fig. \ref{fig:PUweight}.}
   \label{fig:CPbJetMult}
  \end{figure}
  
@@ -313,7 +319,7 @@ smaller than 5 the MC describes the jet multiplicity distribution of the data we
  \end{subfigure}
  \caption{Control distribution the jet $\eta$ (top left) and jet $p_{T}$ (top right) for all selected jets and the jet multiplicity in events 
   after the whole event selection described in sec. \ref{sec:sel}. 
-  Other details as in Fig. \ref{fig:PUweights}.}
+  Other details as in Fig. \ref{fig:PUweight}.}
  \label{fig:CPjetskin}
  \end{figure}
  

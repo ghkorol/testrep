@@ -42,7 +42,7 @@ The track reconstruction procedure consists of four main steps as following \cit
  \item \textbf{Track finding}: extrapolates the seeding candidates along the expected flight paths to the consecutive tracking detector layers searching 
  for further hits and reestimating the track parameters respectively. On each consecutive layer all hits from a 3 sigma region around the seed trajectory
  are tried out and fitted with a Kalman filter\cite{Fruhwirth:1987fm}. The smallest $\chi^{2}$ hit is finally taken and the trajectory
- continues to the next layer is continued until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
+ extrapolation to the next layer is continued until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
  accepted if it contains more then one ghost hit.
  %
  \item \textbf{Track fitting}: after finding the hits in all the tracker layers with the track finding, a track candidate is refitted using the Kalman filter. 
@@ -67,8 +67,8 @@ their hits are removed and the second iteration starts with a bit softer require
 
 \subsection{Primary Vertex Reconstruction}\label{ssec:vtxReco}
 
-The primary vertex reconstruction aims to measure the location of all proton-proton collision points in the event (see Fig. \ref{fig:HugePU}). The reconstruction procedure has three
-phases described as follows\cite{Chatrchyan:2014fea}:
+The primary vertex reconstruction aims to measure the location of all proton-proton collision points in the event (see Fig. \ref{fig:HugePU}). \\
+The primary vertex reconstruction procedure has three phases described as follows\cite{Chatrchyan:2014fea}:
 
 \begin{figure}[t]
   \centering
@@ -98,7 +98,8 @@ phases described as follows\cite{Chatrchyan:2014fea}:
 \end{itemize}
 
 The information on all primary vertices in the event is useful not only for other objects reconstruction but also for separating the signal vertex (with a hard interaction) 
-from the others with no useful physics information.
+from the others with no useful physics information. On average 20 primary vertices can be reconstructed in one event, corresponding to 20 $pp$ interactions. This is called
+\textit{pileup}. To choose the proper primary vertex for a collision where a $t\bar{t}$ pair is produced special selection has to be applied (see sec. \ref{sec:sel}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,7 +112,7 @@ state reconstruction) is presented in this section.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Muon Reconstruction}
 
-As discussed in section \ref{sec:CMS} the CMS experiment has a well established setup for the muon reconstruction.
+As discussed in section \ref{sec:CMS}, the CMS experiment has a well established setup for the muon reconstruction.
 Muons are the only particles expected to appear in the muon sub-detector system, thus their identification is unambiguous.
 Fig. \ref{fig:PFmuons} shows a muon path in the detector compared to other particles.
 One can get three types of muons out of the reconstruction:
@@ -227,19 +228,19 @@ The reconstructed jet energy should be corrected for the non-linear and non-unif
 method is used \cite{2011JInst...611002C}. The calibration is performed sequentially in several steps:
 
 \begin{itemize}
- \item The \textit{Offset correction} removes extra energy due to electronics noise and pile-up. It is applied on the reconstructed experimental data and 
- on the simulated reconstructed jets.
+ \item The \textit{Offset correction} removes extra energy due to electronics noise and pileup. It is applied on the reconstructed level of the 
+ experimental and simulated data.
  %
  \item The \textit{Monte Carlo calibration} corrects the energy of the reconstructed jets such that it is equal to the average energy of the generated 
- particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. It is applied on the simulated reconstructed jets.
+ particle jets. This correction is performed in bins of the jets $p_{T}$ and $\eta$. This correction is applied only on the simulated data.
  %
- \item The \textit{Relative jet energy correction} ensures a flat response as a function of $\eta$. It is applied on the reconstructed experimental data.
+ \item The \textit{Relative jet energy correction} ensures a flat response as a function of $\eta$. It is applied only on the reconstructed experimental data.
  %
  \item The \textit{Absolute jet energy correction} balances the $p_{T}$ response to be linear. It is calibrated on a sample of well reconstructed $Z^{0}$ bosons 
- decaying into two jets. This correction is applied on the reconstructed experimental data.
+ decaying into two jets. This correction is applied only on the reconstructed experimental data.
 \end{itemize}
 
-The first calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pile up. 
+The first calibration step deals with the additional energy in the jet which does not occur from a hard process but rather from the detector noise or pileup. 
 Obviously this correction produces a factor always smaller than 1, thus the jet energy reduces on this step. The MC corrections aim to make the jet response
 flat as a function of $|\eta|$ and $p_{T}$. The correction on the geometrical position dependence corrects all the energies as if they were measured 
 in the most efficient barrel region using a sample of dijet data events. The $p_{T}$ dependence correction makes use of ($\gamma */Z \rightarrow ll$) events to exploit a good
@@ -254,7 +255,7 @@ The task of the $b$-jet identification is to distinguish a $b$-quark jet from li
 the long life time of the beauty hadrons (in the order of $10^{-12}$ s) is exploited which allows them to travel far enough from the primary interaction point 
 ($c\tau \sim 500\:\mu$m) before decaying. The point in space, which corresponds to the place of the beauty hadron decay can be reconstructed with the trends
 precisely measured in the silicone pixel detector as a \textit{secondary vertex}. The jet flavour identification algorithm combines information on identified 
-secondary vertex and track impact parameter (see Fig. \ref{fig:SV}) to the primary vertex.
+secondary vertex and track impact parameter to the primary vertex (see Fig. \ref{fig:SV}).
 
 \begin{figure}[t]
   \centering
@@ -313,11 +314,11 @@ It can be expressed from eq. \ref{eq:EnBal} as the opposite vectorial sum of the
 %  E_{T}^{miss} & = \sqrt{E_{T_{x}}^{miss^{2}} + E_{T_{y}}^{miss^{2}}}.
 % \end{align}
 
-The missing transverse energy reconstruction is sensitive to the pile up objects. To correct for the 
-pile up effects a special Boosted Decision Tree (BDT) was trained \cite{CMS-PAS-JME-12-002}.
+The missing transverse energy reconstruction is sensitive to the pileup objects. To correct for the 
+pileup effects a special Boosted Decision Tree (BDT) was trained \cite{CMS-PAS-JME-12-002}.
 
-An additional ``recoil correction''\cite{TWikiMET} was applied. This was done with the help of a 
-Multi Variate Analysis (MVA) and the resulting missing transverse energy is called ``MVA $E_{T}^{miss}$''.
+An additional \textit{recoil correction}\cite{TWikiMET} was applied. This was done with the help of a 
+Multi Variate Analysis (MVA) and the resulting missing transverse energy is called \textit{MVA $E_{T}^{miss}$}.
 As shown in Fig. \ref{fig:METres}, the MVA $E_{T}^{miss}$ exhibits a better resolution compared to the 
 missing transverse energy calculated only from the PF (eq.(\ref{eq:PFMET})).
 
@@ -331,7 +332,7 @@ missing transverse energy calculated only from the PF (eq.(\ref{eq:PFMET})).
 \end{figure}
 
 % The MVA is trained on the $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and attempts to distinguish between the events emerging from the hard interaction point and
-% pile up vertices. The improvement in resolution which the exploiting of the MVA for pile up rejection gives is $\sim 6\%$. However, the differences between data
+% pileup vertices. The improvement in resolution which the exploiting of the MVA for pileup rejection gives is $\sim 6\%$. However, the differences between data
 % and simulation are getting larger. To compensate for these discrepancies the \textit{recoil corrections} are applied \cite{CMS-PAS-JME-12-002}. 
 
 % A recoil $\vec{u}$ is calculated using the well reconstructed $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and is defined as shown in the eq. \ref{eq:recoil}:
