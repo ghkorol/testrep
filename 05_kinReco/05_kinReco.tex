@@ -193,7 +193,7 @@ In each of the 100 variations of the jet and lepton kinematics, the transverse m
 assuming the transverse energy component, which does not refer to the leptons and jets forming a $t\bar{t}$ candidate, to be constant. Thus the
 missing transverse energy for the $i^{th}$ smearing will be expressed as following:
 
-\begin{equation}\label{eq:weigh_av}
+\begin{equation}
  E^{miss\;i}_{T_{x,y}} = E^{miss \; from \, reco}_{T_{x,y}} + p^{jets \; reco}_{x,y} + p^{leptons\;reco}_{x,y} - (p^{jets\;i}_{x,y} + p^{leptons\;i}_{x,y}).
 \end{equation}
 
@@ -239,7 +239,7 @@ To obtain one $t\bar{t}$ pair out of this candidate variety, the following steps
  %
  \item [--] For the remaining up to 100 candidates (these number is related only to the energy and directional smearing, see sec. \ref{ssec:smear}), the $t$($\bar{t}$) 
  momentum is constructed as a weighted average of all smeared solutions as following:
- \begin{equation}
+ \begin{equation}\label{eq:weigh_av}
   \langle{\vec{p}(t/\bar{t})}\rangle = \frac{\sum\limits_{i=1}^{100} \omega_{i} \vec{p}(t/\bar{t})_i}{\omega}.
  \end{equation}
  Here $\vec{p}(t/ \bar{t})_{i}$ is the $t$ or $\bar{t}$ momentum three vector for the $i^{th}$ variation in the event. The weights ($\omega$ and $\omega_{i}$ are taken according 

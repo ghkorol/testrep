@@ -109,18 +109,22 @@ repeated}. A summary of all the uncertainties taken to account in this analysis 
 
 \subsection{Uncertainties Related to PDFs}
 
-The uncertainty due to the chosen PDF model is estimated following the recommendations in \cite{Lai:2010vv}. There were 26 parameter variations
-performed and the uncertainties of the same sign\footnote{The sign of the systematic variation is determined by the deviation caused by this
-variation. If the variation gave higher cross section results than the nominal ones, then the sign of this variation is "+``. If the variation 
-resulted in lower cross section values, then the sign of this variation is "-".} of each variation were added in quadrature.
+The systematic uncertainty due to the chosen PDF model is estimated by reweighting the $t\bar{t}$ signal sample according to the 
+53 errors of the CTEQ10 PDF set evaluated at the 90\% confidence level\cite{Lai:2010vv}. The effect of each of these variations
+of the same sign\footnote{The sign of the systematic variation is determined by the deviation caused by this
+variation. If the variation gave higher cross section results than the nominal ones, then the sign of this variation is "+``. 
+If the variation resulted in lower cross section values, then the sign of this variation is "-".} are added in quadrature.
 
-% \subsection{Uncertainties Related to the Hard Scattering Model}
-% 
-% The nominal $t\bar{t}$ MC sample used for this analysis is generated with $\MG+\PYTHIA$. The hard scattering model is simulated
-% in \MG with LO precision. A systematic variation was performed using \Powheg instead of \MG for the hard scattering simulation.
-% \Powheg is also interfaced with \PYTHIA for the showering simulation. All the differences between the results produced with $\MG+\PYTHIA$
-% and $\Powheg+\PYTHIA$ are assumed to originate only from the difference in the hard scattering model. The performance of \PYTHIA is assumed 
-% to be the same in both samples.
+% There were 26 parameter variations
+% performed and the uncertainties of the same sign of each variation were added in quadrature.
+
+\subsection{Uncertainties Related to the Hard Scattering Model}
+
+The nominal $t\bar{t}$ MC sample used for this analysis is generated with $\MG+\PYTHIA$. The hard scattering model is simulated
+in \MG with LO precision. A systematic variation was performed using \Powheg instead of \MG for the hard scattering simulation.
+\Powheg is also interfaced with \PYTHIA for the showering simulation. All the differences between the results produced with $\MG+\PYTHIA$
+and $\Powheg+\PYTHIA$ are assumed to originate only from the difference in the hard scattering model. The performance of \PYTHIA is assumed 
+to be the same in both samples.
 
 \subsection{Hadronization and Parton Showering Model Uncertainties}
 
@@ -172,7 +176,7 @@ Here $\delta_{syst.\,total,\:ij}$ is the total systematic uncertainty in the bin
 $s$ different sources. The $\delta_{s,\;ij}^{high/low}$ are expressed the following way:
 
 \begin{equation}
- \delta_{s,\;ij}^{m} = \textrm{Nominal result}_{ij} - \textrm{Varied Result}_{s,\;ij}, 
+ \delta_{s,\;ij}^{m} = \textrm{Varied Result}_{s,\;ij} - \textrm{Nominal result}_{ij}, 
 \end{equation}
 where $m = high$ if $\delta_{s,\;ij}^{m} \geq 0$ and $m = low$ if $\delta_{s,\;ij}^{m} < 0$ . 
 
@@ -209,11 +213,13 @@ in tables from appendix \ref{appendix:xsec_table}.
 An example of the systematic uncertainties is presented in table \ref{tab:ex}. It shows the 
 systematic uncertainties for the double differential $t\bar{t}$ production cross sections in bins of $p_{T}(t)$ and $|y(t)|$.
 The uncertainties are unsymmetrised. However, the total uncertainties result in mainly symmetric positive and negative uncertainties.
+The table also shows the statistical uncertainties in the same bins for the comparisson. All the systematic variations are smaller
+or of the order of statistical uncertainties.
 
 The biggest contributions to the total systematic uncertainties are the JES (up to $\sim 5\%$), top quark mass variation (up to
-$\sim 13\%$), hard scale variation (up to $\sim 12\%$), matching scale variation (up to $\sim 8\%$) and hadronization model
-(up to $\sim 13\%$) uncertainties. A large value of the uncertainty related to the $b$-tagging in the high $p_{T}(t)$ bin 
-is caused by statistical effects.
+$\sim 13\%$), hard scale variation (up to $\sim 12\%$), matching scale variation (up to $\sim 8\%$), hadronization model
+(up to $\sim 13\%$) and hard scattering model ($\sim 22\%$) uncertainties. A large value of the uncertainty related to the $b$-tagging 
+in the high $p_{T}(t)$ bin is caused by statistical effects.
 
 The uncertainties related to the kinematic reconstruction scale factor variation, background variation and PDF variation are 
 small for each cross section bin.
