@@ -213,11 +213,13 @@ MLM scheme \cite{Mrenna:2003if}. In this scheme the showered partons are generat
 between each other. These partons are clustered into jets using the cone algorithms. If the original parton is included in more than one jet,
 the event is rejected.
 
+For this analysis the PDF CTEQ6L1 set \cite{Pumplin:2002vw} is used in \MG to describe the proton structure.
+
 \subsubsection{Powheg}
 
 The \Powheg (Positive Weight Hardest Emission Generator) event generator \cite{Frixione:2007vw} provides the modeling of the hard interaction 
 with NLO accuracy. The \Powheg method doesn't have parton showering included. Thus, it has to be also interfaced with \PYTHIA or
-\HERWIG for a full event description.
+\HERWIG for a full event description. For the description of proton structure, the CT10 \cite{Lai:2010vv} PDFs are used.
 
 \subsubsection{MC@NLO}
 
@@ -228,6 +230,8 @@ it has to be interfaced with general-purpose generators, as it is also done for 
 lepton pairs and associated $H+W/Z$.
 
 The \MCNLO generator provides some events with negative weights. However, the fraction of these events is very small \cite{Frixione:2002ik}.
+
+The CTEQ6M \cite{Pumplin:2002vw} PDF sets were exploited in \MCNLO for this analysis.
 
 
 \section{Detector simulation}
