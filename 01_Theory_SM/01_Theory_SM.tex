@@ -403,9 +403,9 @@ function (PDF).
 The formula \ref{eq:pptt} is a convolution of long-distance contributions (proton densities) and short distance contributions (hard scattering cross sections). 
 As the mass of the $t\bar{t}$ pair is high, the $\alpha_{s}$ turns out
 to be quite low (see Fig. \ref{fig:Alpha_s}), thus the perturbative expansion of the hard scattering cross sections is possible -- $\sigma \sim \sum_{k} c_{k}\alpha_{s}^{k}(\mu)$,
-where the smallest $k$ defines the leading order. The \textit{Parton Density Function}, or the \textit{PDF}, is depending on the parton flavour $i$, parton longitudinal momentum
+where the smallest $k$ defines the leading order. The \textit{Parton Density Function}, or the \textit{PDF}, is depending on the parton flavour $i$, parton momentum
 fraction $x_{i}$ and the energy scale of the interaction. A PDF gives a probability that within the interaction of a given scale a parton with a given flavour $i$
-and momentum fraction $x_{i}$ will be found in a proton. PDFs can't be expanded in perturbative QCD (pQCD), thus need a parametrization, depending on $x$ and 
+and longitudinal momentum fraction $x_{i}$ will be found in a proton. PDFs can't be expanded in perturbative QCD (pQCD), thus need a parametrization, depending on $x$ and 
 the scale $Q$. The dependence on the scale $Q$ is described in the DGLAP evolution\cite{Altarelli:1977zs, Dokshitzer:1977sg, Gribov:1972ri}. The scale can be chosen arbitrarily.
 %for particular needs.
 This scale is called \textit{factorization scale} $\mu_{f}$.
@@ -425,21 +425,6 @@ An example of PDFs obtained by the HERA experiments H1 and ZEUS from fits to the
   \label{fig:HERA_PDF}
 \end{figure}
 
-The momentum fractions $x_{1}$ and $x_{2}$ for the interaction of two protons with the same energy $E_{p}$ producing a $t\bar{t}$ pair can be expressed following 
-the sequential steps. One can write down the momentum conservation equation:
-
-\begin{equation}\label{eq:xcons}
- p^{t} + p^{\bar{t}} = x_{1}p_{1} + x_{2}p_{2}, 
-\end{equation}
-where $p^{t} = (p_{x}^{t}, p_{y}^{t}, p_{z}^{t}, E^{t})$ and $p^{\bar{t}} = (p_{x}^{\bar{t}}, p_{y}^{\bar{t}}, p_{z}^{\bar{t}}, E^{\bar{t}})$ are the top and antitop 
-momenta respectively, $p_{1} = (E_{p},0,0, -E_{p})$ and $p_{2}= (E_{p},0,0, E_{p})$ denote the momenta of two protons. Multiplying the eq. \ref{eq:xcons} sequentially 
-by $p_{1}$ and $p_{2}$ and assuming that the energy of the proton is of the order of $E_{p} =$ 4 TeV (which means that the proton mass $m_{p}$ is much smaller than 
-the proton energy $E_{p}$), one can obtain the following expressions:
-
-\begin{equation}\label{eq:x12}
- x_{1(2)} = \frac{E^{t} + E^{\bar{t}} -(+) p_{z}^{t} -(+)p_{z}^{\bar{t}}}{2E_{p}}.
-\end{equation}
-
 At the LHC $t\bar{t}$ pairs are dominantly produced in the process of gluon-gluon fusion $gg \rightarrow t\bar{t}$ (at 80\% of the cases at 8 TeV $pp$ collisions) 
 and to somewhat lesser extent in quark-antiquark annihilation $q\bar{q} \rightarrow t\bar{t}$ (at 20\% of the cases). These LO production processes are shown in 
 Fig. \ref{fig:LO_tt_prod}. In the NLO production processes there are also partonic sub-processes with $gq$($g\bar{q}$) present.
@@ -450,6 +435,20 @@ Fig. \ref{fig:LO_tt_prod}. In the NLO production processes there are also parton
   \caption{Feynman diagrams for the LO $t\bar{t}$ production.}
   \label{fig:LO_tt_prod}
 \end{figure}
+
+In the leading order picture the proton momentum fractions $x_{1}$ and $x_{2}$ of the two partons ($gg$ or $q\bar{q}$) producing a $t\bar{t}$ pair can be derived
+as follows. One can write down the momentum conservation equation:
+
+\begin{equation}\label{eq:xcons}
+ p^{t} + p^{\bar{t}} = x_{1}p_{1} + x_{2}p_{2}, 
+\end{equation}
+where $p^{t} = (p_{x}^{t}, p_{y}^{t}, p_{z}^{t}, E^{t})$ and $p^{\bar{t}} = (p_{x}^{\bar{t}}, p_{y}^{\bar{t}}, p_{z}^{\bar{t}}, E^{\bar{t}})$ are the top and antitop 
+momenta respectively, $p_{1} = (E_{p},0,0, -E_{p})$ and $p_{2}= (E_{p},0,0, E_{p})$ denote the momenta of two protons. Multiplying the eq. \ref{eq:xcons} 
+by $p_{1}$ or $p_{2}$ and neglecting the $m_{p}^{2}$ terms, one can obtain the following expressions:
+
+\begin{equation}\label{eq:x12}
+ x_{1(2)} = \frac{E^{t} + E^{\bar{t}} -(+) p_{z}^{t} -(+)p_{z}^{\bar{t}}}{2E_{p}}.
+\end{equation}
 
 The studies of the $t\bar{t}$ production process provide a very important test of the Standard Model. 
 In particular, the process of $t\bar{t}$ production in the $pp$ collisions at the LHC (sec. \ref{ssec:tprod}, Fig.\ref{fig:LO_tt_prod})

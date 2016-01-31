@@ -13,10 +13,10 @@ to describe the electromagnetic and QCD radiation of the initial and the final s
 process all the radiation finishes with forming the hadrons. There is also a possibility of interaction with the 
 proton remnants. This interaction is described with the underlying event process.
 
-\begin{figure}[t]
+\begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{03_simulation/plots/pp_all_proc.png}
-  \caption{$pp$ collision sketch showing all the subprocesses.}
+  \includegraphics[width=1.0\textwidth]{03_simulation/plots/pp_all_proc.png}
+  \caption{$pp \rightarrow t\bar{t}X$ collision sketch showing all the subprocesses.}
   \label{fig:pp_all}
 \end{figure}
 
@@ -42,9 +42,16 @@ of partons are to be chosen according to the used PDFs (see sec. \ref{ssec:tt_pr
 
 The parton interaction is taking place in the high energy regime, so that $\alpha_{s} \ll 1$ (see sec. \ref{sec:strong_int}). 
 This allows to perturbativly calculate the process in different orders of $\alpha_{s}$: the higher the order used
-for the calculations, the more precise the calculation should be. However, there are many subtleties with calculating 
-higher orders, that is why the MC generators are usually limited to LO or NLO calculations.
+for the calculations, the more precise the calculation should be. The calculation to different orders of $\alpha_{s}$ corresponds
+to specific processes as represented by Feynman diagrams in Fig.\ref{fig:LO_NLO_ex}. However, there are many subtleties with 
+calculating higher orders, that is why the MC generators are usually limited to LO or NLO calculations.
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{03_simulation/plots/LO_NLO_ex.png}
+  \caption{Examples of $t\bar{t}$ production diagrams showing leading order and next-to-leading order processes.}
+  \label{fig:LO_NLO_ex}
+\end{figure}
 
 \subsection{Parton Showering}
 
