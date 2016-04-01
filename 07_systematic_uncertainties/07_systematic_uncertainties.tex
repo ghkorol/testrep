@@ -14,10 +14,14 @@ The systematic uncertainties may be divided into two classes:
 \end{itemize}
 
 This chapter gives a detailed overview of the systematic variations performed in the analysis which closely follow the
-procedure applied in the analysis on measurement of single differential $t\bar{t}$ production cross sections \cite{Asin2014Auth}. 
+procedure applied in the measurement of single differential $t\bar{t}$ production cross sections \cite{Asin2014Auth}. 
 The way of determining the total systematic uncertainty is presented. The systematic uncertainties, which are taken into
 account in this analysis, cover all the sources of the systematics for the normalized differential cross sections 
-measurements. However, this list may be incomplete for the unnormalized cross sections measurements.
+measurements. 
+
+For every variation discussed in the following the full cross section determination procedure including background subtraction 
+and unfolding (using the regularization strength $\tau$ obtained in the nominal measurement) was repeated.
+%However, this list may be incomplete for the unnormalized cross sections measurements.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,7 +50,7 @@ The uncertainty of this measurement reaches 2.6\%\cite{CMS-PAS-LUM-13-001}. For 
 
 \subsection{Uncertainty on the Lepton Selection}
 
-The lepton scale factors (described in sec. \ref{sec:sel}, lepton isolation) were determined using tag and probe method which results an uncertainty of 0.3\%\cite{Asin2014Auth}. 
+The lepton scale factors (described in sec. \ref{sec:sel}, lepton isolation) were determined using a tag and probe method which results in an uncertainty of 0.3\%\cite{Asin2014Auth}. 
 However, this method was performed using a Drell-Yan sample. To account for the uncertainty of the method and the possible differences between the Drell-Yan and $t\bar{t}$ 
 event topologies, the scale factors were conservatively varied up and down by 1\% \cite{AN-2012-389}.
 
@@ -59,24 +63,22 @@ event is recalculated correspondingly to the change of the jet energy values.
 \subsection{Jet Energy Resolution}
 
 The jet energy resolution has been rescaled up by $\eta$ dependent factors (1.052, 1.057, 1.096, 1.134, 1.288 for the $|\eta|$ ranges [0.0, 0.5, 1.1, 1.7, 2.3, 5.0]) following 
-the prescriptions of Jet/MET group \cite{TWikiSystJER}.
+the prescriptions of the Jet/MET group \cite{TWikiSystJER}.
 
 \subsection{$b$-tagging Efficiency Uncertainty}
 
-The uncertainties due to the $b$-tagging algorithm is taken into account by the $b$-tag scale factors (described in se. \ref{sec:sel}, 
+The uncertainties due to the $b$-tagging algorithm is taken into account by the $b$-tag scale factors (described in sec. \ref{sec:sel}, 
 $b$-jet selection) variations within their estimated
 uncertainties \cite{CMS-PAS-BTV-13-001}. The variations are performed depending on the $p_{T}$ and $|\eta|$ of the jets. The variation ``up'' 
 is done such that if the $p_{T}$ of the jet was greater than a median value (65$\;$GeV for $b$- and $c$-jets and 45$\;$GeV for light-jets) then 
-the $b$-tagging scale factor was varied up by it's uncertainty and if the $p_{T}$ of the jet is lower than the median -- the $b$-tagging 
+the $b$-tagging scale factor was varied up by it's uncertainty, and if the $p_{T}$ of the jet is lower than the median then the $b$-tagging 
 scale factor was varied down by it's uncertainty. The inverse logics was applied for the systematic ``down'' variation of the $b$-tagging 
-scale factors: if the $p_{T}$ of the jet was greater than a median value -- the $b$-tagging scale factor was varied down by it's uncertainty 
-and if the $p_{T}$ of the jet is lower than the median -- the $b$-tagging scale factor was varied up by it's uncertainty. 
-The same variations were performed versus the $|\eta|$ of the jets. The median value for the jet $|\eta|$ is 0.75 for all the jets flavours.
+scale factors. Analogous variations were performed versus the $|\eta|$ of the jets. The median value for the jet $|\eta|$ is 0.75 for all the jets flavours.
 
 The variations of the $b$-tagging scale factors in $p_{T}$ and $\eta$ are considered as fully uncorrelated, which means that they were added
-quadratically to the systematic uncertainty. The variations were also done separately for different jet flavours. The variations for $c$ and $b$ 
-flavours are considered to be fully correlated and the largest of them is taken, while the variations for the light jet flavour are treated as 
-uncorrelated.
+quadratically to the systematic uncertainty. The variations were also done separately for different jet flavours. The uncertainties for $c$ and $b$ 
+flavours are considered to be fully correlated and they are varied simultaneously, while the variations for the light jet flavour are treated as 
+uncorrelated to $c$- and $b$-jets.
 
 \subsection{Missing Transverse Energy Uncertainty}
 
@@ -107,7 +109,7 @@ obtained from different generators and/or setting
 different parameters for the generator input\footnote{Please note that for each discussed variation the full unfolding procedure was
 repeated}. A summary of all the uncertainties taken to account in this analysis is presented in this section.
 
-\subsection{Uncertainties Related to PDFs}
+\subsection{Uncertainties Related to PDFs}\label{sec:syst_PDF}
 
 The systematic uncertainty due to the chosen PDF model is estimated by reweighting the $t\bar{t}$ signal sample according to the 
 44 errors of the CTEQ66 PDF set evaluated at the 90\% confidence level\cite{Lai:2010vv}. The effect of each of these variations
@@ -210,10 +212,10 @@ in tables from appendix \ref{appendix:xsec_table}.
 
 \section{Summary of Systematic Uncertainties}
 
-An example of the systematic uncertainties is presented in table \ref{tab:ex}. It shows the 
+An example of the systematic uncertainties is presented in the table \ref{tab:ex}. It shows the 
 systematic uncertainties for the double differential $t\bar{t}$ production cross sections in bins of $p_{T}(t)$ and $|y(t)|$.
-The uncertainties are unsymmetrised. However, the total uncertainties result in mainly symmetric positive and negative uncertainties.
-The table also shows the statistical uncertainties in the same bins for the comparisson. All the systematic variations are smaller
+The total uncertainties result in mainly symmetric positive and negative uncertainties.
+The table also shows the statistical uncertainties in the same bins for comparison. All the systematic variations are smaller
 or of the order of statistical uncertainties.
 
 The biggest contributions to the total systematic uncertainties are the JES (up to $\sim 5\%$), top quark mass variation (up to
@@ -235,7 +237,7 @@ All the uncertainties derived from the experimental and model systematic sources
 for all the normalized cross sections described in sec. \ref{ssec:xsec_mes} and unnormalized cross sections shown in appendix \ref{appendix:unnorm_XSec}. 
 % 
 % 
-
+% \input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_top_pt-top_arapidity.tex}
 % \input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_top_arapidity-top_pt.tex}
 % 
 % \input{/home/dolinska/Dropbox/desy_plots/Thesis/Jenya/xSec/sysTable/fullSysTableNorm_ttbar_pt-ttbar_arapidity.tex}

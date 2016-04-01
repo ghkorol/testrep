@@ -2,9 +2,17 @@
 
 The CMS detector as described in chapter \ref{chap:exp_setup} was performing during the time period 
 between 2010 and 2012. It provided a center-of-mass energy up to 8 TeV and the bunch spacing was 50 ns. 
-However, the LHC program was planned for at least a decade longer and the plan includes several improvements.
+However, the LHC program was planned for at least a decade longer and the plan includes several improvements
+(see Fig. \ref{fig:LHC_sc}).
 
-After the shutdown for two years, from the end of 2012 until the beginning of 2015, the LHC 
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=1.0\textwidth]{021_pixel_upgrade/plots/LHC_schedule.png}
+ \caption{LHC upgrade program. The plot is taken from \cite{1742-6596-515-1-012012}.}
+ \label{fig:LHC_sc}
+\end{figure}
+
+After the shutdown for two years, from the beginning of 2013 until the beginning of 2015, the LHC 
 center-of-mass energy was increased up to 13 TeV and will be further increased to the designed value
 of 14 TeV. The next long shutdown is planned in 2018. Until that time it is planned that the peak
 luminosity will reach $10^{34} \text{cm}^{-2} \text{s}^{-1}$ (comparing to the $7 \cdot 10^{33} \text{cm}^{-2}\text{s}^{-1}$
@@ -41,8 +49,8 @@ planned fourth layer of the latter.
 
 This section will give a brief overview of the plan for the whole CMS silicon pixel upgrade in frames of so-called
 Phase I upgrade. The purpose of this upgrade is to remake and update the present silicon pixel tracker to make it 
-suitable for the high luminosity and energy runs which will start after the year 2016. The replacement of the silicon
-pixel tracker is planned for the technical stop in 2016/2017. 
+suitable for the high luminosity and energy runs which will start after the year 2018. The replacement of the silicon
+pixel tracker is planned for the technical stop in 2018. 
 
 The main goal for the updated pixel detector is that it should function at higher luminosities with the same or even
 better performance as the current pixel tracker on the lower luminosities \cite{CMS:2012sda}. For these needs new read-out chips
@@ -53,11 +61,11 @@ the first layer, which is the closest to the beam pipe) are much increased.
 It was also decided to increase the number of barrel layers of the pixel detector from 3 to 4 (see Fig. \ref{fig:tracker_4}).
 They were designed as four concentric cylinders with a length of 548.8 mm and radii between 30 mm and 160 mm.
 This improves the track identification, which is crucial in the environment with a twice higher pile-up, expected for the 
-LHC run after 2017. In addition the innermost layer of the detector is moved closer to the collision point (by 10 mm), while
+LHC run after 2018. In addition the innermost layer of the detector is moved closer to the collision point (by 10 mm), while
 the layers 2 and 3 are almost unchanged in the position. The beam pipe
 will also be made smaller to allow the closer approach to the interactions.
 
-Each layer will constructed of various number of 22 mm wide facets, in total consisting of 1184 rectangular pixel modules. Each module
+Each layer will constructed of 22 mm wide facets, in total consisting of 1184 rectangular pixel modules. Each module
 consists of 16 pixel chips. The total number of pixels will be increased from roughly 48 M to 79 M.
 
 \begin{figure}[t]
@@ -74,12 +82,12 @@ First of all, the readout system itself is planned to be thinner (it is easy to 
 where the new pixel barrels are thinner). Secondly, the electronic boards will be moved out of the detector volume. 
 Additionally, a new $CO_{2}$ cooling system \cite{CMS:2012sda} with a light-weight mechanical support will save material budget.
 
-The improvements planned will lead to higher efficiencies, lower fake track rates (see sec. \ref{ssec:trkReco}), lower read-out dead time,
+The planned improvements will lead to higher efficiencies, lower fake track rates (see sec. \ref{ssec:trkReco}, track selection), lower read-out dead time,
 and extended lifetime of the detector. This results in a better identification of the particles for offline analysis and HLT.
 
 The planned upgraded detector performance was simulated. It was compared to the performance of the non-upgraded tracker. This comparison
 is shown in Fig. \ref{fig:sim_perform}. These simulations were performed on the simulated $t\bar{t}$ samples. The studies show overall higher 
-efficiencies and lower fake rates for the upgrade detector for the higher puleup scenarios.
+efficiencies and lower fake rates for the upgrade detector for a higher pileup scenarios.
 
 \begin{figure}[p]
  \centering
@@ -122,7 +130,7 @@ These pixels collect electrons from oxygenated high-resistivity $n$-type silicon
  \label{fig:prototype}
 \end{figure}
 
-Each pixel is bump-bonded to the ROC of the same height and width. The ROCs are fabricated in 250 nm CMOS (Complementary Metal-Oxide-Semiconductor)
+Each pixel is bump-bonded to the ROC. The ROCs are fabricated in 250 nm CMOS (Complementary Metal-Oxide-Semiconductor)
 employing the radiation hard design rules.
 For the upgrade, the data buffer is increased to be able to work with higher occupancy connected with the higher data flow from the more frequent 
 and dense LHC collisions. Furthermore the measured charges are digitalized and transmitted at 160 MHz. The effect of the internal cross talk is reduced
@@ -136,15 +144,15 @@ expected to absorb 40 MRad (0.4 MGy), layer 3 -- 20 MRad (0.2 MGy) and layer 4 -
 \begin{figure}[t]
  \centering
  \includegraphics[width=0.8\textwidth]{021_pixel_upgrade/plots/irradiation_dose.png}
- \caption{The dose in Gy on to be absorbed by different tracker parts at different radial distance from the LHC $pp$ beam line for different
+ \caption{The dose in Gy to be absorbed by different tracker parts at different radial distance from the LHC $pp$ beam line for different
  $z$ coordinate values. The average position of the pixel detector is marked with a red vertical line. The location of different parts of the 
  silicon strip detector are also shown for comparison. The dose is defined for the expected full run time of the LHC until 2018, which 
- corresponds to the integrated luminosity of 500 fb$^{-1}$. The plot is taken from \cite{CMS:2012sda}.}
+ corresponds to an integrated luminosity of 500 fb$^{-1}$. The plot is taken from \cite{CMS:2012sda}.}
  \label{fig:irrad_dose}
 \end{figure}
 
-Here the studies of the properties of the irradiated prototype chips for layer 4 of BPIX will be presented. For this purpose the prototype
-chips were irradiated at the CERN PS \cite{CERNTB} with the 23 GeV protons up to fluences of 3.8 $\cdot$ 10$^{14}$ $p/cm^{2}$ which corresponds to 
+For the studies of the properties of the irradiated prototype chips for layer 4 of BPIX, the prototype
+chips were irradiated at the CERN PS \cite{CERNTB} with the 23 GeV protons up to fluences of 3.8 $\cdot$ 10$^{14}$ $p/cm^{2}$. This corresponds to 
 the expected lifetime dose of the layer 4 of the BPIX (approximately 16 MRad). 
 
 The prototype chips were irradiated such that the silicon sensor side was facing the beam. The readout chips on the back side received a dose
@@ -172,8 +180,8 @@ experimental needs. The scheme of the facility which delivers the beam for the t
 
 \subsection{EUDET Telescope and Experimental Setup} 
 
-The beam test line where the tests described in this thesis were performed is equipped with a telescope of the EUDET/AIDA-family \cite{EUDET},
-which is shown in Fig. \ref{fig:EUDET_tel}. It consists of two arms each equipped with three sensors kept at a stable temperature by a cooling
+For the beam test studies described in the following a telescope of the EUDET/AIDA-family \cite{EUDET} (see Fig. \ref{fig:EUDET_tel}) 
+was exploited. It consists of two arms each equipped with three sensor planes kept at a stable temperature by a cooling
 system. Each sensor plate can be moved along the beam axis to meet some particular experimental requirements.
 
 \begin{figure}[t]
@@ -186,11 +194,12 @@ system. Each sensor plate can be moved along the beam axis to meet some particul
 \end{figure}
 
 The telescope serves as a device which measures the particle path with a very good precision so that it is assumed to be known.
-The EUDET telescope is equipped with silicon pixels. The telescope sensors have a point precision of 3.4 $\mu$m and they
+The EUDET telescope is equipped with silicon pixels. The telescope sensors have a track position resolution of 4.3 $\mu$m and they
 are made with a minimum of material (their thickness is only 50 $\mu$m), so that the precision doesn't drop even on the lowest 
-energy border of the test beam ($\sim$ 1 GeV), when the contribution of the interaction of the particles with matter (multiple
-scattering) becomes sizable. The installed Mimosa (Minimum Ionizing MOS Active Pixel Sensor) sensors (with a size of 
-$21 \times 11$ mm$^{2}$ with squared pixels with s size of 18.4 $\mu$m) developed for the EUDET telescope make use of the MAPS 
+energy border of the test beam ($\sim$ 1 GeV), when the contribution of the interaction of the particles with matter becomes sizable. 
+
+The installed Mimosa (Minimum Ionizing MOS Active Pixel Sensor) sensors (with a size of 
+$21 \times 11$ mm$^{2}$ with squared pixels with a size of 18.4 $\mu$m) developed for the EUDET telescope make use of the MAPS 
 (Monolitic Active Pixel Sensors) technology \cite{2001NIMPA.458..677T, Fischer:2002bv}.
 
 The prototype silicon pixel chip for the BPIX upgrade was placed in between two arms of the telescope. In the beam test 
@@ -210,7 +219,7 @@ There is a second CMS prototype chip placed downstream at the end of the beam te
 measurement of the DUT efficiency, as it has the same time of the working cycle as the DUT (25 ns). The Mimosa has a much longer
 cycle (115 $\mu$s) and it can't be used as a reference for the DUT.
 
-On the front before and in right after the telescope two crossed scintillators are located. They serve as a trigger. 
+On the front before and right after the telescope two crossed scintillators are located. They serve as a trigger. 
 If their signals coincide, the particle has passed all the way through the telescope.
 The typical duration of one run when the telescope, DUT and reference chip were registering the test beam particles, was from 10
 to 30 minutes having several hundred thousand trigger signals.
@@ -218,15 +227,15 @@ to 30 minutes having several hundred thousand trigger signals.
 \subsection{Data Taking}
 
 The data from the telescope was passed to the computer through network cables (see Fig. \ref{fig:EUDET_tel}) and from
-the CMS prototype chips -- through USB cables (see Fig. \ref{fig:prototype_board}). These are the signals which inform
-about the particles hitt the detector plane.  Afterwards the received data had to be preanalysed. 
+the CMS prototype chips -- through USB cables. These are the signals which inform
+about the particles hitting the detector plane.  Afterwards the received data had to be preanalysed. 
 
 To gain accurate knowledge of the geometry of the setup, alignment procedure was done with the Millipede algorithm 
 \cite{1748-0221-3-09-P09002}.
 
 The neighboring fired pixels on the pixel detector are grouped into clusters and the centers of the clusters are the hits.
 The tracks were reconstructed from the hits using the general broken lines algorithm \cite{Blobel:2006yi}. It takes into
-account the multiple scattering in the detector. 
+account the multiple scattering in the detector planes. 
 
 To define the telescope resolution, first the particle track was reconstructed using the hits in the first and third telescope planes.
 Then the second plane was used to determine the difference between the reconstructed particle track position and the actual hit in the 
@@ -241,21 +250,20 @@ campaign.
 
 \subsubsection{Charge Collection}
 
-The external bias voltage is needed to collect all the charge which was released due to the particle crossing the sensitive silicon
-pixel of the detector. If the bias voltage is not high enough, not all the charge is collected and the particle energy may be defined
-incorrectly. The voltage at which the full charge starts to be collected is called \textit{depletion voltage}. The bias voltage is
-applied on the $p$-implant side. A schematic path of the ionizing particle through the silicon sensor and of the resulting charge 
-collection is shown in \ref{fig:depl_volt}.
+The external bias voltage is needed to collect all the charge which was released due to the particle crossing the silicon bulk
+of the detector. If the bias voltage is not high enough, not all the charge is collected. The voltage at which the full charge starts 
+to be collected is called \textit{depletion voltage}. The negative bias voltage is applied on the $p$-implant side. A schematic path 
+of the ionizing particle through the silicon sensor and of the resulting charge collection is shown in \ref{fig:depl_volt}.
 
 \begin{figure}[h]
  \centering
  \includegraphics[width=0.6\textwidth]{021_pixel_upgrade/plots/depletion_voltage.png}
- \caption{The sketch of the charge collection from the ionizing particle crossing the silicon sensor. The figure is taken from \cite{}.}
+ \caption{The sketch of the charge collection from the ionizing particle crossing the silicon sensor. The figure is taken from \cite{DanielTalk}.}
  \label{fig:depl_volt}
 \end{figure}
 
-After the irradiation the damages in the silicon material are introduced. These damages may trap the ionized charge  which is traveling 
-through the silicon to the place where it is read off. That is why a higher voltage is needed so that the particles overcome the traps.
+After the irradiation damages in the silicon material are introduced. These damages may trap the ionized charge  which is traveling 
+through the silicon bulk to the place where it is read off. That is why a higher voltage is needed so that the particles overcome the traps.
 However, there is a practical power dissipation related with the ohmic heating and on the bias voltage supply. If the depletion voltage
 is higher than the voltage allowed by these limitations, the full depletion conditions for the sensors can never be reached. That is why 
 it is necessary to test if the full depletion region can be reached and if so, then at which bias voltage.

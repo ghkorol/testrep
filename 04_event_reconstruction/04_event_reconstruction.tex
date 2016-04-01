@@ -33,7 +33,7 @@ The track reconstruction procedure consists of four main steps as following \cit
 
 \begin{itemize}
  \item \textbf{Seed generation}: all the possible combinations of three points (3 hits in the first layers of the pixel tracker or
- two hits from the first tracker layers an then beam spot center\footnote{The \textit{beam spot} center is 
+ two hits from the first tracker layers and the beam spot center\footnote{The \textit{beam spot} center is 
  defined as an average value of the $p\bar{p}$ interaction points over many events.}) are used to determine a helical trajectory 
  assuming a quasi-uniform magnetic field. Every resulted track is required to have some minimum $p_{T}$ and maximum beam spot impact 
  parameter\footnote{An \textit{impact parameter} $d_{xy}$ of the track is a minimum distance of the track to a certain vertex or 
@@ -43,7 +43,7 @@ The track reconstruction procedure consists of four main steps as following \cit
  for further hits and reestimating the track parameters respectively. On each consecutive layer all hits from a 3 sigma region around the seed trajectory
  are tried out and fitted with a Kalman filter\cite{Fruhwirth:1987fm}. The smallest $\chi^{2}$ hit is finally taken and the trajectory
  extrapolation to the next layer is continued until the end of tracker is reached. In case no hit is found on some layer a ghost hit is assumed. The track is not
- accepted if it contains more then one ghost hit.
+ accepted if it contains more than one ghost hit.
  %
  \item \textbf{Track fitting}: after finding the hits in all the tracker layers with the track finding, a track candidate is refitted using the Kalman filter. 
  This procedure is performed releasing the constraints set on the seeding stage.
@@ -319,17 +319,17 @@ pileup effects a special Boosted Decision Tree (BDT) was trained \cite{CMS-PAS-J
 
 An additional \textit{recoil correction}\cite{TWikiMET} was applied. This was done with the help of a 
 Multi Variate Analysis (MVA) and the resulting missing transverse energy is called \textit{MVA $E_{T}^{miss}$}.
-As shown in Fig. \ref{fig:METres}, the MVA $E_{T}^{miss}$ exhibits a better resolution compared to the 
+The MVA $E_{T}^{miss}$ exhibits a better resolution compared to the 
 missing transverse energy calculated only from the PF (eq.(\ref{eq:PFMET})).
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.8\textwidth]{04_event_reconstruction/plots/MET_res.png}
-  \caption{The distribution of the resolution of the missing transverse energy defined with the PF algorithm only (PF $E_{T}^{miss}$)
-  marked with a red line compared to the MVA $E_{T}^{miss}$ which is marked with a blue line. The results were obtained with simulated
-  data. The plot is taken from \cite{}.}
-  \label{fig:METres}
-\end{figure}
+% \begin{figure}[t]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{04_event_reconstruction/plots/MET_res.png}
+%   \caption{The distribution of the resolution of the missing transverse energy defined with the PF algorithm only (PF $E_{T}^{miss}$)
+%   marked with a red line compared to the MVA $E_{T}^{miss}$ which is marked with a blue line. The results were obtained with simulated
+%   data.}
+%   \label{fig:METres}
+% \end{figure}
 
 % The MVA is trained on the $Z \to e^{+}e^{-} / \mu^{+}\mu^{-}$ samples and attempts to distinguish between the events emerging from the hard interaction point and
 % pileup vertices. The improvement in resolution which the exploiting of the MVA for pileup rejection gives is $\sim 6\%$. However, the differences between data

@@ -2,12 +2,18 @@
 
 \section{Normalized Double Differential $t\bar{t}$ Production Cross Sections}\label{ssec:xsec_mes}
 
-The normalized $t\bar{t}$ production cross sections were measured double differentially in bins of top transverse momentum, rapidity and  $x_{1}$
-(see sec. \ref{ssec:tt_prod}, eq. \ref{eq:x12}),
+The normalized $t\bar{t}$ production cross sections were measured double differentially  as a function of variables (see Fig. \ref{fig:res_dynamics})
+related to the dynamics of the $t$, of the $t\bar{t}$ system or to both of them. The studied observables are: top transverse momentum and rapidity, 
 $t\bar{t}$ mass, rapidity and transverse momentum and the azimuthal and pseudorapidity difference between the $t$ and the $\bar{t}$.
+In addition, for the first time ever in CMS, the cross sections are studied as function of $x_{1}$ (see sec. \ref{ssec:tt_prod}, eq. \ref{eq:x12}),
+which in the leading order QCD picture is equal to the proton longitudinal momentum fraction carried by one of the incoming partons (gluon or quark).
+The study of this observable might be particularly interesting to show the sensitivity of the data to constrain the proton PDFs at large values of 
+$x_{1}$ ($x_{1} \geq 0.5$) where in particular the knowledge on the gluon density in the proton is not so precise.
+
 The binning for the detector level distributions was chosen to have enough statistics in each bin so that the statistics could be treated as Gaussian.
 It was also checked if the purity and stability in each bin are not too low.
-The regularization strength used to determine each set of the cross sections is listed in Appendix \ref{appendix:tau}.
+The regularization strengths used to determine each set of the cross sections are listed in Appendix \ref{appendix:tau}.
+
 
 This sections is presenting only the normalized double differential $t\bar{t}$ production cross sections. The corresponding
 unnormalized cross sections are shown in Appendix \ref{appendix:unnorm_XSec}. 
@@ -139,6 +145,27 @@ high $M(t\bar{t})$ are observed. The MC is a bit lower than data in this region.
 
 The double differential $t\bar{t}$ production cross sections are shown in Fig. \ref{fig:XS_2D_x1_Mtt}. In general a reasonable description of data by the MC
 models is observed. In the two highest $M(t\bar{t})$ bins the predictions tend to be a bit higher than data at the lowest $x_{1}$ values.
+
+It is interesting to investigate how much sensitivity these cross sections
+vs $x_{1}$ could have for constraining the proton PDFs.
+In order to test this the PDF uncertainties on the \MG cross sections
+were evaluated, using the 44 CTEQ66 PDF variations (see sec. \ref{sec:syst_PDF}).
+The resulting uncertainties (adding the effects in quadrature) on the
+cross section predictions are listed in Table \ref{tab:x1_PDF_extend}. One
+can see that the uncertainties increase from a minimum of 5\% at small
+$x_{1}$ to up to 20\% at the highest $x_{1}$ bin $[0.4,\;\;1]$. This is what one had hoped
+for, namely that the PDF uncertainty is larger at high $x$ which is
+probably (further studies would be needed) directly related to the
+worsening of the knowledge of the gluon PDF at high $x$ from fits to HERA
+and other data used in CTEQ6.
+Unfortunately the total uncertainties of the measured $t\bar{t}$ cross sections
+are still a factor two
+(or more)  higher at large $x_{1}$ than the PDF uncertainties on the prediction.
+However, to understand the impact of the data one would need to take
+into account the correlations (full covariance matrix) between the
+measurement bins. It remains a task for the future to  include these data
+in a PDF fit and thereby evaluating their full impact on PDFs.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -656,7 +683,7 @@ tendencies in the way how the theoretical predictions describe the measurements.
   In bins of $y(t)$			& Theoretical predictions are more central than measurement \\ \hline 
   In bins of $p_{T}(t\bar{t})$		& Theory predicts more $t\bar{t}$ pairs with high $p_{T}$ \\ \hline 
   In bins of $y(t\bar{t})$		& Theoretical predictions are more central in $y(t\bar{t})$ \\ \hline
-  In bins of $M(t\bar{t})$		& Theory predicts a harder $M(t\bar{t})$ spectrum \\ \hline
+  In bins of $M(t\bar{t})$		& Theory predictions are overall in agreement with measurement \\ \hline
  \end{tabular}
 \end{center}
 
@@ -702,7 +729,8 @@ The effect observed for the single differential $p_{T}(t\bar{t})$ spectrum may b
 in the predictions since such a radiation is usually accompanied by a recoiling $t\bar{t}$ system with high $p_{T}(t\bar{t})$. This effect is the weakest 
 for $\MG+\PYTHIA$, is equal for $\MCNLO+\HERWIG$ and $\Powheg+\HERWIG$ and is the strongest for
 $\Powheg+\PYTHIA$. The tendency that the measurements are more central in $y(t\bar{t})$ can originate from the PDF effects: it shows that the 
-measurements have an overall less high $x$, which results in an overall smaller total rapidity. 
+measurements favour an overall smaller ratio of $\frac{\text{PDF(low}x)}{\text{PDF(high}x)}$ which corresponds to a more equal $x$ for the incoming partons. 
+This results in an overall smaller total rapidity. 
 % It means that there are less possibilities to get different momenta from gluons for the top and antitop 
 % quarks, thus their total rapidity will be smaller. 
 This effect is the smallest for the $\MG+\PYTHIA$ model, and similarly high for $\Powheg+\PYTHIA$ and
@@ -732,11 +760,10 @@ model.
 There are no strong effects seen in the cross sections in bins of $M(t\bar{t})$ and $\Delta\phi(t\bar{t})$ (see Fig. \ref{fig:XS_2D_phi_Mtt}).
 
 To investigate the guesses about the nature of the smaller $\Delta\eta(t\bar{t})$ (see Fig. \ref{fig:XS_2D_eta_Mtt}),
-the distribution of $\Delta\eta(t\bar{t})$ in bins of hard jet (with the $p_{T} > 30\;\text{GeV}$) multiplicity is studied and presented
+the distribution of $\Delta\eta(t\bar{t})$ in bins of multiplicity of hard jets (with $p_{T} > 30\;\text{GeV}$) is studied and presented
 in Fig. \ref{fig:eta_jetMult}. As one observes from the plot, the ratio between theory predictions and measurements doesn't depend
 on the jet multiplicity (not taking to account the high multiplicity bin where the statistics is low). The conclusion is that it
-is not the hard radiation in the predictions, which is causing the effect. This statement confirms the guess which was made before, that
-the reason for the effect is the soft radiation.
+is not the hard radiation i.e. the number of hard radiations in the events, in the predictions, which is causing the effect. 
 
 \begin{figure}[t]
   \centering
@@ -754,7 +781,8 @@ The effect on the $\Delta\eta(t\bar{t})$ in the highest $M(t\bar{t})$ bin is als
 in Fig. \ref{fig:CP_eta_match} for the matching scale variations and in Fig. \ref{fig:CP_eta_hard} for the hard scale variations. All the varied 
 distributions are compared to the nominal unvaried spectrum. This comparison shows that the effect of the MC tending towards smaller $\Delta\eta(t\bar{t})$
 compared to the measurements is getting smaller for the variation of the matching scale up by factor 2 and for the variation of the hard scale down 
-by factor 0.5.
+by factor 0.5. This might give some indication on the origin of the deficiency of the MC model. It seems that the discrepancy might be related to the 
+mixture of matrix element hard radiation and parton showering.
 
 \begin{figure}[t]
 \centering
@@ -841,16 +869,10 @@ by factor 0.5.
 After presenting the normalized\footnote{As the analysis presented in this work was tuned to measure the normalized cross sections, the unnormalized cross sections are not
 discussed in this section. The results with unnormalized double differential top-quark-pair production cross sections are presented in Appendices \ref{appendix:unnorm_XSec}
 and \ref{appendix:xsec_table}} double differential top-quark-pair production cross sections in bins of nine different combinations of variables,
-one can summarize that overall the theoretical description of the measured data points is reasonable. The precision of the measurements allows a visual 
-comparison of the experimental results to different theoretical models in LO and NLO.
+one can summarize that overall the theoretical description of the measured data points is reasonable. The precision of the measurements allows a meaningful visual 
+comparison of the experimental results to different theoretical models.
 
 All the double differential distributions and normalized cross sections, shown in previous section, can be divided into three groups (see Fig. \ref{fig:res_dynamics}):
-
-\begin{itemize}
- \item [--] results, which describe the $t$ dynamics;
- \item [--] results, which describe the $t\bar{t}$ system dynamics;
- \item [--] results on combined $t$  and $t\bar{t}$ dynamics.
-\end{itemize}
 
 \begin{figure}[H]
   \centering
@@ -860,18 +882,31 @@ All the double differential distributions and normalized cross sections, shown i
   \label{fig:res_dynamics}
 \end{figure}
 
-The results presented in bins of $p_{T}(t)$ and $|y(t)|$ (fig. \ref{fig:XS_2D_y_pt}) are describing the $t$
-dynamics. The observation, made previously in the analysis on measurement of top-quark-pair differential cross sections in dileptonic channel at 
-$\sqrt{s}$ = 8 TeV \cite{Asin2014Auth}, was that the top-quark transverse momentum spectrum was softer in data than most of the predictions. The best
-description was provided by $\Powheg+\HERWIG$ predictions. However, this effect is very weak in the highest $|y(t)|$ bin. One can also conclude that the $\Powheg+\HERWIG$
-predictions provide the best description of the data point, except for the highest $|y(t)|$ regions.
+\begin{itemize}
+ \item [--] results, which describe the $t$ dynamics;
+ \item [--] results, which describe the $t\bar{t}$ system dynamics;
+ \item [--] results on combined $t$  and $t\bar{t}$ dynamics.
+\end{itemize}
 
-If talking about the $t\bar{t}$ system dynamics, the results in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$ (fig. \ref{fig:XS_2D_pttt_ytt})
-show overall good agreement with the predictions. $\MG+\PYTHIA$ describe experimental points the best way. However, the slight tendencies to the softer $p_{T}(t\bar{t})$
-and central $y(t\bar{t})$ in the measured data are observed. The same tendency towards softer $p_{T}(t\bar{t})$ in the measurements is observed for the distributions 
+The results presented in bins of $p_{T}(t)$ and $|y(t)|$ (fig. \ref{fig:XS_2D_y_pt}) are describing the $t$
+dynamics. The observation, made previously in the measurement of top-quark-pair differential cross sections in dileptonic channel at 
+$\sqrt{s}$ = 8 TeV \cite{Asin2014Auth}, was that the top-quark transverse momentum spectrum is softer in data than in most of the predictions. The best
+description was provided by $\Powheg+\HERWIG$ predictions. However, as shown in the present analysis this effect is very weak in the highest $|y(t)|$ bin. 
+One can also conclude that the $\Powheg+\HERWIG$ predictions provide the best description of the data, except for the highest $|y(t)|$ regions.
+
+When talking about the $t\bar{t}$ system dynamics, the results in bins of $p_{T}(t\bar{t})$ and $|y(t\bar{t})|$ (fig. \ref{fig:XS_2D_pttt_ytt})
+show overall good agreement with the predictions. $\MG+\PYTHIA$ describe experimental points best. However, slight tendencies to a softer $p_{T}(t\bar{t})$
+and more central $y(t\bar{t})$ in the measured data are observed. The same tendency towards softer $p_{T}(t\bar{t})$ in the measurements is observed for the distributions 
 in bins of $p_{T}(t\bar{t})$ and $M(t\bar{t})$ (fig. \ref{fig:XS_2D_Mtt_pttt}).
 
 The distributions, which represent the combined dynamics of $t$ and $t\bar{t}$, are the distributions of $M(t\bar{t})$ in different bins of $p_{T}(t)$, $|y(t)|$,
 $\Delta\eta(t\bar{t})$ and $\Delta\phi(t\bar{t})$ (fig. \ref{fig:XS_2D_Mtt_pt}, fig. \ref{fig:XS_2D_Mtt_yt}, fig. \ref{fig:XS_2D_eta_Mtt}
-and fig. \ref{fig:XS_2D_phi_Mtt}). The general observation is that the highest $M(t\bar{t})$ bin has the worst description of data by the predictions. 
+and fig. \ref{fig:XS_2D_phi_Mtt}). The general observation is that the highest $M(t\bar{t})$ bin has the worst description of data by the predictions. In this region 
+the effect of softer $p_{T}(t)$ is much more pronounced which is probably kinematically related to the simultaneous observation of a larger pseudorapidity
+separation $\Delta\eta(t\bar{t})$ between $t$ and $\bar{t}$ in the data and less central $y(t)$ in the data.
 % This trend in the distributions may be caused by the larger amount of soft radiation modeled in the MC predictions (discussion in sec. \ref{sec:ddxsec_discuss}).
+
+One would also think of the possibility of wrong modeling of spin effects. However, \MG includes spin effects. From this point of view strong discrepancies
+due to spin mismodeling are not expected. Spin effects are expected to affect decay angle distributions of $t$ and $\bar{t}$ decay products,
+for instance the angle of $b$ emission in top restframe with the $\bar{t}$ direction defining the $-z$ axis. One would need to study if the spin effects could also 
+affect the $\Delta\eta$ which should reflect the spin properties of incoming partons and exchange gauge bosons involved in the $t\bar{t}$ production process.
